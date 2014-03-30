@@ -1,0 +1,7 @@
+{
+  "T:System.Threading.CountdownEvent": "All",
+  "T:System.Object": "All",
+  "M:System.Threading.CountdownEvent.Dispose": "None",
+  "M:System.Threading.CountdownEvent.Dispose(System.Boolean)": "None",
+  "M:System.Threading.CountdownEvent.Reset": "None"
+}

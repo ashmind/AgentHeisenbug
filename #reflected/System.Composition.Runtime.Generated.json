@@ -1,0 +1,8 @@
+{
+  "T:System.Composition.CompositionContext": "Static",
+  "T:System.Composition.Export`1": "Static",
+  "T:System.Composition.ExportFactory`1": "Static",
+  "T:System.Composition.ExportFactory`2": "Static",
+  "T:System.Composition.Hosting.CompositionFailedException": "Static",
+  "T:System.Composition.Hosting.Core.CompositionContract": "Static"
+}

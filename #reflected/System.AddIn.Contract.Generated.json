@@ -1,0 +1,13 @@
+{
+  "T:System.AddIn.Contract.Automation.RemoteFieldData": "Static",
+  "T:System.AddIn.Contract.Automation.RemoteMemberData": "Static",
+  "T:System.AddIn.Contract.Automation.RemoteMethodData": "Static",
+  "T:System.AddIn.Contract.Automation.RemoteParameterData": "Static",
+  "T:System.AddIn.Contract.Automation.RemotePropertyData": "Static",
+  "T:System.AddIn.Contract.Automation.RemoteTypeData": "Static",
+  "T:System.AddIn.Contract.Collections.RemoteArgumentDictionaryEntry": "Static",
+  "T:System.AddIn.Contract.RemoteArgument": "Static",
+  "T:System.AddIn.Contract.SerializableObjectData": "Static",
+  "T:System.AddIn.Pipeline.AddInContractAttribute": "Static",
+  "T:System.AddIn.Pipeline.QualificationDataAttribute": "Static"
+}

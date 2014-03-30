@@ -1,0 +1,19 @@
+{
+  "T:System.Web.RegularExpressions.AspCodeRegex": "Static",
+  "T:System.Web.RegularExpressions.AspEncodedExprRegex": "Static",
+  "T:System.Web.RegularExpressions.AspExprRegex": "Static",
+  "T:System.Web.RegularExpressions.CommentRegex": "Static",
+  "T:System.Web.RegularExpressions.DatabindExprRegex": "Static",
+  "T:System.Web.RegularExpressions.DataBindRegex": "Static",
+  "T:System.Web.RegularExpressions.DirectiveRegex": "Static",
+  "T:System.Web.RegularExpressions.EndTagRegex": "Static",
+  "T:System.Web.RegularExpressions.GTRegex": "Static",
+  "T:System.Web.RegularExpressions.IncludeRegex": "Static",
+  "T:System.Web.RegularExpressions.LTRegex": "Static",
+  "T:System.Web.RegularExpressions.RunatServerRegex": "Static",
+  "T:System.Web.RegularExpressions.ServerTagsRegex": "Static",
+  "T:System.Web.RegularExpressions.SimpleDirectiveRegex": "Static",
+  "T:System.Web.RegularExpressions.TagRegex": "Static",
+  "T:System.Web.RegularExpressions.TagRegex35": "Static",
+  "T:System.Web.RegularExpressions.TextRegex": "Static"
+}

@@ -1,0 +1,9 @@
+{
+  "T:System.ServiceModel.Activation.HostedTransportConfiguration": "Static",
+  "T:System.ServiceModel.Activation.ServiceActivationBuildProviderAttribute": "Static",
+  "T:System.ServiceModel.Activation.ServiceBuildProvider": "Static",
+  "T:System.ServiceModel.Activation.ServiceHostFactory": "Static",
+  "T:System.ServiceModel.Activation.ServiceRoute": "Static",
+  "T:System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory": "Static",
+  "T:System.ServiceModel.ServiceHostingEnvironment": "Static"
+}

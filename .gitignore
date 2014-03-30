@@ -1,0 +1,11 @@
+
+bin/
+obj/
+*.suo
+*.psess
+*.vsp
+_ReSharper.*
+*.user
+*.snk
+*.ncrunchsolution
+\#packages/

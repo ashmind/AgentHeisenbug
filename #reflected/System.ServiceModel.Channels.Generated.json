@@ -1,0 +1,17 @@
+{
+  "T:System.ServiceModel.Channels.ByteStreamMessage": "Static",
+  "T:System.ServiceModel.Channels.ByteStreamMessageEncodingBindingElement": "Static",
+  "T:System.ServiceModel.Channels.HttpRequestMessageExtensionMethods": "Static",
+  "T:System.ServiceModel.Channels.HttpResponseMessageExtensionMethods": "Static",
+  "T:System.ServiceModel.Channels.MessageExtensionMethods": "Static",
+  "T:System.ServiceModel.Channels.NetworkInterfaceMessageProperty": "Static",
+  "T:System.ServiceModel.Channels.UdpRetransmissionSettings": "Static",
+  "T:System.ServiceModel.Channels.UdpTransportBindingElement": "Static",
+  "T:System.ServiceModel.Channels.UdpTransportImporter": "Static",
+  "T:System.ServiceModel.Configuration.ByteStreamMessageEncodingElement": "Static",
+  "T:System.ServiceModel.Configuration.UdpBindingCollectionElement": "Static",
+  "T:System.ServiceModel.Configuration.UdpBindingElement": "Static",
+  "T:System.ServiceModel.Configuration.UdpRetransmissionSettingsElement": "Static",
+  "T:System.ServiceModel.Configuration.UdpTransportElement": "Static",
+  "T:System.ServiceModel.UdpBinding": "Static"
+}

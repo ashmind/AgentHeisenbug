@@ -1,0 +1,12 @@
+{
+  "T:System.Web.UI.WebControls.EntityDataSource": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceContextCreatedEventArgs": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceContextDisposingEventArgs": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceSelectingEventArgs": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceValidationException": "Static",
+  "T:System.Web.UI.WebControls.EntityDataSourceView": "Static"
+}

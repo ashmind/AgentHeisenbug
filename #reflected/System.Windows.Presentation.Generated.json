@@ -1,0 +1,5 @@
+{
+  "T:System.AddIn.Pipeline.FrameworkElementAdapters": "Static",
+  "T:System.Windows.Threading.DispatcherExtensions": "Static",
+  "T:System.Windows.Threading.TaskExtensions": "Static"
+}

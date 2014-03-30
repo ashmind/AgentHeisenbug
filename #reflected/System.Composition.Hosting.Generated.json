@@ -1,0 +1,10 @@
+{
+  "T:System.Composition.Hosting.CompositionHost": "Static",
+  "T:System.Composition.Hosting.Core.CompositionDependency": "Static",
+  "T:System.Composition.Hosting.Core.CompositionOperation": "Static",
+  "T:System.Composition.Hosting.Core.DependencyAccessor": "Static",
+  "T:System.Composition.Hosting.Core.ExportDescriptor": "Static",
+  "T:System.Composition.Hosting.Core.ExportDescriptorPromise": "Static",
+  "T:System.Composition.Hosting.Core.ExportDescriptorProvider": "Static",
+  "T:System.Composition.Hosting.Core.LifetimeContext": "Static"
+}

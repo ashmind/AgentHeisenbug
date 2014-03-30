@@ -1,0 +1,13 @@
+{
+  "T:System.ServiceProcess.Design.ServiceInstallerDialog": "Static",
+  "T:System.ServiceProcess.ServiceBase": "Static",
+  "T:System.ServiceProcess.ServiceController": "Static",
+  "T:System.ServiceProcess.ServiceControllerPermission": "Static",
+  "T:System.ServiceProcess.ServiceControllerPermissionAttribute": "Static",
+  "T:System.ServiceProcess.ServiceControllerPermissionEntry": "Static",
+  "T:System.ServiceProcess.ServiceControllerPermissionEntryCollection": "Static",
+  "T:System.ServiceProcess.ServiceInstaller": "Static",
+  "T:System.ServiceProcess.ServiceProcessDescriptionAttribute": "Static",
+  "T:System.ServiceProcess.ServiceProcessInstaller": "Static",
+  "T:System.ServiceProcess.TimeoutException": "Static"
+}

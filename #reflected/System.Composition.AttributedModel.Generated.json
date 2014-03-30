@@ -1,0 +1,15 @@
+{
+  "T:System.Composition.Convention.AttributedModelProvider": "Static",
+  "T:System.Composition.ExportAttribute": "Static",
+  "T:System.Composition.ExportMetadataAttribute": "Static",
+  "T:System.Composition.ImportAttribute": "Static",
+  "T:System.Composition.ImportingConstructorAttribute": "Static",
+  "T:System.Composition.ImportManyAttribute": "Static",
+  "T:System.Composition.ImportMetadataConstraintAttribute": "Static",
+  "T:System.Composition.MetadataAttributeAttribute": "Static",
+  "T:System.Composition.OnImportsSatisfiedAttribute": "Static",
+  "T:System.Composition.PartMetadataAttribute": "Static",
+  "T:System.Composition.PartNotDiscoverableAttribute": "Static",
+  "T:System.Composition.SharedAttribute": "Static",
+  "T:System.Composition.SharingBoundaryAttribute": "Static"
+}

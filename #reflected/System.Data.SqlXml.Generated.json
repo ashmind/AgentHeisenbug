@@ -1,0 +1,8 @@
+{
+  "T:System.Xml.Xsl.Runtime.DodSequenceMerge": "Static",
+  "T:System.Xml.Xsl.Runtime.PrecedingSiblingDocOrderIterator": "Static",
+  "T:System.Xml.Xsl.Runtime.PrecedingSiblingIterator": "Static",
+  "T:System.Xml.Xsl.Runtime.XmlQueryItemSequence": "Static",
+  "T:System.Xml.Xsl.Runtime.XmlQueryNodeSequence": "Static",
+  "T:System.Xml.Xsl.Runtime.XmlQuerySequence`1": "Static"
+}

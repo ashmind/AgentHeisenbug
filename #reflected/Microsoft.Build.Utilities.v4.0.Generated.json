@@ -1,0 +1,11 @@
+{
+  "T:Microsoft.Build.Utilities.AssemblyFoldersExInfo": "Static",
+  "T:Microsoft.Build.Utilities.CanonicalTrackedInputFiles": "Static",
+  "T:Microsoft.Build.Utilities.CanonicalTrackedOutputFiles": "Static",
+  "T:Microsoft.Build.Utilities.FileTracker": "Static",
+  "T:Microsoft.Build.Utilities.FlatTrackingData": "Static",
+  "T:Microsoft.Build.Utilities.MuxLogger": "Static",
+  "T:Microsoft.Build.Utilities.ProcessorArchitecture": "Static",
+  "T:Microsoft.Build.Utilities.TargetPlatformSDK": "Static",
+  "T:Microsoft.Build.Utilities.TrackedDependencies": "Static"
+}

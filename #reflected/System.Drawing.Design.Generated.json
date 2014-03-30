@@ -1,0 +1,13 @@
+{
+  "T:System.Drawing.Design.BitmapEditor": "Static",
+  "T:System.Drawing.Design.ColorEditor": "Static",
+  "T:System.Drawing.Design.ContentAlignmentEditor": "Static",
+  "T:System.Drawing.Design.CursorEditor": "Static",
+  "T:System.Drawing.Design.FontEditor": "Static",
+  "T:System.Drawing.Design.FontNameEditor": "Static",
+  "T:System.Drawing.Design.IconEditor": "Static",
+  "T:System.Drawing.Design.ImageEditor": "Static",
+  "T:System.Drawing.Design.MetafileEditor": "Static",
+  "T:System.Drawing.Design.ToolboxItemCreator": "Static",
+  "T:System.Drawing.Design.ToolboxService": "Static"
+}

@@ -1,0 +1,12 @@
+{
+  "T:System.Data.DataRowComparer": "Static",
+  "T:System.Data.DataRowComparer`1": "Static",
+  "T:System.Data.DataRowExtensions": "Static",
+  "T:System.Data.DataTableExtensions": "Static",
+  "T:System.Data.EnumerableRowCollection": "Static",
+  "T:System.Data.EnumerableRowCollection`1": "Static",
+  "T:System.Data.EnumerableRowCollectionExtensions": "Static",
+  "T:System.Data.OrderedEnumerableRowCollection`1": "Static",
+  "T:System.Data.TypedTableBase`1": "Static",
+  "T:System.Data.TypedTableBaseExtensions": "Static"
+}

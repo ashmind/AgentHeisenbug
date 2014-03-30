@@ -1,0 +1,12 @@
+{
+  "T:Microsoft.VisualC.DebugInfoInPDBAttribute": "Static",
+  "T:Microsoft.VisualC.DecoratedNameAttribute": "Static",
+  "T:Microsoft.VisualC.IsConstModifier": "Static",
+  "T:Microsoft.VisualC.IsCXXReferenceModifier": "Static",
+  "T:Microsoft.VisualC.IsLongModifier": "Static",
+  "T:Microsoft.VisualC.IsSignedModifier": "Static",
+  "T:Microsoft.VisualC.IsVolatileModifier": "Static",
+  "T:Microsoft.VisualC.MiscellaneousBitsAttribute": "Static",
+  "T:Microsoft.VisualC.NeedsCopyConstructorModifier": "Static",
+  "T:Microsoft.VisualC.NoSignSpecifiedModifier": "Static"
+}

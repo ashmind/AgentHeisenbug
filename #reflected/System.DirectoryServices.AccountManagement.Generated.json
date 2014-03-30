@@ -1,0 +1,23 @@
+{
+  "T:System.DirectoryServices.AccountManagement.AdvancedFilters": "Static",
+  "T:System.DirectoryServices.AccountManagement.AuthenticablePrincipal": "Static",
+  "T:System.DirectoryServices.AccountManagement.ComputerPrincipal": "Static",
+  "T:System.DirectoryServices.AccountManagement.DirectoryObjectClassAttribute": "Static",
+  "T:System.DirectoryServices.AccountManagement.DirectoryPropertyAttribute": "Static",
+  "T:System.DirectoryServices.AccountManagement.DirectoryRdnPrefixAttribute": "Static",
+  "T:System.DirectoryServices.AccountManagement.GroupPrincipal": "Static",
+  "T:System.DirectoryServices.AccountManagement.MultipleMatchesException": "Static",
+  "T:System.DirectoryServices.AccountManagement.NoMatchingPrincipalException": "Static",
+  "T:System.DirectoryServices.AccountManagement.PasswordException": "Static",
+  "T:System.DirectoryServices.AccountManagement.Principal": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalCollection": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalContext": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalException": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalExistsException": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalOperationException": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalSearcher": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalSearchResult`1": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalServerDownException": "Static",
+  "T:System.DirectoryServices.AccountManagement.PrincipalValueCollection`1": "Static",
+  "T:System.DirectoryServices.AccountManagement.UserPrincipal": "Static"
+}

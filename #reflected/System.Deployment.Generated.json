@@ -1,0 +1,7 @@
+{
+  "T:System.Deployment.Application.CompatibleFramework": "Static",
+  "T:System.Deployment.Application.CompatibleFrameworkMissingException": "Static",
+  "T:System.Deployment.Application.CompatibleFrameworks": "Static",
+  "T:System.Deployment.Application.SupportedRuntimeMissingException": "Static",
+  "T:System.Deployment.Internal.CodeSigning.RSAPKCS1SHA256SignatureDescription": "Static"
+}

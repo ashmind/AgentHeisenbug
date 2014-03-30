@@ -1,0 +1,13 @@
+{
+  "T:System.IdentityModel.Selectors.CardSpaceException": "Static",
+  "T:System.IdentityModel.Selectors.CardSpacePolicyElement": "Static",
+  "T:System.IdentityModel.Selectors.CardSpaceSelector": "Static",
+  "T:System.IdentityModel.Selectors.IdentityValidationException": "Static",
+  "T:System.IdentityModel.Selectors.PolicyValidationException": "Static",
+  "T:System.IdentityModel.Selectors.ServiceBusyException": "Static",
+  "T:System.IdentityModel.Selectors.ServiceNotStartedException": "Static",
+  "T:System.IdentityModel.Selectors.StsCommunicationException": "Static",
+  "T:System.IdentityModel.Selectors.UnsupportedPolicyOptionsException": "Static",
+  "T:System.IdentityModel.Selectors.UntrustedRecipientException": "Static",
+  "T:System.IdentityModel.Selectors.UserCancellationException": "Static"
+}

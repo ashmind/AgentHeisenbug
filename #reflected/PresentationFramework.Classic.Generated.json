@@ -1,0 +1,7 @@
+{
+  "T:Microsoft.Windows.Themes.ClassicBorderDecorator": "Static",
+  "T:Microsoft.Windows.Themes.DataGridHeaderBorder": "Static",
+  "T:Microsoft.Windows.Themes.PlatformCulture": "Static",
+  "T:Microsoft.Windows.Themes.ProgressBarBrushConverter": "Static",
+  "T:Microsoft.Windows.Themes.SystemDropShadowChrome": "Static"
+}

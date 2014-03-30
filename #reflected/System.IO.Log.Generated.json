@@ -1,0 +1,17 @@
+{
+  "T:System.IO.Log.FileRecordSequence": "Static",
+  "T:System.IO.Log.FileRegion": "Static",
+  "T:System.IO.Log.LogArchiveSnapshot": "Static",
+  "T:System.IO.Log.LogExtent": "Static",
+  "T:System.IO.Log.LogExtentCollection": "Static",
+  "T:System.IO.Log.LogPolicy": "Static",
+  "T:System.IO.Log.LogRecord": "Static",
+  "T:System.IO.Log.LogRecordSequence": "Static",
+  "T:System.IO.Log.LogStore": "Static",
+  "T:System.IO.Log.PolicyUnit": "Static",
+  "T:System.IO.Log.ReservationCollection": "Static",
+  "T:System.IO.Log.ReservationNotFoundException": "Static",
+  "T:System.IO.Log.SequenceFullException": "Static",
+  "T:System.IO.Log.SequenceNumber": "Static",
+  "T:System.IO.Log.TailPinnedEventArgs": "Static"
+}

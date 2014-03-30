@@ -1,0 +1,10 @@
+{
+  "T:System.Device.Location.CivicAddress": "Static",
+  "T:System.Device.Location.CivicAddressResolver": "Static",
+  "T:System.Device.Location.GeoCoordinate": "Static",
+  "T:System.Device.Location.GeoCoordinateWatcher": "Static",
+  "T:System.Device.Location.GeoPosition`1": "Static",
+  "T:System.Device.Location.GeoPositionChangedEventArgs`1": "Static",
+  "T:System.Device.Location.GeoPositionStatusChangedEventArgs": "Static",
+  "T:System.Device.Location.ResolveAddressCompletedEventArgs": "Static"
+}

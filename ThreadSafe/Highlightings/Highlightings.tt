@@ -1,0 +1,40 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using JetBrains.Annotations;
+using JetBrains.ReSharper.Daemon;
+using JetBrains.ReSharper.Psi.CSharp;
+using JetBrains.ReSharper.Psi.Tree;
+using ThreadSafety.Highlightings;
+
+<# var model = new Dictionary<string, string> {
+    { "CallToStaticMethodNotThreadSafe",     "Call to static method that is not thread-safe from type annotated with [ThreadSafe]" },
+    { "MutableFieldOrPropertyNotThreadSafe", "Mutable property or field in type annotated with [ThreadSafe]" },
+    { "ExposingNotThreadSafeType",           "Exposing type that is not thread-safe from type annotated with [ThreadSafe]" }
+}; #>
+
+<# foreach (var pair in model) { #>
+[assembly: RegisterConfigurableSeverity(
+    <#= pair.Key #>.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "<#= pair.Value #>",
+    "<#= pair.Value #>",
+    Severity.WARNING,
+    false
+)]
+<# } #>
+
+namespace ThreadSafety.Highlightings {<# foreach (var pair in model) { #>
+
+    [ConfigurableSeverityHighlighting(<#= pair.Key #>.Id, CSharpLanguage.Name)]
+    public class <#= pair.Key #> : ThreadSafetyHighligtingBase {
+        public const string Id = "<#= pair.Key #>";
+
+        [StringFormatMethod("messageFormat")]
+        public <#= pair.Key #>(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+    }
+<# } #>}

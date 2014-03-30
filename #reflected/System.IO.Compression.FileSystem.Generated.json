@@ -1,0 +1,4 @@
+{
+  "T:System.IO.Compression.ZipFile": "Static",
+  "T:System.IO.Compression.ZipFileExtensions": "Static"
+}

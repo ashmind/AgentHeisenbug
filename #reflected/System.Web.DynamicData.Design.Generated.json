@@ -1,0 +1,6 @@
+{
+  "T:System.Web.DynamicData.Design.DataControlReferenceCollectionEditor": "Static",
+  "T:System.Web.DynamicData.Design.DataControlReferenceIDConverter": "Static",
+  "T:System.Web.DynamicData.Design.DynamicDataManagerDesigner": "Static",
+  "T:System.Web.DynamicData.Design.DynamicFieldDesigner": "Static"
+}

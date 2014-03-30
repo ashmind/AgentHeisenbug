@@ -1,0 +1,18 @@
+{
+  "T:System.AddIn.AddInAttribute": "Static",
+  "T:System.AddIn.Hosting.AddInController": "Static",
+  "T:System.AddIn.Hosting.AddInEnvironment": "Static",
+  "T:System.AddIn.Hosting.AddInProcess": "Static",
+  "T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException": "Static",
+  "T:System.AddIn.Hosting.AddInStore": "Static",
+  "T:System.AddIn.Hosting.AddInToken": "Static",
+  "T:System.AddIn.Hosting.InvalidPipelineStoreException": "Static",
+  "T:System.AddIn.Hosting.QualificationDataItem": "Static",
+  "T:System.AddIn.Pipeline.AddInAdapterAttribute": "Static",
+  "T:System.AddIn.Pipeline.AddInBaseAttribute": "Static",
+  "T:System.AddIn.Pipeline.CollectionAdapters": "Static",
+  "T:System.AddIn.Pipeline.ContractAdapter": "Static",
+  "T:System.AddIn.Pipeline.ContractBase": "Static",
+  "T:System.AddIn.Pipeline.ContractHandle": "Static",
+  "T:System.AddIn.Pipeline.HostAdapterAttribute": "Static"
+}

@@ -1,0 +1,17 @@
+{
+  "T:System.Runtime.Caching.CacheEntryChangeMonitor": "Static",
+  "T:System.Runtime.Caching.CacheEntryRemovedArguments": "Static",
+  "T:System.Runtime.Caching.CacheEntryUpdateArguments": "Static",
+  "T:System.Runtime.Caching.CacheItem": "Static",
+  "T:System.Runtime.Caching.CacheItemPolicy": "Static",
+  "T:System.Runtime.Caching.ChangeMonitor": "All",
+  "T:System.Runtime.Caching.Configuration.CachingSectionGroup": "Static",
+  "T:System.Runtime.Caching.Configuration.MemoryCacheElement": "Static",
+  "T:System.Runtime.Caching.Configuration.MemoryCacheSection": "Static",
+  "T:System.Runtime.Caching.Configuration.MemoryCacheSettingsCollection": "Static",
+  "T:System.Runtime.Caching.FileChangeMonitor": "Static",
+  "T:System.Runtime.Caching.HostFileChangeMonitor": "Static",
+  "T:System.Runtime.Caching.MemoryCache": "All",
+  "T:System.Runtime.Caching.ObjectCache": "All",
+  "T:System.Runtime.Caching.SqlChangeMonitor": "Static"
+}

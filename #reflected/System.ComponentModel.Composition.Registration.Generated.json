@@ -1,0 +1,8 @@
+{
+  "T:System.ComponentModel.Composition.Registration.ExportBuilder": "Static",
+  "T:System.ComponentModel.Composition.Registration.ImportBuilder": "Static",
+  "T:System.ComponentModel.Composition.Registration.ParameterImportBuilder": "Static",
+  "T:System.ComponentModel.Composition.Registration.PartBuilder": "Static",
+  "T:System.ComponentModel.Composition.Registration.PartBuilder`1": "Static",
+  "T:System.ComponentModel.Composition.Registration.RegistrationBuilder": "Static"
+}
