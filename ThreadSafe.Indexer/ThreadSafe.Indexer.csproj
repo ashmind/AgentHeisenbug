@@ -7,8 +7,8 @@
     <ProjectGuid>{7BE9C46A-EEB4-469A-A73B-857DDEE6C46F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ThreadSafe.Indexer</RootNamespace>
-    <AssemblyName>ThreadSafe.Indexer</AssemblyName>
+    <RootNamespace>AgentHeisenbug.Indexer</RootNamespace>
+    <AssemblyName>AgentHeisenbug.Indexer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -54,14 +54,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnotationWriter.cs" />
-    <Compile Include="TypeThreadSafety.cs" />
-    <Compile Include="TypeDescription.cs" />
-    <Compile Include="HelpReader.cs" />
+    <Compile Include="Annotation.cs" />
+    <Compile Include="AnnotationsByAssembly.cs" />
+    <Compile Include="ThreadSafe\HelpAnnotationProvider.cs" />
+    <Compile Include="ThreadSafe\TypeThreadSafety.cs" />
+    <Compile Include="ThreadSafe\TypeDescription.cs" />
+    <Compile Include="ThreadSafe\HelpRawReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ReadOnly\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

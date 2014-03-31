@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly name="System.Runtime.Serialization.Formatters.Soap">
+  <member name="T:System.Runtime.Serialization.Formatters.Soap.SoapFormatter">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+</assembly>

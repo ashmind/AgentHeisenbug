@@ -1,8 +1,0 @@
-{
-  "T:System.Composition.Convention.ConventionBuilder": "Static",
-  "T:System.Composition.Convention.ExportConventionBuilder": "Static",
-  "T:System.Composition.Convention.ImportConventionBuilder": "Static",
-  "T:System.Composition.Convention.ParameterImportConventionBuilder": "Static",
-  "T:System.Composition.Convention.PartConventionBuilder": "Static",
-  "T:System.Composition.Convention.PartConventionBuilder`1": "Static"
-}

@@ -1,6 +1,0 @@
-{
-  "T:Microsoft.CSharp.RuntimeBinder.Binder": "Static",
-  "T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo": "Static",
-  "T:Microsoft.CSharp.RuntimeBinder.RuntimeBinderException": "Static",
-  "T:Microsoft.CSharp.RuntimeBinder.RuntimeBinderInternalCompilerException": "Static"
-}

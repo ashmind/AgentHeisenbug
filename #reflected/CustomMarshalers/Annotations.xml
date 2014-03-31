@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly name="CustomMarshalers">
+  <member name="T:System.Runtime.InteropServices.CustomMarshalers.EnumerableToDispatchMarshaler">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.InteropServices.CustomMarshalers.TypeToTypeInfoMarshaler">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+</assembly>

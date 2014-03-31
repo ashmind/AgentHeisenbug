@@ -1,7 +1,0 @@
-{
-  "T:System.Data.Services.BuildProvider.DataServiceBuildProvider": "Static",
-  "T:System.Data.Services.Design.EdmToObjectNamespaceMap": "Static",
-  "T:System.Data.Services.Design.EntityClassGenerator": "Static",
-  "T:System.Data.Services.Design.PropertyGeneratedEventArgs": "Static",
-  "T:System.Data.Services.Design.TypeGeneratedEventArgs": "Static"
-}

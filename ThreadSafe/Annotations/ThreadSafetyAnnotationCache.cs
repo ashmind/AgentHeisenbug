@@ -21,17 +21,15 @@ namespace ThreadSafety.Annotations {
         }
 
         private ThreadSafetyLevel GetThreadSafetyLevelUncached(IAttributesOwner member) {
-            var annotated = member.GetAttributeInstances(true).Any(a => a.AttributeType.GetClrName().ShortName == "ThreadSafeAttribute");
-            if (annotated)
+            var attributes = member.GetAttributeInstances(true);
+            var manual = attributes.Any(a => a.AttributeType.GetClrName().ShortName == "ThreadSafeAttribute");
+            if (manual)
                 return ThreadSafetyLevel.All;
 
-            var typeMember = member as ITypeMember;
-            if (typeMember != null) {
-                var external = this.externalProvider.GetThreadSafetyLevel(typeMember);
-                if (external != ThreadSafetyLevel.None)
-                    return external;
-            }
-
+            var generated = attributes.SingleOrDefault(a => a.AttributeType.GetClrName().ShortName == "GeneratedThreadSafeAttribute");
+            if (generated != null)
+                return (ThreadSafetyLevel)Enum.Parse(typeof(ThreadSafetyLevel), (string)generated.PositionParameter(0).ConstantValue.Value);
+            
             var containing = member.GetContainingType();
             if (containing != null)
                 return GetThreadSafetyLevel(containing);

@@ -1,8 +1,0 @@
-{
-  "T:System.IO.WindowsRuntimeStorageExtensions": "Static",
-  "T:System.IO.WindowsRuntimeStreamExtensions": "Static",
-  "T:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo": "Static",
-  "T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBuffer": "Static",
-  "T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions": "Static",
-  "T:System.WindowsRuntimeSystemExtensions": "Static"
-}

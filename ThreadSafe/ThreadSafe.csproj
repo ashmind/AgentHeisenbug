@@ -84,4 +84,17 @@
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ReSharperSdkTargets)\Plugin.Targets" />
+
+  <Target Name="CopyExternalAnnotationsToReSharper" AfterTargets="Build">
+    <ItemGroup>
+      <_Annotations Include="..\#reflected\**\*.*" />
+    </ItemGroup>
+  
+    <PropertyGroup>
+      <_ExternalAnnotationsDir>$(MSBuildProgramFiles32)\JetBrains\ReSharper\v7.1\Bin\ExternalAnnotations\Heisenbug</_ExternalAnnotationsDir>
+    </PropertyGroup>
+    
+    <MakeDir Directories="$(_ExternalAnnotationsDir)" />
+    <Copy SourceFiles="@(_Annotations)" DestinationFolder="$(_ExternalAnnotationsDir)%(RecursiveDir)"  />
+  </Target>
 </Project>

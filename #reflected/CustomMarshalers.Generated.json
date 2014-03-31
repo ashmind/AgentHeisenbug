@@ -1,6 +1,0 @@
-{
-  "T:System.Runtime.InteropServices.CustomMarshalers.EnumerableToDispatchMarshaler": "Static",
-  "T:System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler": "Static",
-  "T:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler": "Static",
-  "T:System.Runtime.InteropServices.CustomMarshalers.TypeToTypeInfoMarshaler": "Static"
-}

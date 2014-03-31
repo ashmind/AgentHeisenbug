@@ -1,7 +1,0 @@
-{
-  "T:System.Management.Instrumentation.DefaultManagementInstaller": "Static",
-  "T:System.Management.Instrumentation.InstrumentationManager": "Static",
-  "T:System.Management.Instrumentation.ManagedCommonProvider": "Static",
-  "T:System.Management.Instrumentation.ManagementQualifierAttribute": "Static",
-  "T:System.Management.Instrumentation.WmiProviderInstallationException": "Static"
-}

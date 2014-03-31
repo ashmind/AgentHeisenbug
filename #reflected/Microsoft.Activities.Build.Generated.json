@@ -1,7 +1,0 @@
-{
-  "T:Microsoft.Activities.Build.Debugger.DebugBuildExtension": "Static",
-  "T:Microsoft.Activities.Build.Expressions.ExpressionsBuildExtension": "Static",
-  "T:Microsoft.Activities.Build.Validation.DeferredValidationTask": "Static",
-  "T:Microsoft.Activities.Build.Validation.ReportDeferredValidationErrorsTask": "Static",
-  "T:Microsoft.Activities.Build.WorkflowBuildMessageTask": "Static"
-}

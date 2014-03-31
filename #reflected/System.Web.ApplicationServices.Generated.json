@@ -1,9 +1,0 @@
-{
-  "T:System.Web.Security.MembershipCreateUserException": "Static",
-  "T:System.Web.Security.MembershipPasswordException": "Static",
-  "T:System.Web.Security.MembershipProvider": "Static",
-  "T:System.Web.Security.MembershipProviderCollection": "Static",
-  "T:System.Web.Security.MembershipUser": "Static",
-  "T:System.Web.Security.MembershipUserCollection": "Static",
-  "T:System.Web.Security.RoleProvider": "Static"
-}

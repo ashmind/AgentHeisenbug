@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
+using AgentHeisenbug.Indexer.ThreadSafe;
 
-namespace ThreadSafe.Indexer {
+namespace AgentHeisenbug.Indexer {
     public static class Program {
         public static void Main(params string[] args) {
             var inputDirectory = new DirectoryInfo(args[0]);
             var outputDirectory = new DirectoryInfo(args[1]);
+            var tempDirectory = new DirectoryInfo(Path.Combine(outputDirectory.FullName, "#temp"));
 
-            var types = new HelpReader().ReadDirectory(inputDirectory, f => f.Name.Contains("NET_FRAMEWORK_45"));
+            var annotations = new HelpAnnotationProvider(new HelpRawReader())
+                                    .GetAnnotationsByAssembly(inputDirectory.EnumerateFiles("*NET_FRAMEWORK_45*.mshc"), tempDirectory);
             //types = Buffer(types, 200);
 
-            new AnnotationWriter().WriteAll(outputDirectory, types);
+            new AnnotationWriter().WriteAll(outputDirectory, annotations);
             
             Console.WriteLine("Completed");
             Console.ReadKey();
