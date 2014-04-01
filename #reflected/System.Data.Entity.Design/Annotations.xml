@@ -5,42 +5,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Data.Entity.Design.PluralizationServices.PluralizationService">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.MetadataExtensionMethods">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.EntityStoreSchemaGenerator">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.EntityCodeGenerator">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.EdmToObjectNamespaceMap">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.PropertyGeneratedEventArgs">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.TypeGeneratedEventArgs">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.EntityFrameworkVersions">
+  <member name="T:System.Data.Entity.Design.AspNet.EntityModelBuildProvider">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -50,7 +15,27 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Data.Entity.Design.AspNet.EntityModelBuildProvider">
+  <member name="T:System.Data.Entity.Design.AspNet.StorageModelBuildProvider">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.EdmToObjectNamespaceMap">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.EntityClassGenerator">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.EntityCodeGenerator">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.EntityFrameworkVersions">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -65,12 +50,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Data.Entity.Design.MetadataItemCollectionFactory">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Data.Entity.Design.AspNet.StorageModelBuildProvider">
+  <member name="T:System.Data.Entity.Design.EntityStoreSchemaGenerator">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -80,7 +60,27 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Data.Entity.Design.EntityClassGenerator">
+  <member name="T:System.Data.Entity.Design.MetadataExtensionMethods">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.MetadataItemCollectionFactory">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.PluralizationServices.PluralizationService">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.PropertyGeneratedEventArgs">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Data.Entity.Design.TypeGeneratedEventArgs">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

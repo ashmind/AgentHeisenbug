@@ -10,15 +10,15 @@ using ThreadSafety.Highlightings;
 namespace ThreadSafety.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IAccessorDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldOrPropertyNotThreadSafe) })]
     public class ThreadSafetyPropertySetterAnalyzer : IElementProblemAnalyzer {
-        private readonly ThreadSafetyAnalyzerHelper helper;
+        private readonly AnalyzerScopeRequirement requirement;
 
-        public ThreadSafetyPropertySetterAnalyzer(ThreadSafetyAnalyzerHelper helper) {
-            this.helper = helper;
+        public ThreadSafetyPropertySetterAnalyzer(AnalyzerScopeRequirement requirement) {
+            this.requirement = requirement;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
             var accessor = (IAccessorDeclaration)element;
-            if (accessor.Kind != AccessorKind.SETTER || !this.helper.MustBeThreadSafe(accessor))
+            if (accessor.Kind != AccessorKind.SETTER || !this.requirement.MustBeThreadSafe(accessor))
                 return;
 
             var accessRights = accessor.GetAccessRights();

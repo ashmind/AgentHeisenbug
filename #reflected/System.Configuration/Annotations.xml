@@ -1,46 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.Configuration">
-  <member name="T:System.Configuration.ConfigurationPropertyAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.Configuration">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:System.Configuration.AppSettingsSection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.DPAPIProtectedConfigurationProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationLocationCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationElementCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ProtectedConfigurationSection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.PositiveTimeSpanValidatorAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.CommaDelimitedStringCollectionConverter">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -50,77 +10,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Configuration.ConfigurationPermissionAttribute">
+  <member name="T:System.Configuration.CommaDelimitedStringCollectionConverter">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Configuration.RSAProtectedConfigurationProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConnectionStringSettings">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ProtectedConfiguration">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ProviderSettings">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationSectionGroupCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationProperty">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationSectionCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationPropertyCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationSectionGroup">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ProtectedConfigurationProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ProviderSettingsCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConnectionStringSettingsCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ProtectedConfigurationProviderCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Configuration.ConfigurationLocation">
+  <member name="T:System.Configuration.Configuration">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -130,17 +25,17 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Configuration.ConnectionStringsSection">
+  <member name="T:System.Configuration.ConfigurationElementCollection">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Configuration.Provider.ProviderCollection">
+  <member name="T:System.Configuration.ConfigurationLocation">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Configuration.ConfigurationSection">
+  <member name="T:System.Configuration.ConfigurationLocationCollection">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -150,12 +45,117 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Configuration.Provider.ProviderBase">
+  <member name="T:System.Configuration.ConfigurationPermissionAttribute">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConfigurationProperty">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConfigurationPropertyAttribute">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConfigurationPropertyCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConfigurationSection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConfigurationSectionCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConfigurationSectionGroup">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConfigurationSectionGroupCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConnectionStringSettings">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConnectionStringSettingsCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ConnectionStringsSection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.DPAPIProtectedConfigurationProvider">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Configuration.PositiveTimeSpanValidator">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.PositiveTimeSpanValidatorAttribute">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ProtectedConfiguration">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ProtectedConfigurationProvider">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ProtectedConfigurationProviderCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ProtectedConfigurationSection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.Provider.ProviderBase">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.Provider.ProviderCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ProviderSettings">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.ProviderSettingsCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Configuration.RSAProtectedConfigurationProvider">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

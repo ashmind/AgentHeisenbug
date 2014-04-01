@@ -1,286 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="Microsoft.Build">
-  <member name="T:Microsoft.Build.Evaluation.ProjectCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectExtensionsElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectPropertyElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectUsingTaskElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Logging.ConfigurableForwardingLogger">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectItemGroupElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Debugging.DebuggerManager.IslandThread">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectImportElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectRootElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectItem">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectOutputElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.TargetResult">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectItemDefinitionGroupElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.ResolvedImport">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectWhenElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectChangedEventArgs">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Logging.DistributedFileLogger">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectElementContainer">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Exceptions.InternalLoggerException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectPropertyGroupTaskPropertyInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectTaskOutputItemInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectTargetInstanceChild">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectOnErrorInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectItemInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.Project">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectCollectionChangedEventArgs">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectCollection.ProjectAddedToProjectCollectionEventArgs">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectProperty">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectMetadata">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Exceptions.InvalidToolsetDefinitionException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectItemDefinitionElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectTaskInstanceChild">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.BuildRequestData">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectMetadataElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.BuildResult">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.OutOfProcNode">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectItemElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.UsingTaskParameterGroupElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectTaskElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.BuildManager">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:Microsoft.Build.Construction.ElementLocation">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Logging.ConsoleLogger">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectTargetInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectPropertyGroupElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectTaskOutputPropertyInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectItemGroupTaskMetadataInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectPropertyInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.SubToolset">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Exceptions.BuildAbortedException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectMetadataInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Evaluation.Toolset">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectItemGroupTaskInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Construction.ProjectUsingTaskBodyElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectItemDefinitionInstance">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Execution.ProjectPropertyGroupTaskInstance">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -290,27 +10,22 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Construction.ProjectOtherwiseElement">
+  <member name="T:Microsoft.Build.Construction.ProjectElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectXmlChangedEventArgs">
+  <member name="T:Microsoft.Build.Construction.ProjectElementContainer">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Execution.ProjectItemGroupTaskItemInstance">
+  <member name="T:Microsoft.Build.Construction.ProjectExtensionsElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Evaluation.ProjectItemDefinition">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Build.Logging.LoggerDescription">
+  <member name="T:Microsoft.Build.Construction.ProjectImportElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -320,22 +35,27 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Logging.FileLogger">
+  <member name="T:Microsoft.Build.Construction.ProjectItemDefinitionElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Debugging.DebuggerManager">
+  <member name="T:Microsoft.Build.Construction.ProjectItemDefinitionGroupElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Execution.BuildSubmission">
+  <member name="T:Microsoft.Build.Construction.ProjectItemElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Construction.ProjectUsingTaskParameterElement">
+  <member name="T:Microsoft.Build.Construction.ProjectItemGroupElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectMetadataElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -345,7 +65,27 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Execution.ProjectTaskInstance">
+  <member name="T:Microsoft.Build.Construction.ProjectOtherwiseElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectOutputElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectPropertyElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectPropertyGroupElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectRootElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -355,12 +95,132 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:Microsoft.Build.Construction.ProjectTaskElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectUsingTaskBodyElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectUsingTaskElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectUsingTaskParameterElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.ProjectWhenElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Construction.UsingTaskParameterGroupElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Debugging.DebuggerManager">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Debugging.DebuggerManager.IslandThread">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.Project">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectChangedEventArgs">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectCollection.ProjectAddedToProjectCollectionEventArgs">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectCollectionChangedEventArgs">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectItem">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectItemDefinition">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectMetadata">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectProperty">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ProjectXmlChangedEventArgs">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.ResolvedImport">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.SubToolset">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Evaluation.Toolset">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Exceptions.BuildAbortedException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Exceptions.InternalLoggerException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:Microsoft.Build.Exceptions.InvalidProjectFileException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Logging.ForwardingLoggerRecord">
+  <member name="T:Microsoft.Build.Exceptions.InvalidToolsetDefinitionException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.BuildManager">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -370,7 +230,147 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:Microsoft.Build.Execution.BuildRequestData">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.BuildResult">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.BuildSubmission">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:Microsoft.Build.Execution.HostServices">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.OutOfProcNode">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectItemDefinitionInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectItemGroupTaskInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectItemGroupTaskItemInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectItemGroupTaskMetadataInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectItemInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectMetadataInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectOnErrorInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectPropertyGroupTaskInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectPropertyGroupTaskPropertyInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectPropertyInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectTargetInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectTargetInstanceChild">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectTaskInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectTaskInstanceChild">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectTaskOutputItemInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.ProjectTaskOutputPropertyInstance">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Execution.TargetResult">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Logging.ConfigurableForwardingLogger">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Logging.ConsoleLogger">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Logging.DistributedFileLogger">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Logging.FileLogger">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Logging.ForwardingLoggerRecord">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Build.Logging.LoggerDescription">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

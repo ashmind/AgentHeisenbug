@@ -5,17 +5,17 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.ComponentModel.Composition.Registration.PartBuilder">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:System.ComponentModel.Composition.Registration.ImportBuilder">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ComponentModel.Composition.Registration.ParameterImportBuilder">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ComponentModel.Composition.Registration.PartBuilder">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="PresentationFramework.Royale">
-  <member name="T:Microsoft.Windows.Themes.ScrollChrome">
+  <member name="T:Microsoft.Windows.Themes.BulletChrome">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -10,12 +10,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Windows.Themes.BulletChrome">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.Windows.Themes.SystemDropShadowChrome">
+  <member name="T:Microsoft.Windows.Themes.DataGridHeaderBorder">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -30,7 +25,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Windows.Themes.DataGridHeaderBorder">
+  <member name="T:Microsoft.Windows.Themes.ScrollChrome">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Windows.Themes.SystemDropShadowChrome">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

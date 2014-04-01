@@ -13,17 +13,17 @@ using ThreadSafetyTips;
 namespace ThreadSafety.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IAccessorDeclaration) }, HighlightingTypes = new[] { typeof(ExposingNotThreadSafeType) })]
     public class ThreadSafetyTypeExposureAnalyzer : IElementProblemAnalyzer {
-        private readonly ThreadSafetyAnalyzerHelper helper;
-        private readonly ThreadSafetyAnnotationCache cache;
+        private readonly AnalyzerScopeRequirement requirement;
+        private readonly HeisenbugAnnotationCache annotationCache;
 
-        public ThreadSafetyTypeExposureAnalyzer(ThreadSafetyAnalyzerHelper helper, ThreadSafetyAnnotationCache cache) {
-            this.helper = helper;
-            this.cache = cache;
+        public ThreadSafetyTypeExposureAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
+            this.requirement = requirement;
+            this.annotationCache = annotationCache;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
             var accessor = (IAccessorDeclaration)element;
-            if (accessor.Kind != AccessorKind.GETTER || !this.helper.MustBeThreadSafe(accessor))
+            if (accessor.Kind != AccessorKind.GETTER || !this.requirement.MustBeThreadSafe(accessor))
                 return;
 
             var property = accessor.Parent as IPropertyDeclaration;
@@ -42,7 +42,7 @@ namespace ThreadSafety.Analyzers {
             if (propertyTypeElement == null)
                 return;
 
-            var safetyLevel = this.cache.GetThreadSafetyLevel(propertyTypeElement);
+            var safetyLevel = this.annotationCache.GetThreadSafetyLevel(propertyTypeElement);
             if (safetyLevel == ThreadSafetyLevel.Instance || safetyLevel == ThreadSafetyLevel.All)
                 return;
             

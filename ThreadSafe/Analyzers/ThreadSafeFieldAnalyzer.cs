@@ -8,16 +8,16 @@ using ThreadSafety.Highlightings;
 
 namespace ThreadSafety.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldOrPropertyNotThreadSafe) })]
-    public class ThreadSafetyFieldAnalyzer : IElementProblemAnalyzer {
-        private readonly ThreadSafetyAnalyzerHelper helper;
+    public class ThreadSafeFieldAnalyzer : IElementProblemAnalyzer {
+        private readonly AnalyzerScopeRequirement requirement;
 
-        public ThreadSafetyFieldAnalyzer(ThreadSafetyAnalyzerHelper helper) {
-            this.helper = helper;
+        public ThreadSafeFieldAnalyzer(AnalyzerScopeRequirement requirement) {
+            this.requirement = requirement;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
             var field = (IFieldDeclaration)element;
-            if (field.IsReadonly || !this.helper.MustBeThreadSafe(field))
+            if (field.IsReadonly || !this.requirement.MustBeThreadSafe(field))
                 return;
 
             consumer.AddHighlighting(new MutableFieldOrPropertyNotThreadSafe(

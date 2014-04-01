@@ -1,16 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="WindowsFormsIntegration">
-  <member name="T:System.Windows.Forms.Integration.PropertyMappingExceptionEventArgs">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Windows.Forms.Integration.WindowsFormsHost">
+  <member name="T:System.Windows.Automation.Peers.WindowsFormsHostAutomationPeer">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.Integration.ChildChangedEventArgs">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Windows.Forms.Integration.ElementHost">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Windows.Forms.Integration.IntegrationExceptionEventArgs">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -25,17 +30,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Windows.Forms.Integration.IntegrationExceptionEventArgs">
+  <member name="T:System.Windows.Forms.Integration.PropertyMappingExceptionEventArgs">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Windows.Automation.Peers.WindowsFormsHostAutomationPeer">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Windows.Forms.Integration.ElementHost">
+  <member name="T:System.Windows.Forms.Integration.WindowsFormsHost">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

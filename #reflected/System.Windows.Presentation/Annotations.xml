@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.Windows.Presentation">
-  <member name="T:System.Windows.Threading.DispatcherExtensions">
+  <member name="T:System.AddIn.Pipeline.FrameworkElementAdapters">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.AddIn.Pipeline.FrameworkElementAdapters">
+  <member name="T:System.Windows.Threading.DispatcherExtensions">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

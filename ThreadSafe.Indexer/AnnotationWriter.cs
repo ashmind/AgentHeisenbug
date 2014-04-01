@@ -22,7 +22,7 @@ namespace AgentHeisenbug.Indexer {
             using (var writer = XmlWriter.Create(filePath, new XmlWriterSettings { Indent = true })) {
                 writer.WriteStartElement("assembly");
                 writer.WriteAttributeString("name", assembly.AssemblyName);
-                foreach (var annotation in assembly.Annotations) {
+                foreach (var annotation in assembly.Annotations.OrderBy(a => a.MemberXmlId)) {
                     WriteAnnotation(writer, annotation);
                 }
                 writer.WriteEndElement();

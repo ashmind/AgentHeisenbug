@@ -5,32 +5,7 @@
       <argument>All</argument>
     </attribute>
   </member>
-  <member name="T:System.Transactions.TransactionManagerCommunicationException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Transactions.TransactionManager">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Transactions.TransactionOptions">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Transactions.TransactionInDoubtException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Transactions.TransactionScope">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>All</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Transactions.TransactionPromotionException">
+  <member name="T:System.Transactions.TransactionAbortedException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -40,9 +15,34 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Transactions.TransactionAbortedException">
+  <member name="T:System.Transactions.TransactionInDoubtException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Transactions.TransactionManager">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Transactions.TransactionManagerCommunicationException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Transactions.TransactionOptions">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Transactions.TransactionPromotionException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Transactions.TransactionScope">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
     </attribute>
   </member>
 </assembly>

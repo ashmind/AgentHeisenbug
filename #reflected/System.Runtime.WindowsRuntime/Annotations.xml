@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.Runtime.WindowsRuntime">
+  <member name="T:System.IO.WindowsRuntimeStorageExtensions">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.IO.WindowsRuntimeStreamExtensions">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.WindowsRuntimeSystemExtensions">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions">
+  <member name="T:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -20,12 +20,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.IO.WindowsRuntimeStorageExtensions">
+  <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeBufferExtensions">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.InteropServices.WindowsRuntime.AsyncInfo">
+  <member name="T:System.WindowsRuntimeSystemExtensions">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

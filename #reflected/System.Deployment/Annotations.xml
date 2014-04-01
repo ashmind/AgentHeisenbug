@@ -1,16 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.Deployment">
-  <member name="T:System.Deployment.Application.CompatibleFrameworkMissingException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:System.Deployment.Application.CompatibleFramework">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Deployment.Internal.CodeSigning.RSAPKCS1SHA256SignatureDescription">
+  <member name="T:System.Deployment.Application.CompatibleFrameworkMissingException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -21,6 +16,11 @@
     </attribute>
   </member>
   <member name="T:System.Deployment.Application.SupportedRuntimeMissingException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Deployment.Internal.CodeSigning.RSAPKCS1SHA256SignatureDescription">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

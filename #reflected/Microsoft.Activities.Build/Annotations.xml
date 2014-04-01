@@ -5,11 +5,6 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Activities.Build.WorkflowBuildMessageTask">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:Microsoft.Activities.Build.Expressions.ExpressionsBuildExtension">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -21,6 +16,11 @@
     </attribute>
   </member>
   <member name="T:Microsoft.Activities.Build.Validation.ReportDeferredValidationErrorsTask">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.Activities.Build.WorkflowBuildMessageTask">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

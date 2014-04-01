@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="Microsoft.VisualC">
-  <member name="T:Microsoft.VisualC.IsConstModifier">
+  <member name="T:Microsoft.VisualC.DebugInfoInPDBAttribute">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.VisualC.IsSignedModifier">
+  <member name="T:Microsoft.VisualC.DecoratedNameAttribute">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.IsConstModifier">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -15,27 +20,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.VisualC.DebugInfoInPDBAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:Microsoft.VisualC.IsLongModifier">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.VisualC.NoSignSpecifiedModifier">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.NeedsCopyConstructorModifier">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.DecoratedNameAttribute">
+  <member name="T:Microsoft.VisualC.IsSignedModifier">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -46,6 +36,16 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualC.MiscellaneousBitsAttribute">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.NeedsCopyConstructorModifier">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.NoSignSpecifiedModifier">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

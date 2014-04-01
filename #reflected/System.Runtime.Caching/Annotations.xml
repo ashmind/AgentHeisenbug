@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.Runtime.Caching">
+  <member name="T:System.Runtime.Caching.CacheEntryChangeMonitor">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Caching.CacheEntryRemovedArguments">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.Runtime.Caching.CacheEntryUpdateArguments">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Caching.Configuration.MemoryCacheSettingsCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Caching.MemoryCache">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>All</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.Caching.CacheItem">
@@ -20,22 +20,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.Caching.SqlChangeMonitor">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Caching.Configuration.MemoryCacheSection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Caching.HostFileChangeMonitor">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Caching.CacheEntryRemovedArguments">
+  <member name="T:System.Runtime.Caching.CacheItemPolicy">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -50,19 +35,34 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.Caching.CacheEntryChangeMonitor">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:System.Runtime.Caching.Configuration.MemoryCacheElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.Caching.CacheItemPolicy">
+  <member name="T:System.Runtime.Caching.Configuration.MemoryCacheSection">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Caching.Configuration.MemoryCacheSettingsCollection">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Caching.FileChangeMonitor">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Caching.HostFileChangeMonitor">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Caching.MemoryCache">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.Caching.ObjectCache">
@@ -70,7 +70,7 @@
       <argument>All</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.Caching.FileChangeMonitor">
+  <member name="T:System.Runtime.Caching.SqlChangeMonitor">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

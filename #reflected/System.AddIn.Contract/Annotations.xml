@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.AddIn.Contract">
+  <member name="T:System.AddIn.Contract.Automation.RemoteFieldData">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.AddIn.Contract.Automation.RemoteMemberData">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.AddIn.Contract.RemoteArgument">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.AddIn.Pipeline.AddInContractAttribute">
+  <member name="T:System.AddIn.Contract.Automation.RemoteMethodData">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -20,17 +20,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.AddIn.Pipeline.QualificationDataAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:System.AddIn.Contract.Automation.RemotePropertyData">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.AddIn.Contract.Automation.RemoteFieldData">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -45,12 +35,22 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.AddIn.Contract.Automation.RemoteMethodData">
+  <member name="T:System.AddIn.Contract.RemoteArgument">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Contract.SerializableObjectData">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.AddIn.Pipeline.AddInContractAttribute">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.AddIn.Pipeline.QualificationDataAttribute">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

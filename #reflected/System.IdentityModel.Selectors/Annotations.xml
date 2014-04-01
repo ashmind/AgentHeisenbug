@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.IdentityModel.Selectors">
-  <member name="T:System.IdentityModel.Selectors.StsCommunicationException">
+  <member name="T:System.IdentityModel.Selectors.CardSpaceException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.IdentityModel.Selectors.CardSpacePolicyElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.IdentityModel.Selectors.CardSpaceSelector">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -15,12 +25,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.IdentityModel.Selectors.UntrustedRecipientException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.IdentityModel.Selectors.CardSpacePolicyElement">
+  <member name="T:System.IdentityModel.Selectors.ServiceBusyException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -30,7 +35,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.IdentityModel.Selectors.ServiceBusyException">
+  <member name="T:System.IdentityModel.Selectors.StsCommunicationException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -40,17 +45,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.IdentityModel.Selectors.UntrustedRecipientException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.IdentityModel.Selectors.UserCancellationException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.IdentityModel.Selectors.CardSpaceSelector">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.IdentityModel.Selectors.CardSpaceException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

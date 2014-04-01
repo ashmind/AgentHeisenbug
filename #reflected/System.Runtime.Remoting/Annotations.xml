@@ -1,21 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.Runtime.Remoting">
-  <member name="T:System.Runtime.Remoting.MetadataServices.SdlChannelSinkProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.MetadataServices.SUDSGeneratorException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.MetadataServices.ServiceType">
+  <member name="T:System.Runtime.Remoting.Channels.BinaryClientFormatterSink">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -25,22 +10,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.Remoting.Channels.Tcp.TcpChannel">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.MetadataServices.SdlChannelSink">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Services.RemotingClientProxy">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.SoapClientFormatterSink">
+  <member name="T:System.Runtime.Remoting.Channels.BinaryServerFormatterSink">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -50,27 +20,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.Remoting.MetadataServices.SUDSParserException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.MetadataServices.MetaData">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Http.HttpClientChannel">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel">
+  <member name="T:System.Runtime.Remoting.Channels.CommonTransportKeys">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -80,52 +30,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.Remoting.Services.RemotingService">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.CommonTransportKeys">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Http.HttpServerChannel">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.BinaryServerFormatterSink">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.BinaryClientFormatterSink">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Ipc.IpcServerChannel">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.SoapServerFormatterSinkProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.Runtime.Remoting.Channels.Ipc.IpcClientChannel">
+  <member name="T:System.Runtime.Remoting.Channels.Http.HttpClientChannel">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -135,7 +40,102 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.Http.HttpServerChannel">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.Ipc.IpcChannel">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.Ipc.IpcClientChannel">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.Ipc.IpcServerChannel">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.SoapClientFormatterSink">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.Runtime.Remoting.Channels.SoapServerFormatterSink">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.SoapServerFormatterSinkProvider">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.Tcp.TcpChannel">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.Tcp.TcpClientChannel">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.MetadataServices.MetaData">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.MetadataServices.SdlChannelSink">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.MetadataServices.SdlChannelSinkProvider">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.MetadataServices.ServiceType">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.MetadataServices.SUDSGeneratorException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.MetadataServices.SUDSParserException">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Services.RemotingClientProxy">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Runtime.Remoting.Services.RemotingService">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

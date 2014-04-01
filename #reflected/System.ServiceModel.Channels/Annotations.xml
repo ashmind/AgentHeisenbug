@@ -1,36 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.ServiceModel.Channels">
-  <member name="T:System.ServiceModel.Channels.HttpResponseMessageExtensionMethods">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Configuration.UdpBindingElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Channels.HttpRequestMessageExtensionMethods">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Channels.UdpTransportBindingElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:System.ServiceModel.Channels.ByteStreamMessage">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Configuration.UdpBindingCollectionElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Configuration.UdpTransportElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -40,22 +10,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.ServiceModel.Channels.UdpTransportImporter">
+  <member name="T:System.ServiceModel.Channels.HttpRequestMessageExtensionMethods">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.ServiceModel.Channels.UdpRetransmissionSettings">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Configuration.ByteStreamMessageEncodingElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Channels.NetworkInterfaceMessageProperty">
+  <member name="T:System.ServiceModel.Channels.HttpResponseMessageExtensionMethods">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -65,12 +25,52 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.ServiceModel.UdpBinding">
+  <member name="T:System.ServiceModel.Channels.NetworkInterfaceMessageProperty">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Channels.UdpRetransmissionSettings">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Channels.UdpTransportBindingElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Channels.UdpTransportImporter">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Configuration.ByteStreamMessageEncodingElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Configuration.UdpBindingCollectionElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Configuration.UdpBindingElement">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.UdpRetransmissionSettingsElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Configuration.UdpTransportElement">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.UdpBinding">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

@@ -13,6 +13,7 @@ using ThreadSafety.Highlightings;
 <# var model = new Dictionary<string, string> {
     { "CallToStaticMethodNotThreadSafe",     "Call to static method that is not thread-safe from type annotated with [ThreadSafe]" },
     { "MutableFieldOrPropertyNotThreadSafe", "Mutable property or field in type annotated with [ThreadSafe]" },
+    { "MutableFieldInReadOnlyType",          "Mutable field in type annotated with [ReadOnly]" },
     { "ExposingNotThreadSafeType",           "Exposing type that is not thread-safe from type annotated with [ThreadSafe]" }
 }; #>
 

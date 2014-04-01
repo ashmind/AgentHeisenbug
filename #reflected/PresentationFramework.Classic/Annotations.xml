@@ -5,7 +5,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Windows.Themes.SystemDropShadowChrome">
+  <member name="T:Microsoft.Windows.Themes.DataGridHeaderBorder">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -20,7 +20,7 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Windows.Themes.DataGridHeaderBorder">
+  <member name="T:Microsoft.Windows.Themes.SystemDropShadowChrome">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

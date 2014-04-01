@@ -19,7 +19,7 @@ public class TestEnvironmentAssembly : ReSharperTestEnvironmentAssembly
   {
     // Test assembly
     yield return Assembly.GetExecutingAssembly();
-    yield return typeof(ThreadSafetyAnnotationCache).Assembly;
+    yield return typeof(HeisenbugAnnotationCache).Assembly;
   }
 
   public override void SetUp()

@@ -24,6 +24,15 @@ using ThreadSafety.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
+    MutableFieldInReadOnlyType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Mutable field in type annotated with [ReadOnly]",
+    "Mutable field in type annotated with [ReadOnly]",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
     ExposingNotThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
@@ -48,6 +57,14 @@ namespace ThreadSafety.Highlightings {
 
         [StringFormatMethod("messageFormat")]
         public MutableFieldOrPropertyNotThreadSafe(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+    }
+
+    [ConfigurableSeverityHighlighting(MutableFieldInReadOnlyType.Id, CSharpLanguage.Name)]
+    public class MutableFieldInReadOnlyType : ThreadSafetyHighligtingBase {
+        public const string Id = "MutableFieldInReadOnlyType";
+
+        [StringFormatMethod("messageFormat")]
+        public MutableFieldInReadOnlyType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
     }
 
     [ConfigurableSeverityHighlighting(ExposingNotThreadSafeType.Id, CSharpLanguage.Name)]

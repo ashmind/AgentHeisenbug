@@ -1,71 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="Microsoft.VisualC.STLCLR">
-  <member name="T:Microsoft.VisualC.StlClr.TreeEnumeratorBase`2">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.Generic.ConstReverseRandomAccessIterator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.ListEnumeratorBase`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.Generic.ReverseRandomAccessIterator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.Generic.ConstContainerBidirectionalIterator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.ListEnumerator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.Generic.ContainerBidirectionalIterator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
   <member name="T:Microsoft.VisualC.StlClr.DequeEnumerator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.VectorEnumeratorBase`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.TreeEnumerator`2">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.HashEnumeratorBase`2">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.VectorEnumerator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.Generic.ConstContainerRandomAccessIterator`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:Microsoft.VisualC.StlClr.GenericPair`2">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -75,7 +10,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1">
+  <member name="T:Microsoft.VisualC.StlClr.Generic.ConstContainerBidirectionalIterator`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.Generic.ConstContainerRandomAccessIterator`1">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -85,12 +25,72 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.VisualC.StlClr.HashEnumerator`2">
+  <member name="T:Microsoft.VisualC.StlClr.Generic.ConstReverseRandomAccessIterator`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.Generic.ContainerBidirectionalIterator`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualC.StlClr.Generic.ReverseBidirectionalIterator`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.Generic.ReverseRandomAccessIterator`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.GenericPair`2">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.HashEnumerator`2">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.HashEnumeratorBase`2">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.ListEnumerator`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.ListEnumeratorBase`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.TreeEnumerator`2">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.TreeEnumeratorBase`2">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.VectorEnumerator`1">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:Microsoft.VisualC.StlClr.VectorEnumeratorBase`1">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

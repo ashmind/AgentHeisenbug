@@ -10,12 +10,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.InteropServices.CustomMarshalers.TypeToTypeInfoMarshaler">
+  <member name="T:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler">
+  <member name="T:System.Runtime.InteropServices.CustomMarshalers.TypeToTypeInfoMarshaler">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

@@ -5,12 +5,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory">
+  <member name="T:System.ServiceModel.Activation.ServiceActivationBuildProviderAttribute">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.ServiceModel.Activation.ServiceRoute">
+  <member name="T:System.ServiceModel.Activation.ServiceBuildProvider">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -20,17 +20,17 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.ServiceModel.Activation.ServiceRoute">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory">
+    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.ServiceModel.ServiceHostingEnvironment">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Activation.ServiceActivationBuildProviderAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-  <member name="T:System.ServiceModel.Activation.ServiceBuildProvider">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

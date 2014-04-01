@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.IO.Compression.FileSystem">
-  <member name="T:System.IO.Compression.ZipFileExtensions">
+  <member name="T:System.IO.Compression.ZipFile">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.IO.Compression.ZipFile">
+  <member name="T:System.IO.Compression.ZipFileExtensions">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

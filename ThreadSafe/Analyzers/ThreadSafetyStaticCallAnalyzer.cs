@@ -13,17 +13,17 @@ using ThreadSafetyTips;
 namespace ThreadSafety.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToStaticMethodNotThreadSafe) })]
     public class ThreadSafetyStaticCallAnalyzer : IElementProblemAnalyzer {
-        private readonly ThreadSafetyAnalyzerHelper helper;
-        private readonly ThreadSafetyAnnotationCache cache;
+        private readonly AnalyzerScopeRequirement requirement;
+        private readonly HeisenbugAnnotationCache annotationCache;
 
-        public ThreadSafetyStaticCallAnalyzer(ThreadSafetyAnalyzerHelper helper, ThreadSafetyAnnotationCache cache) {
-            this.helper = helper;
-            this.cache = cache;
+        public ThreadSafetyStaticCallAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
+            this.requirement = requirement;
+            this.annotationCache = annotationCache;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
             var call = (IInvocationExpression)element;
-            if (!this.helper.MustBeThreadSafe(call))
+            if (!this.requirement.MustBeThreadSafe(call))
                 return;
 
             var reference = call.InvocationExpressionReference;
@@ -38,7 +38,7 @@ namespace ThreadSafety.Analyzers {
             if (method == null || !method.IsStatic)
                 return;
 
-            var safetyLevel = this.cache.GetThreadSafetyLevel(method);
+            var safetyLevel = this.annotationCache.GetThreadSafetyLevel(method);
             if (safetyLevel == ThreadSafetyLevel.Static || safetyLevel == ThreadSafetyLevel.All)
                 return;
             
