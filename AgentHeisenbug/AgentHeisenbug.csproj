@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C9766D53-5F21-4D18-A1D3-A27DCB251F25}</ProjectGuid>
+    <ProjectGuid>{3E5C994A-6989-4649-82A2-5714DD89C5E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ThreadSafetyTips.Tests</RootNamespace>
-    <AssemblyName>ThreadSafetyTips.Tests</AssemblyName>
+    <RootNamespace>AgentHeisenbug</RootNamespace>
+    <AssemblyName>AgentHeisenbug</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AshMind.Extensions">
+      <HintPath>..\#packages\AshMind.Extensions.1.1.5\lib\net35\AshMind.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\#packages\Newtonsoft.Json.6.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,20 +50,48 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analyzers\ReadOnlyFieldAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafetyTypeExposureAnalyzer.cs" />
+    <Compile Include="Analyzers\AnalyzerScopeRequirement.cs" />
+    <Compile Include="Highlightings\Highlightings.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Highlightings.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Highlightings\ThreadSafetyHighligtingBase.cs" />
+    <Compile Include="Analyzers\ThreadSafeStaticCallAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafeFieldAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ThreadSafe\ThreadSafe.csproj">
-      <Project>{3e5c994a-6989-4649-82a2-5714dd89c5e6}</Project>
-      <Name>ThreadSafetyTips</Name>
-    </ProjectReference>
+    <Compile Include="ThreadSafetyLevel.cs" />
+    <Compile Include="Analyzers\ThreadSafePropertySetterAnalyzer.cs" />
+    <Compile Include="Annotations\HeisenbugAnnotationCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Highlightings\Highlightings.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Highlightings.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <ReSharperSdkTargets Condition=" '$(ReSharperSdkTargets)' == '' ">$(MSBuildExtensionsPath)\JetBrains\ReSharper.SDK\v7.1</ReSharperSdkTargets>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(ReSharperSdkTargets)\Plugin.Tests.Targets" />
+  <Import Project="$(ReSharperSdkTargets)\Plugin.Targets" />
+  <Target Name="CopyExternalAnnotationsToReSharper" AfterTargets="Build">
+    <ItemGroup>
+      <_Annotations Include="..\#reflected\**\*.*" />
+    </ItemGroup>
+    <PropertyGroup>
+      <_ExternalAnnotationsDir>$(MSBuildProgramFiles32)\JetBrains\ReSharper\v7.1\Bin\ExternalAnnotations\Heisenbug\</_ExternalAnnotationsDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(_ExternalAnnotationsDir)" />
+    <Copy SourceFiles="@(_Annotations)" DestinationFolder="$(_ExternalAnnotationsDir)%(RecursiveDir)" />
+  </Target>
 </Project>

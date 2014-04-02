@@ -1,4 +1,5 @@
 using System.Linq;
+using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
@@ -6,17 +7,15 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Resolve;
 using JetBrains.ReSharper.Psi.Tree;
-using ThreadSafety.Annotations;
-using ThreadSafety.Highlightings;
-using ThreadSafetyTips;
+using AgentHeisenbug.Highlightings;
 
-namespace ThreadSafety.Analyzers {
-    [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToStaticMethodNotThreadSafe) })]
-    public class ThreadSafetyStaticCallAnalyzer : IElementProblemAnalyzer {
+namespace AgentHeisenbug.Analyzers {
+    [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToNotThreadSafeStaticMethodInThreadSafeType) })]
+    public class ThreadSafeStaticCallAnalyzer : IElementProblemAnalyzer {
         private readonly AnalyzerScopeRequirement requirement;
         private readonly HeisenbugAnnotationCache annotationCache;
 
-        public ThreadSafetyStaticCallAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
+        public ThreadSafeStaticCallAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
             this.requirement = requirement;
             this.annotationCache = annotationCache;
         }
@@ -41,8 +40,8 @@ namespace ThreadSafety.Analyzers {
             var safetyLevel = this.annotationCache.GetThreadSafetyLevel(method);
             if (safetyLevel == ThreadSafetyLevel.Static || safetyLevel == ThreadSafetyLevel.All)
                 return;
-            
-            consumer.AddHighlighting(new CallToStaticMethodNotThreadSafe(
+
+            consumer.AddHighlighting(new CallToNotThreadSafeStaticMethodInThreadSafeType(
                 call.InvokedExpression, "Method '{0}' is not declared to be thread-safe.", method.ShortName
             ));
         }

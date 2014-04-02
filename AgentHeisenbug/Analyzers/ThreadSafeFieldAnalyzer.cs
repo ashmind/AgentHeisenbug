@@ -4,10 +4,10 @@ using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
-using ThreadSafety.Highlightings;
+using AgentHeisenbug.Highlightings;
 
-namespace ThreadSafety.Analyzers {
-    [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldOrPropertyNotThreadSafe) })]
+namespace AgentHeisenbug.Analyzers {
+    [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldOrPropertyInThreadSafeType) })]
     public class ThreadSafeFieldAnalyzer : IElementProblemAnalyzer {
         private readonly AnalyzerScopeRequirement requirement;
 
@@ -20,7 +20,7 @@ namespace ThreadSafety.Analyzers {
             if (field.IsReadonly || !this.requirement.MustBeThreadSafe(field))
                 return;
 
-            consumer.AddHighlighting(new MutableFieldOrPropertyNotThreadSafe(
+            consumer.AddHighlighting(new MutableFieldOrPropertyInThreadSafeType(
                 field, "Field '{0}' in a [ThreadSafe] class should not be mutable.", field.DeclaredName
             ));
         }

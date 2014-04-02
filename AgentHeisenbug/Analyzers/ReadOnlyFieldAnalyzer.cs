@@ -6,9 +6,9 @@ using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
-using ThreadSafety.Highlightings;
+using AgentHeisenbug.Highlightings;
 
-namespace ThreadSafety.Analyzers {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldInReadOnlyType) })]
     public class ReadOnlyFieldAnalyzer : IElementProblemAnalyzer {
         private readonly AnalyzerScopeRequirement requirement;

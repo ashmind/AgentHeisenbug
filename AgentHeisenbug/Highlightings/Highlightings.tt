@@ -8,13 +8,14 @@ using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
-using ThreadSafety.Highlightings;
+using AgentHeisenbug.Highlightings;
 
 <# var model = new Dictionary<string, string> {
-    { "CallToStaticMethodNotThreadSafe",     "Call to static method that is not thread-safe from type annotated with [ThreadSafe]" },
-    { "MutableFieldOrPropertyNotThreadSafe", "Mutable property or field in type annotated with [ThreadSafe]" },
-    { "MutableFieldInReadOnlyType",          "Mutable field in type annotated with [ReadOnly]" },
-    { "ExposingNotThreadSafeType",           "Exposing type that is not thread-safe from type annotated with [ThreadSafe]" }
+    { "CallToNotThreadSafeStaticMethodInThreadSafeType", "Call to static method that is not thread-safe from type annotated with [ThreadSafe]" },
+    { "MutableFieldOrPropertyInThreadSafeType",          "Mutable property or field in type annotated with [ThreadSafe]" },
+    { "ExposingNotThreadSafeTypeInThreadSafeType",       "Exposing type that is not thread-safe from type annotated with [ThreadSafe]" },
+    
+    { "MutableFieldInReadOnlyType",                      "Mutable field in type annotated with [ReadOnly]" }
 }; #>
 
 <# foreach (var pair in model) { #>
@@ -29,7 +30,7 @@ using ThreadSafety.Highlightings;
 )]
 <# } #>
 
-namespace ThreadSafety.Highlightings {<# foreach (var pair in model) { #>
+namespace AgentHeisenbug.Highlightings {<# foreach (var pair in model) { #>
 
     [ConfigurableSeverityHighlighting(<#= pair.Key #>.Id, CSharpLanguage.Name)]
     public class <#= pair.Key #> : ThreadSafetyHighligtingBase {

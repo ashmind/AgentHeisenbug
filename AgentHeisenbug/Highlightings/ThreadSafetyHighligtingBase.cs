@@ -5,7 +5,7 @@ using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Daemon.Impl;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace ThreadSafety.Highlightings {
+namespace AgentHeisenbug.Highlightings {
     public class ThreadSafetyHighligtingBase : IHighlightingWithRange {
         private readonly ITreeNode element;
         private readonly string message;

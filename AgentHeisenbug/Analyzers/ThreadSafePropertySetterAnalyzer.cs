@@ -5,14 +5,14 @@ using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
-using ThreadSafety.Highlightings;
+using AgentHeisenbug.Highlightings;
 
-namespace ThreadSafety.Analyzers {
-    [ElementProblemAnalyzer(new[] { typeof(IAccessorDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldOrPropertyNotThreadSafe) })]
-    public class ThreadSafetyPropertySetterAnalyzer : IElementProblemAnalyzer {
+namespace AgentHeisenbug.Analyzers {
+    [ElementProblemAnalyzer(new[] { typeof(IAccessorDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldOrPropertyInThreadSafeType) })]
+    public class ThreadSafePropertySetterAnalyzer : IElementProblemAnalyzer {
         private readonly AnalyzerScopeRequirement requirement;
 
-        public ThreadSafetyPropertySetterAnalyzer(AnalyzerScopeRequirement requirement) {
+        public ThreadSafePropertySetterAnalyzer(AnalyzerScopeRequirement requirement) {
             this.requirement = requirement;
         }
 
@@ -29,7 +29,7 @@ namespace ThreadSafety.Analyzers {
             if (property == null)
                 return;
 
-            consumer.AddHighlighting(new MutableFieldOrPropertyNotThreadSafe(
+            consumer.AddHighlighting(new MutableFieldOrPropertyInThreadSafeType(
                 accessor, "Property '{0}' in a [ThreadSafe] class should not have setter.", property.DeclaredName
             ));
         }

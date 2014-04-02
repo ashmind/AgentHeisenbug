@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ThreadSafetyTips {
+namespace AgentHeisenbug {
     public enum ThreadSafetyLevel {
         None,
         Static,

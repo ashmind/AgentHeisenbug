@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using ThreadSafety.Annotations;
-using ThreadSafetyTips;
 
-namespace ThreadSafety.Analyzers {
+namespace AgentHeisenbug.Analyzers {
     [PsiComponent]
     public class AnalyzerScopeRequirement {
         private readonly HeisenbugAnnotationCache annotationCache;

@@ -5,9 +5,8 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CodeAnnotations;
 using JetBrains.ReSharper.Psi.Impl;
 using JetBrains.Util.dataStructures;
-using ThreadSafetyTips;
 
-namespace ThreadSafety.Annotations {
+namespace AgentHeisenbug.Annotations {
     [PsiComponent]
     public class HeisenbugAnnotationCache : InvalidatingPsiCache {
         private readonly CodeAnnotationsCache annotationCache;

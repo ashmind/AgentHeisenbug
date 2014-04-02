@@ -1,9 +1,9 @@
+using AgentHeisenbug.Annotations;
 using JetBrains.Application;
 using JetBrains.Threading;
 using System.Reflection;
 using System.Collections.Generic;
 using NUnit.Framework;
-using ThreadSafety.Annotations;
 
 /// <summary>
 /// Test environment. Must be in the global namespace.

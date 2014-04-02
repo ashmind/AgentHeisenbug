@@ -1,4 +1,5 @@
 using System.Linq;
+using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
@@ -6,17 +7,15 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
-using ThreadSafety.Annotations;
-using ThreadSafety.Highlightings;
-using ThreadSafetyTips;
+using AgentHeisenbug.Highlightings;
 
-namespace ThreadSafety.Analyzers {
-    [ElementProblemAnalyzer(new[] { typeof(IAccessorDeclaration) }, HighlightingTypes = new[] { typeof(ExposingNotThreadSafeType) })]
-    public class ThreadSafetyTypeExposureAnalyzer : IElementProblemAnalyzer {
+namespace AgentHeisenbug.Analyzers {
+    [ElementProblemAnalyzer(new[] { typeof(IAccessorDeclaration) }, HighlightingTypes = new[] { typeof(ExposingNotThreadSafeTypeInThreadSafeType) })]
+    public class ThreadSafeTypeExposureAnalyzer : IElementProblemAnalyzer {
         private readonly AnalyzerScopeRequirement requirement;
         private readonly HeisenbugAnnotationCache annotationCache;
 
-        public ThreadSafetyTypeExposureAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
+        public ThreadSafeTypeExposureAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
             this.requirement = requirement;
             this.annotationCache = annotationCache;
         }
@@ -45,8 +44,8 @@ namespace ThreadSafety.Analyzers {
             var safetyLevel = this.annotationCache.GetThreadSafetyLevel(propertyTypeElement);
             if (safetyLevel == ThreadSafetyLevel.Instance || safetyLevel == ThreadSafetyLevel.All)
                 return;
-            
-            consumer.AddHighlighting(new ExposingNotThreadSafeType(
+
+            consumer.AddHighlighting(new ExposingNotThreadSafeTypeInThreadSafeType(
                 property.TypeUsage, "Type '{0}' is not thread-safe and so should not be exposed by [ThreadSafe] type.", propertyType.GetPresentableName(CSharpLanguage.Instance)
             ));
         }
