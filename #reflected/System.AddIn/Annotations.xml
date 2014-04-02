@@ -46,6 +46,7 @@
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.AddInAdapterAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -56,11 +57,13 @@
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.CollectionAdapters">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.ContractAdapter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -76,6 +79,7 @@
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.HostAdapterAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

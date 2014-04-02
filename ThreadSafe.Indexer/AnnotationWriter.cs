@@ -10,6 +10,9 @@ namespace AgentHeisenbug.Indexer {
             directory.Create();
 
             foreach (var assembly in annotations) {
+                if (assembly.Annotations.Count == 0)
+                    continue;
+
                 WriteAssembly(directory, assembly);
             }
         }
@@ -29,15 +32,17 @@ namespace AgentHeisenbug.Indexer {
             }
         }
 
-        private void WriteAnnotation(XmlWriter writer, Annotation annotation) {
+        private void WriteAnnotation(XmlWriter writer, AnnotationsByMember member) {
             writer.WriteStartElement("member");
-            writer.WriteAttributeString("name", annotation.MemberXmlId);
-            writer.WriteStartElement("attribute");
-            writer.WriteAttributeString("ctor", annotation.AttributeConstructorXmlId);
-            foreach (var argument in annotation.AttributeArguments) {
-                writer.WriteElementString("argument", argument);
+            writer.WriteAttributeString("name", member.MemberXmlId);
+            foreach (var attribute in member.Annotations.OrderBy(a => a.AttributeConstructorXmlId)) {
+                writer.WriteStartElement("attribute");
+                writer.WriteAttributeString("ctor", attribute.AttributeConstructorXmlId);
+                foreach (var argument in attribute.AttributeArguments) {
+                    writer.WriteElementString("argument", argument);
+                }
+                writer.WriteEndElement();
             }
-            writer.WriteEndElement();
             writer.WriteEndElement();
         }
     }

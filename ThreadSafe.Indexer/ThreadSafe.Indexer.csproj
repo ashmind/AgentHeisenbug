@@ -40,10 +40,20 @@
     <Reference Include="AshMind.Extensions">
       <HintPath>..\#packages\AshMind.Extensions.1.1.5\lib\net45\AshMind.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="ClariusLabs.NuDoc">
+      <HintPath>..\#packages\NuDoc.0.4.1308.1316\lib\net35\ClariusLabs.NuDoc.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.Metadata">
+      <HintPath>C:\Program Files (x86)\JetBrains\ReSharper\v7.1\SDK\Bin\JetBrains.Platform.ReSharper.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.Util">
+      <HintPath>C:\Program Files (x86)\JetBrains\ReSharper\v7.1\SDK\Bin\JetBrains.Platform.ReSharper.Util.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable">
       <HintPath>..\#packages\Microsoft.Bcl.Immutable.1.0.30\lib\portable-net45+win8+wp8\System.Collections.Immutable.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Caching" />
@@ -53,10 +63,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnnotationWriter.cs" />
     <Compile Include="Annotation.cs" />
+    <Compile Include="AnnotationWriter.cs" />
+    <Compile Include="AnnotationsByMember.cs" />
     <Compile Include="AnnotationsByAssembly.cs" />
+    <Compile Include="ReadOnly\ReadOnlyAnnotationProvider.cs" />
     <Compile Include="ThreadSafe\HelpAnnotationProvider.cs" />
+    <Compile Include="IAnnotationProvider.cs" />
+    <Compile Include="ThreadSafe\TypeDescriptionIdEqualityComparer.cs" />
     <Compile Include="ThreadSafe\TypeThreadSafety.cs" />
     <Compile Include="ThreadSafe\TypeDescription.cs" />
     <Compile Include="ThreadSafe\HelpRawReader.cs" />
@@ -64,11 +78,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ReadOnly\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

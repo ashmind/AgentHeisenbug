@@ -96,11 +96,13 @@
     </attribute>
   </member>
   <member name="T:System.Data.Common.CommandTrees.DbExpressionVisitor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Data.Common.CommandTrees.DbExpressionVisitor`1">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -191,6 +193,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Common.CommandTrees.DbModificationClause">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -326,6 +329,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Common.CommandTrees.ExpressionBuilder.EdmFunctions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -336,6 +340,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Common.CommandTrees.ExpressionBuilder.Spatial.SpatialEdmFunctions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -346,6 +351,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Common.DbCommandDefinition">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -356,6 +362,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Common.DbProviderServices">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -421,6 +428,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.EntityClient.EntityProviderFactory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -736,6 +744,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Objects.DataClasses.EdmComplexPropertyAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -761,6 +770,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Objects.DataClasses.EdmPropertyAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -781,6 +791,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Objects.DataClasses.EdmSchemaAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -831,6 +842,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Objects.EntityFunctions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -846,6 +858,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Objects.ObjectMaterializedEventArgs">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -871,6 +884,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Objects.ObjectResult">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -906,11 +920,13 @@
     </attribute>
   </member>
   <member name="T:System.Data.Objects.SqlClient.SqlFunctions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Data.Objects.SqlClient.SqlSpatialFunctions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -951,6 +967,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Spatial.DbSpatialDataReader">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

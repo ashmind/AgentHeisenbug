@@ -36,6 +36,7 @@
     </attribute>
   </member>
   <member name="T:System.Configuration.Install.ManagedInstallerClass">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

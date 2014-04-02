@@ -131,16 +131,19 @@
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.ProtectedData">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.ProtectedMemory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.X509Certificates.X509Certificate2UI">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -211,6 +214,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.Xml.KeyInfoClause">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

@@ -10,25 +10,29 @@ using System.Xml.XPath;
 namespace AgentHeisenbug.Indexer.ThreadSafe {
     public class HelpRawReader {
         private static readonly XmlNamespaceManager namespaceManager;
-
+        private readonly IEnumerable<FileInfo> files;
+        
         static HelpRawReader() {
             namespaceManager = new XmlNamespaceManager(new NameTable());
             namespaceManager.AddNamespace("xhtml", "http://www.w3.org/1999/xhtml");
             namespaceManager.AddNamespace("mtps",  "http://msdn2.microsoft.com/mtps");
         }
 
-        public IEnumerable<TypeDescription> ReadFiles(IEnumerable<FileInfo> files) {
-            return files.SelectMany(ReadFile);
+        public HelpRawReader(IEnumerable<FileInfo> files) {
+            this.files = files;
+        }
+
+        public IEnumerable<TypeDescription> ReadFiles() {
+            return this.files.SelectMany(ReadFile);
         }
 
         private IEnumerable<TypeDescription> ReadFile(FileInfo file) {
-            using (var archive = new ZipArchive(file.OpenRead(), ZipArchiveMode.Read)) {
+            using (var stream = file.OpenRead())
+            using (var archive = new ZipArchive(stream, ZipArchiveMode.Read)) {
                 var results = archive.Entries.Where(e => e.Name.EndsWith(".htm"))
                                              .Select(ReadEntryText)
-                                             .AsParallel()
                                              .Select(ParseDescription)
-                                             .Where(d => d != null)
-                                             .AsSequential();
+                                             .Where(d => d != null);
 
                 foreach (var result in results) {
                     yield return result;

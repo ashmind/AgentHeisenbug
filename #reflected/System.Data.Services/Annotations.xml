@@ -226,11 +226,13 @@
     </attribute>
   </member>
   <member name="T:System.Data.Services.Providers.DataServiceProviderMethods">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Data.Services.Providers.OpenTypeMethods">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -276,6 +278,7 @@
     </attribute>
   </member>
   <member name="T:System.Data.Services.SingleResultAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

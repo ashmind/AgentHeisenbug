@@ -1,86 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using AshMind.Extensions;
 
 namespace AgentHeisenbug.Indexer.ThreadSafe {
-    public class HelpAnnotationProvider {
+    public class HelpAnnotationProvider : IAnnotationProvider {
         private const string ThreadSafeConstructorXmlId = "M:GeneratedThreadSafeAttribute.#ctor";
+        private const string NonParsedFileName = "NotParsed.Generated.txt";
 
         private readonly HelpRawReader reader;
-        private const string NonParsedFileName = "NotParsed.Generated.txt";
 
         public HelpAnnotationProvider(HelpRawReader reader) {
             this.reader = reader;
         }
 
-        public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(IEnumerable<FileInfo> helpFiles, DirectoryInfo tempDirectory) {
-            if (tempDirectory.Exists)
-                tempDirectory.Delete(true);
-            tempDirectory.Create();
+        public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(Func<string, bool> assemblyNameFilter) {
+            var typesByAssembly = new Dictionary<string, ISet<TypeDescription>>();
+            foreach (var type in this.reader.ReadFiles()) {
+                foreach (var assemblyName in type.AssemblyNames) {
+                    if (!assemblyNameFilter(assemblyName))
+                        continue;
 
-            AggregateByAssembly(tempDirectory, reader.ReadFiles(helpFiles));
-
-            foreach (var dumpFile in tempDirectory.EnumerateFiles("*.dump")) {
-                yield return new AnnotationsByAssembly(Path.GetFileNameWithoutExtension(dumpFile.Name), GetAnnotations(dumpFile));
+                    typesByAssembly.GetOrAdd(assemblyName, _ => new HashSet<TypeDescription>(TypeDescriptionIdEqualityComparer.Default)).Add(type);
+                }
             }
 
-            tempDirectory.Delete(true);
+            foreach (var pair in typesByAssembly) {
+                yield return new AnnotationsByAssembly(pair.Key, GetAnnotations(pair.Value));
+            }
         }
 
-        private ICollection<Annotation> GetAnnotations(FileInfo dumpFile) {
-            var lines = File.ReadAllLines(dumpFile.FullName).Distinct();
-            var annotations = new List<Annotation>();
-            foreach (var line in lines) {
-                var parts = line.Split('#');
-                annotations.Add(new Annotation(parts[0], ThreadSafeConstructorXmlId, parts[1]));
+        private ICollection<AnnotationsByMember> GetAnnotations(ISet<TypeDescription> types) {
+            var annotations = new List<AnnotationsByMember>();
+            foreach (var type in types) {
+                if (type.ThreadSafety == TypeThreadSafety.NotParsed || type.ThreadSafety == TypeThreadSafety.NotFound || type.ThreadSafety == TypeThreadSafety.NotSafe)
+                    continue;
+
+                annotations.Add(new AnnotationsByMember(type.Id, new Annotation(ThreadSafeConstructorXmlId, type.ThreadSafety.ToString())));
             }
 
             return annotations;
         }
-
-        public void AggregateByAssembly(DirectoryInfo tempDirectory, IEnumerable<TypeDescription> entries) {
-            tempDirectory.Create();
-
-            File.Delete(Path.Combine(tempDirectory.FullName, NonParsedFileName));
-            var writers = new Dictionary<string, TextWriter>();
-            try {
-                foreach (var description in entries) {
-                    WriteRaw(tempDirectory, description, writers);
-                }
-            }
-            finally {
-                foreach (var writer in writers.Values) {
-                    writer.Dispose();
-                }
-            }
-        }
-
-        private void WriteRaw(DirectoryInfo directory, TypeDescription description, IDictionary<string, TextWriter> writers) {
-            if (description.ThreadSafety == TypeThreadSafety.NotSafe || description.ThreadSafety == TypeThreadSafety.NotFound)
-                return;
-
-            if (description.ThreadSafety == TypeThreadSafety.NotParsed) {
-                WriteNotParsed(directory, description);
-                return;
-            }
-
-            foreach (var assemblyName in description.AssemblyNames) {
-                var writer = writers.GetOrAdd(assemblyName, _ => new StreamWriter(Path.Combine(directory.FullName, assemblyName + ".dump"), true));
-                writer.Write(description.Id);
-                writer.Write("#");
-                writer.WriteLine(description.ThreadSafety.ToString());
-            }
-        }
-
-        private void WriteNotParsed(DirectoryInfo directory, TypeDescription description) {
-            var filePath = Path.Combine(directory.FullName, NonParsedFileName);
-            using (var writer = new StreamWriter(filePath, true)) {
-                writer.WriteLine(description.Id);
-                writer.WriteLine(description.ThreadSafetyText);
-                writer.WriteLine();
-            }
-        }
+        
+        //private void WriteNotParsed(DirectoryInfo directory, TypeDescription description) {
+        //    var filePath = Path.Combine(directory.FullName, NonParsedFileName);
+        //    using (var writer = new StreamWriter(filePath, true)) {
+        //        writer.WriteLine(description.Id);
+        //        writer.WriteLine(description.ThreadSafetyText);
+        //        writer.WriteLine();
+        //    }
+        //}
     }
 }

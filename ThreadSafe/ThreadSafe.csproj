@@ -89,7 +89,7 @@
       <_Annotations Include="..\#reflected\**\*.*" />
     </ItemGroup>
     <PropertyGroup>
-      <_ExternalAnnotationsDir>$(MSBuildProgramFiles32)\JetBrains\ReSharper\v7.1\Bin\ExternalAnnotations\Heisenbug</_ExternalAnnotationsDir>
+      <_ExternalAnnotationsDir>$(MSBuildProgramFiles32)\JetBrains\ReSharper\v7.1\Bin\ExternalAnnotations\Heisenbug\</_ExternalAnnotationsDir>
     </PropertyGroup>
     <MakeDir Directories="$(_ExternalAnnotationsDir)" />
     <Copy SourceFiles="@(_Annotations)" DestinationFolder="$(_ExternalAnnotationsDir)%(RecursiveDir)" />

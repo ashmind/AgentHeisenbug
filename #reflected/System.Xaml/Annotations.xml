@@ -6,6 +6,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Markup.AmbientAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -46,6 +47,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Markup.MarkupExtension">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -56,6 +58,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Markup.MemberDefinition">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -71,6 +74,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Markup.NullExtension">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -101,6 +105,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Markup.TrimSurroundingWhitespaceAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -126,6 +131,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Markup.WhitespaceSignificantCollectionAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -246,6 +252,7 @@
     </attribute>
   </member>
   <member name="T:System.Xaml.XamlDeferringLoader">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -356,6 +363,7 @@
     </attribute>
   </member>
   <member name="T:System.Xaml.XamlServices">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -371,6 +379,7 @@
     </attribute>
   </member>
   <member name="T:System.Xaml.XamlWriterSettings">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

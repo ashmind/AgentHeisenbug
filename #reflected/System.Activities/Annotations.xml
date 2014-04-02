@@ -351,6 +351,7 @@
     </attribute>
   </member>
   <member name="T:System.Activities.Debugger.SourceLocationProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1056,6 +1057,7 @@
     </attribute>
   </member>
   <member name="T:System.Activities.RequiredArgumentAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1096,6 +1098,7 @@
     </attribute>
   </member>
   <member name="T:System.Activities.Statements.Catch">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1371,6 +1374,7 @@
     </attribute>
   </member>
   <member name="T:System.Activities.Statements.TimerExtension">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1701,6 +1705,7 @@
     </attribute>
   </member>
   <member name="T:System.Activities.WorkflowInspectionServices">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1761,6 +1766,7 @@
     </attribute>
   </member>
   <member name="T:System.Activities.XamlIntegration.FuncDeferringLoader">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

@@ -15,6 +15,9 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Deployment.Application.DeploymentServiceCom">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Deployment.Application.SupportedRuntimeMissingException">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>

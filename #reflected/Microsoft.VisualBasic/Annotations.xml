@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="Microsoft.VisualBasic">
+  <member name="T:Microsoft.VisualBasic.ApplicationServices.User">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:Microsoft.VisualBasic.ApplicationServices.WebUser">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:Microsoft.VisualBasic.Collection">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -11,41 +17,52 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.BooleanType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.ByteType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.CharArrayType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.CharType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.Conversions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.DateType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.DecimalType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:Microsoft.VisualBasic.CompilerServices.DesignerGeneratedAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.DoubleType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -56,6 +73,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.FlowControl">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -71,11 +89,13 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.IntegerType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.InternalXmlHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -86,16 +106,19 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.LongType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.NewLateBinding">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.ObjectFlowControl">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -116,11 +139,13 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.OptionCompareAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.OptionTextAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -131,16 +156,19 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.ShortType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.SingleType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.StandardModuleAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -161,6 +189,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.CompilerServices.Versioned">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -185,10 +214,25 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:Microsoft.VisualBasic.Devices.Clock">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:Microsoft.VisualBasic.Devices.Keyboard">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:Microsoft.VisualBasic.Devices.Mouse">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:Microsoft.VisualBasic.Devices.Ports">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:Microsoft.VisualBasic.ErrObject">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+  </member>
+  <member name="T:Microsoft.VisualBasic.FileIO.SpecialDirectories">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:Microsoft.VisualBasic.FileSystem">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
@@ -201,11 +245,13 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.Globals">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.HideModuleNameAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -226,6 +272,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.MyServices.ClipboardProxy">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -236,11 +283,13 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.MyServices.RegistryProxy">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.MyServices.SpecialDirectoriesProxy">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -271,6 +320,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.VisualBasic.VBMath">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

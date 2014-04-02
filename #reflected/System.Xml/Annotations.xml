@@ -116,6 +116,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.Schema.XmlSchemaDatatype">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -360,6 +361,9 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Xml.Serialization.Advanced.SchemaImporterExtension">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Xml.Serialization.CodeExporter">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -376,6 +380,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.Serialization.Configuration.RootedPathValidator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -426,6 +431,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.Serialization.SoapIgnoreAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -466,6 +472,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.Serialization.XmlAnyAttributeAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -551,6 +558,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.Serialization.XmlIgnoreAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -576,6 +584,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.Serialization.XmlNamespaceDeclarationsAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -659,6 +668,9 @@
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+  </member>
+  <member name="T:System.Xml.Serialization.XmlSerializerImplementation">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Xml.Serialization.XmlSerializerNamespaces">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
@@ -786,6 +798,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.XmlNameTable">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -801,6 +814,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.XmlNodeList">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -841,6 +855,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.XmlResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -896,6 +911,7 @@
     </attribute>
   </member>
   <member name="T:System.Xml.XmlXapResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -911,11 +927,13 @@
     </attribute>
   </member>
   <member name="T:System.Xml.XPath.XPathExpression">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Xml.XPath.XPathItem">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -949,5 +967,8 @@
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+  </member>
+  <member name="T:System.Xml.Xsl.XsltMessageEncounteredEventArgs">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
   </member>
 </assembly>

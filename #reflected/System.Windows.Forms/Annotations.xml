@@ -191,6 +191,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.Clipboard">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -256,6 +257,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.ComponentModel.Com2Interop.Com2Variant">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -831,6 +833,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.Design.WindowsFormsComponentEditor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -901,6 +904,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.FeatureSupport">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -986,6 +990,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.GridTablesFactory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1176,6 +1181,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.Layout.LayoutEngine">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1846,6 +1852,7 @@
     </attribute>
   </member>
   <member name="T:System.Windows.Forms.TextRenderer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

@@ -21,6 +21,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ApplicationServices.KnownTypesProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -176,6 +177,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Query.Dynamic.DynamicClass">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -186,11 +188,13 @@
     </attribute>
   </member>
   <member name="T:System.Web.Script.AjaxFrameworkAssemblyAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.Script.Serialization.JavaScriptConverter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -201,6 +205,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Script.Serialization.JavaScriptTypeResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -211,6 +216,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Script.Serialization.SimpleTypeResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -231,6 +237,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Script.Services.ScriptServiceAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -331,6 +338,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.ScriptDescriptor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

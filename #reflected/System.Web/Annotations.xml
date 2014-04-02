@@ -51,6 +51,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Caching.ResponseElement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -126,6 +127,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Compilation.ControlBuilderInterceptor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -181,6 +183,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Compilation.ResourceProviderFactory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -406,6 +409,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Configuration.HttpCapabilitiesProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -585,10 +589,16 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Web.Configuration.ProtocolsConfigurationHandler">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Web.Configuration.ProtocolsSection">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+  </member>
+  <member name="T:System.Web.Configuration.ProvidersHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Web.Configuration.RegexWorker">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
@@ -705,6 +715,9 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Web.Configuration.WebConfigurationManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Web.Configuration.WebPartsPersonalization">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -761,6 +774,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Hosting.ApplicationHost">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -786,6 +800,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Hosting.HostSecurityPolicyResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -861,6 +876,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpBrowserCapabilitiesBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -876,6 +892,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpCachePolicyBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -916,6 +933,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpContextBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -971,6 +989,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpPostedFileBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -986,6 +1005,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpRequestBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1006,6 +1026,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpResponseBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1026,6 +1047,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpServerUtilityBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1036,6 +1058,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpSessionStateBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1051,6 +1074,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpStaticObjectsCollectionBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1061,6 +1085,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpTaskAsyncHandler">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1071,6 +1096,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.HttpUtility">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1096,6 +1122,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Instrumentation.PageExecutionListener">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1236,6 +1263,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Management.WebEventManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1316,16 +1344,19 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.ArrayModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.AssociatedMetadataProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.AssociatedValidatorProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1356,6 +1387,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.CollectionModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1366,6 +1398,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.ComplexModelBinder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1436,6 +1469,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.DictionaryModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1446,6 +1480,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.EmptyModelMetadataProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1476,6 +1511,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.KeyValuePairModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1491,6 +1527,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.ModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1541,6 +1578,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.ModelMetadataProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1586,6 +1624,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.ModelValidatorProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1606,6 +1645,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.MutableObjectModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1681,26 +1721,31 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.TypeConverterModelBinder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.TypeConverterModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.TypeMatchModelBinder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.TypeMatchModelBinderProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.UserProfileAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1726,6 +1771,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ModelBinding.ValueProviderSourceAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1761,6 +1807,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.ProcessModelInfo">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1871,6 +1918,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Routing.StopRoutingHandler">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1951,6 +1999,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Security.MachineKey">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2071,6 +2120,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.SessionState.StateRuntime">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2236,6 +2286,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.CssClassPropertyAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2311,6 +2362,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.DesignTimeTemplateParser">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2371,6 +2423,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.HierarchicalDataSourceView">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2611,6 +2664,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.ListSourceHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2641,6 +2695,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.ObjectConverter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2731,6 +2786,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.PropertyConverter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4555,6 +4611,9 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Web.UI.WebControls.WebParts.WebPartTransformer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Web.UI.WebControls.WebParts.WebPartUserCapability">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -4661,6 +4720,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.XPathBinder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4671,6 +4731,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.UnvalidatedRequestValuesBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4691,6 +4752,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.Util.Transactions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4701,6 +4763,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.VirtualPathUtility">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4716,6 +4779,7 @@
     </attribute>
   </member>
   <member name="T:System.Web.WebSockets.AspNetWebSocketContext">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

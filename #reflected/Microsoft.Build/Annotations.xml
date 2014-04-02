@@ -316,6 +316,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Execution.ProjectTargetInstanceChild">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -326,6 +327,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Execution.ProjectTaskInstanceChild">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

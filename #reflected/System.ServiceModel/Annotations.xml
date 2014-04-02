@@ -66,6 +66,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Activation.ServiceHostFactoryBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -171,6 +172,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.BindingElement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -191,6 +193,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.BufferManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -241,6 +244,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.ClientWebSocketFactory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -256,6 +260,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.CompositeDuplexBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -271,6 +276,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.ContextBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -286,6 +292,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.CorrelationDataDescription">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -311,11 +318,13 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.FaultConverter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.HttpCookieContainerBindingElement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -376,26 +385,31 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.MessageBuffer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.MessageEncoder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.MessageEncoderFactory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.MessageEncodingBindingElement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.MessageEncodingBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -411,6 +425,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.MessageHeaderInfo">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -471,6 +486,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.OneWayBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -481,6 +497,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.PeerResolverBindingElement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -501,6 +518,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.PrivacyNoticeBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -541,6 +559,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.ReliableSessionBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -551,6 +570,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.RequestContext">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -571,6 +591,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.SessionOpenNotification">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -581,16 +602,19 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.StandardBindingImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.StreamSecurityUpgradeAcceptor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.StreamSecurityUpgradeInitiator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -601,16 +625,19 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.StreamUpgradeAcceptor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.StreamUpgradeBindingElement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.StreamUpgradeInitiator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -646,6 +673,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.TransactionFlowBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -661,6 +689,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.TransportBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -676,11 +705,13 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.UseManagedPresentationBindingElement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.UseManagedPresentationBindingElementImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -751,6 +782,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.ComIntegration.WasHostedComPlusFactory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2036,6 +2068,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.XPathMessageFilterElementComparer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2181,6 +2214,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.MetadataResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2311,6 +2345,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.SynchronousReceiveBehavior">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2321,6 +2356,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.TypedMessageConverter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2351,6 +2387,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.XmlSerializerMessageContractImporter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2441,16 +2478,19 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Dispatcher.MatchAllMessageFilter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Dispatcher.MatchNoneMessageFilter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Dispatcher.MessageFilter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2466,6 +2506,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Dispatcher.MessageQuery">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2721,6 +2762,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.MessageSecurityVersion">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2861,6 +2903,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.PeerMessagePropagationFilter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2876,6 +2919,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.PeerResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3001,6 +3045,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Security.BasicSecurityProfileVersion">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3031,6 +3076,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Security.IdentityVerifier">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3101,6 +3147,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Security.SecurityCredentialsManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3121,6 +3168,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Security.SecurityStateEncoder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3201,6 +3249,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Security.Tokens.SecurityContextSecurityTokenAuthenticator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3371,11 +3420,13 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.ServiceAuthenticationManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.ServiceAuthorizationManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3596,6 +3647,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.TransactionProtocol">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

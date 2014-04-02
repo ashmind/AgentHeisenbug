@@ -111,6 +111,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.CmdLineOptionParser">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -171,6 +172,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.DebugConvert">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -186,6 +188,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.Empty">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -241,6 +244,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.Expando">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -301,6 +305,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.Hide">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -321,6 +326,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.JSAuthor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -341,6 +347,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.JSField">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -491,6 +498,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.Missing">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -546,6 +554,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.Override">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -741,6 +750,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.JScript.Vsa.BaseVsaSite">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

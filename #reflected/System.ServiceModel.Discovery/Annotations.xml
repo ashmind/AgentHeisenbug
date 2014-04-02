@@ -146,6 +146,7 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Discovery.DiscoveryEndpointProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

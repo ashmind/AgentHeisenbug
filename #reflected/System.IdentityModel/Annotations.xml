@@ -136,6 +136,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.CookieTransform">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -301,11 +302,13 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Policy.AuthorizationContext">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Policy.EvaluationContext">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -416,21 +419,25 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Protocols.WSTrust.WSTrust13RequestSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Protocols.WSTrust.WSTrust13ResponseSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005RequestSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005ResponseSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -441,11 +448,13 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -501,6 +510,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.AudienceUriModeValidationHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -521,6 +531,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.RsaSecurityTokenAuthenticator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -531,16 +542,19 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.SecurityTokenAuthenticator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.SecurityTokenManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.SecurityTokenProvider">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -556,16 +570,19 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.SecurityTokenResolver">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.SecurityTokenSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.SecurityTokenVersion">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -576,6 +593,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -626,6 +644,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.AsymmetricSecurityKey">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -721,6 +740,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.IssuerNameRegistry">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -756,6 +776,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.ProofDescriptor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -871,6 +892,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.Saml2Statement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -956,6 +978,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.SamlCondition">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1011,6 +1034,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.SamlStatement">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1031,6 +1055,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.SecurityKey">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1051,11 +1076,13 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClauseSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.SecurityToken">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1131,6 +1158,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.SessionSecurityTokenCache">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1156,11 +1184,13 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.SymmetricSecurityKey">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.TokenReplayCache">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1196,6 +1226,7 @@
     </attribute>
   </member>
   <member name="T:System.IdentityModel.Tokens.X509DataSecurityKeyIdentifierClauseSerializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1281,11 +1312,13 @@
     </attribute>
   </member>
   <member name="T:System.Security.Claims.ClaimsAuthenticationManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.Claims.ClaimsAuthorizationManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

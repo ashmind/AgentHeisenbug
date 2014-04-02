@@ -131,6 +131,7 @@
     </attribute>
   </member>
   <member name="T:System.Attribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -156,6 +157,7 @@
     </attribute>
   </member>
   <member name="T:System.Buffer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -226,6 +228,7 @@
     </attribute>
   </member>
   <member name="T:System.Collections.Concurrent.Partitioner`1">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -336,6 +339,7 @@
     </attribute>
   </member>
   <member name="T:System.ContextStaticAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -361,6 +365,7 @@
     </attribute>
   </member>
   <member name="T:System.DBNull">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -375,6 +380,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Deployment.Internal.InternalActivationContextHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Deployment.Internal.InternalApplicationIdentityHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Diagnostics.ConditionalAttribute">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -386,11 +397,13 @@
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Contracts.ContractAbbreviatorAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Contracts.ContractArgumentValidatorAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -411,6 +424,7 @@
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Contracts.ContractInvariantMethodAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -426,11 +440,13 @@
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Contracts.ContractReferenceAssemblyAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Contracts.ContractRuntimeIgnoredAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -441,11 +457,13 @@
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Contracts.Internal.ContractHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Contracts.PureAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -471,16 +489,22 @@
     </attribute>
   </member>
   <member name="T:System.Diagnostics.DebuggerHiddenAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Diagnostics.DebuggerNonUserCodeAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Diagnostics.DebuggerStepperBoundaryAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Diagnostics.DebuggerStepThroughAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -566,6 +590,7 @@
     </attribute>
   </member>
   <member name="T:System.Diagnostics.Tracing.NonEventAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -606,6 +631,7 @@
     </attribute>
   </member>
   <member name="T:System.EventArgs">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -626,6 +652,7 @@
     </attribute>
   </member>
   <member name="T:System.FlagsAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -636,6 +663,7 @@
     </attribute>
   </member>
   <member name="T:System.GC">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1066,6 +1094,7 @@
     </attribute>
   </member>
   <member name="T:System.MTAThreadAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1081,6 +1110,7 @@
     </attribute>
   </member>
   <member name="T:System.NonSerializedAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1101,6 +1131,7 @@
     </attribute>
   </member>
   <member name="T:System.Nullable">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1116,6 +1147,7 @@
     </attribute>
   </member>
   <member name="T:System.Object">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1151,6 +1183,7 @@
     </attribute>
   </member>
   <member name="T:System.ParamArrayAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1181,6 +1214,7 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.Assembly">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -1291,6 +1325,7 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.Binder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1306,6 +1341,7 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.CustomAttributeExtensions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1486,6 +1522,7 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.EventInfo">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -1496,6 +1533,7 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.FieldInfo">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -1506,6 +1544,7 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.IntrospectionExtensions">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1526,11 +1565,13 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.MemberInfo">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
   </member>
   <member name="T:System.Reflection.MethodBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -1541,11 +1582,13 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.MethodInfo">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
   </member>
   <member name="T:System.Reflection.Missing">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1581,11 +1624,13 @@
     </attribute>
   </member>
   <member name="T:System.Reflection.PropertyInfo">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
   </member>
   <member name="T:System.Reflection.ReflectionContext">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1706,36 +1751,43 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CallConvCdecl">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CallConvFastcall">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CallConvStdcall">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CallConvThiscall">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CallerFilePathAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CallerLineNumberAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CallerMemberNameAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1746,16 +1798,19 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CompilerGeneratedAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CompilerGlobalScopeAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CompilerMarshalOverride">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1791,6 +1846,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.CustomConstantAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1816,16 +1872,19 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.DiscardableAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.ExtensionAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.FixedAddressValueTypeAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1836,16 +1895,19 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.HasCopySemanticsAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IDispatchConstantAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IndexerNameAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1856,56 +1918,70 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsBoxed">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsByValue">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsConst">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Runtime.CompilerServices.IsCopyConstructed">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Runtime.CompilerServices.IsExplicitlyDereferenced">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsImplicitlyDereferenced">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsJitIntrinsic">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsLong">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsPinned">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsSignUnspecifiedByte">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsUdtReturn">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IsVolatile">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1916,6 +1992,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.IUnknownConstantAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1924,6 +2001,9 @@
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+  </member>
+  <member name="T:System.Runtime.CompilerServices.NativeCppClassAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Runtime.CompilerServices.ReferenceAssemblyAttribute">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
@@ -1941,6 +2021,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.RuntimeHelpers">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1951,9 +2032,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.ScopelessEnumAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+  </member>
+  <member name="T:System.Runtime.CompilerServices.SpecialNameAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Runtime.CompilerServices.StateMachineAttribute">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
@@ -1961,11 +2046,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.StringFreezingAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.SuppressIldasmAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -1986,6 +2073,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.CompilerServices.UnsafeValueTypeAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2001,11 +2089,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.ConstrainedExecution.CriticalFinalizerObject">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.ConstrainedExecution.PrePrepareMethodAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2031,11 +2121,19 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Runtime.GCSettings">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Runtime.Hosting.ApplicationActivator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Runtime.InteropServices.AllowReversePInvokeCallsAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2091,6 +2189,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.ComConversionLossAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2106,6 +2205,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.ComEventsHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2116,11 +2216,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.ComImportAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.ComRegisterFunctionAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2216,6 +2318,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.ComUnregisterFunctionAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2291,6 +2394,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.ExtensibleClassFactory">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2346,6 +2450,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.InAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2391,11 +2496,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.OptionalAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.OutAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2406,6 +2513,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.PreserveSigAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2426,6 +2534,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.RuntimeEnvironment">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2456,6 +2565,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.SetWin32ContextInIDispatchAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2571,6 +2681,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArrayAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2581,6 +2692,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2591,11 +2703,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArrayAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.ProfileOptimization">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2616,11 +2730,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.Channels.BaseChannelObjectWithProperties">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.Channels.BaseChannelSinkWithProperties">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2681,6 +2797,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.InternalRemotingServices">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2701,6 +2818,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.Messaging.CallContext">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2751,6 +2869,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.Messaging.OneWayAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2816,6 +2935,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.Metadata.W3cXsd2001.SoapDuration">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2956,6 +3076,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.Proxies.ProxyAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -2991,6 +3112,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Remoting.Services.EnterpriseServicesHelper">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3026,6 +3148,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.FormatterConverter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3036,11 +3159,13 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.Formatters.InternalRM">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.Formatters.InternalST">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3076,21 +3201,25 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.OnDeserializedAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.OnDeserializingAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.OnSerializedAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.OnSerializingAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3106,6 +3235,7 @@
     </attribute>
   </member>
   <member name="T:System.Runtime.Serialization.SerializationBinder">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3431,6 +3561,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.CodeAccessPermission">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3446,21 +3577,25 @@
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.AsymmetricKeyExchangeFormatter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.AsymmetricSignatureDeformatter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.AsymmetricSignatureFormatter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3501,6 +3636,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.DeriveBytes">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3601,6 +3737,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.MaskGenerationMethod">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3626,6 +3763,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.RandomNumberGenerator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3776,6 +3914,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Cryptography.ToBase64Transform">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3801,6 +3940,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.HostSecurityManager">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -3846,6 +3986,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Permissions.GacIdentityPermission">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4026,6 +4167,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Policy.AllMembershipCondition">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4036,6 +4178,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Policy.ApplicationDirectoryMembershipCondition">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4081,6 +4224,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Policy.EvidenceBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4095,7 +4239,11 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Security.Policy.GacInstalled">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Security.Policy.GacMembershipCondition">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4211,6 +4359,7 @@
     </attribute>
   </member>
   <member name="T:System.Security.Principal.IdentityReference">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4281,21 +4430,31 @@
     </attribute>
   </member>
   <member name="T:System.Security.SecuritySafeCriticalAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.SecurityState">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Security.SecurityTransparentAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Security.SecurityTreatAsSafeAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Security.SuppressUnmanagedCodeSecurityAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Security.UnverifiableCodeAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4311,6 +4470,7 @@
     </attribute>
   </member>
   <member name="T:System.SerializableAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4326,6 +4486,7 @@
     </attribute>
   </member>
   <member name="T:System.STAThreadAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4336,6 +4497,7 @@
     </attribute>
   </member>
   <member name="T:System.StringComparer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4506,11 +4668,13 @@
     </attribute>
   </member>
   <member name="T:System.Threading.Interlocked">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
   </member>
   <member name="T:System.Threading.LazyInitializer">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -4531,6 +4695,7 @@
     </attribute>
   </member>
   <member name="T:System.Threading.Monitor">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -4641,6 +4806,7 @@
     </attribute>
   </member>
   <member name="T:System.Threading.ThreadPool">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
@@ -4661,6 +4827,7 @@
     </attribute>
   </member>
   <member name="T:System.Threading.Volatile">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4676,6 +4843,7 @@
     </attribute>
   </member>
   <member name="T:System.ThreadStaticAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4716,46 +4884,55 @@
     </attribute>
   </member>
   <member name="T:System.Tuple">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`1">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`2">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`3">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`4">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`5">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`6">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`7">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Tuple`8">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -4821,6 +4998,7 @@
     </attribute>
   </member>
   <member name="T:System.ValueType">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

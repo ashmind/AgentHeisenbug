@@ -15,6 +15,12 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Xml.Xsl.Runtime.XmlILStorageConverter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Xml.Xsl.Runtime.XmlNavigatorFilter">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Xml.Xsl.Runtime.XmlQueryItemSequence">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>

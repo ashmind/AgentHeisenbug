@@ -30,17 +30,28 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:Microsoft.Build.Framework.LoadInSeparateAppDomainAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:Microsoft.Build.Framework.OutputAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:Microsoft.Build.Framework.RequiredAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:Microsoft.Build.Framework.RequiredRuntimeAttribute">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Framework.RunInMTAAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Framework.RunInSTAAttribute">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -76,6 +87,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Framework.XamlTypes.CategorySchema">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -141,6 +153,7 @@
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Framework.XamlTypes.RuleSchema">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<assembly name="sysglobl">
-  <member name="T:System.Globalization.CultureAndRegionInfoBuilder">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
-      <argument>Static</argument>
-    </attribute>
-  </member>
-</assembly>

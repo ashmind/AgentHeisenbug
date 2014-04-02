@@ -85,6 +85,9 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Configuration.ConfigurationValidatorBase">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Configuration.ConnectionStringSettings">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -100,12 +103,16 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Configuration.DefaultValidator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Configuration.DPAPIProtectedConfigurationProvider">
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Configuration.PositiveTimeSpanValidator">
+    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
