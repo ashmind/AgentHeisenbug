@@ -31,7 +31,7 @@ namespace AgentHeisenbug.Analyzers {
                 return;
 
             consumer.AddHighlighting(new MutableFieldOrPropertyInThreadSafeType(
-                setter, "Property '{0}' in a [ThreadSafe] class should not have setter.", property.DeclaredName
+                setter.NameIdentifier, "Property '{0}' in a [ThreadSafe] class should not have setter.", property.DeclaredName
             ));
         }
     }

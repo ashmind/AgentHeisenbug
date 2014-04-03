@@ -39,7 +39,7 @@ namespace AgentHeisenbug.Analyzers {
                 return;
 
             var safetyLevel = this.annotationCache.GetThreadSafety(method);
-            if (!safetyLevel.Static)
+            if (safetyLevel.Static)
                 return;
 
             consumer.AddHighlighting(new CallToNotThreadSafeStaticMethodInThreadSafeType(
