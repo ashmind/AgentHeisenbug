@@ -24,6 +24,15 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
+    FieldOfNonThreadSafeTypeInThreadSafeType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
+    "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
     ExposingNotThreadSafeTypeInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
@@ -38,6 +47,15 @@ using AgentHeisenbug.Highlightings;
     HighlightingGroupIds.ConstraintViolation,
     "Mutable field in type annotated with [ReadOnly]",
     "Mutable field in type annotated with [ReadOnly]",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
+    FieldOfMutableTypeInReadOnlyType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Field of mutable type in type annotated with [ReadOnly]",
+    "Field of mutable type in type annotated with [ReadOnly]",
     Severity.WARNING,
     false
 )]
@@ -59,6 +77,14 @@ namespace AgentHeisenbug.Highlightings {
         public MutableFieldOrPropertyInThreadSafeType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
     }
 
+    [ConfigurableSeverityHighlighting(FieldOfNonThreadSafeTypeInThreadSafeType.Id, CSharpLanguage.Name)]
+    public class FieldOfNonThreadSafeTypeInThreadSafeType : ThreadSafetyHighligtingBase {
+        public const string Id = "FieldOfNonThreadSafeTypeInThreadSafeType";
+
+        [StringFormatMethod("messageFormat")]
+        public FieldOfNonThreadSafeTypeInThreadSafeType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+    }
+
     [ConfigurableSeverityHighlighting(ExposingNotThreadSafeTypeInThreadSafeType.Id, CSharpLanguage.Name)]
     public class ExposingNotThreadSafeTypeInThreadSafeType : ThreadSafetyHighligtingBase {
         public const string Id = "ExposingNotThreadSafeTypeInThreadSafeType";
@@ -73,5 +99,13 @@ namespace AgentHeisenbug.Highlightings {
 
         [StringFormatMethod("messageFormat")]
         public MutableFieldInReadOnlyType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+    }
+
+    [ConfigurableSeverityHighlighting(FieldOfMutableTypeInReadOnlyType.Id, CSharpLanguage.Name)]
+    public class FieldOfMutableTypeInReadOnlyType : ThreadSafetyHighligtingBase {
+        public const string Id = "FieldOfMutableTypeInReadOnlyType";
+
+        [StringFormatMethod("messageFormat")]
+        public FieldOfMutableTypeInReadOnlyType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
     }
 }

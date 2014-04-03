@@ -1,4 +1,5 @@
 using System.Linq;
+using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -12,17 +13,17 @@ using AgentHeisenbug.Highlightings;
 namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToNotThreadSafeStaticMethodInThreadSafeType) })]
     public class ThreadSafeStaticCallAnalyzer : IElementProblemAnalyzer {
-        private readonly AnalyzerScopeRequirement requirement;
+        private readonly AnalyzerPreconditions preconditions;
         private readonly HeisenbugAnnotationCache annotationCache;
 
-        public ThreadSafeStaticCallAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
-            this.requirement = requirement;
+        public ThreadSafeStaticCallAnalyzer(AnalyzerPreconditions preconditions, HeisenbugAnnotationCache annotationCache) {
+            this.preconditions = preconditions;
             this.annotationCache = annotationCache;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
             var call = (IInvocationExpression)element;
-            if (!this.requirement.MustBeThreadSafe(call))
+            if (!this.preconditions.MustBeThreadSafe(call))
                 return;
 
             var reference = call.InvocationExpressionReference;
@@ -37,8 +38,8 @@ namespace AgentHeisenbug.Analyzers {
             if (method == null || !method.IsStatic)
                 return;
 
-            var safetyLevel = this.annotationCache.GetThreadSafetyLevel(method);
-            if (safetyLevel == ThreadSafetyLevel.Static || safetyLevel == ThreadSafetyLevel.All)
+            var safetyLevel = this.annotationCache.GetThreadSafety(method);
+            if (!safetyLevel.Static)
                 return;
 
             consumer.AddHighlighting(new CallToNotThreadSafeStaticMethodInThreadSafeType(

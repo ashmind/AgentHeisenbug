@@ -13,9 +13,11 @@ using AgentHeisenbug.Highlightings;
 <# var model = new Dictionary<string, string> {
     { "CallToNotThreadSafeStaticMethodInThreadSafeType", "Call to static method that is not thread-safe from type annotated with [ThreadSafe]" },
     { "MutableFieldOrPropertyInThreadSafeType",          "Mutable property or field in type annotated with [ThreadSafe]" },
+    { "FieldOfNonThreadSafeTypeInThreadSafeType",        "Field of type that is not thread-safe, in type annotated with [ThreadSafe]" },
     { "ExposingNotThreadSafeTypeInThreadSafeType",       "Exposing type that is not thread-safe from type annotated with [ThreadSafe]" },
     
-    { "MutableFieldInReadOnlyType",                      "Mutable field in type annotated with [ReadOnly]" }
+    { "MutableFieldInReadOnlyType",                      "Mutable field in type annotated with [ReadOnly]" },
+    { "FieldOfMutableTypeInReadOnlyType",                "Field of mutable type in type annotated with [ReadOnly]" },
 }; #>
 
 <# foreach (var pair in model) { #>

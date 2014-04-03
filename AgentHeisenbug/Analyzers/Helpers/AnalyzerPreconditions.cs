@@ -5,12 +5,12 @@ using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.Helpers {
     [PsiComponent]
-    public class AnalyzerScopeRequirement {
+    public class AnalyzerPreconditions {
         private readonly HeisenbugAnnotationCache annotationCache;
 
-        public AnalyzerScopeRequirement(HeisenbugAnnotationCache annotationCache) {
+        public AnalyzerPreconditions(HeisenbugAnnotationCache annotationCache) {
             this.annotationCache = annotationCache;
         }
 
@@ -19,7 +19,12 @@ namespace AgentHeisenbug.Analyzers {
             if (typeNode == null)
                 return false;
 
-            return this.annotationCache.GetThreadSafetyLevel(typeNode.DeclaredElement) != ThreadSafetyLevel.None;
+            var safety = this.annotationCache.GetThreadSafety(typeNode.DeclaredElement);
+            var member = node.GetContainingTypeMemberDeclaration();
+            if (member == null)
+                return safety.Instance && safety.Static;
+
+            return member.IsStatic ? safety.Static : safety.Instance;
         }
 
         public bool MustBeReadOnly(ICSharpTreeNode node) {

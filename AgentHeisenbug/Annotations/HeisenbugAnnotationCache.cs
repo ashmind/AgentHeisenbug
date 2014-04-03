@@ -10,19 +10,19 @@ namespace AgentHeisenbug.Annotations {
     [PsiComponent]
     public class HeisenbugAnnotationCache : InvalidatingPsiCache {
         private readonly CodeAnnotationsCache annotationCache;
-        private readonly ConcurrentDictionary<IAttributesOwner, ThreadSafetyLevel> threadSafeCache = new ConcurrentDictionary<IAttributesOwner, ThreadSafetyLevel>();
+        private readonly ConcurrentDictionary<IAttributesOwner, ThreadSafety> threadSafeCache = new ConcurrentDictionary<IAttributesOwner, ThreadSafety>();
         private readonly ConcurrentDictionary<IAttributesOwner, bool> readOnlyCache = new ConcurrentDictionary<IAttributesOwner, bool>();
 
         public HeisenbugAnnotationCache(CodeAnnotationsCache annotationCache) {
             this.annotationCache = annotationCache;
         }
 
-        public ThreadSafetyLevel GetThreadSafetyLevel(IAttributesOwner member) {
+        public ThreadSafety GetThreadSafety(IAttributesOwner member) {
             return this.threadSafeCache.GetOrAdd(member, m => GetValueUncached(
                 m, "ThreadSafeAttribute",
-                ThreadSafetyLevel.All,
-                generated => (ThreadSafetyLevel)Enum.Parse(typeof(ThreadSafetyLevel), (string)generated.PositionParameter(0).ConstantValue.Value),
-                GetThreadSafetyLevel
+                ThreadSafety.Values.All,
+                generated => (ThreadSafety)Enum.Parse(typeof(ThreadSafety), (string)generated.PositionParameter(0).ConstantValue.Value),
+                GetThreadSafety
             ));
         }
         

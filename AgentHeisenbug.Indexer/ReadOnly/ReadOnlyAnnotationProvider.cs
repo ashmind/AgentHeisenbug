@@ -11,7 +11,7 @@ namespace AgentHeisenbug.Indexer.ReadOnly {
     public class ReadOnlyAnnotationProvider : IAnnotationProvider {
         private static readonly object CachedTrue = new object();
         private static readonly object CachedFalse = new object();
-        private static readonly Annotation ReadOnlyAnnotation = new Annotation("M:GeneratedReadOnlyAttribute.#ctor");
+        private static readonly Annotation ReadOnlyAnnotation = new Annotation("M:JetBrains.Annotations.GeneratedReadOnlyAttribute.#ctor");
 
         private readonly ConditionalWeakTable<IMetadataTypeInfo, object> typeCache = new ConditionalWeakTable<IMetadataTypeInfo, object>();
         private readonly DirectoryInfo frameworkDirectory;
@@ -36,7 +36,7 @@ namespace AgentHeisenbug.Indexer.ReadOnly {
 
         private ICollection<AnnotationsByMember> InferReadOnlyForAssembly(IMetadataAssembly assembly) {
             return assembly.GetTypes()
-                           .Where(t => t.IsPublic && !t.IsInterface && !t.IsDelegate() && !t.IsEnum() && !t.IsValueType())
+                           .Where(t => t.IsPublic && !t.IsInterface && !IsObviouslyReadOnly(t))
                            .Where(IsReadOnly)
                            .Select(t => new AnnotationsByMember(GenerateXmlId(t), ReadOnlyAnnotation))
                            .ToList();
@@ -45,6 +45,10 @@ namespace AgentHeisenbug.Indexer.ReadOnly {
 
         private string GenerateXmlId(IMetadataTypeInfo type) {
             return "T:" + type.FullyQualifiedName;
+        }
+
+        private bool IsObviouslyReadOnly(IMetadataTypeInfo type) {
+            return type.IsDelegate() || type.IsValueType();
         }
 
         private bool IsReadOnly(IMetadataTypeInfo type) {
@@ -64,7 +68,8 @@ namespace AgentHeisenbug.Indexer.ReadOnly {
             if (classType == null || classType.Type == field.DeclaringType)
                 return true;
 
-            return IsReadOnly(classType.Type);
+            return IsObviouslyReadOnly(classType.Type)
+                || IsReadOnly(classType.Type);
         }
     }
 }

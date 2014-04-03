@@ -1,4 +1,5 @@
 using System.Linq;
+using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -12,17 +13,17 @@ using AgentHeisenbug.Highlightings;
 namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IAccessorDeclaration) }, HighlightingTypes = new[] { typeof(ExposingNotThreadSafeTypeInThreadSafeType) })]
     public class ThreadSafeTypeExposureAnalyzer : IElementProblemAnalyzer {
-        private readonly AnalyzerScopeRequirement requirement;
+        private readonly AnalyzerPreconditions preconditions;
         private readonly HeisenbugAnnotationCache annotationCache;
 
-        public ThreadSafeTypeExposureAnalyzer(AnalyzerScopeRequirement requirement, HeisenbugAnnotationCache annotationCache) {
-            this.requirement = requirement;
+        public ThreadSafeTypeExposureAnalyzer(AnalyzerPreconditions preconditions, HeisenbugAnnotationCache annotationCache) {
+            this.preconditions = preconditions;
             this.annotationCache = annotationCache;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
             var accessor = (IAccessorDeclaration)element;
-            if (accessor.Kind != AccessorKind.GETTER || !this.requirement.MustBeThreadSafe(accessor))
+            if (accessor.Kind != AccessorKind.GETTER || !this.preconditions.MustBeThreadSafe(accessor))
                 return;
 
             var property = accessor.Parent as IPropertyDeclaration;
@@ -41,8 +42,8 @@ namespace AgentHeisenbug.Analyzers {
             if (propertyTypeElement == null)
                 return;
 
-            var safetyLevel = this.annotationCache.GetThreadSafetyLevel(propertyTypeElement);
-            if (safetyLevel == ThreadSafetyLevel.Instance || safetyLevel == ThreadSafetyLevel.All)
+            var safetyLevel = this.annotationCache.GetThreadSafety(propertyTypeElement);
+            if (!safetyLevel.Instance)
                 return;
 
             consumer.AddHighlighting(new ExposingNotThreadSafeTypeInThreadSafeType(
