@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Props" Condition="Exists('..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -41,13 +42,8 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analyzers\Helpers\ReferencedTypeHelper.cs" />
@@ -80,11 +76,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <PropertyGroup>
-    <ReSharperSdkTargets Condition=" '$(ReSharperSdkTargets)' == '' ">$(MSBuildExtensionsPath)\JetBrains\ReSharper.SDK\v7.1</ReSharperSdkTargets>
-  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(ReSharperSdkTargets)\Plugin.Targets" />
   <Target Name="CopyExternalAnnotationsToReSharper" AfterTargets="Build">
     <ItemGroup>
       <_Annotations Include="..\#reflected\**\*.*" />
@@ -95,4 +87,12 @@
     <MakeDir Directories="$(_ExternalAnnotationsDir)" />
     <Copy SourceFiles="@(_Annotations)" DestinationFolder="$(_ExternalAnnotationsDir)%(RecursiveDir)" />
   </Target>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Props')" Text="$([System.String]::Format('$(ErrorText)', '..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Props'))" />
+    <Error Condition="!Exists('..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Targets'))" />
+  </Target>
+  <Import Project="..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Targets" Condition="Exists('..\#packages\JetBrains.ReSharper.SDK.8.2.1158\build\JetBrains.ReSharper.SDK.Targets')" />
 </Project>

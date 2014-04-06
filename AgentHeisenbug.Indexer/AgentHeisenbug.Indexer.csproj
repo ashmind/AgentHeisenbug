@@ -43,11 +43,13 @@
     <Reference Include="ClariusLabs.NuDoc">
       <HintPath>..\#packages\NuDoc.0.4.1308.1316\lib\net35\ClariusLabs.NuDoc.dll</HintPath>
     </Reference>
-    <Reference Include="JetBrains.Platform.ReSharper.Metadata">
-      <HintPath>C:\Program Files (x86)\JetBrains\ReSharper\v7.1\SDK\Bin\JetBrains.Platform.ReSharper.Metadata.dll</HintPath>
+    <Reference Include="JetBrains.Platform.ReSharper.Metadata, Version=7.1.25.156, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\#packages\JetBrains.ReSharper.SDK.8.2.1158\bin\JetBrains.Platform.ReSharper.Metadata.dll</HintPath>
     </Reference>
-    <Reference Include="JetBrains.Platform.ReSharper.Util">
-      <HintPath>C:\Program Files (x86)\JetBrains\ReSharper\v7.1\SDK\Bin\JetBrains.Platform.ReSharper.Util.dll</HintPath>
+    <Reference Include="JetBrains.Platform.ReSharper.Util, Version=7.1.25.156, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\#packages\JetBrains.ReSharper.SDK.8.2.1158\bin\JetBrains.Platform.ReSharper.Util.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable">

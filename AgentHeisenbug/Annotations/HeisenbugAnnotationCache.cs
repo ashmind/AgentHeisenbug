@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.ReSharper.Psi;
+using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.CodeAnnotations;
-using JetBrains.ReSharper.Psi.Impl;
-using JetBrains.Util.dataStructures;
 
 namespace AgentHeisenbug.Annotations {
     [PsiComponent]

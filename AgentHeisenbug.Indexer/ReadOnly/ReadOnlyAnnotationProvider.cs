@@ -21,7 +21,7 @@ namespace AgentHeisenbug.Indexer.ReadOnly {
         }
 
         public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(Func<string, bool> assemblyNameFilter) {
-            var frameworkPath = new FileSystemPath(frameworkDirectory.FullName);
+            var frameworkPath = FileSystemPath.Parse(frameworkDirectory.FullName);
             using (var loader = new MetadataLoader(frameworkPath)) {
                 var assemblyPaths = frameworkPath.GetChildFiles("*.dll");
                 foreach (var assemblyPath in assemblyPaths) {
