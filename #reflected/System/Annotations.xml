@@ -615,7 +615,47 @@
   <member name="T:System.Collections.Specialized.CollectionsUtil">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
   </member>
+  <member name="T:System.Collections.Specialized.HybridDictionary">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.ListDictionary">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.NameObjectCollectionBase">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.NameValueCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.StringCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.StringDictionary">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.StringEnumerator">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

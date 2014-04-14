@@ -26,12 +26,15 @@ namespace AgentHeisenbug.Indexer {
         private static readonly ConcurrentDictionary<object, double> progressBySource = new ConcurrentDictionary<object, double>();
         private static readonly ITaskbarList4 taskbar = (ITaskbarList4)new CTaskbarList();
         private static Timer progressTimer;
+        private static string savedTitle;
 
         static ConsoleMultiProgressReporter() {
             taskbar.HrInit();
         }
         
         public static IDisposable Start(params object[] sources) {
+            savedTitle = Console.Title;
+
             progressBySource.Clear();
             sources.ForEach(s => progressBySource[s] = 0);
 
@@ -55,11 +58,13 @@ namespace AgentHeisenbug.Indexer {
         public static void End() {
             progressTimer.Dispose();
             taskbar.SetProgressState(windowHandle, TaskbarProgressBarStatus.NoProgress);
+            Console.Title = savedTitle;
         }
 
         private static void DisplayProgress() {
             var maximum = progressBySource.Count;
             var current = progressBySource.Values.Sum(v => v);
+            Console.Title = string.Format("{0:F2} % {1}", 100 * current / maximum, savedTitle);
             taskbar.SetProgressValue(windowHandle, (ulong)(1000 * current), (ulong)(1000 * maximum));
         }
     }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 
 namespace AgentHeisenbug.Indexer.ThreadSafe {
-    public class TypeDescription {
-        public TypeDescription(string id, IReadOnlyCollection<string> assemblyNames, TypeThreadSafety threadSafety, string threadSafetyText) {
+    public class TypeHelp {
+        public TypeHelp(string id, IReadOnlyCollection<string> assemblyNames, TypeThreadSafety threadSafety, string threadSafetyText) {
             this.Id = Argument.NotNullOrEmpty("id", id);
             this.AssemblyNames = Argument.NotNullOrEmpty("assemblyNames", assemblyNames);
             this.ThreadSafety = threadSafety;

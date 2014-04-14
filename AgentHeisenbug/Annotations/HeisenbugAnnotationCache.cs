@@ -3,7 +3,6 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Reflection;
 using AgentHeisenbug.Annotations.Generated;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;

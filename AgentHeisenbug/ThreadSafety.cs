@@ -11,10 +11,10 @@ namespace AgentHeisenbug {
         }
 
         private static readonly IDictionary<string, ThreadSafety> ParseMap = new Dictionary<string, ThreadSafety> {
-            { "None",     Values.None },
-            { "Static",   new ThreadSafety(true, false) },
+            { "None",     new ThreadSafety(false, false) },
+            { "Static",   new ThreadSafety(true,  false) },
             { "Instance", new ThreadSafety(false, true) },
-            { "All",      Values.All },
+            { "All",      new ThreadSafety(true,  true) },
         };
 
         public ThreadSafety(bool @static, bool instance) : this() {

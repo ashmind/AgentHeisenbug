@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly name="mscorlib">
+  <member name="T:System.Array">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.ArrayList">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.BitArray">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.CollectionBase">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.DictionaryBase">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Generic.List`1">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Queue">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.ReadOnlyCollectionBase">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.SortedList">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.HybridDictionary">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.ListDictionary">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.NameValueCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.StringCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.StringDictionary">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Specialized.StringEnumerator">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Stack">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.Barrier">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.Barrier.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.CancellationToken">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.CancellationToken.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.CancellationTokenSource">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.CancellationTokenSource.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.CountdownEvent">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.CountdownEvent.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.CountdownEvent.Reset">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.ManualResetEventSlim">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.ManualResetEventSlim.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.ManualResetEventSlim.Reset">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.SemaphoreSlim">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.SemaphoreSlim.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.Task">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.Task.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.Task`1">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.Task`1.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+  <member name="P:System.Threading.Tasks.TaskCanceledException.Task">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Instance</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Threading.ThreadLocal`1">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
+  <member name="M:System.Threading.ThreadLocal`1.Dispose">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>None</argument>
+    </attribute>
+  </member>
+</assembly>

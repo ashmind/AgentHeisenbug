@@ -1187,6 +1187,11 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Windows.Forms.Layout.ArrangedElementCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.Windows.Forms.Layout.LayoutEngine">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">

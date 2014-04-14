@@ -23,12 +23,12 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             this.files = files;
         }
 
-        public IEnumerable<TypeDescription> ReadFiles(Action<double> reportProgress) {
+        public IEnumerable<TypeHelp> ReadFiles(Action<double> reportProgress) {
             return this.files.OnAfterEach((_, index) => reportProgress((double)index / files.Count))
                              .SelectMany(ReadFile);
         }
 
-        private IEnumerable<TypeDescription> ReadFile(FileInfo file) {
+        private IEnumerable<TypeHelp> ReadFile(FileInfo file) {
             using (var stream = file.OpenRead())
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Read)) {
                 var results = archive.Entries.Where(e => e.Name.EndsWith(".htm"))
@@ -49,14 +49,14 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             }
         }
 
-        private TypeDescription ParseDescription(string xmlString) {
+        private TypeHelp ParseDescription(string xmlString) {
             var xml = new XPathDocument(new StringReader(xmlString)).CreateNavigator();
             var id = (string)xml.Evaluate("string(//xhtml:meta[@name='Microsoft.Help.Id']/@content)", namespaceManager);
             if (id == null || !id.StartsWith("T:"))
                 return null;
 
             var threadSafetyText = GetThreadSafetyText(xml);
-            return new TypeDescription(id, GetAssemblyNames(xml), GetThreadSafety(threadSafetyText), threadSafetyText);
+            return new TypeHelp(id, GetAssemblyNames(xml), GetThreadSafety(threadSafetyText), threadSafetyText);
         }
 
         private string[] GetAssemblyNames(XPathNavigator xml) {
@@ -88,7 +88,7 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             if (string.IsNullOrEmpty(text))
                 return TypeThreadSafety.NotFound;
             
-            if (Regex.IsMatch(text, @"except|only|all other|none of the other", RegexOptions.IgnoreCase))
+            if (Regex.IsMatch(text, @"except(?!ion)|only|all other|none of the other", RegexOptions.IgnoreCase))
                 return TypeThreadSafety.NotParsed;
 
             if (Regex.IsMatch(text, @"instances of [^\.]+ are thread safe\.", RegexOptions.IgnoreCase))

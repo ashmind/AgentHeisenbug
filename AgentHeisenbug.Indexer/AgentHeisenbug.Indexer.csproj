@@ -83,9 +83,9 @@
     <Compile Include="TaskbarApi\TaskbarProgressBarStatus.cs" />
     <Compile Include="ThreadSafe\HelpAnnotationProvider.cs" />
     <Compile Include="IAnnotationProvider.cs" />
-    <Compile Include="ThreadSafe\TypeDescriptionIdEqualityComparer.cs" />
+    <Compile Include="ThreadSafe\TypeHelpIdEqualityComparer.cs" />
     <Compile Include="ThreadSafe\TypeThreadSafety.cs" />
-    <Compile Include="ThreadSafe\TypeDescription.cs" />
+    <Compile Include="ThreadSafe\TypeHelp.cs" />
     <Compile Include="ThreadSafe\HelpRawReader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

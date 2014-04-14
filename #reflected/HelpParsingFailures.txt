@@ -1,0 +1,84 @@
+T:System.Collections.Concurrent.BlockingCollection`1
+The Dispose method is not thread-safe. All other public and protected members of BlockingCollection (T ) are thread-safe and may be used concurrently from multiple threads. 
+
+T:System.Collections.Generic.List`1
+Public static ( Shared in Visual Basic) members of this type are thread safe. Any instance members are not guaranteed to be thread safe. A List (T ) can support multiple readers concurrently, as long as the collection is not modified. Enumerating through a collection is intrinsically not a thread-safe procedure. In the rare case where an enumeration contends with one or more write accesses, the only way to ensure thread safety is to lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization. 
+
+T:System.Collections.Hashtable
+Hashtable is thread safe for use by multiple reader threads and a single writing thread. It is thread safe for multi-thread use when only one of the threads perform write (update) operations, which allows for lock-free reads provided that the writers are serialized to the Hashtable. To support multiple writers all operations on the Hashtable must be done through the wrapper returned by the Synchronized method, provided that there are no threads reading the Hashtable object. Enumerating through a collection is intrinsically not a thread safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+
+T:System.Collections.ReadOnlyCollectionBase
+Public static ( Shared in Visual Basic) members of this type are thread safe. Any instance members are not guaranteed to be thread safe. This implementation does not provide a synchronized (thread safe) wrapper for a ReadOnlyCollectionBase, but derived classes can create their own synchronized versions of the ReadOnlyCollectionBase using the SyncRoot property. Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+
+T:System.Collections.Specialized.CollectionsUtil
+A Hashtable can support one writer and multiple readers concurrently. To support multiple writers, all operations must be done through the wrapper returned by the Synchronized method. A SortedList can support multiple readers concurrently, as long as the collection is not modified. To guarantee the thread safety of the SortedList, all operations must be done through the wrapper returned by the Synchronized method. Enumerating through a collection is intrinsically not a thread safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+
+T:System.Messaging.MessageQueue
+Only the GetAllMessages method is thread safe. 
+
+T:System.Runtime.Serialization.DataContractSerializer
+Instances of this class are thread safe except when the instance is used with an implementation of the IDataContractSurrogate or DataContractResolver. 
+
+T:System.Text.RegularExpressions.Regex
+The Regex class is immutable (read-only) and thread safe. Regex objects can be created on any thread and shared between threads. For more information, see Thread Safety. 
+
+T:System.Threading.Barrier
+All public and protected members of Barrier are thread-safe and may be used concurrently from multiple threads, with the exception of Dispose, which must only be used when all other operations on the Barrier have completed. 
+
+T:System.Threading.CancellationToken
+All public and protected members of CancellationToken are thread-safe and may be used concurrently from multiple threads, with the exception of Dispose, which must only be used when all other operations on the CancellationToken have completed. 
+
+T:System.Threading.CancellationTokenRegistration
+All public and protected members of CancellationTokenRegistration are thread-safe and may be used concurrently from multiple threads, with the exception of Dispose, which must only be used when all other operations on the CancellationTokenRegistration have completed. 
+
+T:System.Threading.CancellationTokenSource
+All public and protected members of CancellationTokenSource are thread-safe and may be used concurrently from multiple threads, with the exception of Dispose, which must only be used when all other operations on the CancellationTokenSource object have completed. 
+
+T:System.Threading.CountdownEvent
+All public and protected members of CountdownEvent are thread-safe and may be used concurrently from multiple threads, with the exception of Dispose, which must only be used when all other operations on the CountdownEvent have completed, and Reset, which should only be used when no other threads are accessing the event. ExampleThe following example shows how to use a CountdownEvent: Imports System.Collections.Concurrent Imports System.Linq Imports System.Threading Imports System.Threading.Tasks Module CDESample ' Demonstrates: ' CountdownEvent construction ' CountdownEvent.AddCount() ' CountdownEvent.Signal() ' CountdownEvent.Wait() ' CountdownEvent.Wait() w/ cancellation ' CountdownEvent.Reset() ' CountdownEvent.IsSet ' CountdownEvent.InitialCount ' CountdownEvent.CurrentCount Sub Main() ' Initialize a queue and a CountdownEvent Dim queue As New ConcurrentQueue(Of Integer)(Enumerable.Range(0, 10000)) Dim cde As New CountdownEvent(10000) ' initial count = 10000 ' This is the logic for all queue consumers Dim consumer As Action = Sub() Dim local As Integer ' decrement CDE count once for each element consumed from queue While queue.TryDequeue(local) cde.Signal() End While End Sub ' Now empty the queue with a couple of asynchronous tasks Dim t1 As Task = Task.Factory.StartNew(consumer) Dim t2 As Task = Task.Factory.StartNew(consumer) ' And wait for queue to empty by waiting on cde cde.Wait() ' will return when cde count reaches 0 Console.WriteLine("Done emptying queue. InitialCount={0}, CurrentCount={1}, IsSet={2}", cde.InitialCount, cde.CurrentCount, cde.IsSet) ' Proper form is to wait for the tasks to complete, even if you know that their work ' is done already. Task.WaitAll(t1, t2) ' Resetting will cause the CountdownEvent to un-set, and resets InitialCount/CurrentCount ' to the specified value cde.Reset(10) ' AddCount will affect the CurrentCount, but not the InitialCount cde.AddCount(2) Console.WriteLine("After Reset(10), AddCount(2): InitialCount={0}, CurrentCount={1}, IsSet={2}", cde.InitialCount, cde.CurrentCount, cde.IsSet) ' Now try waiting with cancellation Dim cts As New CancellationTokenSource() cts.Cancel() ' cancels the CancellationTokenSource Try cde.Wait(cts.Token) Catch generatedExceptionName As OperationCanceledException Console.WriteLine("cde.Wait(preCanceledToken) threw OCE, as expected") End Try ' It's good for to release a CountdownEvent when you're done with it. cde.Dispose() End Sub End Module using System; using System.Collections.Concurrent; using System.Linq; using System.Threading; using System.Threading.Tasks; class CDESample { // Demonstrates: // CountdownEvent construction // CountdownEvent.AddCount() // CountdownEvent.Signal() // CountdownEvent.Wait() // CountdownEvent.Wait() w/ cancellation // CountdownEvent.Reset() // CountdownEvent.IsSet // CountdownEvent.InitialCount // CountdownEvent.CurrentCount static void Main() { // Initialize a queue and a CountdownEvent ConcurrentQueue<int> queue = new ConcurrentQueue<int>(Enumerable.Range(0, 10000)); CountdownEvent cde = new CountdownEvent(10000); // initial count = 10000 // This is the logic for all queue consumers Action consumer = () => { int local; // decrement CDE count once for each element consumed from queue while (queue.TryDequeue(out local)) cde.Signal(); }; // Now empty the queue with a couple of asynchronous tasks Task t1 = Task.Factory.StartNew(consumer); Task t2 = Task.Factory.StartNew(consumer); // And wait for queue to empty by waiting on cde cde.Wait(); // will return when cde count reaches 0 Console.WriteLine("Done emptying queue. InitialCount={0}, CurrentCount={1}, IsSet={2}", cde.InitialCount, cde.CurrentCount, cde.IsSet); // Proper form is to wait for the tasks to complete, even if you that their work // is done already. Task.WaitAll(t1, t2); // Resetting will cause the CountdownEvent to un-set, and resets InitialCount/CurrentCount // to the specified value cde.Reset(10); // AddCount will affect the CurrentCount, but not the InitialCount cde.AddCount(2); Console.WriteLine("After Reset(10), AddCount(2): InitialCount={0}, CurrentCount={1}, IsSet={2}", cde.InitialCount, cde.CurrentCount, cde.IsSet); // Now try waiting with cancellation CancellationTokenSource cts = new CancellationTokenSource(); cts.Cancel(); // cancels the CancellationTokenSource try { cde.Wait(cts.Token); } catch (OperationCanceledException) { Console.WriteLine("cde.Wait(preCanceledToken) threw OCE, as expected"); } // It's good for to release a CountdownEvent when you're done with it. cde.Dispose(); } } 
+
+T:System.Threading.ManualResetEventSlim
+All public and protected members of ManualResetEventSlim are thread-safe and may be used concurrently from multiple threads, with the exception of Dispose, which must only be used when all other operations on the ManualResetEventSlim have completed, and Reset, which should only be used when no other threads are accessing the event. 
+
+T:System.Threading.SemaphoreSlim
+All public and protected members of SemaphoreSlim are thread-safe and may be used concurrently from multiple threads, with the exception of Dispose, which must only be used when all other operations on the SemaphoreSlim have completed. 
+
+T:System.Threading.Tasks.ParallelLoopState
+A ParallelLoopState instance is meant to be used only within the body of the loop to which an instance was provided. It is not safe to use a provided ParallelLoopState instance after the associated loop ends, nor is it safe to explicitly hand it off to other threads and have those threads access it at any time. A different ParallelLoopState instance will be provided to each thread involved in a loop. 
+
+T:System.Threading.Tasks.ParallelOptions
+The constructor is thread-safe and may be used by multiple threads concurrently to construct multiple instances. None of the other public members are thread-safe.
+
+T:System.Threading.Tasks.Task
+All members of Task, except for Dispose, are thread-safe and may be used from multiple threads concurrently. 
+
+T:System.Threading.Tasks.Task`1
+All members of Task (TResult ), except for Dispose, are thread-safe and may be used from multiple threads concurrently. 
+
+T:System.Threading.Tasks.TaskCanceledException
+The Task property is thread-safe and may be used from multiple threads concurrently. 
+
+T:System.Threading.ThreadLocal`1
+With the exception of Dispose, all public and protected members of ThreadLocal (T ) thread-safe and may be used concurrently from multiple threads. The value returned for the Value and IsValueCreated properties is specific for the thread on which the property is accessed. 
+
+T:System.Web.Services.Protocols.HttpWebClientProtocol
+The properties on this class are copied into a new instance of a WebRequest object for each XML Web service method call. While you can call XML Web service methods on the same WebClientProtocol instance from different threads at the same time, there is no synchronization done to ensure that a consistent snapshot of the properties gets transferred to the WebRequest object. Therefore, if you need to modify the properties and make concurrent method calls from different threads you should use a different instance of the XML Web service proxy or provide your own synchronization. 
+
+T:System.Web.Services.Protocols.WebClientProtocol
+The properties on this class are copied into a new instance of a WebRequest object for each XML Web service method call. While you can call XML Web service methods on the same WebClientProtocol instance from different threads at the same time, there is no synchronization done to ensure that a consistent snapshot of the properties will get transferred to the WebRequest object. Therefore if you need to modify the properties and make concurrent method calls from different threads you should use a different instance of the XML Web service proxy or provide your own synchronization. 
+
+T:System.Windows.Forms.Control
+Only the following members are thread safe: BeginInvoke, EndInvoke, Invoke, InvokeRequired, and CreateGraphics if the handle for the control has already been created. Calling CreateGraphics before the control's handle has been created on a background thread can cause illegal cross thread calls. 
+
+T:System.Windows.Freezable
+Any public static members of this type are thread safe. Any instance members are not guaranteed to be thread safe. When the IsFrozen property is false, a Freezable object can be accessed only from the thread on which it was created. Attempting to access it from another thread throws an InvalidOperationException. The Dispatcher .Invoke and Dispatcher .BeginInvoke methods provide support for marshalling to the correct thread. When their IsFrozen property is true, Freezable objects are free-threaded. For more information, see Freezable Objects Overview. 
+
+T:System.Windows.Interop.HwndTarget
+A HwndTarget is not thread-safe. You can reference a HwndTarget only from the thread that created it. If you try to access HwndTarget from a different thread, an InvalidOperationException is thrown. 
+
+T:System.Windows.Threading.DispatcherObject
+Any public static members of this type are thread safe. Any instance members are not guaranteed to be thread safe. This object can be accessed only from the thread on which it was created. Attempts to access it from other threads will throw an InvalidOperationException. Invoke or BeginInvoke provide support for marshalling work to the correct thread. 
+
+T:System.Xml.Xsl.XslTransform
+XslTransform objects are only thread-safe for transform operations. Other operations are not guaranteed to be thread-safe. You must ensure that no other methods are called on the object during load operations. 
+

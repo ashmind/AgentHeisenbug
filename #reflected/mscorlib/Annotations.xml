@@ -55,6 +55,11 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.AggregateException">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
+  </member>
   <member name="T:System.AppDomain">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
@@ -111,6 +116,11 @@
     </attribute>
   </member>
   <member name="T:System.ArithmeticException">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Array">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -188,12 +198,27 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Collections.ArrayList">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.BitArray">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
   <member name="T:System.Collections.CaseInsensitiveComparer">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Collections.CaseInsensitiveHashCodeProvider">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.CollectionBase">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -230,6 +255,11 @@
   </member>
   <member name="T:System.Collections.Concurrent.Partitioner`1">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.DictionaryBase">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -300,6 +330,21 @@
     </attribute>
   </member>
   <member name="T:System.Collections.ObjectModel.ReadOnlyDictionary`2.ValueCollection">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Queue">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.SortedList">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>Static</argument>
+    </attribute>
+  </member>
+  <member name="T:System.Collections.Stack">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

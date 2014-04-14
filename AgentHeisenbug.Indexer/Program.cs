@@ -1,37 +1,39 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using AgentHeisenbug.Indexer.ReadOnly;
 using AgentHeisenbug.Indexer.ThreadSafe;
-using AshMind.Extensions;
 
 namespace AgentHeisenbug.Indexer {
     public static class Program {
         public static void Main(params string[] args) {
+            Console.Title = Assembly.GetExecutingAssembly().GetName().Name;
             FluentConsole.White.Line("Started");
-
+            
             var outputDirectory = new DirectoryInfo(args[0]);
             var msdnDirectory = new DirectoryInfo(ConfigurationManager.AppSettings["indexer:MsdnPath"]);
             var frameworkDirectory = new DirectoryInfo(ConfigurationManager.AppSettings["indexer:FrameworkPath"]);
             var assemblyFilter = ConfigurationManager.AppSettings["indexer:AssemblyFilter"];
 
+            var helpParsingFailures = new List<TypeHelp>();
             var providers = new IAnnotationProvider[] {
                 new ReadOnlyAnnotationProvider(frameworkDirectory),
-                new HelpAnnotationProvider(new HelpRawReader(msdnDirectory.GetFiles("*NET_FRAMEWORK_45*.mshc")))
+                new HelpAnnotationProvider(new HelpRawReader(msdnDirectory.GetFiles("*NET_FRAMEWORK_45*.mshc")), helpParsingFailures.Add)
             };
 
             using (ConsoleMultiProgressReporter.Start(providers)) {
-                ProcessAll(providers, assemblyFilter, outputDirectory);
+                var annotations = GetAllAnnotations(providers, assemblyFilter);
+                new AnnotationWriter().WriteAll(outputDirectory, annotations);
             }
+
+            WriteHelpParsingFailures(outputDirectory, helpParsingFailures);
         }
 
-        private static void ProcessAll(IEnumerable<IAnnotationProvider> providers, string assemblyFilter, DirectoryInfo outputDirectory) {
+        private static IEnumerable<AnnotationsByAssembly> GetAllAnnotations(IEnumerable<IAnnotationProvider> providers, string assemblyFilter) {
             var annotations = providers.AsParallel()
                                        .SelectMany(p => p.GetAnnotationsByAssembly(
                                            n => Regex.IsMatch(n, assemblyFilter),
@@ -39,9 +41,8 @@ namespace AgentHeisenbug.Indexer {
                                        ))
                                        .GroupBy(a => a.AssemblyName)
                                        .Select(MergeByAssembly);
-            //types = Buffer(types, 200);
 
-            new AnnotationWriter().WriteAll(outputDirectory, annotations.AsSequential());
+            return annotations.AsSequential();
         }
 
         private static AnnotationsByAssembly MergeByAssembly(IGrouping<string, AnnotationsByAssembly> group) {
@@ -52,23 +53,13 @@ namespace AgentHeisenbug.Indexer {
             return new AnnotationsByMember(group.Key, group.SelectMany(g => g.Annotations).ToArray());
         }
 
-        private static IEnumerable<T> Buffer<T>(IEnumerable<T> enumerable, int count) {
-            var index = 0;
-            var list = new List<T>();
-            using (var enumerator = enumerable.GetEnumerator()) {
-                while (enumerator.MoveNext()) {
-                    list.Add(enumerator.Current);
-                    index += 1;
-
-                    while (index < count && enumerator.MoveNext()) {
-                        list.Add(enumerator.Current);
-                        index += 1;
-                    }
-                    
-                    foreach (var item in list) {
-                        yield return item;
-                    }
-                    index = 0;
+        private static void WriteHelpParsingFailures(DirectoryInfo outputDirectory, IEnumerable<TypeHelp> failures) {
+            var filePath = Path.Combine(outputDirectory.FullName, "HelpParsingFailures.txt");
+            using (var writer = new StreamWriter(filePath)) {
+                foreach (var failure in failures.OrderBy(f => f.Id)) {
+                    writer.WriteLine(failure.Id);
+                    writer.WriteLine(failure.ThreadSafetyText);
+                    writer.WriteLine();
                 }
             }
         }
