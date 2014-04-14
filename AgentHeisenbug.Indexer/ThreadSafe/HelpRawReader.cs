@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.XPath;
+using AshMind.Extensions;
 
 namespace AgentHeisenbug.Indexer.ThreadSafe {
     public class HelpRawReader {
         private static readonly XmlNamespaceManager namespaceManager;
-        private readonly IEnumerable<FileInfo> files;
+        private readonly ICollection<FileInfo> files;
         
         static HelpRawReader() {
             namespaceManager = new XmlNamespaceManager(new NameTable());
@@ -18,12 +19,13 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             namespaceManager.AddNamespace("mtps",  "http://msdn2.microsoft.com/mtps");
         }
 
-        public HelpRawReader(IEnumerable<FileInfo> files) {
+        public HelpRawReader(ICollection<FileInfo> files) {
             this.files = files;
         }
 
-        public IEnumerable<TypeDescription> ReadFiles() {
-            return this.files.SelectMany(ReadFile);
+        public IEnumerable<TypeDescription> ReadFiles(Action<double> reportProgress) {
+            return this.files.OnAfterEach((_, index) => reportProgress((double)index / files.Count))
+                             .SelectMany(ReadFile);
         }
 
         private IEnumerable<TypeDescription> ReadFile(FileInfo file) {

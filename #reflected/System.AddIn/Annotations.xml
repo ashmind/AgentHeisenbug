@@ -1,86 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.AddIn">
   <member name="T:System.AddIn.AddInAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.AddInController">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.AddInEnvironment">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.AddInProcess">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.AddInSegmentDirectoryNotFoundException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.AddInStore">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.AddInToken">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.InvalidPipelineStoreException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Hosting.QualificationDataItem">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.AddInAdapterAttribute">
-    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.AddInBaseAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.CollectionAdapters">
-    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.ContractAdapter">
-    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.ContractBase">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.ContractHandle">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.AddIn.Pipeline.HostAdapterAttribute">
-    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>

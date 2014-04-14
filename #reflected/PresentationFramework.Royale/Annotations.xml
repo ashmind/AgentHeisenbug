@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="PresentationFramework.Royale">
   <member name="T:Microsoft.Windows.Themes.BulletChrome">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Windows.Themes.ButtonChrome">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Windows.Themes.DataGridHeaderBorder">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Windows.Themes.PlatformCulture">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Windows.Themes.ProgressBarBrushConverter">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Windows.Themes.ScrollChrome">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Windows.Themes.SystemDropShadowChrome">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>

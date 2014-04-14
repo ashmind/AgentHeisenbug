@@ -1,37 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.Web.ApplicationServices">
   <member name="T:System.Web.Security.MembershipCreateUserException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.Security.MembershipPasswordException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.Security.MembershipProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.Security.MembershipProviderCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.Security.MembershipUser">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.Security.MembershipUserCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Web.Security.RoleProvider">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>

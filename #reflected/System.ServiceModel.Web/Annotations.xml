@@ -1,208 +1,208 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="System.ServiceModel.Web">
   <member name="T:System.ServiceModel.Activation.WebScriptServiceHostFactory">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Activation.WebServiceHostFactory">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.JavascriptCallbackResponseMessageProperty">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.StreamBodyWriter">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.WebBodyFormatMessageProperty">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.WebContentTypeMapper">
-    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Channels.WebMessageEncodingBindingElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebHttpBindingCollectionElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebHttpBindingElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebHttpElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebHttpEndpointCollectionElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebHttpEndpointElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebHttpSecurityElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebMessageEncodingElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebScriptEnablingElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebScriptEndpointCollectionElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Configuration.WebScriptEndpointElement">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.JsonFaultDetail">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.WebHttpBehavior">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.WebHttpEndpoint">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.WebScriptEnablingBehavior">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.WebScriptEndpoint">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Description.WebServiceEndpoint">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Dispatcher.JsonQueryStringConverter">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Dispatcher.QueryStringConverter">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Dispatcher.WebHttpDispatchOperationSelector">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.AspNetCacheProfileAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.IncomingWebRequestContext">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.IncomingWebResponseContext">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.JavascriptCallbackBehaviorAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.OutgoingWebRequestContext">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.OutgoingWebResponseContext">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.WebChannelFactory`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.WebFaultException">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.WebFaultException`1">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.WebGetAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.WebInvokeAttribute">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.WebOperationContext">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Web.WebServiceHost">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.WebHttpBinding">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.ServiceModel.WebHttpSecurity">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>

@@ -1,163 +1,163 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly name="Microsoft.Build.Tasks.v4.0">
   <member name="T:Microsoft.Build.Tasks.AssignProjectConfiguration">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.CallTarget">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.CodeTaskFactory">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.CombinePath">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.ConvertToAbsolutePath">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.CompatibleFramework">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.CompatibleFrameworkCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.FileAssociation">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.FileAssociationCollection">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader">
-    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestWriter">
-    <attribute ctor="M:GeneratedReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:Microsoft.Build.Tasks.ExtractedClassName">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.FindAppConfigFile">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.FindInList">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.GetInstalledSDKLocations">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.GetReferenceAssemblyPaths">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.GetSDKReferenceFiles">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Move">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.RequiresFramework35SP1Assembly">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.ResolveProjectBase">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.ResolveSDKReference">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.WinMDExp">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.WriteCodeFragment">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Xaml.CommandLineArgumentRelation">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Xaml.CommandLineGenerator">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Xaml.CommandLineToolSwitch">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Xaml.PropertyRelation">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.Xaml.XamlDataDrivenToolTask">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.XamlTaskFactory">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.XmlPeek">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.XmlPoke">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Tasks.XslTransformation">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
   <member name="T:System.Deployment.Internal.CodeSigning.RSAPKCS1SHA256SignatureDescription">
-    <attribute ctor="M:GeneratedThreadSafeAttribute.#ctor">
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using AgentHeisenbug.Annotations.Generated;
 using JetBrains.Metadata.Reader.API;
 using JetBrains.Metadata.Utils;
 using JetBrains.Util;
@@ -11,7 +12,7 @@ namespace AgentHeisenbug.Indexer.ReadOnly {
     public class ReadOnlyAnnotationProvider : IAnnotationProvider {
         private static readonly object CachedTrue = new object();
         private static readonly object CachedFalse = new object();
-        private static readonly Annotation ReadOnlyAnnotation = new Annotation("M:JetBrains.Annotations.GeneratedReadOnlyAttribute.#ctor");
+        private static readonly Annotation ReadOnlyAnnotation = new Annotation("M:" + typeof(GeneratedReadOnlyAttribute).FullName + ".#ctor");
 
         private readonly ConditionalWeakTable<IMetadataTypeInfo, object> typeCache = new ConditionalWeakTable<IMetadataTypeInfo, object>();
         private readonly DirectoryInfo frameworkDirectory;
@@ -20,16 +21,21 @@ namespace AgentHeisenbug.Indexer.ReadOnly {
             this.frameworkDirectory = frameworkDirectory;
         }
 
-        public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(Func<string, bool> assemblyNameFilter) {
+        public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(Func<string, bool> assemblyNameFilter, Action<double> reportProgress) {
             var frameworkPath = FileSystemPath.Parse(frameworkDirectory.FullName);
             using (var loader = new MetadataLoader(frameworkPath)) {
                 var assemblyPaths = frameworkPath.GetChildFiles("*.dll");
+
+                var processedCount = 0;
                 foreach (var assemblyPath in assemblyPaths) {
                     var assembly = loader.TryLoadFrom(assemblyPath, JetFunc<AssemblyNameInfo>.True);
                     if (assembly == null || assembly.AssemblyName == null || !assemblyNameFilter(assembly.AssemblyName.Name))
                         continue;
 
                     yield return new AnnotationsByAssembly(assembly.AssemblyName.Name, InferReadOnlyForAssembly(assembly));
+                    
+                    processedCount += 1;
+                    reportProgress((double)processedCount/assemblyPaths.Count);
                 }
             }
         }

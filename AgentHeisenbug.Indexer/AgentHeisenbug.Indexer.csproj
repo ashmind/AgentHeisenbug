@@ -37,11 +37,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Argument.1.0.0\lib\net45\Argument.dll</HintPath>
     </Reference>
-    <Reference Include="AshMind.Extensions">
-      <HintPath>..\#packages\AshMind.Extensions.1.1.5\lib\net45\AshMind.Extensions.dll</HintPath>
+    <Reference Include="AshMind.Extensions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\#packages\AshMind.Extensions.1.2.1\lib\net45\AshMind.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="ClariusLabs.NuDoc">
       <HintPath>..\#packages\NuDoc.0.4.1308.1316\lib\net35\ClariusLabs.NuDoc.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentConsole">
+      <HintPath>..\#packages\FluentConsole.0.8.3.0\lib\net35-Client\FluentConsole.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Platform.ReSharper.Metadata, Version=7.1.25.156, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -50,6 +54,9 @@
     <Reference Include="JetBrains.Platform.ReSharper.Util, Version=7.1.25.156, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\JetBrains.ReSharper.SDK.8.2.1158\bin\JetBrains.Platform.ReSharper.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="ShellProgressBar">
+      <HintPath>..\#packages\ShellProgressBar.1.0.0.0\lib\NET4\ShellProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable">
@@ -69,7 +76,11 @@
     <Compile Include="AnnotationWriter.cs" />
     <Compile Include="AnnotationsByMember.cs" />
     <Compile Include="AnnotationsByAssembly.cs" />
+    <Compile Include="ConsoleMultiProgressReporter.cs" />
     <Compile Include="ReadOnly\ReadOnlyAnnotationProvider.cs" />
+    <Compile Include="TaskbarApi\CTaskbarList.cs" />
+    <Compile Include="TaskbarApi\ITaskbarList4.cs" />
+    <Compile Include="TaskbarApi\TaskbarProgressBarStatus.cs" />
     <Compile Include="ThreadSafe\HelpAnnotationProvider.cs" />
     <Compile Include="IAnnotationProvider.cs" />
     <Compile Include="ThreadSafe\TypeDescriptionIdEqualityComparer.cs" />
@@ -82,6 +93,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgentHeisenbug.Annotations.Generated\AgentHeisenbug.Annotations.Generated.csproj">
+      <Project>{363F856C-0F58-4B43-BC48-CE275F9A5403}</Project>
+      <Name>AgentHeisenbug.Annotations.Generated</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

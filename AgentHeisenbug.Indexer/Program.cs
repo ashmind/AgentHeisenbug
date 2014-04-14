@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 using AgentHeisenbug.Indexer.ReadOnly;
 using AgentHeisenbug.Indexer.ThreadSafe;
+using AshMind.Extensions;
 
 namespace AgentHeisenbug.Indexer {
     public static class Program {
         public static void Main(params string[] args) {
+            FluentConsole.White.Line("Started");
+
             var outputDirectory = new DirectoryInfo(args[0]);
             var msdnDirectory = new DirectoryInfo(ConfigurationManager.AppSettings["indexer:MsdnPath"]);
             var frameworkDirectory = new DirectoryInfo(ConfigurationManager.AppSettings["indexer:FrameworkPath"]);
@@ -17,11 +23,20 @@ namespace AgentHeisenbug.Indexer {
 
             var providers = new IAnnotationProvider[] {
                 new ReadOnlyAnnotationProvider(frameworkDirectory),
-                new HelpAnnotationProvider(new HelpRawReader(msdnDirectory.EnumerateFiles("*NET_FRAMEWORK_45*.mshc")))
+                new HelpAnnotationProvider(new HelpRawReader(msdnDirectory.GetFiles("*NET_FRAMEWORK_45*.mshc")))
             };
 
+            using (ConsoleMultiProgressReporter.Start(providers)) {
+                ProcessAll(providers, assemblyFilter, outputDirectory);
+            }
+        }
+
+        private static void ProcessAll(IEnumerable<IAnnotationProvider> providers, string assemblyFilter, DirectoryInfo outputDirectory) {
             var annotations = providers.AsParallel()
-                                       .SelectMany(p => p.GetAnnotationsByAssembly(n => Regex.IsMatch(n, assemblyFilter)))
+                                       .SelectMany(p => p.GetAnnotationsByAssembly(
+                                           n => Regex.IsMatch(n, assemblyFilter),
+                                           progress => ConsoleMultiProgressReporter.Progress(p, progress)
+                                       ))
                                        .GroupBy(a => a.AssemblyName)
                                        .Select(MergeByAssembly);
             //types = Buffer(types, 200);

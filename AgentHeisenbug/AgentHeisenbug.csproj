@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AshMind.Extensions">
-      <HintPath>..\#packages\AshMind.Extensions.1.1.5\lib\net35\AshMind.Extensions.dll</HintPath>
+    <Reference Include="Argument">
+      <HintPath>..\#packages\Argument.1.0.0\lib\net20\Argument.dll</HintPath>
+    </Reference>
+    <Reference Include="AshMind.Extensions, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\#packages\AshMind.Extensions.1.2.1\lib\net35\AshMind.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\#packages\Newtonsoft.Json.6.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
@@ -50,6 +54,7 @@
     <Compile Include="Analyzers\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafeTypeExposureAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\AnalyzerPreconditions.cs" />
+    <Compile Include="Annotations\HeisenbugDebugExternalAnnotationFileProvider.cs" />
     <Compile Include="Highlightings\Highlightings.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgentHeisenbug.Annotations.Generated\AgentHeisenbug.Annotations.Generated.csproj">
+      <Project>{363f856c-0f58-4b43-bc48-ce275f9a5403}</Project>
+      <Name>AgentHeisenbug.Annotations.Generated</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="CopyExternalAnnotationsToReSharper" AfterTargets="Build">

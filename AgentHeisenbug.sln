@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentHeisenbug", "AgentHeis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentHeisenbug.Indexer", "AgentHeisenbug.Indexer\AgentHeisenbug.Indexer.csproj", "{7BE9C46A-EEB4-469A-A73B-857DDEE6C46F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentHeisenbug.Annotations.Generated", "AgentHeisenbug.Annotations.Generated\AgentHeisenbug.Annotations.Generated.csproj", "{363F856C-0F58-4B43-BC48-CE275F9A5403}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{7BE9C46A-EEB4-469A-A73B-857DDEE6C46F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE9C46A-EEB4-469A-A73B-857DDEE6C46F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE9C46A-EEB4-469A-A73B-857DDEE6C46F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363F856C-0F58-4B43-BC48-CE275F9A5403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363F856C-0F58-4B43-BC48-CE275F9A5403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363F856C-0F58-4B43-BC48-CE275F9A5403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363F856C-0F58-4B43-BC48-CE275F9A5403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

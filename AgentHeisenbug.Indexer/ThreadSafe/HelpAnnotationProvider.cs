@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Annotations.Generated;
 using AshMind.Extensions;
 
 namespace AgentHeisenbug.Indexer.ThreadSafe {
     public class HelpAnnotationProvider : IAnnotationProvider {
-        private const string ThreadSafeConstructorXmlId = "M:GeneratedThreadSafeAttribute.#ctor";
+        private static readonly string ThreadSafeConstructorXmlId = "M:" + typeof(GeneratedThreadSafeAttribute).FullName + ".#ctor";
         private const string NonParsedFileName = "NotParsed.Generated.txt";
 
         private readonly HelpRawReader reader;
@@ -14,9 +15,9 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             this.reader = reader;
         }
 
-        public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(Func<string, bool> assemblyNameFilter) {
+        public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(Func<string, bool> assemblyNameFilter, Action<double> reportProgress) {
             var typesByAssembly = new Dictionary<string, ISet<TypeDescription>>();
-            foreach (var type in this.reader.ReadFiles()) {
+            foreach (var type in this.reader.ReadFiles(reportProgress)) {
                 foreach (var assemblyName in type.AssemblyNames) {
                     if (!assemblyNameFilter(assemblyName))
                         continue;
