@@ -1,0 +1,23 @@
+﻿using System;
+using JetBrains.Annotations;
+
+namespace JetBrains.Annotations {
+    public class ThreadSafeAttribute : Attribute {}
+    public class ReadOnlyAttribute   : Attribute {}
+}
+
+[ThreadSafe] public class Safe     {}
+[ReadOnly]   public class ReadOnly {}
+             public class NonSafe  {}
+
+[ThreadSafe]
+public class Fields {
+    private Safe |mutable1|(0);
+    
+    private readonly Safe readonly1;
+    private readonly ReadOnly readonly2;
+    private readonly |NonSafe|(1) readonly3;
+}
+---------------------------------------------------------
+(0): ReSharper Warning: Field 'mutable1' in a [ThreadSafe] class should be readonly.
+(1): ReSharper Warning: Type 'NonSafe' of field 'readonly3' in a [ThreadSafe] type should be thread-safe.

@@ -4,6 +4,7 @@ using System.Linq;
 using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
+using JetBrains.ReSharper.Psi.Tree;
 
 namespace AgentHeisenbug.Analyzers.Helpers {
     [PsiComponent]
@@ -14,13 +15,13 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             this.annotationCache = annotationCache;
         }
 
-        public bool MustBeThreadSafe(ICSharpTreeNode node) {
-            var typeNode = node.GetContainingTypeDeclaration();
+        public bool MustBeThreadSafe(ITreeNode node) {
+            var typeNode = node.GetContainingNode<ITypeDeclaration>();
             if (typeNode == null)
                 return false;
 
             var safety = this.annotationCache.GetThreadSafety(typeNode.DeclaredElement);
-            var member = node.GetContainingTypeMemberDeclaration();
+            var member = node.GetContainingNode<ICSharpTypeMemberDeclaration>();
             if (member == null)
                 return safety.Instance && safety.Static;
 

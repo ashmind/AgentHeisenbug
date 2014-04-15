@@ -2,43 +2,110 @@
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
-using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Highlightings;
 
-<# var model = new Dictionary<string, string> {
-    { "CallToNotThreadSafeStaticMethodInThreadSafeType", "Call to static method that is not thread-safe from type annotated with [ThreadSafe]" },
-    { "MutableFieldOrPropertyInThreadSafeType",          "Mutable property or field in type annotated with [ThreadSafe]" },
-    { "FieldOfNonThreadSafeTypeInThreadSafeType",        "Field of type that is not thread-safe, in type annotated with [ThreadSafe]" },
-    { "ExposingNotThreadSafeTypeInThreadSafeType",       "Exposing type that is not thread-safe from type annotated with [ThreadSafe]" },
-    
-    { "MutableFieldInReadOnlyType",                      "Mutable field in type annotated with [ReadOnly]" },
-    { "FieldOfMutableTypeInReadOnlyType",                "Field of mutable type in type annotated with [ReadOnly]" },
+<# var models = new List<Model> {
+    new Model(
+        "CallToNotThreadSafeStaticMethodInThreadSafeType",
+        "Call to static method that is not thread-safe from type annotated with [ThreadSafe]",
+        "Method '{0}' is not declared to be thread-safe.",
+        "string methodName"
+    ),
+
+    new Model(
+        "MutableFieldInThreadSafeType",
+        "Mutable field in type annotated with [ThreadSafe]",
+        "Field '{0}' in a [ThreadSafe] class should be readonly.",
+        "string fieldName"
+    ),
+
+    new Model(
+        "MutableAutoPropertyInThreadSafeType",
+        "Mutable auto property in type annotated with [ThreadSafe]",
+        "Setter of auto property '{0}' in a [ThreadSafe] class should be private.",
+        "string propertyName"
+    ),
+
+    new Model(
+        "AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType",
+        "Auto property assigned outside of constructor in type annotated with [ThreadSafe]",
+        "Auto property '{0}' in a [ThreadSafe] class should only be assigned in a constructor.",
+        "string propertyName"
+    ),
+
+    new Model(
+        "FieldOfNonThreadSafeTypeInThreadSafeType",
+        "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
+        "Type '{1}' of field '{0}' in a [ThreadSafe] type should be thread-safe.",
+        "string fieldName, string typeName"
+    ),
+
+    new Model(
+        "AutoPropertyOfNonThreadSafeTypeInThreadSafeType",
+        "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
+        "Type '{1}' of auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
+        "string propertyName, string typeName"
+    ),
+
+    new Model(
+        "MutableFieldInReadOnlyType",
+        "Mutable field in type annotated with [ReadOnly]",
+        "Field '{0}' in a [ThreadSafe] class should be readonly.",
+        "string fieldName"
+    ),
+
+    new Model(
+        "FieldOfMutableTypeInReadOnlyType",
+        "Field of mutable type in type annotated with [ReadOnly]",
+        "Type '{1}' of field '{0}' in a [ReadOnly] type should be read only.",
+        "string fieldName, string typeName"
+    )
 }; #>
 
-<# foreach (var pair in model) { #>
+<# foreach (var model in models) { #>
 [assembly: RegisterConfigurableSeverity(
-    <#= pair.Key #>.Id,
+    <#= model.Id #>.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "<#= pair.Value #>",
-    "<#= pair.Value #>",
+    "<#= model.Description #>",
+    "<#= model.Description #>",
     Severity.WARNING,
     false
 )]
 <# } #>
 
-namespace AgentHeisenbug.Highlightings {<# foreach (var pair in model) { #>
+namespace AgentHeisenbug.Highlightings {<# foreach (var model in models) { #>
 
-    [ConfigurableSeverityHighlighting(<#= pair.Key #>.Id, CSharpLanguage.Name)]
-    public class <#= pair.Key #> : ThreadSafetyHighligtingBase {
-        public const string Id = "<#= pair.Key #>";
+    [ConfigurableSeverityHighlighting(<#= model.Id #>.Id, CSharpLanguage.Name)]
+    public class <#= model.Id #> : HeisenbugHighligtingBase {
+        public const string Id = "<#= model.Id #>";
 
-        [StringFormatMethod("messageFormat")]
-        public <#= pair.Key #>(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+        public <#= model.Id #>(ITreeNode element, <#= model.Arguments #>) : base(
+            element,
+            "<#= model.MessageFormat #>",
+            <#= Regex.Replace(model.Arguments, @"(?<=(?:^|,)\s*)\S+\s+", "") #>
+        ) {}
     }
 <# } #>}
+
+<#+
+private class Model {
+    public string Id { get; private set; }
+    public string Description { get; private set; }
+    public string MessageFormat { get; private set; }
+    public string Arguments { get; private set; }
+
+    public Model(string id, string description, string messageFormat, string arguments) {
+        this.Id = id;
+        this.Description = description;
+        this.MessageFormat = messageFormat;
+        this.Arguments = arguments;
+    }
+}
+#>

@@ -1,0 +1,36 @@
+﻿using System;
+using JetBrains.Annotations;
+
+namespace JetBrains.Annotations {
+    public class ThreadSafeAttribute : Attribute {}
+    public class ReadOnlyAttribute   : Attribute {}
+}
+
+[ThreadSafe] public class Safe     {}
+[ReadOnly]   public class ReadOnly {}
+             public class NonSafe  {}
+
+[ThreadSafe]
+public class Properties {
+    public Safe AutoGetSet1 { get; |set|(0); }
+
+    public Safe GetSet1 { get { return null; } set { } }
+
+    public NonSafe GetOnly1 { get { return null; } }
+
+    public Safe AutoPrivateSet1 { get; private set; }
+    public ReadOnly AutoPrivateSet2 { get; private set; }
+    public |NonSafe|(1) AutoPrivateSet3 { get; private set; }
+
+    public Properties() {
+        AutoPrivateSet1 = null;
+    }
+
+    public void Change(Safe value) {
+        |AutoPrivateSet1 = value|(2);
+    }
+}
+---------------------------------------------------------
+(0): ReSharper Warning: Setter of auto property 'AutoGetSet1' in a [ThreadSafe] class should be private.
+(1): ReSharper Warning: Type 'NonSafe' of auto property 'AutoPrivateSet3' in a [ThreadSafe] type should be thread-safe.
+(2): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.

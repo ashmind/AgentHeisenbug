@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon;
+﻿using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Highlightings;
@@ -15,11 +14,29 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
-    MutableFieldOrPropertyInThreadSafeType.Id,
+    MutableFieldInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Mutable property or field in type annotated with [ThreadSafe]",
-    "Mutable property or field in type annotated with [ThreadSafe]",
+    "Mutable field in type annotated with [ThreadSafe]",
+    "Mutable field in type annotated with [ThreadSafe]",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
+    MutableAutoPropertyInThreadSafeType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Mutable auto property in type annotated with [ThreadSafe]",
+    "Mutable auto property in type annotated with [ThreadSafe]",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
+    AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Auto property assigned outside of constructor in type annotated with [ThreadSafe]",
+    "Auto property assigned outside of constructor in type annotated with [ThreadSafe]",
     Severity.WARNING,
     false
 )]
@@ -33,11 +50,11 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
-    ExposingNotThreadSafeTypeInThreadSafeType.Id,
+    AutoPropertyOfNonThreadSafeTypeInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Exposing type that is not thread-safe from type annotated with [ThreadSafe]",
-    "Exposing type that is not thread-safe from type annotated with [ThreadSafe]",
+    "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
+    "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
     Severity.WARNING,
     false
 )]
@@ -62,50 +79,91 @@ using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Highlightings {
     [ConfigurableSeverityHighlighting(CallToNotThreadSafeStaticMethodInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class CallToNotThreadSafeStaticMethodInThreadSafeType : ThreadSafetyHighligtingBase {
+    public class CallToNotThreadSafeStaticMethodInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "CallToNotThreadSafeStaticMethodInThreadSafeType";
 
-        [StringFormatMethod("messageFormat")]
-        public CallToNotThreadSafeStaticMethodInThreadSafeType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+        public CallToNotThreadSafeStaticMethodInThreadSafeType(ITreeNode element, string methodName) : base(
+            element,
+            "Method '{0}' is not declared to be thread-safe.",
+            methodName
+        ) {}
     }
 
-    [ConfigurableSeverityHighlighting(MutableFieldOrPropertyInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class MutableFieldOrPropertyInThreadSafeType : ThreadSafetyHighligtingBase {
-        public const string Id = "MutableFieldOrPropertyInThreadSafeType";
+    [ConfigurableSeverityHighlighting(MutableFieldInThreadSafeType.Id, CSharpLanguage.Name)]
+    public class MutableFieldInThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "MutableFieldInThreadSafeType";
 
-        [StringFormatMethod("messageFormat")]
-        public MutableFieldOrPropertyInThreadSafeType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+        public MutableFieldInThreadSafeType(ITreeNode element, string fieldName) : base(
+            element,
+            "Field '{0}' in a [ThreadSafe] class should be readonly.",
+            fieldName
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(MutableAutoPropertyInThreadSafeType.Id, CSharpLanguage.Name)]
+    public class MutableAutoPropertyInThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "MutableAutoPropertyInThreadSafeType";
+
+        public MutableAutoPropertyInThreadSafeType(ITreeNode element, string propertyName) : base(
+            element,
+            "Setter of auto property '{0}' in a [ThreadSafe] class should be private.",
+            propertyName
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType.Id, CSharpLanguage.Name)]
+    public class AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType";
+
+        public AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType(ITreeNode element, string propertyName) : base(
+            element,
+            "Auto property '{0}' in a [ThreadSafe] class should only be assigned in a constructor.",
+            propertyName
+        ) {}
     }
 
     [ConfigurableSeverityHighlighting(FieldOfNonThreadSafeTypeInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class FieldOfNonThreadSafeTypeInThreadSafeType : ThreadSafetyHighligtingBase {
+    public class FieldOfNonThreadSafeTypeInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "FieldOfNonThreadSafeTypeInThreadSafeType";
 
-        [StringFormatMethod("messageFormat")]
-        public FieldOfNonThreadSafeTypeInThreadSafeType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+        public FieldOfNonThreadSafeTypeInThreadSafeType(ITreeNode element, string fieldName, string typeName) : base(
+            element,
+            "Type '{1}' of field '{0}' in a [ThreadSafe] type should be thread-safe.",
+            fieldName, typeName
+        ) {}
     }
 
-    [ConfigurableSeverityHighlighting(ExposingNotThreadSafeTypeInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class ExposingNotThreadSafeTypeInThreadSafeType : ThreadSafetyHighligtingBase {
-        public const string Id = "ExposingNotThreadSafeTypeInThreadSafeType";
+    [ConfigurableSeverityHighlighting(AutoPropertyOfNonThreadSafeTypeInThreadSafeType.Id, CSharpLanguage.Name)]
+    public class AutoPropertyOfNonThreadSafeTypeInThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "AutoPropertyOfNonThreadSafeTypeInThreadSafeType";
 
-        [StringFormatMethod("messageFormat")]
-        public ExposingNotThreadSafeTypeInThreadSafeType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+        public AutoPropertyOfNonThreadSafeTypeInThreadSafeType(ITreeNode element, string propertyName, string typeName) : base(
+            element,
+            "Type '{1}' of auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
+            propertyName, typeName
+        ) {}
     }
 
     [ConfigurableSeverityHighlighting(MutableFieldInReadOnlyType.Id, CSharpLanguage.Name)]
-    public class MutableFieldInReadOnlyType : ThreadSafetyHighligtingBase {
+    public class MutableFieldInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "MutableFieldInReadOnlyType";
 
-        [StringFormatMethod("messageFormat")]
-        public MutableFieldInReadOnlyType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+        public MutableFieldInReadOnlyType(ITreeNode element, string fieldName) : base(
+            element,
+            "Field '{0}' in a [ThreadSafe] class should be readonly.",
+            fieldName
+        ) {}
     }
 
     [ConfigurableSeverityHighlighting(FieldOfMutableTypeInReadOnlyType.Id, CSharpLanguage.Name)]
-    public class FieldOfMutableTypeInReadOnlyType : ThreadSafetyHighligtingBase {
+    public class FieldOfMutableTypeInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "FieldOfMutableTypeInReadOnlyType";
 
-        [StringFormatMethod("messageFormat")]
-        public FieldOfMutableTypeInReadOnlyType(ITreeNode element, string messageFormat, params object[] args) : base(element, messageFormat, args) {}
+        public FieldOfMutableTypeInReadOnlyType(ITreeNode element, string fieldName, string typeName) : base(
+            element,
+            "Type '{1}' of field '{0}' in a [ReadOnly] type should be read only.",
+            fieldName, typeName
+        ) {}
     }
 }
+

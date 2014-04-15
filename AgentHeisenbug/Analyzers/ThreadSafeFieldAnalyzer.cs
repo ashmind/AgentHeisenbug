@@ -9,7 +9,10 @@ using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers {
-    [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldOrPropertyInThreadSafeType) })]
+    [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] {
+        typeof(MutableFieldInThreadSafeType),
+        typeof(FieldOfNonThreadSafeTypeInThreadSafeType)
+    })]
     public class ThreadSafeFieldAnalyzer : IElementProblemAnalyzer {
         private readonly AnalyzerPreconditions preconditions;
         private readonly ReferencedTypeHelper referenceHelper;
@@ -23,18 +26,16 @@ namespace AgentHeisenbug.Analyzers {
             var field = (IFieldDeclaration)element;
             if (!this.preconditions.MustBeThreadSafe(field))
                 return;
-
+            
             if (!field.IsReadonly) {
-                consumer.AddHighlighting(new MutableFieldOrPropertyInThreadSafeType(field, "Field '{0}' in a [ThreadSafe] class should not be mutable.", field.DeclaredName));
+                consumer.AddHighlighting(new MutableFieldInThreadSafeType(field, field.DeclaredName));
                 return;
             }
 
-            if (!this.referenceHelper.GetThreadSafety(field.Type).Instance) {
+            if (!this.referenceHelper.GetThreadSafety(field.Type).Instance && !this.referenceHelper.IsReadOnly(field.Type)) {
                 consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
-                    field.TypeUsage,
-                    "Type '{0}' of field '{1}' in a [ThreadSafe] type should be thread-safe.",
-                    field.Type.GetPresentableName(CSharpLanguage.Instance), field.DeclaredName)
-                );
+                    field.TypeUsage, field.DeclaredName, field.Type.GetPresentableName(CSharpLanguage.Instance)
+                ));
             }
         }
     }

@@ -27,17 +27,14 @@ namespace AgentHeisenbug.Analyzers {
                 return;
 
             if (!field.IsReadonly) {
-                consumer.AddHighlighting(new MutableFieldInReadOnlyType(field, "Field '{0}' in a [ReadOnly] type should not be mutable.", field.DeclaredName));
+                consumer.AddHighlighting(new MutableFieldInReadOnlyType(field, field.DeclaredName));
                 return;
             }
 
             if (!this.referenceHelper.IsReadOnly(field.Type)) {
                 consumer.AddHighlighting(new FieldOfMutableTypeInReadOnlyType(
-                    field.TypeUsage,
-                    "Type '{0}' of field '{1}' in a [ReadOnly] type should not be mutable.",
-                    field.Type.GetPresentableName(CSharpLanguage.Instance), field.DeclaredName)
-                );
-                return;
+                    field.TypeUsage, field.DeclaredName, field.Type.GetPresentableName(CSharpLanguage.Instance)
+                ));
             }
         }
     }

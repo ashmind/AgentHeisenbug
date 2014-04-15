@@ -1,4 +1,4 @@
-You have just generated an empty ReSharper plug-in test project.
+﻿You have just generated an empty ReSharper plugin test project.
 
 To add additional tests to your project, use the Add|New Item... menu.
 

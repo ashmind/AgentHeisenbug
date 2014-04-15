@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentHeisenbug.Indexer", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentHeisenbug.Annotations.Generated", "AgentHeisenbug.Annotations.Generated\AgentHeisenbug.Annotations.Generated.csproj", "{363F856C-0F58-4B43-BC48-CE275F9A5403}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgentHeisenbug.Tests", "AgentHeisenbug.Tests\AgentHeisenbug.Tests.csproj", "{1BAF38E0-8023-471D-8C13-9A80E75841EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{363F856C-0F58-4B43-BC48-CE275F9A5403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{363F856C-0F58-4B43-BC48-CE275F9A5403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{363F856C-0F58-4B43-BC48-CE275F9A5403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAF38E0-8023-471D-8C13-9A80E75841EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAF38E0-8023-471D-8C13-9A80E75841EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAF38E0-8023-471D-8C13-9A80E75841EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAF38E0-8023-471D-8C13-9A80E75841EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

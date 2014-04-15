@@ -42,9 +42,7 @@ namespace AgentHeisenbug.Analyzers {
             if (safetyLevel.Static)
                 return;
 
-            consumer.AddHighlighting(new CallToNotThreadSafeStaticMethodInThreadSafeType(
-                call.InvokedExpression, "Method '{0}' is not declared to be thread-safe.", method.ShortName
-            ));
+            consumer.AddHighlighting(new CallToNotThreadSafeStaticMethodInThreadSafeType(call.InvokedExpression, method.ShortName));
         }
     }
 }

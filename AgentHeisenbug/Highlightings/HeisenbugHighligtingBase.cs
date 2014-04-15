@@ -6,12 +6,12 @@ using JetBrains.ReSharper.Daemon.Impl;
 using JetBrains.ReSharper.Psi.Tree;
 
 namespace AgentHeisenbug.Highlightings {
-    public class ThreadSafetyHighligtingBase : IHighlightingWithRange {
+    public class HeisenbugHighligtingBase : IHighlightingWithRange {
         private readonly ITreeNode element;
         private readonly string message;
 
         [StringFormatMethod("messageFormat")]
-        public ThreadSafetyHighligtingBase(ITreeNode element, string messageFormat, params object[] args) {
+        protected HeisenbugHighligtingBase(ITreeNode element, string messageFormat, params object[] args) {
             this.element = element;
             this.message = string.Format(messageFormat, args);
         }
@@ -25,7 +25,7 @@ namespace AgentHeisenbug.Highlightings {
         }
 
         public string ErrorStripeToolTip {
-            get { throw new NotSupportedException(); }
+            get { return this.message; }
         }
 
         public bool IsValid() {
