@@ -31,7 +31,7 @@ namespace AgentHeisenbug.Analyzers {
                 return;
             }
 
-            if (!this.referenceHelper.IsReadOnly(field.Type)) {
+            if (!this.referenceHelper.IsReadOnlyOrImmutable(field.Type)) {
                 consumer.AddHighlighting(new FieldOfMutableTypeInReadOnlyType(
                     field.TypeUsage, field.DeclaredName, field.Type.GetPresentableName(CSharpLanguage.Instance)
                 ));

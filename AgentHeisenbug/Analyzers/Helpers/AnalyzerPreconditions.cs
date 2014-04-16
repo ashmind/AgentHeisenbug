@@ -5,6 +5,7 @@ using AgentHeisenbug.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
+using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers.Helpers {
     [PsiComponent]
@@ -23,9 +24,9 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             var safety = this.annotationCache.GetThreadSafety(typeNode.DeclaredElement);
             var member = node.GetContainingNode<ICSharpTypeMemberDeclaration>();
             if (member == null)
-                return safety.Instance && safety.Static;
+                return safety == ThreadSafety.All;
 
-            return member.IsStatic ? safety.Static : safety.Instance;
+            return member.IsStatic ? safety.Has(ThreadSafety.Static) : safety.Has(ThreadSafety.Instance);
         }
 
         public bool MustBeReadOnly(ICSharpTreeNode node) {

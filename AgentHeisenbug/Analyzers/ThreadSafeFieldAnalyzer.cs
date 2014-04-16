@@ -32,7 +32,7 @@ namespace AgentHeisenbug.Analyzers {
                 return;
             }
 
-            if (!this.referenceHelper.GetThreadSafety(field.Type).Instance && !this.referenceHelper.IsReadOnly(field.Type)) {
+            if (!this.referenceHelper.IsInstanceThreadSafeOrReadOnlyOrImmutable(field.Type)) {
                 consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
                     field.TypeUsage, field.DeclaredName, field.Type.GetPresentableName(CSharpLanguage.Instance)
                 ));

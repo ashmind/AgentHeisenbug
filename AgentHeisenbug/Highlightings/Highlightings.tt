@@ -40,6 +40,13 @@ using AgentHeisenbug.Highlightings;
     ),
 
     new Model(
+        "ParameterOfNonThreadSafeTypeInThreadSafeMethod",
+        "Parameter of type that is not thread-safe in a thread-safe method",
+        "Type '{1}' of parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
+        "string paramterName, string typeName"
+    ),
+
+    new Model(
         "FieldOfNonThreadSafeTypeInThreadSafeType",
         "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
         "Type '{1}' of field '{0}' in a [ThreadSafe] type should be thread-safe.",

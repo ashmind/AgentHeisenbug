@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.ReSharper.Psi;
 using AgentHeisenbug.Annotations;
+using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers.Helpers {
     [PsiComponent]
@@ -20,7 +21,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             return false;
         }
 
-        public bool IsReadOnly(IType type) {
+        public bool IsReadOnlyOrImmutable(IType type) {
             if (IsImmutable(type))
                 return true;
 
@@ -28,18 +29,31 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             if (scalarType == null)
                 return false;
 
-            return this.annotationCache.IsReadOnly(scalarType.GetTypeElement());
+            var typeElement = scalarType.GetTypeElement();
+            if (typeElement == null)
+                return false;
+
+            return this.annotationCache.IsReadOnly(typeElement);
         }
 
         public ThreadSafety GetThreadSafety(IType type) {
             if (IsImmutable(type))
-                return ThreadSafety.Values.All;
+                return ThreadSafety.All;
 
             var scalarType = type.GetScalarType();
             if (scalarType == null)
-                return ThreadSafety.Values.None;
+                return ThreadSafety.None;
 
-            return this.annotationCache.GetThreadSafety(scalarType.GetTypeElement());
+            var typeElement = scalarType.GetTypeElement();
+            if (typeElement == null)
+                return ThreadSafety.None;
+
+            return this.annotationCache.GetThreadSafety(typeElement);
+        }
+
+        public bool IsInstanceThreadSafeOrReadOnlyOrImmutable(IType type) {
+            return IsReadOnlyOrImmutable(type)
+                || GetThreadSafety(type).Has(ThreadSafety.Instance);
         }
     }
 }

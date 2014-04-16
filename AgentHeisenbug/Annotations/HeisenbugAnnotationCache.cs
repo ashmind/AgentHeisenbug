@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using AgentHeisenbug.Annotations.Generated;
+using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.CodeAnnotations;
@@ -23,22 +24,22 @@ namespace AgentHeisenbug.Annotations {
             this.annotationCache = annotationCache;
         }
 
-        public ThreadSafety GetThreadSafety(IAttributesOwner member) {
+        public ThreadSafety GetThreadSafety([NotNull] IAttributesOwner member) {
             return this.threadSafeCache.GetOrAdd(member, m => GetValueUncached(
                 m, "ThreadSafeAttribute",
-                ThreadSafety.Values.All,
-                generated => ThreadSafety.Parse(GetPositionalAttributeValue((ExternalAnnotationAttributeInstance)generated, 0)),
+                ThreadSafety.All,
+                generated => (ThreadSafety)Enum.Parse(typeof(ThreadSafety), GetPositionalAttributeValue((ExternalAnnotationAttributeInstance)generated, 0)),
                 GetThreadSafety
             ));
         }
         
-        public bool IsReadOnly(IAttributesOwner member) {
+        public bool IsReadOnly([NotNull] IAttributesOwner member) {
             return this.readOnlyCache.GetOrAdd(member, m => GetValueUncached(
                 m, "ReadOnlyAttribute", true, _ => true, IsReadOnly
             ));
         }
 
-        private T GetValueUncached<T>(IAttributesOwner member, string attributeShortName, T valueIfManual, Func<IAttributeInstance, T> valueIfGenerated, Func<IAttributesOwner, T> getValueCached) {
+        private T GetValueUncached<T>([NotNull] IAttributesOwner member, string attributeShortName, T valueIfManual, Func<IAttributeInstance, T> valueIfGenerated, Func<IAttributesOwner, T> getValueCached) {
             var attributes = member.GetAttributeInstances(true);
             var manual = attributes.Any(a => this.annotationCache.IsAnnotationAttribute(a, attributeShortName));
             if (manual)

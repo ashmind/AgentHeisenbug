@@ -49,10 +49,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\ThreadSafe.Parameters.cs.gold" />
     <None Include="Files\ThreadSafe.Properties.cs.gold" />
     <None Include="Files\ThreadSafe.Fields.cs.gold" />
     <Content Include="Files\ThreadSafe.Properties.cs" />
     <Content Include="Files\ThreadSafe.Fields.cs" />
+    <Content Include="Files\ThreadSafe.Parameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThreadSafeTests.cs" />
   </ItemGroup>

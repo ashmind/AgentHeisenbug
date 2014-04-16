@@ -17,6 +17,7 @@ namespace AgentHeisenbug.Tests {
         [Test]
         [TestCase("ThreadSafe.Fields.cs")]
         [TestCase("ThreadSafe.Properties.cs")]
+        [TestCase("ThreadSafe.Parameters.cs")]
         public void Test(string testName) {
             DoTestSolution(testName);
         }

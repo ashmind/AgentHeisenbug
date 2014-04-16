@@ -9,6 +9,7 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Resolve;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Highlightings;
+using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToNotThreadSafeStaticMethodInThreadSafeType) })]
@@ -39,7 +40,7 @@ namespace AgentHeisenbug.Analyzers {
                 return;
 
             var safetyLevel = this.annotationCache.GetThreadSafety(method);
-            if (safetyLevel.Static)
+            if (safetyLevel.Has(ThreadSafety.Static))
                 return;
 
             consumer.AddHighlighting(new CallToNotThreadSafeStaticMethodInThreadSafeType(call.InvokedExpression, method.ShortName));

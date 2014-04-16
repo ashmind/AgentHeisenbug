@@ -41,6 +41,15 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
+    ParameterOfNonThreadSafeTypeInThreadSafeMethod.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Parameter of type that is not thread-safe in a thread-safe method",
+    "Parameter of type that is not thread-safe in a thread-safe method",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
     FieldOfNonThreadSafeTypeInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
@@ -119,6 +128,17 @@ namespace AgentHeisenbug.Highlightings {
             element,
             "{1}auto property '{0}' in a [ThreadSafe] class should only be assigned in a {1}constructor.",
             propertyName, @static
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(ParameterOfNonThreadSafeTypeInThreadSafeMethod.Id, CSharpLanguage.Name)]
+    public class ParameterOfNonThreadSafeTypeInThreadSafeMethod : HeisenbugHighligtingBase {
+        public const string Id = "ParameterOfNonThreadSafeTypeInThreadSafeMethod";
+
+        public ParameterOfNonThreadSafeTypeInThreadSafeMethod(ITreeNode element, string paramterName, string typeName) : base(
+            element,
+            "Type '{1}' of parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
+            paramterName, typeName
         ) {}
     }
 
