@@ -63,14 +63,14 @@ using AgentHeisenbug.Highlightings;
     new Model(
         "MutableFieldInReadOnlyType",
         "Mutable field in type annotated with [ReadOnly]",
-        "Field '{0}' in a [ThreadSafe] class should be readonly.",
+        "Field '{0}' in a [ReadOnly] type should be readonly.",
         "string fieldName"
     ),
 
     new Model(
         "FieldOfMutableTypeInReadOnlyType",
         "Field of mutable type in type annotated with [ReadOnly]",
-        "Type '{1}' of field '{0}' in a [ReadOnly] type should be read only.",
+        "Type '{1}' of field '{0}' in a [ReadOnly] type should be readonly.",
         "string fieldName, string typeName"
     )
 }; #>

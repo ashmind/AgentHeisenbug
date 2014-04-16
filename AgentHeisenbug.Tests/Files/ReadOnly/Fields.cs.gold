@@ -1,0 +1,27 @@
+﻿using System;
+using JetBrains.Annotations;
+
+namespace JetBrains.Annotations {
+    public class ReadOnlyAttribute : Attribute {}
+}
+
+[ReadOnly] public class ReadOnly {}
+           public class NonReadOnly {}
+
+[ReadOnly]
+public class Fields {
+    private ReadOnly |mutable1|(0);
+    
+    private readonly ReadOnly readonly1;
+    private readonly |NonReadOnly|(1) readonly2;
+
+    private static ReadOnly |staticMutable1|(2);
+
+    private readonly static ReadOnly staticReadOnly1;
+    private readonly static |NonReadOnly|(3) staticReadOnly2;
+}
+---------------------------------------------------------
+(0): ReSharper Warning: Field 'mutable1' in a [ReadOnly] type should be readonly.
+(1): ReSharper Warning: Type 'NonReadOnly' of field 'readonly2' in a [ReadOnly] type should be readonly.
+(2): ReSharper Warning: Field 'staticMutable1' in a [ReadOnly] type should be readonly.
+(3): ReSharper Warning: Type 'NonReadOnly' of field 'staticReadOnly2' in a [ReadOnly] type should be readonly.

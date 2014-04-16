@@ -170,7 +170,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public MutableFieldInReadOnlyType(ITreeNode element, string fieldName) : base(
             element,
-            "Field '{0}' in a [ThreadSafe] class should be readonly.",
+            "Field '{0}' in a [ReadOnly] type should be readonly.",
             fieldName
         ) {}
     }
@@ -181,7 +181,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public FieldOfMutableTypeInReadOnlyType(ITreeNode element, string fieldName, string typeName) : base(
             element,
-            "Type '{1}' of field '{0}' in a [ReadOnly] type should be read only.",
+            "Type '{1}' of field '{0}' in a [ReadOnly] type should be readonly.",
             fieldName, typeName
         ) {}
     }

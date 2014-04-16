@@ -5,9 +5,9 @@ using NUnit.Framework;
 
 namespace AgentHeisenbug.Tests {
     [TestFixture]
-    public class ThreadSafeTests : CSharpHighlightingTestBase {
+    public class ReadOnlyTests : CSharpHighlightingTestBase {
         protected override bool HighlightingPredicate(IHighlighting highlighting, IContextBoundSettingsStore settingsstore) {
-            return highlighting.GetType().Name.Contains("ThreadSafe");
+            return highlighting.GetType().Name.Contains("ReadOnly");
         }
 
         protected override string RelativeTestDataPath {
@@ -15,9 +15,7 @@ namespace AgentHeisenbug.Tests {
         }
 
         [Test]
-        [TestCase(@"ThreadSafe\Fields.cs")]
-        [TestCase(@"ThreadSafe\Properties.cs")]
-        [TestCase(@"ThreadSafe\Parameters.cs")]
+        [TestCase(@"ReadOnly\Fields.cs")]
         public void Test(string testName) {
             DoTestSolution(testName);
         }
