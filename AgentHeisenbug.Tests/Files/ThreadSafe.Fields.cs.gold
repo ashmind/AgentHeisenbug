@@ -17,7 +17,15 @@ public class Fields {
     private readonly Safe readonly1;
     private readonly ReadOnly readonly2;
     private readonly |NonSafe|(1) readonly3;
+
+    private static Safe |staticMutable1|(2);
+    
+    private readonly static Safe staticReadOnly1;
+    private readonly static ReadOnly staticReadOnly2;
+    private readonly static |NonSafe|(3) staticReadOnly3;
 }
 ---------------------------------------------------------
 (0): ReSharper Warning: Field 'mutable1' in a [ThreadSafe] class should be readonly.
 (1): ReSharper Warning: Type 'NonSafe' of field 'readonly3' in a [ThreadSafe] type should be thread-safe.
+(2): ReSharper Warning: Field 'staticMutable1' in a [ThreadSafe] class should be readonly.
+(3): ReSharper Warning: Type 'NonSafe' of field 'staticReadOnly3' in a [ThreadSafe] type should be thread-safe.

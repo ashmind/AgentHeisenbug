@@ -22,11 +22,26 @@ public class Properties {
     public ReadOnly AutoPrivateSet2 { get; private set; }
     public NonSafe AutoPrivateSet3 { get; private set; }
 
-    public Properties() {
-        AutoPrivateSet1 = null;
+    public static Safe StaticAutoGetSet1 { get; set; }
+    public static Safe StaticAutoPrivateSet1 { get; private set; }
+    public static NonSafe StaticAutoPrivateSet2 { get; private set; }
+
+    static Properties() {
+        StaticAutoPrivateSet1 = null;
+        new Properties().AutoPrivateSet1 = null;
     }
 
-    public void Change(Safe value) {
+    public Properties() {
+        AutoPrivateSet1 = null;
+        StaticAutoPrivateSet1 = value;
+    }
+
+    public void ChangeThis(Safe value) {
         AutoPrivateSet1 = value;
+        StaticAutoPrivateSet1 = value;
+    }
+
+    public void ChangeOther(Properties properties, Safe value) {
+        properties.AutoPrivateSet1 = value;
     }
 }

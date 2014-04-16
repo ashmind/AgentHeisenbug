@@ -35,8 +35,8 @@ using AgentHeisenbug.Highlightings;
     new Model(
         "AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType",
         "Auto property assigned outside of constructor in type annotated with [ThreadSafe]",
-        "Auto property '{0}' in a [ThreadSafe] class should only be assigned in a constructor.",
-        "string propertyName"
+        "{1}auto property '{0}' in a [ThreadSafe] class should only be assigned in a {1}constructor.",
+        "string propertyName, string @static"
     ),
 
     new Model(

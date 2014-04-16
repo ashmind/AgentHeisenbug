@@ -115,10 +115,10 @@ namespace AgentHeisenbug.Highlightings {
     public class AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType";
 
-        public AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType(ITreeNode element, string propertyName) : base(
+        public AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType(ITreeNode element, string propertyName, string @static) : base(
             element,
-            "Auto property '{0}' in a [ThreadSafe] class should only be assigned in a constructor.",
-            propertyName
+            "{1}auto property '{0}' in a [ThreadSafe] class should only be assigned in a {1}constructor.",
+            propertyName, @static
         ) {}
     }
 

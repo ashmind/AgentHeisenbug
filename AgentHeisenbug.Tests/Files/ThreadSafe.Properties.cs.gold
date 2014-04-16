@@ -22,15 +22,34 @@ public class Properties {
     public ReadOnly AutoPrivateSet2 { get; private set; }
     public |NonSafe|(1) AutoPrivateSet3 { get; private set; }
 
-    public Properties() {
-        AutoPrivateSet1 = null;
+    public static Safe StaticAutoGetSet1 { get; |set|(2); }
+    public static Safe StaticAutoPrivateSet1 { get; private set; }
+    public static |NonSafe|(3) StaticAutoPrivateSet2 { get; private set; }
+
+    static Properties() {
+        StaticAutoPrivateSet1 = null;
+        new Properties().AutoPrivateSet1 = null;
     }
 
-    public void Change(Safe value) {
-        |AutoPrivateSet1 = value|(2);
+    public Properties() {
+        AutoPrivateSet1 = null;
+        |StaticAutoPrivateSet1 = value|(4);
+    }
+
+    public void ChangeThis(Safe value) {
+        |AutoPrivateSet1 = value|(5);
+        |StaticAutoPrivateSet1 = value|(6);
+    }
+
+    public void ChangeOther(Properties properties, Safe value) {
+        properties.AutoPrivateSet1 = value;
     }
 }
 ---------------------------------------------------------
 (0): ReSharper Warning: Setter of auto property 'AutoGetSet1' in a [ThreadSafe] class should be private.
 (1): ReSharper Warning: Type 'NonSafe' of auto property 'AutoPrivateSet3' in a [ThreadSafe] type should be thread-safe.
-(2): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.
+(2): ReSharper Warning: Setter of auto property 'StaticAutoGetSet1' in a [ThreadSafe] class should be private.
+(3): ReSharper Warning: Type 'NonSafe' of auto property 'StaticAutoPrivateSet2' in a [ThreadSafe] type should be thread-safe.
+(4): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a static constructor.
+(5): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.
+(6): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a static constructor.

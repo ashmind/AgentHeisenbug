@@ -1,4 +1,5 @@
 using System;
+using AshMind.Extensions;
 using JetBrains.Annotations;
 using JetBrains.DocumentModel;
 using JetBrains.ReSharper.Daemon;
@@ -14,6 +15,10 @@ namespace AgentHeisenbug.Highlightings {
         protected HeisenbugHighligtingBase(ITreeNode element, string messageFormat, params object[] args) {
             this.element = element;
             this.message = string.Format(messageFormat, args);
+            if (!this.message[0].IsUpper()) {
+                // simplifies format strings that start with optional substitutions
+                this.message = this.message[0].ToUpperInvariant() + this.message.Substring(1);
+            }
         }
 
         public int NavigationOffsetPatch {
