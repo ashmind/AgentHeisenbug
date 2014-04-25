@@ -11,7 +11,7 @@ using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers {
-    [ElementProblemAnalyzer(new[] { typeof(IParameterDeclaration) }, HighlightingTypes = new[] { typeof(ParameterOfNonThreadSafeTypeInThreadSafeMethod) })]
+    [ElementProblemAnalyzer(new[] { typeof(IRegularParameterDeclaration) }, HighlightingTypes = new[] { typeof(ParameterOfNonThreadSafeTypeInThreadSafeMethod) })]
     public class ThreadSafeParameterAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly ReferencedTypeHelper _referenceHelper;

@@ -13,6 +13,9 @@ namespace JetBrains.Annotations {
 
 [ThreadSafe]
 public class Parameters {
+    // not processed in any way, but should not cause exception
+    private readonly Action<NonSafe> A = n => {};
+
     public void M(Safe s) {}
     public void M(ref Safe s) {}
     public void M(out Safe s) {}

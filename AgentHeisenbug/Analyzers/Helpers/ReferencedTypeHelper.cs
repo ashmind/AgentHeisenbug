@@ -4,6 +4,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using AgentHeisenbug.Annotations;
+using JetBrains.ReSharper.Psi.Util;
 using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers.Helpers {
@@ -16,7 +17,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
         }
 
         private bool IsTriviallyImmutable([NotNull] IType type) {
-            if (type.IsDelegate() || type.IsSimplePredefined() || type.IsValue())
+            if (type.IsSimplePredefined() || type.IsValue() || type.IsDelegateType())
                 return true;
 
             return false;
