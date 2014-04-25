@@ -16,6 +16,7 @@ namespace AgentHeisenbug.Tests {
 
         [Test]
         [TestCase(@"ReadOnly\Fields.cs")]
+        [TestCase(@"ReadOnly\Properties.cs")]
         public void Test(string testName) {
             DoTestSolution(testName);
         }

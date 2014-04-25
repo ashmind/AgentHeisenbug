@@ -5,6 +5,7 @@
 <#@ import namespace="System.Text.RegularExpressions" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".cs" #>
+using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
@@ -26,10 +27,24 @@ using AgentHeisenbug.Highlightings;
     ),
 
     new Model(
+        "FieldOfNonThreadSafeTypeInThreadSafeType",
+        "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
+        "Type '{1}' of field '{0}' in a [ThreadSafe] type should be thread-safe.",
+        "string fieldName, string typeName"
+    ),
+
+    new Model(
         "MutableAutoPropertyInThreadSafeType",
         "Mutable auto property in type annotated with [ThreadSafe]",
         "Setter of auto property '{0}' in a [ThreadSafe] class should be private.",
         "string propertyName"
+    ),
+
+    new Model(
+        "AutoPropertyOfNonThreadSafeTypeInThreadSafeType",
+        "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
+        "Type '{1}' of auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
+        "string propertyName, string typeName"
     ),
 
     new Model(
@@ -47,20 +62,6 @@ using AgentHeisenbug.Highlightings;
     ),
 
     new Model(
-        "FieldOfNonThreadSafeTypeInThreadSafeType",
-        "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
-        "Type '{1}' of field '{0}' in a [ThreadSafe] type should be thread-safe.",
-        "string fieldName, string typeName"
-    ),
-
-    new Model(
-        "AutoPropertyOfNonThreadSafeTypeInThreadSafeType",
-        "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
-        "Type '{1}' of auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
-        "string propertyName, string typeName"
-    ),
-
-    new Model(
         "MutableFieldInReadOnlyType",
         "Mutable field in type annotated with [ReadOnly]",
         "Field '{0}' in a [ReadOnly] type should be readonly.",
@@ -68,10 +69,31 @@ using AgentHeisenbug.Highlightings;
     ),
 
     new Model(
-        "FieldOfMutableTypeInReadOnlyType",
+        "FieldOfNonReadOnlyTypeInReadOnlyType",
         "Field of mutable type in type annotated with [ReadOnly]",
         "Type '{1}' of field '{0}' in a [ReadOnly] type should be readonly.",
         "string fieldName, string typeName"
+    ),
+
+    new Model(
+        "MutableAutoPropertyInReadOnlyType",
+        "Mutable auto property in type annotated with [ReadOnly]",
+        "Setter of auto property '{0}' in a [ReadOnly] class should be private.",
+        "string propertyName"
+    ),
+
+    new Model(
+        "AutoPropertyOfNonReadOnlyTypeInReadOnlyType",
+        "Auto property of type that is not readonly, in type annotated with [ReadOnly]",
+        "Type '{1}' of auto property '{0}' in a [ReadOnly] type should be readonly.",
+        "string propertyName, string typeName"
+    ),
+
+    new Model(
+        "AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType",
+        "Auto property assigned outside of constructor in type annotated with [ReadOnly]",
+        "{1}auto property '{0}' in a [ReadOnly] class should only be assigned in a {1}constructor.",
+        "string propertyName, string @static"
     )
 }; #>
 
@@ -91,9 +113,9 @@ namespace AgentHeisenbug.Highlightings {<# foreach (var model in models) { #>
 
     [ConfigurableSeverityHighlighting(<#= model.Id #>.Id, CSharpLanguage.Name)]
     public class <#= model.Id #> : HeisenbugHighligtingBase {
-        public const string Id = "<#= model.Id #>";
+        public const string Id = "AgentHeisenbug.<#= model.Id #>";
 
-        public <#= model.Id #>(ITreeNode element, <#= model.Arguments #>) : base(
+        public <#= model.Id #>([NotNull] ITreeNode element, <#= model.Arguments #>) : base(
             element,
             "<#= model.MessageFormat #>",
             <#= Regex.Replace(model.Arguments, @"(?<=(?:^|,)\s*)\S+\s+", "") #>

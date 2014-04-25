@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AgentHeisenbug.Annotations;
+using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
@@ -10,18 +11,19 @@ using JetBrains.Util;
 namespace AgentHeisenbug.Analyzers.Helpers {
     [PsiComponent]
     public class AnalyzerPreconditions {
-        private readonly HeisenbugAnnotationCache annotationCache;
+        [NotNull] private readonly HeisenbugAnnotationCache _annotationCache;
 
-        public AnalyzerPreconditions(HeisenbugAnnotationCache annotationCache) {
-            this.annotationCache = annotationCache;
+        public AnalyzerPreconditions([NotNull] HeisenbugAnnotationCache annotationCache) {
+            _annotationCache = annotationCache;
         }
 
-        public bool MustBeThreadSafe(ITreeNode node) {
+        public bool MustBeThreadSafe([NotNull] ITreeNode node) {
+            Argument.NotNull("node", node);
             var typeNode = node.GetContainingNode<ITypeDeclaration>();
-            if (typeNode == null)
+            if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 
-            var safety = this.annotationCache.GetThreadSafety(typeNode.DeclaredElement);
+            var safety = _annotationCache.GetThreadSafety(typeNode.DeclaredElement);
             var member = node.GetContainingNode<ICSharpTypeMemberDeclaration>();
             if (member == null)
                 return safety == ThreadSafety.All;
@@ -29,12 +31,14 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             return member.IsStatic ? safety.Has(ThreadSafety.Static) : safety.Has(ThreadSafety.Instance);
         }
 
-        public bool MustBeReadOnly(ICSharpTreeNode node) {
-            var typeNode = node.GetContainingTypeDeclaration();
-            if (typeNode == null)
+        public bool MustBeReadOnly([NotNull] ITreeNode node) {
+            Argument.NotNull("node", node);
+
+            var typeNode = node.GetContainingNode<ITypeDeclaration>();
+            if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 
-            return this.annotationCache.IsReadOnly(typeNode.DeclaredElement);
+            return this._annotationCache.IsReadOnly(typeNode.DeclaredElement);
         }
     }
 }

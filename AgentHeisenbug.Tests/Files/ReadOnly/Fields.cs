@@ -10,13 +10,12 @@ namespace JetBrains.Annotations {
 
 [ReadOnly]
 public class Fields {
-    private ReadOnly mutable1;
-    
+    private ReadOnly mutable;
+    private static ReadOnly staticMutable;
+
     private readonly ReadOnly readonly1;
-    private readonly NonReadOnly readonly2;
-
-    private static ReadOnly staticMutable1;
-
     private readonly static ReadOnly staticReadOnly1;
+    
+    private readonly NonReadOnly readonly2;
     private readonly static NonReadOnly staticReadOnly2;
 }

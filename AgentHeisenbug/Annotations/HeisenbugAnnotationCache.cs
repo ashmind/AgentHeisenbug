@@ -3,49 +3,57 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using AgentHeisenbug.Annotations.Generated;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.CodeAnnotations;
 using JetBrains.ReSharper.Psi.Impl.Reflection2.ExternalAnnotations;
+using AgentHeisenbug.Annotations.Generated;
 
 namespace AgentHeisenbug.Annotations {
     [PsiComponent]
     public class HeisenbugAnnotationCache : InvalidatingPsiCache {
-        private static readonly string GeneratedAttributeNamespace = typeof(GeneratedThreadSafeAttribute).Namespace;
-        private static readonly Func<ExternalAnnotationAttributeInstance, int, string> GetPositionalAttributeValue = CompileGetPositionalAttributeValue();
+        [NotNull] private static readonly string GeneratedAttributeNamespace = typeof(GeneratedThreadSafeAttribute).Namespace;
+        [NotNull] private static readonly Func<ExternalAnnotationAttributeInstance, int, string> GetPositionalAttributeValue = CompileGetPositionalAttributeValue();
 
-        private readonly CodeAnnotationsCache annotationCache;
-        private readonly ConcurrentDictionary<IAttributesOwner, ThreadSafety> threadSafeCache = new ConcurrentDictionary<IAttributesOwner, ThreadSafety>();
-        private readonly ConcurrentDictionary<IAttributesOwner, bool> readOnlyCache = new ConcurrentDictionary<IAttributesOwner, bool>();
+        [NotNull] private readonly CodeAnnotationsCache _annotationCache;
+        [NotNull] private readonly ConcurrentDictionary<IAttributesOwner, ThreadSafety> _threadSafeCache = new ConcurrentDictionary<IAttributesOwner, ThreadSafety>();
+        [NotNull] private readonly ConcurrentDictionary<IAttributesOwner, bool> _readOnlyCache = new ConcurrentDictionary<IAttributesOwner, bool>();
 
-        public HeisenbugAnnotationCache(CodeAnnotationsCache annotationCache) {
-            this.annotationCache = annotationCache;
+        public HeisenbugAnnotationCache([NotNull] CodeAnnotationsCache annotationCache) {
+            _annotationCache = annotationCache;
         }
 
         public ThreadSafety GetThreadSafety([NotNull] IAttributesOwner member) {
-            return this.threadSafeCache.GetOrAdd(member, m => GetValueUncached(
+            Argument.NotNull("member", member);
+            return _threadSafeCache.GetOrAdd(member, m => GetValueUncached(
+                // ReSharper disable AssignNullToNotNullAttribute
                 m, "ThreadSafeAttribute",
                 ThreadSafety.All,
                 generated => (ThreadSafety)Enum.Parse(typeof(ThreadSafety), GetPositionalAttributeValue((ExternalAnnotationAttributeInstance)generated, 0)),
                 GetThreadSafety
+                // ReSharper restore AssignNullToNotNullAttribute
             ));
         }
         
         public bool IsReadOnly([NotNull] IAttributesOwner member) {
-            return this.readOnlyCache.GetOrAdd(member, m => GetValueUncached(
+            Argument.NotNull("member", member);
+            return _readOnlyCache.GetOrAdd(member, m => GetValueUncached(
+                // ReSharper disable once AssignNullToNotNullAttribute
                 m, "ReadOnlyAttribute", true, _ => true, IsReadOnly
             ));
         }
 
-        private T GetValueUncached<T>([NotNull] IAttributesOwner member, string attributeShortName, T valueIfManual, Func<IAttributeInstance, T> valueIfGenerated, Func<IAttributesOwner, T> getValueCached) {
+        private T GetValueUncached<T>([NotNull] IAttributesOwner member, string attributeShortName, T valueIfManual, [NotNull] Func<IAttributeInstance, T> valueIfGenerated, [NotNull] Func<IAttributesOwner, T> getValueCached) {
             var attributes = member.GetAttributeInstances(true);
-            var manual = attributes.Any(a => this.annotationCache.IsAnnotationAttribute(a, attributeShortName));
+            Assume.NotNull("attributes", attributes);
+
+            var manual = attributes.Any(a => this._annotationCache.IsAnnotationAttribute(a, attributeShortName));
             if (manual)
                 return valueIfManual;
 
             var generatedFullName = GeneratedAttributeNamespace + ".Generated" + attributeShortName;
+            // ReSharper disable once PossibleNullReferenceException
             var generated = attributes.SingleOrDefault(a => a.GetClrName().FullName == generatedFullName);
             if (generated != null)
                 return valueIfGenerated(generated);
@@ -62,8 +70,8 @@ namespace AgentHeisenbug.Annotations {
         
         protected override void InvalidateOnPhysicalChange() {
             base.InvalidateOnPhysicalChange();
-            this.threadSafeCache.Clear();
-            this.readOnlyCache.Clear();
+            this._threadSafeCache.Clear();
+            this._readOnlyCache.Clear();
         }
         
         private static Func<ExternalAnnotationAttributeInstance, int, string> CompileGetPositionalAttributeValue() {

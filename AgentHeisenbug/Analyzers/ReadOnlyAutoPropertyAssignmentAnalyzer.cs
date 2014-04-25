@@ -11,21 +11,21 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 
 namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IAssignmentExpression) }, HighlightingTypes = new[] {
-        typeof(AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType)
+        typeof(AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType)
     })]
-    public class ThreadSafeAutoPropertyAssignmentAnalyzer : AutoPropertyAssignmentAnalyzerBase {
+    public class ReadOnlyAutoPropertyAssignmentAnalyzer : AutoPropertyAssignmentAnalyzerBase {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
 
-        public ThreadSafeAutoPropertyAssignmentAnalyzer([NotNull] AnalyzerPreconditions preconditions) {
+        public ReadOnlyAutoPropertyAssignmentAnalyzer([NotNull] AnalyzerPreconditions preconditions) {
             _preconditions = preconditions;
         }
 
         protected override bool MustBeAnalyzed(IAssignmentExpression assignment) {
-            return _preconditions.MustBeThreadSafe(assignment);
+            return _preconditions.MustBeReadOnly(assignment);
         }
 
         protected override IHighlighting NewHighlighting(IAssignmentExpression assignment, string propertyName, string staticOrInstance) {
-            return new AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType(assignment, propertyName, staticOrInstance);
+            return new AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType(assignment, propertyName, staticOrInstance);
         }
     }
 }

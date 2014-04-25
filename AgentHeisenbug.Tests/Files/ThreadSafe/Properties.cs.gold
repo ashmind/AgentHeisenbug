@@ -28,21 +28,21 @@ public class Properties {
 
     static Properties() {
         StaticAutoPrivateSet1 = null;
-        new Properties().AutoPrivateSet1 = null;
+        |new Properties().AutoPrivateSet1 = null|(4);
     }
 
     public Properties() {
         AutoPrivateSet1 = null;
-        |StaticAutoPrivateSet1 = value|(4);
+        |StaticAutoPrivateSet1 = value|(5);
     }
 
     public void ChangeThis(Safe value) {
-        |AutoPrivateSet1 = value|(5);
-        |StaticAutoPrivateSet1 = value|(6);
+        |AutoPrivateSet1 = value|(6);
+        |StaticAutoPrivateSet1 = value|(7);
     }
 
     public void ChangeOther(Properties properties, Safe value) {
-        properties.AutoPrivateSet1 = value;
+        |properties.AutoPrivateSet1 = value|(8);
     }
 }
 ---------------------------------------------------------
@@ -50,6 +50,8 @@ public class Properties {
 (1): ReSharper Warning: Type 'NonSafe' of auto property 'AutoPrivateSet3' in a [ThreadSafe] type should be thread-safe.
 (2): ReSharper Warning: Setter of auto property 'StaticAutoGetSet1' in a [ThreadSafe] class should be private.
 (3): ReSharper Warning: Type 'NonSafe' of auto property 'StaticAutoPrivateSet2' in a [ThreadSafe] type should be thread-safe.
-(4): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a static constructor.
-(5): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.
-(6): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a static constructor.
+(4): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.
+(5): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a static constructor.
+(6): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.
+(7): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a static constructor.
+(8): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.

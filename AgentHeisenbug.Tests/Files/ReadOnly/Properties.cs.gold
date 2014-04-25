@@ -1,0 +1,53 @@
+﻿using System;
+using JetBrains.Annotations;
+
+namespace JetBrains.Annotations {
+    public class ReadOnlyAttribute : Attribute {}
+}
+
+[ReadOnly] public class ReadOnly {}
+           public class NonReadOnly {}
+
+[ReadOnly]
+public class Properties {
+    public ReadOnly AutoGetSet { get; |set|(0); }
+    public static ReadOnly StaticAutoGetSet { get; |set|(1); }
+
+    public ReadOnly GetSet { get { return null; } set { } }
+    public ReadOnly GetOnly { get { return null; } }
+
+    public ReadOnly AutoPrivateSet1 { get; private set; }
+    public static ReadOnly StaticAutoPrivateSet1 { get; private set; }
+
+    public |NonReadOnly|(2) AutoPrivateSet2 { get; private set; }
+    public static |NonReadOnly|(3) StaticAutoPrivateSet2 { get; private set; }
+
+    static Properties() {
+        |new Properties().AutoPrivateSet1 = null|(4);
+        StaticAutoPrivateSet1 = null;
+    }
+
+    public Properties() {
+        AutoPrivateSet1 = null;
+        |StaticAutoPrivateSet1 = value|(5);
+    }
+
+    public void ChangeThis(Safe value) {
+        |AutoPrivateSet1 = value|(6);
+        |StaticAutoPrivateSet1 = value|(7);
+    }
+
+    public void ChangeOther(Properties properties, Safe value) {
+        |properties.AutoPrivateSet1 = value|(8);
+    }
+}
+---------------------------------------------------------
+(0): ReSharper Warning: Setter of auto property 'AutoGetSet' in a [ReadOnly] class should be private.
+(1): ReSharper Warning: Setter of auto property 'StaticAutoGetSet' in a [ReadOnly] class should be private.
+(2): ReSharper Warning: Type 'NonReadOnly' of auto property 'AutoPrivateSet2' in a [ReadOnly] type should be readonly.
+(3): ReSharper Warning: Type 'NonReadOnly' of auto property 'StaticAutoPrivateSet2' in a [ReadOnly] type should be readonly.
+(4): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ReadOnly] class should only be assigned in a constructor.
+(5): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ReadOnly] class should only be assigned in a static constructor.
+(6): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ReadOnly] class should only be assigned in a constructor.
+(7): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ReadOnly] class should only be assigned in a static constructor.
+(8): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ReadOnly] class should only be assigned in a constructor.

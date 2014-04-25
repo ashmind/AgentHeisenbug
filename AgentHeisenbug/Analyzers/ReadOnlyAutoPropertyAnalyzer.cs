@@ -11,32 +11,33 @@ using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IPropertyDeclaration) }, HighlightingTypes = new[] {
-        typeof(MutableAutoPropertyInThreadSafeType),
-        typeof(AutoPropertyOfNonThreadSafeTypeInThreadSafeType)
+        typeof(MutableAutoPropertyInReadOnlyType),
+        typeof(AutoPropertyOfNonReadOnlyTypeInReadOnlyType)
     })]
-    public class ThreadSafeAutoPropertyAnalyzer : IElementProblemAnalyzer {
+    public class ReadOnlyAutoPropertyAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly ReferencedTypeHelper _referenceHelper;
 
-        public ThreadSafeAutoPropertyAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] ReferencedTypeHelper referenceHelper) {
+        public ReadOnlyAutoPropertyAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] ReferencedTypeHelper referenceHelper) {
             _preconditions = preconditions;
             _referenceHelper = referenceHelper;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
             var property = (IPropertyDeclaration)element;
-            if (!property.IsAuto || !_preconditions.MustBeThreadSafe(property))
+            if (!property.IsAuto || !this._preconditions.MustBeReadOnly(property))
                 return;
 
             var setter = property.GetSetter();
             if (setter != null && !setter.IsPrivate())
-                consumer.AddHighlighting(new MutableAutoPropertyInThreadSafeType(setter.NameIdentifier, property.DeclaredName));
+                consumer.AddHighlighting(new MutableAutoPropertyInReadOnlyType(setter.NameIdentifier, property.DeclaredName));
 
-            if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(property.Type)) {
-                consumer.AddHighlighting(new AutoPropertyOfNonThreadSafeTypeInThreadSafeType(
+            if (!this._referenceHelper.IsReadOnly(property.Type)) {
+                consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(
                     property.TypeUsage, property.DeclaredName, property.Type.GetPresentableName(CSharpLanguage.Instance)
                 ));
             }
         }
     }
 }
+

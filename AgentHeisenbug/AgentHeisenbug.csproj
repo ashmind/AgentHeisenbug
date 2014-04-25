@@ -51,11 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analyzers\ThreadSafeAutoPropertyAssignmentAnalyzer.cs" />
+    <Compile Include="Analyzers\Helpers\AstExtensions.cs" />
+    <Compile Include="Analyzers\ReadOnlyAutoPropertyAnalyzer.cs" />
+    <Compile Include="Analyzers\Base\AutoPropertyAssignmentAnalyzerBase.cs" />
+    <Compile Include="Analyzers\ReadOnlyAutoPropertyAssignmentAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafeParameterAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\ReferencedTypeHelper.cs" />
     <Compile Include="Analyzers\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\AnalyzerPreconditions.cs" />
     <Compile Include="Annotations\HeisenbugDebugExternalAnnotationFileProvider.cs" />
+    <Compile Include="Assume.cs" />
     <Compile Include="Highlightings\Highlightings.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

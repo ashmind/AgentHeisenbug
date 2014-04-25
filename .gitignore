@@ -9,3 +9,4 @@ _ReSharper.*
 *.snk
 *.ncrunchsolution
 \#packages/
+/AgentHeisenbug.sln.ide/graph/*.ide
