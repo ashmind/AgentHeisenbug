@@ -23,7 +23,7 @@ namespace AgentHeisenbug.Indexer {
             var subdirectory = new DirectoryInfo(Path.Combine(directory.FullName, assembly.AssemblyName));
             subdirectory.Create();
 
-            var filePath = Path.Combine(subdirectory.FullName, "Annotations.xml");
+            var filePath = Path.Combine(subdirectory.FullName, "Generated.xml");
             using (var writer = XmlWriter.Create(filePath, new XmlWriterSettings { Indent = true })) {
                 writer.WriteStartElement("assembly");
                 writer.WriteAttributeString("name", assembly.AssemblyName);
