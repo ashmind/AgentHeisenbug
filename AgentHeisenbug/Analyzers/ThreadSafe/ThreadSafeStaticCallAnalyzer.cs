@@ -1,8 +1,7 @@
-using System.Diagnostics;
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
+using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
@@ -12,7 +11,7 @@ using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Annotations;
 using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToNonThreadSafeStaticMethodInThreadSafeType) })]
     public class ThreadSafeStaticCallAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;

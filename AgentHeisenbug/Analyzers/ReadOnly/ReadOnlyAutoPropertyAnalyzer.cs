@@ -1,15 +1,14 @@
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
+using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.ReadOnly {
     [ElementProblemAnalyzer(new[] { typeof(IPropertyDeclaration) }, HighlightingTypes = new[] {
         typeof(MutableAutoPropertyInReadOnlyType),
         typeof(AutoPropertyOfNonReadOnlyTypeInReadOnlyType)
@@ -29,9 +28,13 @@ namespace AgentHeisenbug.Analyzers {
                 return;
 
             var setter = property.GetSetter();
-            if (setter != null && !setter.IsPrivate())
+            if (setter != null && !setter.IsPrivate()) {
+                Assume.NotNullWorkaround(setter.NameIdentifier != null, "setter.NameIdentifier");
                 consumer.AddHighlighting(new MutableAutoPropertyInReadOnlyType(setter.NameIdentifier, property.DeclaredName));
+            }
 
+            Assume.NotNullWorkaround(property.Type != null, "property.Type");
+            Assume.NotNullWorkaround(property.TypeUsage != null, "property.TypeUsage");
             if (!this._referenceHelper.IsReadOnly(property.Type)) {
                 consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(
                     property.TypeUsage, property.DeclaredName, property.Type.GetCSharpPresentableName()

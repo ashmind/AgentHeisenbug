@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
+using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.ReadOnly {
     [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldInReadOnlyType) })]
     public class ReadOnlyFieldAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;

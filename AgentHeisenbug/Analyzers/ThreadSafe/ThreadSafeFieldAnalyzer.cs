@@ -1,15 +1,14 @@
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
+using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] {
         typeof(MutableFieldInThreadSafeType),
         typeof(FieldOfNonThreadSafeTypeInThreadSafeType)
@@ -31,6 +30,8 @@ namespace AgentHeisenbug.Analyzers {
             if (!field.IsReadonly)
                 consumer.AddHighlighting(new MutableFieldInThreadSafeType(field, field.DeclaredName));
 
+            Assume.NotNullWorkaround(field.Type != null, "field.Type");
+            Assume.NotNullWorkaround(field.TypeUsage != null, "field.TypeUsage");
             if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(field.Type)) {
                 consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
                     field.TypeUsage, field.DeclaredName, field.Type.GetCSharpPresentableName()

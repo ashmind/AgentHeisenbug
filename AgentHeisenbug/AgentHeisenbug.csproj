@@ -52,15 +52,15 @@
   <ItemGroup>
     <Compile Include="Analyzers\Base\InheritanceAnalyzerBase.cs" />
     <Compile Include="Analyzers\ThreadSafeInheritanceAnalyzer.cs" />
-    <Compile Include="Analyzers\ReadOnlyInheritanceAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnly\ReadOnlyInheritanceAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafeAutoPropertyAssignmentAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\AstExtensions.cs" />
-    <Compile Include="Analyzers\ReadOnlyAutoPropertyAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnly\ReadOnlyAutoPropertyAnalyzer.cs" />
     <Compile Include="Analyzers\Base\AutoPropertyAssignmentAnalyzerBase.cs" />
-    <Compile Include="Analyzers\ReadOnlyAutoPropertyAssignmentAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnly\ReadOnlyAutoPropertyAssignmentAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafeParameterAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\ReferencedTypeHelper.cs" />
-    <Compile Include="Analyzers\ReadOnlyFieldAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnly\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\AnalyzerPreconditions.cs" />
     <Compile Include="Annotations\HeisenbugAnnotations.cs" />
     <Compile Include="Annotations\HeisenbugDebugExternalAnnotationFileProvider.cs" />

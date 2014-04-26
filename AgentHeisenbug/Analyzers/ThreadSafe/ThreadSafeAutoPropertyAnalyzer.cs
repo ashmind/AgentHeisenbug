@@ -3,13 +3,12 @@ using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IPropertyDeclaration) }, HighlightingTypes = new[] {
         typeof(MutableAutoPropertyInThreadSafeType),
         typeof(AutoPropertyOfNonThreadSafeTypeInThreadSafeType)
@@ -29,9 +28,13 @@ namespace AgentHeisenbug.Analyzers {
                 return;
 
             var setter = property.GetSetter();
-            if (setter != null && !setter.IsPrivate())
+            if (setter != null && !setter.IsPrivate()) {
+                Assume.NotNullWorkaround(setter.NameIdentifier != null, "setter.NameIdentifier");
                 consumer.AddHighlighting(new MutableAutoPropertyInThreadSafeType(setter.NameIdentifier, property.DeclaredName));
+            }
 
+            Assume.NotNullWorkaround(property.Type != null, "property.Type");
+            Assume.NotNullWorkaround(property.TypeUsage != null, "property.TypeUsage");
             if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(property.Type)) {
                 consumer.AddHighlighting(new AutoPropertyOfNonThreadSafeTypeInThreadSafeType(
                     property.TypeUsage, property.DeclaredName, property.Type.GetCSharpPresentableName()

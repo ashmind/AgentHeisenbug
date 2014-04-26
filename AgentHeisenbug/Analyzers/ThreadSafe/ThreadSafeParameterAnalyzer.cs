@@ -1,16 +1,15 @@
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
+using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CodeAnnotations;
-using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IRegularParameterDeclaration) }, HighlightingTypes = new[] { typeof(ParameterOfNonThreadSafeTypeInThreadSafeMethod) })]
     public class ThreadSafeParameterAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
@@ -32,6 +31,8 @@ namespace AgentHeisenbug.Analyzers {
             if (method == null || this._annotationsCache.IsPure(method.DeclaredElement))
                 return;
 
+            Assume.NotNullWorkaround(parameter.Type != null, "parameter.Type");
+            Assume.NotNullWorkaround(parameter.TypeUsage != null, "parameter.TypeUsage");
             if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(parameter.Type)) {
                 consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
                     parameter.TypeUsage, parameter.DeclaredName, parameter.Type.GetCSharpPresentableName()
