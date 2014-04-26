@@ -11,10 +11,19 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
         }
 
         public bool Equals(TypeHelp x, TypeHelp y) {
+            if (x == y)
+                return true;
+
+            if (x == null || y == null)
+                return false;
+
             return x.Id == y.Id;
         }
 
         public int GetHashCode(TypeHelp obj) {
+            if (obj == null)
+                return 0;
+
             return obj.Id.GetHashCode();
         }
     }

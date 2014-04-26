@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using AgentHeisenbug.Annotations.Generated;
 using AshMind.Extensions;
+using JetBrains.Annotations;
 
 namespace AgentHeisenbug.Indexer.ThreadSafe {
     public class HelpAnnotationProvider : IAnnotationProvider {
         private static readonly string ThreadSafeConstructorXmlId = "M:" + typeof(GeneratedThreadSafeAttribute).FullName + ".#ctor";
 
-        private readonly HelpRawReader _reader;
-        private readonly Action<TypeHelp> _reportParsingFailure;
+        [NotNull] private readonly HelpRawReader _reader;
+        [NotNull] private readonly Action<TypeHelp> _reportParsingFailure;
 
-        public HelpAnnotationProvider(HelpRawReader reader, Action<TypeHelp> reportParsingFailure = null) {
+        public HelpAnnotationProvider([NotNull] HelpRawReader reader, [NotNull] Action<TypeHelp> reportParsingFailure = null) {
             _reader = reader;
             _reportParsingFailure = reportParsingFailure ?? (s => { });
         }

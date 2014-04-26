@@ -6,35 +6,41 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.XPath;
+using JetBrains.Annotations;
 using AshMind.Extensions;
 
 namespace AgentHeisenbug.Indexer.ThreadSafe {
     public class HelpRawReader {
-        private static readonly XmlNamespaceManager namespaceManager;
-        private readonly ICollection<FileInfo> files;
+        [NotNull]private static readonly XmlNamespaceManager NamespaceManager;
+        [NotNull] private readonly ICollection<FileInfo> _files;
         
         static HelpRawReader() {
-            namespaceManager = new XmlNamespaceManager(new NameTable());
-            namespaceManager.AddNamespace("xhtml", "http://www.w3.org/1999/xhtml");
-            namespaceManager.AddNamespace("mtps",  "http://msdn2.microsoft.com/mtps");
+            NamespaceManager = new XmlNamespaceManager(new NameTable());
+            NamespaceManager.AddNamespace("xhtml", "http://www.w3.org/1999/xhtml");
+            NamespaceManager.AddNamespace("mtps", "http://msdn2.microsoft.com/mtps");
         }
 
-        public HelpRawReader(ICollection<FileInfo> files) {
-            this.files = files;
+        public HelpRawReader([NotNull] ICollection<FileInfo> files) {
+            _files = files;
         }
 
-        public IEnumerable<TypeHelp> ReadFiles(Action<double> reportProgress) {
-            return this.files.OnAfterEach((_, index) => reportProgress((double)index / files.Count))
+        [NotNull]
+        public IEnumerable<TypeHelp> ReadFiles([NotNull] Action<double> reportProgress) {
+            return _files.OnAfterEach((_, index) => reportProgress((double)index / _files.Count))
                              .SelectMany(ReadFile);
         }
 
-        private IEnumerable<TypeHelp> ReadFile(FileInfo file) {
+        [NotNull]
+        private IEnumerable<TypeHelp> ReadFile([NotNull] FileInfo file) {
             using (var stream = file.OpenRead())
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Read)) {
+                // ReSharper disable once AssignNullToNotNullAttribute
+                // ReSharper disable PossibleNullReferenceException
                 var results = archive.Entries.Where(e => e.Name.EndsWith(".htm"))
                                              .Select(ReadEntryText)
                                              .Select(ParseDescription)
                                              .Where(d => d != null);
+                // ReSharper restore PossibleNullReferenceException
 
                 foreach (var result in results) {
                     yield return result;
@@ -42,16 +48,19 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             }
         }
 
-        private string ReadEntryText(ZipArchiveEntry entry) {
+        [NotNull]
+        private string ReadEntryText([NotNull] ZipArchiveEntry entry) {
             using (var stream = entry.Open())
+            // ReSharper disable once AssignNullToNotNullAttribute
             using (var reader = new StreamReader(stream)) {
                 return reader.ReadToEnd();
             }
         }
 
-        private TypeHelp ParseDescription(string xmlString) {
+        [CanBeNull]
+        private TypeHelp ParseDescription([NotNull] string xmlString) {
             var xml = new XPathDocument(new StringReader(xmlString)).CreateNavigator();
-            var id = (string)xml.Evaluate("string(//xhtml:meta[@name='Microsoft.Help.Id']/@content)", namespaceManager);
+            var id = (string)xml.Evaluate("string(//xhtml:meta[@name='Microsoft.Help.Id']/@content)", NamespaceManager);
             if (id == null || !id.StartsWith("T:"))
                 return null;
 
@@ -59,25 +68,35 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             return new TypeHelp(id, GetAssemblyNames(xml), GetThreadSafety(threadSafetyText), threadSafetyText);
         }
 
-        private string[] GetAssemblyNames(XPathNavigator xml) {
-            var singleName = (string)xml.Evaluate("string(//xhtml:strong[.='Assembly:']/following-sibling::*[1])", namespaceManager);
+        [NotNull]
+        private string[] GetAssemblyNames([NotNull] XPathNavigator xml) {
+            var singleName = (string)xml.Evaluate("string(//xhtml:strong[.='Assembly:']/following-sibling::*[1])", NamespaceManager);
             if (!string.IsNullOrEmpty(singleName))
                 return new[] {singleName};
 
-            var parentResult = xml.Select("//xhtml:strong[.='Assemblies:']/parent::*", namespaceManager);
+            var parentResult = xml.Select("//xhtml:strong[.='Assemblies:']/parent::*", NamespaceManager);
             if (!parentResult.MoveNext())
-                return null;
+                throw new Exception("Could not find assembly names.");
 
+            // ReSharper disable once PossibleNullReferenceException
             var siblings = parentResult.Current.SelectChildren(XPathNodeType.Element);
-            var s1 = siblings.Cast<XPathNavigator>().SkipWhile(x => x.LocalName != "strong" || x.Value != "Assemblies:");
-            var s2 = s1.Skip(1);
-            var s3 = s2.TakeWhile(x => x.LocalName == "br" || x.LocalName == "span");
-            var s4 = s3.Where(x => x.LocalName == "span");
-            return s4.Select(x => x.Value).ToArray();
+
+            var assemblyNameSpans = siblings
+                // ReSharper disable PossibleNullReferenceException
+                .Cast<XPathNavigator>()
+                .SkipWhile(x => x.LocalName != "strong" || x.Value != "Assemblies:")
+                .Skip(1)
+                .TakeWhile(x => x.LocalName == "br" || x.LocalName == "span")
+                .Where(x => x.LocalName == "span");
+                // ReSharper restore PossibleNullReferenceException
+
+            // ReSharper disable once PossibleNullReferenceException
+            return assemblyNameSpans.Select(x => x.Value).ToArray();
         }
 
-        private string GetThreadSafetyText(XPathNavigator xml) {
-            var text = (string)xml.Evaluate("string(//mtps:CollapsibleArea[@Title='Thread Safety'])", namespaceManager);
+        [CanBeNull]
+        private string GetThreadSafetyText([NotNull] XPathNavigator xml) {
+            var text = (string)xml.Evaluate("string(//mtps:CollapsibleArea[@Title='Thread Safety'])", NamespaceManager);
             if (text == null)
                 return null;
 
