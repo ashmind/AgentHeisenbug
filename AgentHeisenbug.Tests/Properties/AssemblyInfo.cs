@@ -1,4 +1,5 @@
 ﻿using AgentHeisenbug.Analyzers;
+using AgentHeisenbug.Analyzers.ThreadSafe;
 using JetBrains.Application;
 using JetBrains.Threading;
 using System.Reflection;

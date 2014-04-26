@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AgentHeisenbug.Analyzers.Base;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
+using AgentHeisenbug.Analyzers.Base;
 using AgentHeisenbug.Annotations;
 using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers {
+namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IClassLikeDeclaration) }, HighlightingTypes = new[] {
         typeof(ThreadSafeClassInheritedByNonThreadSafeType),
         typeof(ThreadSafeInterfaceImplementedByNonThreadSafeType)

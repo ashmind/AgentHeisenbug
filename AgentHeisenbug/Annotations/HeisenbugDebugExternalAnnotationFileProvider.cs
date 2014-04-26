@@ -16,7 +16,7 @@ namespace AgentHeisenbug.Annotations {
             if (assemblyName == null)
                 return Enumerable.Empty<FileSystemPath>();
 
-            var root = FileSystemPath.Parse(@"d:\Development\VS 2012\AgentHeisenbug\#reflected\");
+            var root = FileSystemPath.Parse(@"d:\Development\VS 2012\AgentHeisenbug\#annotations\");
             var directoryForAssembly = root.Combine(assemblyName.Name);
             if (!directoryForAssembly.ExistsDirectory)
                 return Enumerable.Empty<FileSystemPath>();
