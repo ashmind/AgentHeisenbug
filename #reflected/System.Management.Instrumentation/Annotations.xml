@@ -6,7 +6,6 @@
     </attribute>
   </member>
   <member name="T:System.Management.Instrumentation.InstrumentationManager">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

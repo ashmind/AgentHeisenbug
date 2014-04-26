@@ -21,7 +21,6 @@
     </attribute>
   </member>
   <member name="T:System.Web.Mobile.ErrorHandlerModule">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -32,7 +31,6 @@
     </attribute>
   </member>
   <member name="T:System.Web.Mobile.MobileDeviceCapabilitiesSectionHandler">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -43,7 +41,6 @@
     </attribute>
   </member>
   <member name="T:System.Web.Mobile.MobileFormsAuthentication">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -59,7 +56,6 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.Design.MobileControls.MobileResource">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -360,7 +356,6 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCssHandler">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -631,7 +626,6 @@
     </attribute>
   </member>
   <member name="T:System.Web.UI.MobileControls.MobileControlsSectionHandler">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

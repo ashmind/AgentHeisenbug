@@ -21,7 +21,6 @@
     </attribute>
   </member>
   <member name="T:System.ComponentModel.DataAnnotations.ConcurrencyCheckAttribute">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -82,7 +81,6 @@
     </attribute>
   </member>
   <member name="T:System.ComponentModel.DataAnnotations.KeyAttribute">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -138,7 +136,6 @@
     </attribute>
   </member>
   <member name="T:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -159,7 +156,6 @@
     </attribute>
   </member>
   <member name="T:System.ComponentModel.DataAnnotations.Schema.NotMappedAttribute">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -175,7 +171,6 @@
     </attribute>
   </member>
   <member name="T:System.ComponentModel.DataAnnotations.TimestampAttribute">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

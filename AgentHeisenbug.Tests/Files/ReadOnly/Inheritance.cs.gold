@@ -1,0 +1,19 @@
+﻿using System;
+using JetBrains.Annotations;
+
+namespace JetBrains.Annotations {
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
+    public class ReadOnlyAttribute : Attribute {}
+}
+
+[ReadOnly] public interface IReadOnly {}
+[ReadOnly] public class ReadOnlyBase {}
+
+public class NonReadOnlyImplementingClass : |IReadOnly|(0) {}
+[ReadOnly] public class ReadOnlyImplementingClass : IReadOnly {}
+
+public class NonReadOnlySubClass : |ReadOnlyBase|(1) {}
+[ReadOnly] public class ReadOnlySubClass : ReadOnlyBase {}
+---------------------------------------------------------
+(0): ReSharper Warning: Interface 'IReadOnly' is readonly, but type 'NonReadOnlyImplementingClass' is not annotated with [ReadOnly].
+(1): ReSharper Warning: Class 'ReadOnlyBase' is readonly, but type 'NonReadOnlySubClass' is not annotated with [ReadOnly].

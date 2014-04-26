@@ -13,65 +13,79 @@ using AgentHeisenbug.Annotations.Generated;
 namespace AgentHeisenbug.Annotations {
     [PsiComponent]
     public class HeisenbugAnnotationCache : InvalidatingPsiCache {
-        [NotNull] private static readonly string GeneratedAttributeNamespace = typeof(GeneratedThreadSafeAttribute).Namespace;
         [NotNull] private static readonly Func<ExternalAnnotationAttributeInstance, int, string> GetPositionalAttributeValue = CompileGetPositionalAttributeValue();
 
         [NotNull] private readonly CodeAnnotationsCache _annotationCache;
-        [NotNull] private readonly ConcurrentDictionary<IAttributesOwner, ThreadSafety> _threadSafeCache = new ConcurrentDictionary<IAttributesOwner, ThreadSafety>();
-        [NotNull] private readonly ConcurrentDictionary<IAttributesOwner, bool> _readOnlyCache = new ConcurrentDictionary<IAttributesOwner, bool>();
+        [NotNull] private readonly ConcurrentDictionary<IAttributesOwner, HeisenbugAnnotations> _heisenbugCache = new ConcurrentDictionary<IAttributesOwner, HeisenbugAnnotations>();
 
         public HeisenbugAnnotationCache([NotNull] CodeAnnotationsCache annotationCache) {
             _annotationCache = annotationCache;
         }
 
-        public ThreadSafety GetThreadSafety([NotNull] IAttributesOwner member) {
+        [NotNull]
+        public HeisenbugAnnotations GetAnnotations([NotNull] IAttributesOwner member) {
             Argument.NotNull("member", member);
-            return _threadSafeCache.GetOrAdd(member, m => GetValueUncached(
-                // ReSharper disable AssignNullToNotNullAttribute
-                m, "ThreadSafeAttribute",
-                ThreadSafety.All,
-                generated => (ThreadSafety)Enum.Parse(typeof(ThreadSafety), GetPositionalAttributeValue((ExternalAnnotationAttributeInstance)generated, 0)),
-                GetThreadSafety
-                // ReSharper restore AssignNullToNotNullAttribute
-            ));
-        }
-        
-        public bool IsReadOnly([NotNull] IAttributesOwner member) {
-            Argument.NotNull("member", member);
-            return _readOnlyCache.GetOrAdd(member, m => GetValueUncached(
-                // ReSharper disable once AssignNullToNotNullAttribute
-                m, "ReadOnlyAttribute", true, _ => true, IsReadOnly
-            ));
+
+            // ReSharper disable once AssignNullToNotNullAttribute
+            return _heisenbugCache.GetOrAdd(member, GetAnnotationsUncached);
         }
 
-        private T GetValueUncached<T>([NotNull] IAttributesOwner member, string attributeShortName, T valueIfManual, [NotNull] Func<IAttributeInstance, T> valueIfGenerated, [NotNull] Func<IAttributesOwner, T> getValueCached) {
+        [NotNull]
+        private HeisenbugAnnotations GetAnnotationsUncached([NotNull] IAttributesOwner member) {
             var attributes = member.GetAttributeInstances(true);
-            Assume.NotNull("attributes", attributes);
+            Assume.NotNull(attributes, "attributes");
 
-            var manual = attributes.Any(a => this._annotationCache.IsAnnotationAttribute(a, attributeShortName));
-            if (manual)
-                return valueIfManual;
+            return new HeisenbugAnnotations(
+                IsReadOnlyUncached(member, attributes),
+                GetThreadSafetyUncached(member, attributes)
+            );
+        }
 
-            var generatedFullName = GeneratedAttributeNamespace + ".Generated" + attributeShortName;
+        private bool IsReadOnlyUncached([NotNull] IClrDeclaredElement member, [NotNull] IList<IAttributeInstance> attributes) {
+            return HasAnnotationAttribute(attributes, "ReadOnlyAttribute")
+                // ReSharper disable once PossibleNullReferenceException
+                || GetValueFromParentOrDefault(member, a => a.IsReadOnly);
+        }
+
+        private ThreadSafety GetThreadSafetyUncached([NotNull] IClrDeclaredElement member, [NotNull] IList<IAttributeInstance> attributes) {
+            if (HasAnnotationAttribute(attributes, "ThreadSafeAttribute"))
+                return ThreadSafety.All;
+
+            return GetThreadSafetyFromGenerated(attributes)
+                // ReSharper disable once PossibleNullReferenceException
+                ?? GetValueFromParentOrDefault(member, a => a.ThreadSafety);
+        }
+
+        private bool HasAnnotationAttribute([NotNull] IEnumerable<IAttributeInstance> attributes, [NotNull] string name) {
+            return attributes.Any(a => _annotationCache.IsAnnotationAttribute(a, name));
+        }
+
+        private ThreadSafety? GetThreadSafetyFromGenerated([NotNull] IEnumerable<IAttributeInstance> attributes) {
+            var generatedFullName = typeof(GeneratedThreadSafeAttribute).FullName;
             // ReSharper disable once PossibleNullReferenceException
             var generated = attributes.SingleOrDefault(a => a.GetClrName().FullName == generatedFullName);
-            if (generated != null)
-                return valueIfGenerated(generated);
+            if (generated == null)
+                return null;
 
+            var valueString = GetPositionalAttributeValue(((ExternalAnnotationAttributeInstance)generated), 0);
+            // ReSharper disable once AssignNullToNotNullAttribute
+            return (ThreadSafety)Enum.Parse(typeof(ThreadSafety), valueString);
+        }
+
+        private T GetValueFromParentOrDefault<T>([NotNull] IClrDeclaredElement member, [NotNull] Func<HeisenbugAnnotations, T> getValue) {
             if (member is ITypeElement)
                 return default(T);
 
             var containing = member.GetContainingType();
             if (containing != null)
-                return getValueCached(containing);
+                return getValue(GetAnnotations(containing));
 
             return default(T);
         }
-        
+
         protected override void InvalidateOnPhysicalChange() {
             base.InvalidateOnPhysicalChange();
-            this._threadSafeCache.Clear();
-            this._readOnlyCache.Clear();
+            _heisenbugCache.Clear();
         }
         
         private static Func<ExternalAnnotationAttributeInstance, int, string> CompileGetPositionalAttributeValue() {

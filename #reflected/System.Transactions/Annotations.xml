@@ -20,9 +20,6 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:System.Transactions.TransactionInterop">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
-  </member>
   <member name="T:System.Transactions.TransactionManager">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>

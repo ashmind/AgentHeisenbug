@@ -25,7 +25,6 @@ namespace AgentHeisenbug.Analyzers.Helpers {
 
         public bool IsReadOnly([NotNull] IType type) {
             Argument.NotNull("type", type);
-
             if (IsTriviallyImmutable(type))
                 return true;
 
@@ -37,7 +36,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             if (typeElement == null)
                 return false;
 
-            return _annotationCache.IsReadOnly(typeElement);
+            return _annotationCache.GetAnnotations(typeElement).IsReadOnly;
         }
 
         public bool IsInstanceThreadSafeOrReadOnly([NotNull] IType type) {
@@ -54,7 +53,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             if (typeElement == null)
                 return ThreadSafety.None;
 
-            return _annotationCache.GetThreadSafety(typeElement);
+            return _annotationCache.GetAnnotations(typeElement).ThreadSafety;
         }
     }
 }

@@ -45,12 +45,6 @@
       <argument>Static</argument>
     </attribute>
   </member>
-  <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestReader">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
-  </member>
-  <member name="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.ManifestWriter">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
-  </member>
   <member name="T:Microsoft.Build.Tasks.ExtractedClassName">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>

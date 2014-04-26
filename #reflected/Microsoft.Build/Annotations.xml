@@ -316,7 +316,6 @@
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Execution.ProjectTargetInstanceChild">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -327,7 +326,6 @@
     </attribute>
   </member>
   <member name="T:Microsoft.Build.Execution.ProjectTaskInstanceChild">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

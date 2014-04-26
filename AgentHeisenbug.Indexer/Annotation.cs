@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 
 namespace AgentHeisenbug.Indexer {
     public class Annotation {
-        public Annotation(string attributeConstructorXmlId, params string[] attributeArguments) {
-            this.AttributeConstructorXmlId = attributeConstructorXmlId;
-            this.AttributeArguments = attributeArguments;
-        }
+        [NotNull] public string AttributeConstructorXmlId { get; private set; }
+        [NotNull] public string[] AttributeArguments { get; private set; }
 
-        public string AttributeConstructorXmlId { get; private set; }
-        public string[] AttributeArguments { get; private set; }
+        public Annotation([NotNull] string attributeConstructorXmlId, [NotNull] params string[] attributeArguments) {
+            AttributeConstructorXmlId = attributeConstructorXmlId;
+            AttributeArguments = attributeArguments;
+        }
     }
 }

@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analyzers\Base\InheritanceAnalyzerBase.cs" />
+    <Compile Include="Analyzers\ThreadSafeInheritanceAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnlyInheritanceAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafeAutoPropertyAssignmentAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\AstExtensions.cs" />
     <Compile Include="Analyzers\ReadOnlyAutoPropertyAnalyzer.cs" />
@@ -59,6 +62,7 @@
     <Compile Include="Analyzers\Helpers\ReferencedTypeHelper.cs" />
     <Compile Include="Analyzers\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Analyzers\Helpers\AnalyzerPreconditions.cs" />
+    <Compile Include="Annotations\HeisenbugAnnotations.cs" />
     <Compile Include="Annotations\HeisenbugDebugExternalAnnotationFileProvider.cs" />
     <Compile Include="Assume.cs" />
     <Compile Include="Highlightings\Highlightings.cs">
@@ -73,9 +77,6 @@
     <Compile Include="ThreadSafety.cs" />
     <Compile Include="Analyzers\ThreadSafeAutoPropertyAnalyzer.cs" />
     <Compile Include="Annotations\HeisenbugAnnotationCache.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Highlightings\Highlightings.tt">

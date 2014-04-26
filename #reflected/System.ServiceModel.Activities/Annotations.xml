@@ -111,7 +111,6 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Activities.Description.WorkflowContractBehaviorAttribute">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
@@ -217,7 +216,6 @@
     </attribute>
   </member>
   <member name="T:System.ServiceModel.Activities.SendReceiveExtension">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedReadOnlyAttribute.#ctor" />
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>

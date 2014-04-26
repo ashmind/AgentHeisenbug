@@ -6,7 +6,25 @@ using AgentHeisenbug.Highlightings;
 
 
 [assembly: RegisterConfigurableSeverity(
-    CallToNotThreadSafeStaticMethodInThreadSafeType.Id,
+    ThreadSafeInterfaceImplementedByNonThreadSafeType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Thread-safe interface implemented by type that is not annotated with [ThreadSafe].",
+    "Thread-safe interface implemented by type that is not annotated with [ThreadSafe].",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
+    ThreadSafeClassInheritedByNonThreadSafeType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Thread-safe class inherited by type that is not annotated with [ThreadSafe].",
+    "Thread-safe class inherited by type that is not annotated with [ThreadSafe].",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
+    CallToNonThreadSafeStaticMethodInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
     "Call to static method that is not thread-safe from type annotated with [ThreadSafe]",
@@ -69,6 +87,24 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
+    ReadOnlyInterfaceImplementedByNonReadOnlyType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Readonly interface implemented by type that is not annotated with [ReadOnly].",
+    "Readonly interface implemented by type that is not annotated with [ReadOnly].",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
+    ReadOnlyClassInheritedByNonReadOnlyType.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Readonly class inherited by type that is not annotated with [ReadOnly].",
+    "Readonly class inherited by type that is not annotated with [ReadOnly].",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
     MutableFieldInReadOnlyType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
@@ -115,11 +151,33 @@ using AgentHeisenbug.Highlightings;
 )]
 
 namespace AgentHeisenbug.Highlightings {
-    [ConfigurableSeverityHighlighting(CallToNotThreadSafeStaticMethodInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class CallToNotThreadSafeStaticMethodInThreadSafeType : HeisenbugHighligtingBase {
-        public const string Id = "AgentHeisenbug.CallToNotThreadSafeStaticMethodInThreadSafeType";
+    [ConfigurableSeverityHighlighting(ThreadSafeInterfaceImplementedByNonThreadSafeType.Id, CSharpLanguage.Name)]
+    public class ThreadSafeInterfaceImplementedByNonThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.ThreadSafeInterfaceImplementedByNonThreadSafeType";
 
-        public CallToNotThreadSafeStaticMethodInThreadSafeType([NotNull] ITreeNode element, string methodName) : base(
+        public ThreadSafeInterfaceImplementedByNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) : base(
+            element,
+            "Interface '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
+            interfaceName, typeName
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(ThreadSafeClassInheritedByNonThreadSafeType.Id, CSharpLanguage.Name)]
+    public class ThreadSafeClassInheritedByNonThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.ThreadSafeClassInheritedByNonThreadSafeType";
+
+        public ThreadSafeClassInheritedByNonThreadSafeType([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
+            element,
+            "Class '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
+            baseClassName, typeName
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(CallToNonThreadSafeStaticMethodInThreadSafeType.Id, CSharpLanguage.Name)]
+    public class CallToNonThreadSafeStaticMethodInThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.CallToNonThreadSafeStaticMethodInThreadSafeType";
+
+        public CallToNonThreadSafeStaticMethodInThreadSafeType([NotNull] ITreeNode element, string methodName) : base(
             element,
             "Method '{0}' is not declared to be thread-safe.",
             methodName
@@ -189,6 +247,28 @@ namespace AgentHeisenbug.Highlightings {
             element,
             "Type '{1}' of parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
             paramterName, typeName
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(ReadOnlyInterfaceImplementedByNonReadOnlyType.Id, CSharpLanguage.Name)]
+    public class ReadOnlyInterfaceImplementedByNonReadOnlyType : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.ReadOnlyInterfaceImplementedByNonReadOnlyType";
+
+        public ReadOnlyInterfaceImplementedByNonReadOnlyType([NotNull] ITreeNode element, string interfaceName, string typeName) : base(
+            element,
+            "Interface '{0}' is readonly, but type '{1}' is not annotated with [ReadOnly].",
+            interfaceName, typeName
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(ReadOnlyClassInheritedByNonReadOnlyType.Id, CSharpLanguage.Name)]
+    public class ReadOnlyClassInheritedByNonReadOnlyType : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.ReadOnlyClassInheritedByNonReadOnlyType";
+
+        public ReadOnlyClassInheritedByNonReadOnlyType([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
+            element,
+            "Class '{0}' is readonly, but type '{1}' is not annotated with [ReadOnly].",
+            baseClassName, typeName
         ) {}
     }
 

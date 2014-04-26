@@ -32,7 +32,7 @@ namespace AgentHeisenbug.Analyzers {
 
             if (!_referenceHelper.IsReadOnly(field.Type)) {
                 consumer.AddHighlighting(new FieldOfNonReadOnlyTypeInReadOnlyType(
-                    field.TypeUsage, field.DeclaredName, field.Type.GetPresentableName(CSharpLanguage.Instance)
+                    field.TypeUsage, field.DeclaredName, field.Type.GetCSharpPresentableName()
                 ));
             }
         }

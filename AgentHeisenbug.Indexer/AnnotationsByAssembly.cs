@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 
 namespace AgentHeisenbug.Indexer {
     public class AnnotationsByAssembly {
-        public string AssemblyName { get; private set; }
-        public ICollection<AnnotationsByMember> Annotations { get; private set; }
+        [NotNull] public string AssemblyName { get; private set; }
+        [NotNull] public ICollection<AnnotationsByMember> Annotations { get; private set; }
 
-        public AnnotationsByAssembly(string assemblyName, ICollection<AnnotationsByMember> annotations) {
+        public AnnotationsByAssembly([NotNull] string assemblyName, [NotNull] ICollection<AnnotationsByMember> annotations) {
             AssemblyName = assemblyName;
             Annotations = annotations;
         }

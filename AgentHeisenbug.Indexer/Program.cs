@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using AgentHeisenbug.Indexer.ReadOnly;
 using AgentHeisenbug.Indexer.ThreadSafe;
+using JetBrains.Annotations;
+
+// ReSharper disable PossibleNullReferenceException
+// ReSharper disable AssignNullToNotNullAttribute
 
 namespace AgentHeisenbug.Indexer {
     public static class Program {
@@ -16,15 +19,14 @@ namespace AgentHeisenbug.Indexer {
             
             var outputDirectory = new DirectoryInfo(args[0]);
             var msdnDirectory = new DirectoryInfo(ConfigurationManager.AppSettings["indexer:MsdnPath"]);
-            var frameworkDirectory = new DirectoryInfo(ConfigurationManager.AppSettings["indexer:FrameworkPath"]);
             var assemblyFilter = ConfigurationManager.AppSettings["indexer:AssemblyFilter"];
 
             var helpParsingFailures = new List<TypeHelp>();
             var providers = new IAnnotationProvider[] {
-                new ReadOnlyAnnotationProvider(frameworkDirectory),
                 new HelpAnnotationProvider(new HelpRawReader(msdnDirectory.GetFiles("*NET_FRAMEWORK_45*.mshc")), helpParsingFailures.Add)
             };
 
+            // ReSharper disable once CoVariantArrayConversion
             using (ConsoleMultiProgressReporter.Start(providers)) {
                 var annotations = GetAllAnnotations(providers, assemblyFilter);
                 new AnnotationWriter().WriteAll(outputDirectory, annotations);
@@ -33,7 +35,7 @@ namespace AgentHeisenbug.Indexer {
             WriteHelpParsingFailures(outputDirectory, helpParsingFailures);
         }
 
-        private static IEnumerable<AnnotationsByAssembly> GetAllAnnotations(IEnumerable<IAnnotationProvider> providers, string assemblyFilter) {
+        private static IEnumerable<AnnotationsByAssembly> GetAllAnnotations([NotNull] IEnumerable<IAnnotationProvider> providers, [NotNull] string assemblyFilter) {
             var annotations = providers.AsParallel()
                                        .SelectMany(p => p.GetAnnotationsByAssembly(
                                            n => Regex.IsMatch(n, assemblyFilter),

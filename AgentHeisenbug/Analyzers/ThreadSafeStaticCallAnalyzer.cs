@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -12,7 +13,7 @@ using AgentHeisenbug.Annotations;
 using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers {
-    [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToNotThreadSafeStaticMethodInThreadSafeType) })]
+    [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToNonThreadSafeStaticMethodInThreadSafeType) })]
     public class ThreadSafeStaticCallAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly HeisenbugAnnotationCache _annotationCache;
@@ -36,11 +37,12 @@ namespace AgentHeisenbug.Analyzers {
             if (method == null || !method.IsStatic)
                 return;
 
-            var safetyLevel = this._annotationCache.GetThreadSafety(method);
+            var safetyLevel = _annotationCache.GetAnnotations(method).ThreadSafety;
             if (safetyLevel.Has(ThreadSafety.Static))
                 return;
 
-            consumer.AddHighlighting(new CallToNotThreadSafeStaticMethodInThreadSafeType(call.InvokedExpression, method.ShortName));
+            Assume.NotNullWorkaround(call.InvokedExpression != null, "call.InvokedExpression");
+            consumer.AddHighlighting(new CallToNonThreadSafeStaticMethodInThreadSafeType(call.InvokedExpression, method.ShortName));
         }
     }
 }

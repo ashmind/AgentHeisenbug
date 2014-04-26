@@ -77,7 +77,6 @@
     <Compile Include="AnnotationsByMember.cs" />
     <Compile Include="AnnotationsByAssembly.cs" />
     <Compile Include="ConsoleMultiProgressReporter.cs" />
-    <Compile Include="ReadOnly\ReadOnlyAnnotationProvider.cs" />
     <Compile Include="TaskbarApi\CTaskbarList.cs" />
     <Compile Include="TaskbarApi\ITaskbarList4.cs" />
     <Compile Include="TaskbarApi\TaskbarProgressBarStatus.cs" />

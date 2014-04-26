@@ -34,7 +34,7 @@ namespace AgentHeisenbug.Analyzers {
 
             if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(parameter.Type)) {
                 consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
-                    parameter.TypeUsage, parameter.DeclaredName, parameter.Type.GetPresentableName(CSharpLanguage.Instance)
+                    parameter.TypeUsage, parameter.DeclaredName, parameter.Type.GetCSharpPresentableName()
                 ));
             }
         }

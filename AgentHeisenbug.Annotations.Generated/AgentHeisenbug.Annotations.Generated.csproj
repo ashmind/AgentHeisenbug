@@ -40,8 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeneratedImmutableAttribute.cs" />
-    <Compile Include="GeneratedReadOnlyAttribute.cs" />
     <Compile Include="GeneratedThreadSafeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

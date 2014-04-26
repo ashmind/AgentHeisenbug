@@ -8,17 +8,17 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
     public class HelpAnnotationProvider : IAnnotationProvider {
         private static readonly string ThreadSafeConstructorXmlId = "M:" + typeof(GeneratedThreadSafeAttribute).FullName + ".#ctor";
 
-        private readonly HelpRawReader reader;
-        private readonly Action<TypeHelp> reportParsingFailure;
+        private readonly HelpRawReader _reader;
+        private readonly Action<TypeHelp> _reportParsingFailure;
 
         public HelpAnnotationProvider(HelpRawReader reader, Action<TypeHelp> reportParsingFailure = null) {
-            this.reader = reader;
-            this.reportParsingFailure = reportParsingFailure ?? (s => { });
+            _reader = reader;
+            _reportParsingFailure = reportParsingFailure ?? (s => { });
         }
 
         public IEnumerable<AnnotationsByAssembly> GetAnnotationsByAssembly(Func<string, bool> assemblyNameFilter, Action<double> reportProgress) {
             var typesByAssembly = new Dictionary<string, ISet<TypeHelp>>();
-            foreach (var type in this.reader.ReadFiles(reportProgress)) {
+            foreach (var type in _reader.ReadFiles(reportProgress)) {
                 foreach (var assemblyName in type.AssemblyNames) {
                     if (!assemblyNameFilter(assemblyName))
                         continue;
@@ -36,7 +36,7 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
             var annotations = new List<AnnotationsByMember>();
             foreach (var type in types) {
                 if (type.ThreadSafety == TypeThreadSafety.NotParsed) {
-                    reportParsingFailure(type);
+                    _reportParsingFailure(type);
                     continue;
                 }
 

@@ -23,7 +23,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 
-            var safety = _annotationCache.GetThreadSafety(typeNode.DeclaredElement);
+            var safety = _annotationCache.GetAnnotations(typeNode.DeclaredElement).ThreadSafety;
             var member = node.GetContainingNode<ICSharpTypeMemberDeclaration>();
             if (member == null)
                 return safety == ThreadSafety.All;
@@ -38,7 +38,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 
-            return this._annotationCache.IsReadOnly(typeNode.DeclaredElement);
+            return _annotationCache.GetAnnotations(typeNode.DeclaredElement).IsReadOnly;
         }
     }
 }

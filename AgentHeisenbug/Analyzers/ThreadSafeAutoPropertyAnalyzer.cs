@@ -34,7 +34,7 @@ namespace AgentHeisenbug.Analyzers {
 
             if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(property.Type)) {
                 consumer.AddHighlighting(new AutoPropertyOfNonThreadSafeTypeInThreadSafeType(
-                    property.TypeUsage, property.DeclaredName, property.Type.GetPresentableName(CSharpLanguage.Instance)
+                    property.TypeUsage, property.DeclaredName, property.Type.GetCSharpPresentableName()
                 ));
             }
         }

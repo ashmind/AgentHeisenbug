@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using AgentHeisenbug.Indexer.TaskbarApi;
 using AshMind.Extensions;
+using JetBrains.Annotations;
 
 namespace AgentHeisenbug.Indexer {
     public static class ConsoleMultiProgressReporter {
@@ -22,50 +23,50 @@ namespace AgentHeisenbug.Indexer {
         private static extern IntPtr GetConsoleWindow();
         #endregion
 
-        private static readonly IntPtr windowHandle = GetConsoleWindow();
-        private static readonly ConcurrentDictionary<object, double> progressBySource = new ConcurrentDictionary<object, double>();
-        private static readonly ITaskbarList4 taskbar = (ITaskbarList4)new CTaskbarList();
-        private static Timer progressTimer;
-        private static string savedTitle;
+        private static readonly IntPtr _windowHandle = GetConsoleWindow();
+        [NotNull] private static readonly ConcurrentDictionary<object, double> _progressBySource = new ConcurrentDictionary<object, double>();
+        [NotNull] private static readonly ITaskbarList4 _taskbar = (ITaskbarList4)new CTaskbarList();
+        [NotNull] private static Timer _progressTimer;
+        [NotNull] private static string _savedTitle;
 
         static ConsoleMultiProgressReporter() {
-            taskbar.HrInit();
+            _taskbar.HrInit();
         }
-        
-        public static IDisposable Start(params object[] sources) {
-            savedTitle = Console.Title;
 
-            progressBySource.Clear();
-            sources.ForEach(s => progressBySource[s] = 0);
+        public static IDisposable Start([NotNull] params object[] sources) {
+            _savedTitle = Console.Title;
 
-            progressTimer = new Timer(_ => DisplayProgress());
+            _progressBySource.Clear();
+            sources.ForEach(s => _progressBySource[s] = 0);
+
+            _progressTimer = new Timer(_ => DisplayProgress());
             try {
-                progressTimer.Change(0, 500);
-                taskbar.SetProgressState(windowHandle, TaskbarProgressBarStatus.Normal);
+                _progressTimer.Change(0, 500);
+                _taskbar.SetProgressState(_windowHandle, TaskbarProgressBarStatus.Normal);
             }
             catch (Exception) {
-                progressTimer.Dispose();
+                _progressTimer.Dispose();
                 throw;
             }
 
             return new Disposer();
         }
 
-        public static void Progress(object source, double progress) {
-            progressBySource[source] = progress;
+        public static void Progress([NotNull] object source, double progress) {
+            _progressBySource[source] = progress;
         }
 
         public static void End() {
-            progressTimer.Dispose();
-            taskbar.SetProgressState(windowHandle, TaskbarProgressBarStatus.NoProgress);
-            Console.Title = savedTitle;
+            _progressTimer.Dispose();
+            _taskbar.SetProgressState(_windowHandle, TaskbarProgressBarStatus.NoProgress);
+            Console.Title = _savedTitle;
         }
 
         private static void DisplayProgress() {
-            var maximum = progressBySource.Count;
-            var current = progressBySource.Values.Sum(v => v);
-            Console.Title = string.Format("{0:F2} % {1}", 100 * current / maximum, savedTitle);
-            taskbar.SetProgressValue(windowHandle, (ulong)(1000 * current), (ulong)(1000 * maximum));
+            var maximum = _progressBySource.Count;
+            var current = _progressBySource.Values.Sum(v => v);
+            Console.Title = string.Format("{0:F1} % {1}", 100 * current / maximum, _savedTitle);
+            _taskbar.SetProgressValue(_windowHandle, (ulong)(1000 * current), (ulong)(1000 * maximum));
         }
     }
 }

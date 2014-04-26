@@ -13,7 +13,21 @@ using AgentHeisenbug.Highlightings;
 
 <# var models = new List<Model> {
     new Model(
-        "CallToNotThreadSafeStaticMethodInThreadSafeType",
+        "ThreadSafeInterfaceImplementedByNonThreadSafeType",
+        "Thread-safe interface implemented by type that is not annotated with [ThreadSafe].",
+        "Interface '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
+        "string interfaceName, string typeName"
+    ),
+
+    new Model(
+        "ThreadSafeClassInheritedByNonThreadSafeType",
+        "Thread-safe class inherited by type that is not annotated with [ThreadSafe].",
+        "Class '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
+        "string baseClassName, string typeName"
+    ),
+
+    new Model(
+        "CallToNonThreadSafeStaticMethodInThreadSafeType",
         "Call to static method that is not thread-safe from type annotated with [ThreadSafe]",
         "Method '{0}' is not declared to be thread-safe.",
         "string methodName"
@@ -59,6 +73,20 @@ using AgentHeisenbug.Highlightings;
         "Parameter of type that is not thread-safe in a thread-safe method",
         "Type '{1}' of parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
         "string paramterName, string typeName"
+    ),
+
+    new Model(
+        "ReadOnlyInterfaceImplementedByNonReadOnlyType",
+        "Readonly interface implemented by type that is not annotated with [ReadOnly].",
+        "Interface '{0}' is readonly, but type '{1}' is not annotated with [ReadOnly].",
+        "string interfaceName, string typeName"
+    ),
+
+    new Model(
+        "ReadOnlyClassInheritedByNonReadOnlyType",
+        "Readonly class inherited by type that is not annotated with [ReadOnly].",
+        "Class '{0}' is readonly, but type '{1}' is not annotated with [ReadOnly].",
+        "string baseClassName, string typeName"
     ),
 
     new Model(

@@ -34,7 +34,7 @@ namespace AgentHeisenbug.Analyzers {
 
             if (!this._referenceHelper.IsReadOnly(property.Type)) {
                 consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(
-                    property.TypeUsage, property.DeclaredName, property.Type.GetPresentableName(CSharpLanguage.Instance)
+                    property.TypeUsage, property.DeclaredName, property.Type.GetCSharpPresentableName()
                 ));
             }
         }
