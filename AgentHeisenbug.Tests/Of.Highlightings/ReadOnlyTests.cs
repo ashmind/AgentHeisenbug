@@ -13,6 +13,7 @@ namespace AgentHeisenbug.Tests.Of.Highlightings {
         [TestCase("Properties.cs")]
         [TestCase("Inheritance.cs")]
         [TestCase("BclTypes.cs")]
+        [TestCase("ArrayPointerEtcTypes.cs")]
         public void Test(string testName) {
             DoTestSolution(testName);
         }

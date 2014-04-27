@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using JetBrains.Annotations;
+
+namespace JetBrains.Annotations {
+    public class ReadOnlyAttribute : Attribute {}
+}
+
+public class NonReadOnly {}
+
+[ReadOnly]
+public unsafe class ArrayPointerEtcTypes {
+    private readonly int? x;
+    private readonly |int*|(0) x;
+    private readonly |int**|(1) x;
+    private readonly |int*[]|(2) x;
+    private readonly |int[]|(3) x;
+    private readonly |int[,]|(4) x;
+    private readonly |int[][]|(5) x;
+
+    private readonly |NonReadOnly[]|(6) x;
+    private readonly |NonReadOnly[,]|(7) x;
+    private readonly |NonReadOnly[][]|(8) x;
+}
+---------------------------------------------------------
+(0): ReSharper Warning: Type 'int*' of field 'x' in a [ReadOnly] type should be readonly.
+(1): ReSharper Warning: Type 'int**' of field 'x' in a [ReadOnly] type should be readonly.
+(2): ReSharper Warning: Type 'int*[]' of field 'x' in a [ReadOnly] type should be readonly.
+(3): ReSharper Warning: Type 'int[]' of field 'x' in a [ReadOnly] type should be readonly.
+(4): ReSharper Warning: Type 'int[,]' of field 'x' in a [ReadOnly] type should be readonly.
+(5): ReSharper Warning: Type 'int[][]' of field 'x' in a [ReadOnly] type should be readonly.
+(6): ReSharper Warning: Type 'NonReadOnly[]' of field 'x' in a [ReadOnly] type should be readonly.
+(7): ReSharper Warning: Type 'NonReadOnly[,]' of field 'x' in a [ReadOnly] type should be readonly.
+(8): ReSharper Warning: Type 'NonReadOnly[][]' of field 'x' in a [ReadOnly] type should be readonly.
