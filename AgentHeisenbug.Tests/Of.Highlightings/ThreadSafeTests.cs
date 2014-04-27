@@ -11,10 +11,15 @@ namespace AgentHeisenbug.Tests.Of.Highlightings {
         [Test]
         [TestCase("Fields.cs")]
         [TestCase("Properties.cs")]
-        [TestCase("Parameters.cs")]
         [HighlightingFilter(exclude: "Inherited|Implemented")]
         public void Test(string testName) {
             DoTestSolution(testName);
+        }
+
+        [Test]
+        [HighlightingFilter(include: @"AgentHeisenbug\..*Parameter")]
+        public void Parameters() {
+            DoTestSolution("Parameters.cs");
         }
 
         [Test]

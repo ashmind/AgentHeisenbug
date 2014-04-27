@@ -4,10 +4,11 @@ using System.Linq;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
+using JetBrains.ReSharper.Psi.CSharp.Impl;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
 
-namespace AgentHeisenbug.Analyzers.Helpers {
+namespace AgentHeisenbug {
     public static class AstExtensions {
         [CanBeNull]
         public static IAccessorDeclaration GetSetter([NotNull] this IPropertyDeclaration property) {
@@ -43,5 +44,20 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             return type.GetPresentableName(CSharpLanguage.Instance);
         }
 
+        [CanBeNull]
+        public static IList<IAttributeInstance> ReliablyGetAttributeInstances([NotNull] this IAttributesOwner owner, bool inherit) {
+            Argument.NotNull("owner", owner);
+            if (owner.GetType().FullName == "JetBrains.ReSharper.Psi.ExtensionsAPI.Caches2.TypeElement+TypeParameter")
+                return GetAttributeInstancesFromTypeParameter((ITypeParameter)owner);
+
+            return owner.GetAttributeInstances(inherit);
+        }
+
+        private static IList<IAttributeInstance> GetAttributeInstancesFromTypeParameter([NotNull] ITypeParameter owner) {
+            var declarations = owner.GetDeclarations().Cast<IAttributesOwnerDeclaration>();
+            // ReSharper disable once PossibleNullReferenceException
+            var attributes = declarations.SelectMany(d => d.AttributesEnumerable);
+            return attributes.Select(CSharpImplUtil.GetAttributeInstance).AsIList();
+        }
     }
 }

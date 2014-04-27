@@ -28,4 +28,4 @@ public class Parameters {
     public void M(out ReadOnly s) {}
 }
 ---------------------------------------------------------
-(0): ReSharper Warning: Type 'NonSafe' of parameter 's' in a thread-safe method should be thread-safe unless method is [Pure].
+(0): ReSharper Warning: Type 'NonSafe' used by parameter 's' in a thread-safe method should be thread-safe unless method is [Pure].

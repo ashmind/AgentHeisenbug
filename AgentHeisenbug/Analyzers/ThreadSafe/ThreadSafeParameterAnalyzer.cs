@@ -6,6 +6,7 @@ using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CodeAnnotations;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
+using JetBrains.Util;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
@@ -31,13 +32,16 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             if (method == null || this._annotationsCache.IsPure(method.DeclaredElement))
                 return;
 
-            Assume.NotNullWorkaround(parameter.Type != null, "parameter.Type");
-            Assume.NotNullWorkaround(parameter.TypeUsage != null, "parameter.TypeUsage");
-            if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(parameter.Type)) {
-                consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
-                    parameter.TypeUsage, parameter.DeclaredName, parameter.Type.GetCSharpPresentableName()
-                ));
-            }
+            _referenceHelper.ValidateTypeUsageTree(
+                parameter.TypeUsage.NotNull(),
+                _referenceHelper.IsInstanceThreadSafeOrReadOnly,
+
+                (type, usage) => consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
+                    // ReSharper disable AssignNullToNotNullAttribute
+                    usage, parameter.DeclaredName, type.GetCSharpPresentableName()
+                    // ReSharper enable AssignNullToNotNullAttribute
+                ))
+            );
         }
     }
 }

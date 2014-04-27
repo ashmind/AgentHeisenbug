@@ -5,6 +5,7 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
+using JetBrains.Util;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
@@ -30,13 +31,16 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             if (!field.IsReadonly)
                 consumer.AddHighlighting(new MutableFieldInThreadSafeType(field, field.DeclaredName));
 
-            Assume.NotNullWorkaround(field.Type != null, "field.Type");
-            Assume.NotNullWorkaround(field.TypeUsage != null, "field.TypeUsage");
-            if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(field.Type)) {
-                consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
-                    field.TypeUsage, field.DeclaredName, field.Type.GetCSharpPresentableName()
-                ));
-            }
+            _referenceHelper.ValidateTypeUsageTree(
+                field.TypeUsage.NotNull(),
+                _referenceHelper.IsInstanceThreadSafeOrReadOnly,
+
+                (type, usage) => consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
+                    // ReSharper disable AssignNullToNotNullAttribute
+                    usage, field.DeclaredName, type.GetCSharpPresentableName()
+                    // ReSharper enable AssignNullToNotNullAttribute
+                ))
+            );
         }
     }
 }

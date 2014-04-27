@@ -3,11 +3,13 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using AgentHeisenbug.Analyzers.Helpers;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.CodeAnnotations;
 using JetBrains.ReSharper.Psi.Impl.Reflection2.ExternalAnnotations;
+using JetBrains.Util;
 using AgentHeisenbug.Annotations.Generated;
 
 namespace AgentHeisenbug.Annotations {
@@ -25,16 +27,12 @@ namespace AgentHeisenbug.Annotations {
         [NotNull]
         public HeisenbugAnnotations GetAnnotations([NotNull] IAttributesOwner member) {
             Argument.NotNull("member", member);
-
-            // ReSharper disable once AssignNullToNotNullAttribute
-            return _heisenbugCache.GetOrAdd(member, GetAnnotationsUncached);
+            return _heisenbugCache.GetOrAdd(member, GetAnnotationsUncached).NotNull();
         }
 
         [NotNull]
         private HeisenbugAnnotations GetAnnotationsUncached([NotNull] IAttributesOwner member) {
-            var attributes = member.GetAttributeInstances(true);
-            Assume.NotNull(attributes, "attributes");
-
+            var attributes = member.ReliablyGetAttributeInstances(false).NotNull();
             return new HeisenbugAnnotations(
                 IsReadOnlyUncached(member, attributes),
                 GetThreadSafetyUncached(member, attributes)
@@ -68,8 +66,7 @@ namespace AgentHeisenbug.Annotations {
                 return null;
 
             var valueString = GetPositionalAttributeValue(((ExternalAnnotationAttributeInstance)generated), 0);
-            // ReSharper disable once AssignNullToNotNullAttribute
-            return (ThreadSafety)Enum.Parse(typeof(ThreadSafety), valueString);
+            return (ThreadSafety)Enum.Parse(typeof(ThreadSafety), valueString.NotNull());
         }
 
         private T GetValueFromParentOrDefault<T>([NotNull] IClrDeclaredElement member, [NotNull] Func<HeisenbugAnnotations, T> getValue) {

@@ -7,6 +7,7 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
+using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IPropertyDeclaration) }, HighlightingTypes = new[] {
@@ -28,18 +29,19 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
                 return;
 
             var setter = property.GetSetter();
-            if (setter != null && !setter.IsPrivate()) {
-                Assume.NotNullWorkaround(setter.NameIdentifier != null, "setter.NameIdentifier");
-                consumer.AddHighlighting(new MutableAutoPropertyInThreadSafeType(setter.NameIdentifier, property.DeclaredName));
-            }
+            if (setter != null && !setter.IsPrivate())
+                consumer.AddHighlighting(new MutableAutoPropertyInThreadSafeType(setter.NameIdentifier.NotNull(), property.DeclaredName));
 
-            Assume.NotNullWorkaround(property.Type != null, "property.Type");
-            Assume.NotNullWorkaround(property.TypeUsage != null, "property.TypeUsage");
-            if (!_referenceHelper.IsInstanceThreadSafeOrReadOnly(property.Type)) {
-                consumer.AddHighlighting(new AutoPropertyOfNonThreadSafeTypeInThreadSafeType(
-                    property.TypeUsage, property.DeclaredName, property.Type.GetCSharpPresentableName()
-                ));
-            }
+            _referenceHelper.ValidateTypeUsageTree(
+                property.TypeUsage.NotNull(),
+                _referenceHelper.IsInstanceThreadSafeOrReadOnly,
+
+                (type, usage) => consumer.AddHighlighting(new AutoPropertyOfNonThreadSafeTypeInThreadSafeType(
+                    // ReSharper disable AssignNullToNotNullAttribute
+                    usage, property.DeclaredName, type.GetCSharpPresentableName()
+                    // ReSharper enable AssignNullToNotNullAttribute
+                ))
+            );
         }
     }
 }

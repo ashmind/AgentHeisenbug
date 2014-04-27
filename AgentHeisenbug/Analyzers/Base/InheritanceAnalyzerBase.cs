@@ -7,7 +7,7 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.Util;
-using AgentHeisenbug.Analyzers.Helpers;
+using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers.Base {
     public abstract class InheritanceAnalyzerBase : IElementProblemAnalyzer {
@@ -33,8 +33,7 @@ namespace AgentHeisenbug.Analyzers.Base {
                 if (!IsAnnotated(superTypeElement))
                     continue;
 
-                var usage = Assume.NotNull(type.SuperTypeUsageNodes[index], "type.SuperTypeUsageNodes[" + index + "]");
-                consumer.AddHighlighting(Highlighting(type, superType, usage));
+                consumer.AddHighlighting(Highlighting(type, superType, type.SuperTypeUsageNodes[index].NotNull()));
             }
         }
 

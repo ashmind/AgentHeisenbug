@@ -7,11 +7,15 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
+using JetBrains.Util;
 using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers.ReadOnly {
-    [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] { typeof(MutableFieldInReadOnlyType) })]
+    [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] {
+        typeof(MutableFieldInReadOnlyType),
+        typeof(FieldOfNonReadOnlyTypeInReadOnlyType)
+    })]
     public class ReadOnlyFieldAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly ReferencedTypeHelper _referenceHelper;
@@ -28,12 +32,17 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
 
             if (!field.IsReadonly)
                 consumer.AddHighlighting(new MutableFieldInReadOnlyType(field, field.DeclaredName));
+            
+            _referenceHelper.ValidateTypeUsageTree(
+                field.TypeUsage.NotNull(),
+                _referenceHelper.IsReadOnly,
 
-            if (!_referenceHelper.IsReadOnly(field.Type)) {
-                consumer.AddHighlighting(new FieldOfNonReadOnlyTypeInReadOnlyType(
-                    field.TypeUsage, field.DeclaredName, field.Type.GetCSharpPresentableName()
-                ));
-            }
+                (type, usage) => consumer.AddHighlighting(new FieldOfNonReadOnlyTypeInReadOnlyType(
+                    // ReSharper disable AssignNullToNotNullAttribute
+                    usage, field.DeclaredName, type.GetCSharpPresentableName()
+                    // ReSharper enable AssignNullToNotNullAttribute
+                ))
+            );
         }
     }
 }

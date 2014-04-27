@@ -44,8 +44,8 @@ public class Properties {
 ---------------------------------------------------------
 (0): ReSharper Warning: Setter of auto property 'AutoGetSet' in a [ReadOnly] class should be private.
 (1): ReSharper Warning: Setter of auto property 'StaticAutoGetSet' in a [ReadOnly] class should be private.
-(2): ReSharper Warning: Type 'NonReadOnly' of auto property 'AutoPrivateSet2' in a [ReadOnly] type should be readonly.
-(3): ReSharper Warning: Type 'NonReadOnly' of auto property 'StaticAutoPrivateSet2' in a [ReadOnly] type should be readonly.
+(2): ReSharper Warning: Type 'NonReadOnly' used by auto property 'AutoPrivateSet2' in a [ReadOnly] type should be readonly.
+(3): ReSharper Warning: Type 'NonReadOnly' used by auto property 'StaticAutoPrivateSet2' in a [ReadOnly] type should be readonly.
 (4): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ReadOnly] class should only be assigned in a constructor.
 (5): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ReadOnly] class should only be assigned in a static constructor.
 (6): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ReadOnly] class should only be assigned in a constructor.

@@ -42,8 +42,8 @@ using AgentHeisenbug.Highlightings;
 
     new Model(
         "FieldOfNonThreadSafeTypeInThreadSafeType",
-        "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
-        "Type '{1}' of field '{0}' in a [ThreadSafe] type should be thread-safe.",
+        "Field using type that is not thread-safe in type annotated with [ThreadSafe]",
+        "Type '{1}' used by field '{0}' in a [ThreadSafe] type should be thread-safe.",
         "string fieldName, string typeName"
     ),
 
@@ -56,8 +56,8 @@ using AgentHeisenbug.Highlightings;
 
     new Model(
         "AutoPropertyOfNonThreadSafeTypeInThreadSafeType",
-        "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
-        "Type '{1}' of auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
+        "Auto property using type that is not thread-safe in type annotated with [ThreadSafe]",
+        "Type '{1}' used by auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
         "string propertyName, string typeName"
     ),
 
@@ -70,8 +70,8 @@ using AgentHeisenbug.Highlightings;
 
     new Model(
         "ParameterOfNonThreadSafeTypeInThreadSafeMethod",
-        "Parameter of type that is not thread-safe in a thread-safe method",
-        "Type '{1}' of parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
+        "Parameter using type that is not thread-safe in a thread-safe method",
+        "Type '{1}' used by parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
         "string paramterName, string typeName"
     ),
 
@@ -98,8 +98,8 @@ using AgentHeisenbug.Highlightings;
 
     new Model(
         "FieldOfNonReadOnlyTypeInReadOnlyType",
-        "Field of mutable type in type annotated with [ReadOnly]",
-        "Type '{1}' of field '{0}' in a [ReadOnly] type should be readonly.",
+        "Field using mutable type in type annotated with [ReadOnly]",
+        "Type '{1}' used by field '{0}' in a [ReadOnly] type should be readonly.",
         "string fieldName, string typeName"
     ),
 
@@ -112,8 +112,8 @@ using AgentHeisenbug.Highlightings;
 
     new Model(
         "AutoPropertyOfNonReadOnlyTypeInReadOnlyType",
-        "Auto property of type that is not readonly, in type annotated with [ReadOnly]",
-        "Type '{1}' of auto property '{0}' in a [ReadOnly] type should be readonly.",
+        "Auto property using type that is not readonly in type annotated with [ReadOnly]",
+        "Type '{1}' used by auto property '{0}' in a [ReadOnly] type should be readonly.",
         "string propertyName, string typeName"
     ),
 
@@ -137,16 +137,23 @@ using AgentHeisenbug.Highlightings;
 )]
 <# } #>
 
-namespace AgentHeisenbug.Highlightings {<# foreach (var model in models) { #>
+namespace AgentHeisenbug.Highlightings {
+    public static class HeisenbugHighlightings {
+<# foreach (var model in models) { #>
+        public static <#= model.Id #> <#= model.Id #>([NotNull] ITreeNode element, <#= model.ArgumentsDefinition #>) {
+            return new <#= model.Id #>(element, <#= model.Arguments #>);
+        }
+<# } #>    }
+<# foreach (var model in models) { #>
 
     [ConfigurableSeverityHighlighting(<#= model.Id #>.Id, CSharpLanguage.Name)]
     public class <#= model.Id #> : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.<#= model.Id #>";
 
-        public <#= model.Id #>([NotNull] ITreeNode element, <#= model.Arguments #>) : base(
+        public <#= model.Id #>([NotNull] ITreeNode element, <#= model.ArgumentsDefinition #>) : base(
             element,
             "<#= model.MessageFormat #>",
-            <#= Regex.Replace(model.Arguments, @"(?<=(?:^|,)\s*)\S+\s+", "") #>
+            <#= model.Arguments #>
         ) {}
     }
 <# } #>}
@@ -156,13 +163,15 @@ private class Model {
     public string Id { get; private set; }
     public string Description { get; private set; }
     public string MessageFormat { get; private set; }
+    public string ArgumentsDefinition { get; private set; }
     public string Arguments { get; private set; }
 
-    public Model(string id, string description, string messageFormat, string arguments) {
+    public Model(string id, string description, string messageFormat, string argumentsDefinition) {
         this.Id = id;
         this.Description = description;
         this.MessageFormat = messageFormat;
-        this.Arguments = arguments;
+        this.ArgumentsDefinition = argumentsDefinition;
+        this.Arguments = Regex.Replace(argumentsDefinition, @"(?<=(?:^|,)\s*)\S+\s+", "");
     }
 }
 #>

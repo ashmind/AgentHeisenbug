@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using JetBrains.Annotations;
+
+namespace JetBrains.Annotations {
+    public class ReadOnlyAttribute : Attribute {}
+}
+
+[ReadOnly]
+public class ReadOnlyGenericWithNonReadOnlyArgument<T> {
+    private readonly |T|(0) field;
+    public T M(T argument) {}
+}
+
+[ReadOnly]
+public class ReadOnlyGeneric<[ReadOnly] T> {
+    private readonly T field;
+}
+
+public class NonReadOnly {}
+
+[ReadOnly]
+public class GenericFields {
+    private readonly ReadOnlyGeneric<int> x;
+    private readonly ReadOnlyGeneric<|NonReadOnly|(1)> x;
+    private readonly ReadOnlyGeneric<ReadOnlyGeneric<|NonReadOnly|(2)>> x;
+}
+---------------------------------------------------------
+(0): ReSharper Warning: Type 'T' used by field 'field' in a [ReadOnly] type should be readonly.
+(1): ReSharper Warning: Type 'NonReadOnly' used by field 'x' in a [ReadOnly] type should be readonly.
+(2): ReSharper Warning: Type 'NonReadOnly' used by field 'x' in a [ReadOnly] type should be readonly.

@@ -58,11 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\ReadOnly\ArrayPointerEtcTypes.cs" />
+    <Content Include="Files\ReadOnly\GenericTypes.cs" />
     <Compile Include="Of.Highlightings\HeisenbugHighlightingTestBase.cs" />
     <Compile Include="Of.Highlightings\HighlightingFilterAttribute.cs" />
     <Compile Include="Properties\TestEnvironmentAssembly.cs" />
     <None Include="Files\ReadOnly\BclTypes.cs.gold" />
     <None Include="Files\ReadOnly\ArrayPointerEtcTypes.cs.gold" />
+    <None Include="Files\ReadOnly\GenericTypes.cs.gold" />
     <None Include="Files\ReadOnly\Fields.cs.gold" />
     <None Include="Files\ReadOnly\Inheritance.cs.gold" />
     <None Include="Files\ReadOnly\Properties.cs.gold" />

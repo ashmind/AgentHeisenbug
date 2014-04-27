@@ -14,6 +14,7 @@ namespace AgentHeisenbug.Tests.Of.Highlightings {
         [TestCase("Inheritance.cs")]
         [TestCase("BclTypes.cs")]
         [TestCase("ArrayPointerEtcTypes.cs")]
+        [TestCase("GenericTypes.cs")]
         public void Test(string testName) {
             DoTestSolution(testName);
         }

@@ -8,16 +8,16 @@ using JetBrains.ReSharper.Psi.Tree;
 
 namespace AgentHeisenbug.Highlightings {
     public class HeisenbugHighligtingBase : IHighlightingWithRange {
-        private readonly ITreeNode element;
-        private readonly string message;
+        [NotNull] private readonly ITreeNode _element;
+        [NotNull] private readonly string _message;
 
         [StringFormatMethod("messageFormat")]
-        protected HeisenbugHighligtingBase(ITreeNode element, string messageFormat, params object[] args) {
-            this.element = element;
-            this.message = string.Format(messageFormat, args);
-            if (!this.message[0].IsUpper()) {
+        protected HeisenbugHighligtingBase([NotNull] ITreeNode element, [NotNull] string messageFormat, [NotNull] params object[] args) {
+            this._element = element;
+            this._message = string.Format(messageFormat, args);
+            if (!this._message[0].IsUpper()) {
                 // simplifies format strings that start with optional substitutions
-                this.message = this.message[0].ToUpperInvariant() + this.message.Substring(1);
+                this._message = this._message[0].ToUpperInvariant() + this._message.Substring(1);
             }
         }
 
@@ -26,19 +26,19 @@ namespace AgentHeisenbug.Highlightings {
         }
 
         public string ToolTip {
-            get { return this.message; }
+            get { return _message; }
         }
 
         public string ErrorStripeToolTip {
-            get { return this.message; }
+            get { return _message; }
         }
 
         public bool IsValid() {
-            return this.element != null && this.element.IsValid();
+            return _element.IsValid();
         }
 
         public DocumentRange CalculateRange() {
-            return this.element.GetHighlightingRange();
+            return _element.GetHighlightingRange();
         }
     }
 }

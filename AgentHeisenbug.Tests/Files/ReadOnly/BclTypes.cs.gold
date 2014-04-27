@@ -19,12 +19,12 @@ public class BclTypes {
     private readonly IntPtr x;
     private readonly Uri x;
 
-    private readonly IReadOnlyCollection<T> x;
-    private readonly  ReadOnlyCollection<T> x;
+    private readonly IReadOnlyCollection<int> x;
+    private readonly ReadOnlyCollection<int> x;
 
-    private readonly IReadOnlyList<T> x;
+    private readonly IReadOnlyList<int> x;
 
-    private readonly IReadOnlyDictionary<TKey, TValue> x;
-    private readonly  ReadOnlyDictionary<TKey, TValue> x;
+    private readonly IReadOnlyDictionary<int, int> x;
+    private readonly ReadOnlyDictionary<int, int> x;
 }
 ---------------------------------------------------------

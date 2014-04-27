@@ -47,9 +47,9 @@ public class Properties {
 }
 ---------------------------------------------------------
 (0): ReSharper Warning: Setter of auto property 'AutoGetSet1' in a [ThreadSafe] class should be private.
-(1): ReSharper Warning: Type 'NonSafe' of auto property 'AutoPrivateSet3' in a [ThreadSafe] type should be thread-safe.
+(1): ReSharper Warning: Type 'NonSafe' used by auto property 'AutoPrivateSet3' in a [ThreadSafe] type should be thread-safe.
 (2): ReSharper Warning: Setter of auto property 'StaticAutoGetSet1' in a [ThreadSafe] class should be private.
-(3): ReSharper Warning: Type 'NonSafe' of auto property 'StaticAutoPrivateSet2' in a [ThreadSafe] type should be thread-safe.
+(3): ReSharper Warning: Type 'NonSafe' used by auto property 'StaticAutoPrivateSet2' in a [ThreadSafe] type should be thread-safe.
 (4): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.
 (5): ReSharper Warning: Static auto property 'StaticAutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a static constructor.
 (6): ReSharper Warning: Auto property 'AutoPrivateSet1' in a [ThreadSafe] class should only be assigned in a constructor.

@@ -11,7 +11,7 @@ using JetBrains.Util;
 // ReSharper disable PossibleNullReferenceException
 
 namespace AgentHeisenbug.Tests.Of.Highlightings {
-    public class HeisenbugHighlightingTestBase : CSharpHighlightingTestNet45Base {
+    public abstract class HeisenbugHighlightingTestBase : CSharpHighlightingTestNet45Base {
         protected override bool HighlightingPredicate([NotNull] IHighlighting highlighting, IContextBoundSettingsStore settingsStore) {
             if (!base.HighlightingPredicate(highlighting, settingsStore))
                 return false;

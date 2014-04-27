@@ -40,8 +40,7 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             if (safetyLevel.Has(ThreadSafety.Static))
                 return;
 
-            Assume.NotNullWorkaround(call.InvokedExpression != null, "call.InvokedExpression");
-            consumer.AddHighlighting(new CallToNonThreadSafeStaticMethodInThreadSafeType(call.InvokedExpression, method.ShortName));
+            consumer.AddHighlighting(new CallToNonThreadSafeStaticMethodInThreadSafeType(call.InvokedExpression.NotNull(), method.ShortName));
         }
     }
 }

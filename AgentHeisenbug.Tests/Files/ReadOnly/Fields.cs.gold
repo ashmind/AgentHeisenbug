@@ -22,5 +22,5 @@ public class Fields {
 ---------------------------------------------------------
 (0): ReSharper Warning: Field 'mutable' in a [ReadOnly] type should be readonly.
 (1): ReSharper Warning: Field 'staticMutable' in a [ReadOnly] type should be readonly.
-(2): ReSharper Warning: Type 'NonReadOnly' of field 'readonly2' in a [ReadOnly] type should be readonly.
-(3): ReSharper Warning: Type 'NonReadOnly' of field 'staticReadOnly2' in a [ReadOnly] type should be readonly.
+(2): ReSharper Warning: Type 'NonReadOnly' used by field 'readonly2' in a [ReadOnly] type should be readonly.
+(3): ReSharper Warning: Type 'NonReadOnly' used by field 'staticReadOnly2' in a [ReadOnly] type should be readonly.

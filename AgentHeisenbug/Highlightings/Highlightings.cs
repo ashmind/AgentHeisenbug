@@ -45,8 +45,8 @@ using AgentHeisenbug.Highlightings;
     FieldOfNonThreadSafeTypeInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
-    "Field of type that is not thread-safe, in type annotated with [ThreadSafe]",
+    "Field using type that is not thread-safe in type annotated with [ThreadSafe]",
+    "Field using type that is not thread-safe in type annotated with [ThreadSafe]",
     Severity.WARNING,
     false
 )]
@@ -63,8 +63,8 @@ using AgentHeisenbug.Highlightings;
     AutoPropertyOfNonThreadSafeTypeInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
-    "Auto property of type that is not thread-safe, in type annotated with [ThreadSafe]",
+    "Auto property using type that is not thread-safe in type annotated with [ThreadSafe]",
+    "Auto property using type that is not thread-safe in type annotated with [ThreadSafe]",
     Severity.WARNING,
     false
 )]
@@ -81,8 +81,8 @@ using AgentHeisenbug.Highlightings;
     ParameterOfNonThreadSafeTypeInThreadSafeMethod.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Parameter of type that is not thread-safe in a thread-safe method",
-    "Parameter of type that is not thread-safe in a thread-safe method",
+    "Parameter using type that is not thread-safe in a thread-safe method",
+    "Parameter using type that is not thread-safe in a thread-safe method",
     Severity.WARNING,
     false
 )]
@@ -117,8 +117,8 @@ using AgentHeisenbug.Highlightings;
     FieldOfNonReadOnlyTypeInReadOnlyType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Field of mutable type in type annotated with [ReadOnly]",
-    "Field of mutable type in type annotated with [ReadOnly]",
+    "Field using mutable type in type annotated with [ReadOnly]",
+    "Field using mutable type in type annotated with [ReadOnly]",
     Severity.WARNING,
     false
 )]
@@ -135,8 +135,8 @@ using AgentHeisenbug.Highlightings;
     AutoPropertyOfNonReadOnlyTypeInReadOnlyType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Auto property of type that is not readonly, in type annotated with [ReadOnly]",
-    "Auto property of type that is not readonly, in type annotated with [ReadOnly]",
+    "Auto property using type that is not readonly in type annotated with [ReadOnly]",
+    "Auto property using type that is not readonly in type annotated with [ReadOnly]",
     Severity.WARNING,
     false
 )]
@@ -151,6 +151,57 @@ using AgentHeisenbug.Highlightings;
 )]
 
 namespace AgentHeisenbug.Highlightings {
+    public static class HeisenbugHighlightings {
+        public static ThreadSafeInterfaceImplementedByNonThreadSafeType ThreadSafeInterfaceImplementedByNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) {
+            return new ThreadSafeInterfaceImplementedByNonThreadSafeType(element, interfaceName, typeName);
+        }
+        public static ThreadSafeClassInheritedByNonThreadSafeType ThreadSafeClassInheritedByNonThreadSafeType([NotNull] ITreeNode element, string baseClassName, string typeName) {
+            return new ThreadSafeClassInheritedByNonThreadSafeType(element, baseClassName, typeName);
+        }
+        public static CallToNonThreadSafeStaticMethodInThreadSafeType CallToNonThreadSafeStaticMethodInThreadSafeType([NotNull] ITreeNode element, string methodName) {
+            return new CallToNonThreadSafeStaticMethodInThreadSafeType(element, methodName);
+        }
+        public static MutableFieldInThreadSafeType MutableFieldInThreadSafeType([NotNull] ITreeNode element, string fieldName) {
+            return new MutableFieldInThreadSafeType(element, fieldName);
+        }
+        public static FieldOfNonThreadSafeTypeInThreadSafeType FieldOfNonThreadSafeTypeInThreadSafeType([NotNull] ITreeNode element, string fieldName, string typeName) {
+            return new FieldOfNonThreadSafeTypeInThreadSafeType(element, fieldName, typeName);
+        }
+        public static MutableAutoPropertyInThreadSafeType MutableAutoPropertyInThreadSafeType([NotNull] ITreeNode element, string propertyName) {
+            return new MutableAutoPropertyInThreadSafeType(element, propertyName);
+        }
+        public static AutoPropertyOfNonThreadSafeTypeInThreadSafeType AutoPropertyOfNonThreadSafeTypeInThreadSafeType([NotNull] ITreeNode element, string propertyName, string typeName) {
+            return new AutoPropertyOfNonThreadSafeTypeInThreadSafeType(element, propertyName, typeName);
+        }
+        public static AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType([NotNull] ITreeNode element, string propertyName, string @static) {
+            return new AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType(element, propertyName, @static);
+        }
+        public static ParameterOfNonThreadSafeTypeInThreadSafeMethod ParameterOfNonThreadSafeTypeInThreadSafeMethod([NotNull] ITreeNode element, string paramterName, string typeName) {
+            return new ParameterOfNonThreadSafeTypeInThreadSafeMethod(element, paramterName, typeName);
+        }
+        public static ReadOnlyInterfaceImplementedByNonReadOnlyType ReadOnlyInterfaceImplementedByNonReadOnlyType([NotNull] ITreeNode element, string interfaceName, string typeName) {
+            return new ReadOnlyInterfaceImplementedByNonReadOnlyType(element, interfaceName, typeName);
+        }
+        public static ReadOnlyClassInheritedByNonReadOnlyType ReadOnlyClassInheritedByNonReadOnlyType([NotNull] ITreeNode element, string baseClassName, string typeName) {
+            return new ReadOnlyClassInheritedByNonReadOnlyType(element, baseClassName, typeName);
+        }
+        public static MutableFieldInReadOnlyType MutableFieldInReadOnlyType([NotNull] ITreeNode element, string fieldName) {
+            return new MutableFieldInReadOnlyType(element, fieldName);
+        }
+        public static FieldOfNonReadOnlyTypeInReadOnlyType FieldOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string fieldName, string typeName) {
+            return new FieldOfNonReadOnlyTypeInReadOnlyType(element, fieldName, typeName);
+        }
+        public static MutableAutoPropertyInReadOnlyType MutableAutoPropertyInReadOnlyType([NotNull] ITreeNode element, string propertyName) {
+            return new MutableAutoPropertyInReadOnlyType(element, propertyName);
+        }
+        public static AutoPropertyOfNonReadOnlyTypeInReadOnlyType AutoPropertyOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string propertyName, string typeName) {
+            return new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(element, propertyName, typeName);
+        }
+        public static AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType([NotNull] ITreeNode element, string propertyName, string @static) {
+            return new AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType(element, propertyName, @static);
+        }
+    }
+
     [ConfigurableSeverityHighlighting(ThreadSafeInterfaceImplementedByNonThreadSafeType.Id, CSharpLanguage.Name)]
     public class ThreadSafeInterfaceImplementedByNonThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.ThreadSafeInterfaceImplementedByNonThreadSafeType";
@@ -201,7 +252,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public FieldOfNonThreadSafeTypeInThreadSafeType([NotNull] ITreeNode element, string fieldName, string typeName) : base(
             element,
-            "Type '{1}' of field '{0}' in a [ThreadSafe] type should be thread-safe.",
+            "Type '{1}' used by field '{0}' in a [ThreadSafe] type should be thread-safe.",
             fieldName, typeName
         ) {}
     }
@@ -223,7 +274,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public AutoPropertyOfNonThreadSafeTypeInThreadSafeType([NotNull] ITreeNode element, string propertyName, string typeName) : base(
             element,
-            "Type '{1}' of auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
+            "Type '{1}' used by auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
             propertyName, typeName
         ) {}
     }
@@ -245,7 +296,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public ParameterOfNonThreadSafeTypeInThreadSafeMethod([NotNull] ITreeNode element, string paramterName, string typeName) : base(
             element,
-            "Type '{1}' of parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
+            "Type '{1}' used by parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
             paramterName, typeName
         ) {}
     }
@@ -289,7 +340,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public FieldOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string fieldName, string typeName) : base(
             element,
-            "Type '{1}' of field '{0}' in a [ReadOnly] type should be readonly.",
+            "Type '{1}' used by field '{0}' in a [ReadOnly] type should be readonly.",
             fieldName, typeName
         ) {}
     }
@@ -311,7 +362,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public AutoPropertyOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string propertyName, string typeName) : base(
             element,
-            "Type '{1}' of auto property '{0}' in a [ReadOnly] type should be readonly.",
+            "Type '{1}' used by auto property '{0}' in a [ReadOnly] type should be readonly.",
             propertyName, typeName
         ) {}
     }
