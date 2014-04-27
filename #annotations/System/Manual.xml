@@ -11,9 +11,9 @@
     </attribute>
   </member>
   <member name="T:System.Text.RegularExpressions.Regex">
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
-      <argument>All</argument>
-    </attribute>
-    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedImmutableAttribute.#ctor" />
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Uri">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
 </assembly>

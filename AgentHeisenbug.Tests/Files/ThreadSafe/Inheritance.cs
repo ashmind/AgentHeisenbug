@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 
 namespace JetBrains.Annotations {
+    [ThreadSafe]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
     public class ThreadSafeAttribute : Attribute {}
 }

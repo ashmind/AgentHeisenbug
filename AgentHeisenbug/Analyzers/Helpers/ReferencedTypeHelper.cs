@@ -17,7 +17,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
         }
 
         private bool IsTriviallyImmutable([NotNull] IType type) {
-            if (type.IsSimplePredefined() || type.IsValue() || type.IsDelegateType())
+            if (type.IsSimplePredefined() || type.IsValueType() || type.IsDelegateType())
                 return true;
 
             return false;

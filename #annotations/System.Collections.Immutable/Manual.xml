@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly name="System.Collections.Immutable">
+  <member name="T:System.Collections.Immutable.IImmutableDictionary`2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.IImmutableList`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.IImmutableQueue`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.IImmutableSet`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.IImmutableStack`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.ImmutableDictionary`2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.ImmutableHashSet`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.ImmutableList`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.ImmutableQueue`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.ImmutableSortedDictionary`2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.ImmutableSortedSet`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Collections.Immutable.ImmutableStack`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+</assembly>

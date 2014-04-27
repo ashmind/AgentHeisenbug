@@ -4,13 +4,14 @@ using System.Linq;
 using JetBrains.Application;
 using JetBrains.Application.Env;
 using JetBrains.Metadata.Utils;
+using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Impl.Reflection2.ExternalAnnotations;
 using JetBrains.Util;
 
 namespace AgentHeisenbug.Annotations {
     // DEBUG ONLY
 
-    [EnvironmentComponent(Sharing.Product)]
+    [PsiComponent]
     public class HeisenbugDebugExternalAnnotationFileProvider : IExternalAnnotationsFileProvider {
         public IEnumerable<FileSystemPath> GetAnnotationsFiles(AssemblyNameInfo assemblyName = null, FileSystemPath assemblyLocation = null) {
             if (assemblyName == null)
