@@ -12,6 +12,9 @@
   </member>
   <member name="T:System.Text.RegularExpressions.Regex">
     <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+      <argument>All</argument>
+    </attribute>
   </member>
   <member name="T:System.Uri">
     <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />

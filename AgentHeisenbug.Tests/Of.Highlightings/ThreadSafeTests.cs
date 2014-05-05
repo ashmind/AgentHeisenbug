@@ -11,6 +11,7 @@ namespace AgentHeisenbug.Tests.Of.Highlightings {
         [Test]
         [TestCase("Fields.cs")]
         [TestCase("Properties.cs")]
+        [TestCase("BclTypes.cs")]
         [HighlightingFilter(exclude: "Inherited|Implemented")]
         public void Test(string testName) {
             DoTestSolution(testName);

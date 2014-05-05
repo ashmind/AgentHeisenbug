@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 using JetBrains.Annotations;
 
 namespace JetBrains.Annotations {
@@ -18,6 +19,7 @@ public class BclTypes {
     private readonly Action x;
     private readonly IntPtr x;
     private readonly Uri x;
+    private readonly Regex x;
 
     private readonly IReadOnlyCollection<int> x;
     private readonly ReadOnlyCollection<int> x;
