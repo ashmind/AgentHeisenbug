@@ -6,6 +6,7 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
+using JetBrains.ReSharper.Psi.CSharp.Util;
 using JetBrains.ReSharper.Psi.Tree;
 
 namespace AgentHeisenbug.Analyzers.Base {
@@ -27,8 +28,7 @@ namespace AgentHeisenbug.Analyzers.Base {
             if (containingType == null || containingType.DeclaredElement == null || !containingType.DeclaredElement.Properties.Contains(property))
                 return;
 
-            // ReSharper disable once PossibleNullReferenceException
-            if (!property.GetDeclarations().Cast<IPropertyDeclaration>().Any(d => d.IsAuto))
+            if (!CSharpDeclaredElementUtil.IsAutoProperty(property))
                 return;
 
             var containingMethod = assignment.GetContainingTypeMemberDeclaration();
