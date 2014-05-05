@@ -34,6 +34,8 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
 
             _referenceHelper.ValidateTypeUsageTree(
                 parameter.TypeUsage.NotNull(),
+                parameter.Type.NotNull(),
+                _preconditions.MustBeThreadSafe,
                 _referenceHelper.IsInstanceThreadSafeOrReadOnly,
 
                 (type, usage) => consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(

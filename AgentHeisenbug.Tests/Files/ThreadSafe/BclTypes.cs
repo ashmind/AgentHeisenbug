@@ -20,6 +20,8 @@ public class BclTypes {
     private readonly IntPtr x;
     private readonly Uri x;
     private readonly Regex x;
+    private readonly Lazy<Uri> x;
+    private readonly Lazy<List<int>> x;
 
     public void StaticMethods() {
         Regex.Match("", "");

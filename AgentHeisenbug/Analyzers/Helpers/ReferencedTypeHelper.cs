@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon;
-using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Psi;
 using AgentHeisenbug.Annotations;
-using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.Util;
 using JetBrains.Util;
 
@@ -61,30 +57,13 @@ namespace AgentHeisenbug.Analyzers.Helpers {
 
         public void ValidateTypeUsageTree(
             [NotNull] ITypeUsage rootUsage,
+            [NotNull] IType rootType,
+            [NotNull] Func<ITypeParameter, bool> mustBeValid,
             [NotNull] Func<IType, bool> isValid,
             [NotNull] Action<IType, ITypeUsage> processInvalid
         ) {
-            ValidateTypeUsageSubTree(rootUsage, isValid, processInvalid);
-        }
-
-        private void ValidateTypeUsageSubTree(
-            [NotNull] ITreeNode root,
-            [NotNull] Func<IType, bool> isValid,
-            [NotNull] Action<IType, ITypeUsage> processInvalid
-        ) {
-            var usage = root as ITypeUsage;
-            if (usage != null) {
-                var type = CSharpTypeFactory.CreateType(usage);
-                if (!isValid(type)) {
-                    processInvalid(type, usage);
-                    return;
-                }
-            }
-
-            foreach (var child in root.Children()) {
-                // ReSharper disable once AssignNullToNotNullAttribute
-                ValidateTypeUsageSubTree(child, isValid, processInvalid);
-            }
+            new TypeUsageTreeValidator(mustBeValid, isValid, processInvalid)
+                .Validate(rootType, rootUsage);
         }
     }
 }

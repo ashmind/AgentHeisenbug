@@ -18,15 +18,22 @@ public class ReadOnlyGeneric<[ReadOnly] T> {
     private readonly T field;
 }
 
+[ReadOnly]
+public class ReadOnlyGenericWithTwoArguments<[ReadOnly] T1, T2> {
+}
+
 public class NonReadOnly {}
 
 [ReadOnly]
 public class GenericFields {
+    private readonly ReadOnlyGenericWithNonReadOnlyArgument<NonReadOnly> x;
     private readonly ReadOnlyGeneric<int> x;
     private readonly ReadOnlyGeneric<|NonReadOnly|(1)> x;
     private readonly ReadOnlyGeneric<ReadOnlyGeneric<|NonReadOnly|(2)>> x;
+    private readonly ReadOnlyGenericWithTwoArguments<|NonReadOnly|(3), int> x;
 }
 ---------------------------------------------------------
 (0): ReSharper Warning: Type 'T' used by field 'field' in a [ReadOnly] type should be readonly.
 (1): ReSharper Warning: Type 'NonReadOnly' used by field 'x' in a [ReadOnly] type should be readonly.
 (2): ReSharper Warning: Type 'NonReadOnly' used by field 'x' in a [ReadOnly] type should be readonly.
+(3): ReSharper Warning: Type 'NonReadOnly' used by field 'x' in a [ReadOnly] type should be readonly.

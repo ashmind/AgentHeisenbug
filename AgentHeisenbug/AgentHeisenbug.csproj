@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analyzers\Base\InheritanceAnalyzerBase.cs" />
+    <Compile Include="Analyzers\Helpers\TypeUsageTreeValidator.cs" />
     <Compile Include="Analyzers\ThreadSafe\ThreadSafeInheritanceAnalyzer.cs" />
     <Compile Include="Analyzers\ReadOnly\ReadOnlyInheritanceAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafe\ThreadSafeAutoPropertyAssignmentAnalyzer.cs" />

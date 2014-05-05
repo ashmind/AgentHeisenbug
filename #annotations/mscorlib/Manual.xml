@@ -27,15 +27,30 @@
   </member>
   <member name="T:System.Collections.Generic.IEnumerable`1">
     <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    <typeparameter name="T">
+      <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    </typeparameter>
   </member>
   <member name="T:System.Collections.Generic.IReadOnlyCollection`1">
     <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    <typeparameter name="T">
+      <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    </typeparameter>
   </member>
   <member name="T:System.Collections.Generic.IReadOnlyDictionary`2">
     <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    <typeparameter name="T">
+      <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    </typeparameter>
   </member>
   <member name="T:System.Collections.Generic.IReadOnlyList`1">
     <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    <typeparameter name="TKey">
+      <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />    
+    </typeparameter>
+    <typeparameter name="TValue">
+      <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    </typeparameter>
   </member>
   <member name="T:System.Collections.Generic.List`1">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
@@ -102,6 +117,15 @@
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+  </member>
+  <member name="T:System.Lazy`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+    <typeparameter name="T">
+      <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+      <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
+        <argument>Instance</argument>
+      </attribute>
+    </typeparameter>
   </member>
   <member name="T:System.Threading.Barrier">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">

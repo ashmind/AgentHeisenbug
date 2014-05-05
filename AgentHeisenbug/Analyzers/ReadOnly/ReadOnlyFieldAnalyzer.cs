@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -35,6 +36,8 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
             
             _referenceHelper.ValidateTypeUsageTree(
                 field.TypeUsage.NotNull(),
+                field.Type.NotNull(),
+                _preconditions.MustBeReadOnly,
                 _referenceHelper.IsReadOnly,
 
                 (type, usage) => consumer.AddHighlighting(new FieldOfNonReadOnlyTypeInReadOnlyType(
