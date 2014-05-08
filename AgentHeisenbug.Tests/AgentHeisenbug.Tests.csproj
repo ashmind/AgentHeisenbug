@@ -60,6 +60,7 @@
     <Content Include="Files\ReadOnly\ArrayPointerEtcTypes.cs" />
     <Content Include="Files\ReadOnly\GenericTypes.cs" />
     <Content Include="Files\ThreadSafe\BclTypes.cs" />
+    <Content Include="Files\ThreadSafe\StaticCalls.cs" />
     <Compile Include="Of.Highlightings\HeisenbugHighlightingTestBase.cs" />
     <Compile Include="Of.Highlightings\HighlightingFilterAttribute.cs" />
     <Compile Include="Properties\TestEnvironmentAssembly.cs" />
@@ -70,6 +71,7 @@
     <None Include="Files\ReadOnly\Inheritance.cs.gold" />
     <None Include="Files\ReadOnly\Properties.cs.gold" />
     <None Include="Files\ThreadSafe\BclTypes.cs.gold" />
+    <None Include="Files\ThreadSafe\StaticCalls.cs.gold" />
     <None Include="Files\ThreadSafe\Inheritance.cs.gold" />
     <None Include="Files\ThreadSafe\Parameters.cs.gold" />
     <None Include="Files\ThreadSafe\Properties.cs.gold" />

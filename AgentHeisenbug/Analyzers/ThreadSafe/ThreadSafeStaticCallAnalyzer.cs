@@ -4,6 +4,7 @@ using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
+using JetBrains.ReSharper.Psi.CodeAnnotations;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Util;
@@ -16,10 +17,16 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
     public class ThreadSafeStaticCallAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly HeisenbugAnnotationCache _annotationCache;
+        [NotNull] private readonly CodeAnnotationsCache _defaultAnnotationCache;
 
-        public ThreadSafeStaticCallAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugAnnotationCache annotationCache) {
+        public ThreadSafeStaticCallAnalyzer(
+            [NotNull] AnalyzerPreconditions preconditions,
+            [NotNull] HeisenbugAnnotationCache annotationCache,
+            [NotNull] CodeAnnotationsCache defaultAnnotationCache
+        ) {
             _preconditions = preconditions;
             _annotationCache = annotationCache;
+            _defaultAnnotationCache = defaultAnnotationCache;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
@@ -38,6 +45,9 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
 
             var safetyLevel = _annotationCache.GetAnnotations(method).ThreadSafety;
             if (safetyLevel.Has(ThreadSafety.Static))
+                return;
+
+            if (_defaultAnnotationCache.IsPure(method))
                 return;
 
             consumer.AddHighlighting(new CallToNonThreadSafeStaticMethodInThreadSafeType(call.InvokedExpression.NotNull(), method.ShortName));
