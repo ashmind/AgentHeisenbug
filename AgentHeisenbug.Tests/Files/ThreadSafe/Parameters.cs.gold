@@ -21,7 +21,10 @@ public class Parameters {
     public void M(out Safe s) {}
 
     public void M(|NonSafe|(0) s) {}
+    public void M(ref |NonSafe|(1) s) {}
+    public void M(out |NonSafe|(2) s) {}
     [Pure] public void MPure(NonSafe s) {}
+    private void MPrivate(NonSafe s) {}
 
     public void M(ReadOnly s) {}
     public void M(ref ReadOnly s) {}
@@ -29,3 +32,5 @@ public class Parameters {
 }
 ---------------------------------------------------------
 (0): ReSharper Warning: Type 'NonSafe' used by parameter 's' in a thread-safe method should be thread-safe unless method is [Pure].
+(1): ReSharper Warning: Type 'NonSafe' used by parameter 's' in a thread-safe method should be thread-safe unless method is [Pure].
+(2): ReSharper Warning: Type 'NonSafe' used by parameter 's' in a thread-safe method should be thread-safe unless method is [Pure].

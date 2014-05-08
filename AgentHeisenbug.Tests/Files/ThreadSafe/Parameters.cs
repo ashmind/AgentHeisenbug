@@ -21,7 +21,10 @@ public class Parameters {
     public void M(out Safe s) {}
 
     public void M(NonSafe s) {}
+    public void M(ref NonSafe s) {}
+    public void M(out NonSafe s) {}
     [Pure] public void MPure(NonSafe s) {}
+    private void MPrivate(NonSafe s) {}
 
     public void M(ReadOnly s) {}
     public void M(ref ReadOnly s) {}

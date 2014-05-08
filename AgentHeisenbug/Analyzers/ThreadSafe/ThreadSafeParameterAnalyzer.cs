@@ -29,7 +29,7 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
                 return;
 
             var method = parameter.GetContainingNode<IMethodDeclaration>();
-            if (method == null || this._annotationsCache.IsPure(method.DeclaredElement))
+            if (method == null || method.IsPrivate() || _annotationsCache.IsPure(method.DeclaredElement))
                 return;
 
             _referenceHelper.ValidateTypeUsageTree(
