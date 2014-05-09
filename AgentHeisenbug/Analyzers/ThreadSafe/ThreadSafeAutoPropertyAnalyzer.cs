@@ -14,7 +14,7 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
         typeof(MutableAutoPropertyInThreadSafeType),
         typeof(AutoPropertyOfNonThreadSafeTypeInThreadSafeType)
     })]
-    public class ThreadSafeAutoPropertyAnalyzer : IElementProblemAnalyzer {
+    public class ThreadSafeAutoPropertyAnalyzer : ElementProblemAnalyzer<IPropertyDeclaration> {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
@@ -23,25 +23,24 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             _featureProvider = featureProvider;
         }
 
-        public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            var property = (IPropertyDeclaration)element;
-            if (!property.IsAuto || !_preconditions.MustBeThreadSafe(property))
+        protected override void Run(IPropertyDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
+            if (!element.IsAuto || !_preconditions.MustBeThreadSafe(element))
                 return;
 
-            var setter = property.GetSetter();
+            var setter = element.GetSetter();
             if (setter != null && !setter.IsPrivate())
-                consumer.AddHighlighting(new MutableAutoPropertyInThreadSafeType(setter.NameIdentifier.NotNull(), property.DeclaredName));
+                consumer.AddHighlighting(new MutableAutoPropertyInThreadSafeType(setter.NameIdentifier.NotNull(), element.DeclaredName));
 
             TypeUsageTreeValidator.Validate(
-                property.TypeUsage.NotNull(),
-                property.Type.NotNull(),
+                element.TypeUsage.NotNull(),
+                element.Type.NotNull(),
                 _preconditions.MustBeThreadSafe,
                 // ReSharper disable once AssignNullToNotNullAttribute
                 t => _featureProvider.GetFeatures(t).IsInstanceAccessThreadSafeOrReadOnly,
 
                 (type, usage) => consumer.AddHighlighting(new AutoPropertyOfNonThreadSafeTypeInThreadSafeType(
                     // ReSharper disable AssignNullToNotNullAttribute
-                    usage, property.DeclaredName, type.GetCSharpPresentableName()
+                    usage, element.DeclaredName, type.GetCSharpPresentableName()
                     // ReSharper enable AssignNullToNotNullAttribute
                 ))
             );

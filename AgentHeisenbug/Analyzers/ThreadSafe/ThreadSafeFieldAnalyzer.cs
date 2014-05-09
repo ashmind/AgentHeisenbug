@@ -14,7 +14,7 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
         typeof(MutableFieldInThreadSafeType),
         typeof(FieldOfNonThreadSafeTypeInThreadSafeType)
     })]
-    public class ThreadSafeFieldAnalyzer : IElementProblemAnalyzer {
+    public class ThreadSafeFieldAnalyzer : ElementProblemAnalyzer<IFieldDeclaration> {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
@@ -23,24 +23,23 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             _featureProvider = featureProvider;
         }
 
-        public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            var field = (IFieldDeclaration)element;
-            if (!_preconditions.MustBeThreadSafe(field))
+        protected override void Run(IFieldDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
+            if (!_preconditions.MustBeThreadSafe(element))
                 return;
             
-            if (!field.IsReadonly)
-                consumer.AddHighlighting(new MutableFieldInThreadSafeType(field, field.DeclaredName));
+            if (!element.IsReadonly)
+                consumer.AddHighlighting(new MutableFieldInThreadSafeType(element, element.DeclaredName));
 
             TypeUsageTreeValidator.Validate(
-                field.TypeUsage.NotNull(),
-                field.Type.NotNull(),
+                element.TypeUsage.NotNull(),
+                element.Type.NotNull(),
                 _preconditions.MustBeThreadSafe,
                 // ReSharper disable once AssignNullToNotNullAttribute
                 t => _featureProvider.GetFeatures(t).IsInstanceAccessThreadSafeOrReadOnly,
 
                 (type, usage) => consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
                     // ReSharper disable AssignNullToNotNullAttribute
-                    usage, field.DeclaredName, type.GetCSharpPresentableName()
+                    usage, element.DeclaredName, type.GetCSharpPresentableName()
                     // ReSharper enable AssignNullToNotNullAttribute
                 ))
             );

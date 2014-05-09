@@ -12,7 +12,7 @@ using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IRegularParameterDeclaration) }, HighlightingTypes = new[] { typeof(ParameterOfNonThreadSafeTypeInThreadSafeMethod) })]
-    public class ThreadSafeParameterAnalyzer : IElementProblemAnalyzer {
+    public class ThreadSafeParameterAnalyzer : ElementProblemAnalyzer<IRegularParameterDeclaration> {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
         [NotNull] private readonly CodeAnnotationsCache _annotationsCache;
@@ -23,25 +23,24 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             _annotationsCache = annotationsCache;
         }
 
-        public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            var parameter = (IRegularParameterDeclaration)element;
-            if (!_preconditions.MustBeThreadSafe(parameter))
+        protected override void Run(IRegularParameterDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
+            if (!_preconditions.MustBeThreadSafe(element))
                 return;
 
-            var method = parameter.GetContainingNode<IMethodDeclaration>();
+            var method = element.GetContainingNode<IMethodDeclaration>();
             if (method == null || method.IsPrivate() || _annotationsCache.IsPure(method.DeclaredElement))
                 return;
 
             TypeUsageTreeValidator.Validate(
-                parameter.TypeUsage.NotNull(),
-                parameter.Type.NotNull(),
+                element.TypeUsage.NotNull(),
+                element.Type.NotNull(),
                 _preconditions.MustBeThreadSafe,
                 // ReSharper disable once AssignNullToNotNullAttribute
                 t => _featureProvider.GetFeatures(t).IsInstanceAccessThreadSafeOrReadOnly,
 
                 (type, usage) => consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
                     // ReSharper disable AssignNullToNotNullAttribute
-                    usage, parameter.DeclaredName, type.GetCSharpPresentableName()
+                    usage, element.DeclaredName, type.GetCSharpPresentableName()
                     // ReSharper enable AssignNullToNotNullAttribute
                 ))
             );

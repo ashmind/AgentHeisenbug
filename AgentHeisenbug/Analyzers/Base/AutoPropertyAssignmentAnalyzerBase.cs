@@ -7,16 +7,14 @@ using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.CSharp.Util;
-using JetBrains.ReSharper.Psi.Tree;
 
 namespace AgentHeisenbug.Analyzers.Base {
-    public abstract class AutoPropertyAssignmentAnalyzerBase : IElementProblemAnalyzer {
-        public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            var assignment = (IAssignmentExpression)element;
-            if (!MustBeAnalyzed(assignment))
+    public abstract class AutoPropertyAssignmentAnalyzerBase : ElementProblemAnalyzer<IAssignmentExpression> {
+        protected override void Run(IAssignmentExpression element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
+            if (!MustBeAnalyzed(element))
                 return;
 
-            var reference = assignment.Dest as IReferenceExpression;
+            var reference = element.Dest as IReferenceExpression;
             if (reference == null)
                 return;
 
@@ -24,19 +22,19 @@ namespace AgentHeisenbug.Analyzers.Base {
             if (property == null)
                 return;
 
-            var containingType = assignment.GetContainingTypeDeclaration();
+            var containingType = element.GetContainingTypeDeclaration();
             if (containingType == null || containingType.DeclaredElement == null || !containingType.DeclaredElement.Properties.Contains(property))
                 return;
 
             if (!CSharpDeclaredElementUtil.IsAutoProperty(property))
                 return;
 
-            var containingMethod = assignment.GetContainingTypeMemberDeclaration();
+            var containingMethod = element.GetContainingTypeMemberDeclaration();
             if (containingMethod != null && containingMethod.DeclaredElement is IConstructor && containingMethod.DeclaredElement.IsStatic == property.IsStatic)
                 return;
 
             consumer.AddHighlighting(NewHighlighting(
-                assignment, property.ShortName, property.IsStatic ? "static " : ""
+                element, property.ShortName, property.IsStatic ? "static " : ""
             ));
         }
 

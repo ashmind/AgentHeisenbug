@@ -5,18 +5,16 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.Util;
 using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers.Base {
-    public abstract class InheritanceAnalyzerBase : IElementProblemAnalyzer {
-        public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            var type = ((IClassLikeDeclaration)element);
-            if (type.DeclaredElement == null || IsAnnotated(type.DeclaredElement))
+    public abstract class InheritanceAnalyzerBase : ElementProblemAnalyzer<IClassLikeDeclaration> {
+        protected override void Run(IClassLikeDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
+            if (element.DeclaredElement == null || IsAnnotated(element.DeclaredElement))
                 return;
 
-            var superTypes = type.SuperTypes;
+            var superTypes = element.SuperTypes;
             if (superTypes == null)
                 return;
 
@@ -33,7 +31,7 @@ namespace AgentHeisenbug.Analyzers.Base {
                 if (!IsAnnotated(superTypeElement))
                     continue;
 
-                consumer.AddHighlighting(Highlighting(type, superType, type.SuperTypeUsageNodes[index].NotNull()));
+                consumer.AddHighlighting(Highlighting(element, superType, element.SuperTypeUsageNodes[index].NotNull()));
             }
         }
 
