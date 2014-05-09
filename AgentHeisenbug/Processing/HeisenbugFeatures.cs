@@ -7,19 +7,21 @@ using JetBrains.Util;
 namespace AgentHeisenbug.Processing {
     public class HeisenbugFeatures {
         private readonly bool _isReadOnly;
+        private readonly bool _isPure;
         private readonly ThreadSafety _threadSafety;
         [CanBeNull] private readonly HeisenbugFeatures _containingTypeFeatures;
 
-        public HeisenbugFeatures(bool isReadOnly, ThreadSafety threadSafety) : this(isReadOnly, threadSafety, null) {
+        public HeisenbugFeatures(bool isReadOnly, bool isPure, ThreadSafety threadSafety) : this(isReadOnly, isPure, threadSafety, null) {
         }
 
         public HeisenbugFeatures([NotNull] HeisenbugFeatures currentFeatures, [NotNull] HeisenbugFeatures containingTypeFeatures) 
-            : this(currentFeatures.IsReadOnly, currentFeatures._threadSafety, containingTypeFeatures) 
+            : this(currentFeatures.IsReadOnly, currentFeatures._isPure, currentFeatures.DeclaredThreadSafety, containingTypeFeatures) 
         {
         }
 
-        private HeisenbugFeatures(bool isReadOnly, ThreadSafety threadSafety, [CanBeNull] HeisenbugFeatures containingTypeFeatures) {
+        private HeisenbugFeatures(bool isReadOnly, bool isPure, ThreadSafety threadSafety, [CanBeNull] HeisenbugFeatures containingTypeFeatures) {
             _isReadOnly = isReadOnly;
+            _isPure = isPure;
             _threadSafety = threadSafety;
             _containingTypeFeatures = containingTypeFeatures;
         }
@@ -43,6 +45,7 @@ namespace AgentHeisenbug.Processing {
         public bool IsStaticAccessThreadSafe {
             get {
                 return Has(ThreadSafety.Static)
+                    || _isPure
                     || (_containingTypeFeatures != null && _containingTypeFeatures.Has(ThreadSafety.Static));
             }
         }
@@ -54,7 +57,7 @@ namespace AgentHeisenbug.Processing {
 
         [Pure] [NotNull]
         public HeisenbugFeatures WithReadOnly(bool readOnly) {
-            return new HeisenbugFeatures(readOnly, _threadSafety, _containingTypeFeatures);
+            return new HeisenbugFeatures(readOnly, _isPure, _threadSafety, _containingTypeFeatures);
         }
     }
 }

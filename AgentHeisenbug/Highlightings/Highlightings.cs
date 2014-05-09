@@ -24,20 +24,11 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
-    CallToNonThreadSafeStaticMethodInThreadSafeType.Id,
+    AccessToNonThreadSafeStaticMemberInThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Call to static method that is not thread-safe from type annotated with [ThreadSafe]",
-    "Call to static method that is not thread-safe from type annotated with [ThreadSafe]",
-    Severity.WARNING,
-    false
-)]
-[assembly: RegisterConfigurableSeverity(
-    AssignmentToNonThreadSafeStaticMemberInThreadSafeType.Id,
-    null,
-    HighlightingGroupIds.ConstraintViolation,
-    "Assignment to static field or property that is not thread-safe from type annotated with [ThreadSafe]",
-    "Assignment to static field or property that is not thread-safe from type annotated with [ThreadSafe]",
+    "Access to static member that is not thread-safe from type annotated with [ThreadSafe]",
+    "Access to static member that is not thread-safe from type annotated with [ThreadSafe]",
     Severity.WARNING,
     false
 )]
@@ -167,11 +158,8 @@ namespace AgentHeisenbug.Highlightings {
         public static ThreadSafeClassInheritedByNonThreadSafeType ThreadSafeClassInheritedByNonThreadSafeType([NotNull] ITreeNode element, string baseClassName, string typeName) {
             return new ThreadSafeClassInheritedByNonThreadSafeType(element, baseClassName, typeName);
         }
-        public static CallToNonThreadSafeStaticMethodInThreadSafeType CallToNonThreadSafeStaticMethodInThreadSafeType([NotNull] ITreeNode element, string methodName) {
-            return new CallToNonThreadSafeStaticMethodInThreadSafeType(element, methodName);
-        }
-        public static AssignmentToNonThreadSafeStaticMemberInThreadSafeType AssignmentToNonThreadSafeStaticMemberInThreadSafeType([NotNull] ITreeNode element, string fieldOrProperty, string memberName) {
-            return new AssignmentToNonThreadSafeStaticMemberInThreadSafeType(element, fieldOrProperty, memberName);
+        public static AccessToNonThreadSafeStaticMemberInThreadSafeType AccessToNonThreadSafeStaticMemberInThreadSafeType([NotNull] ITreeNode element, string memberKind, string memberName) {
+            return new AccessToNonThreadSafeStaticMemberInThreadSafeType(element, memberKind, memberName);
         }
         public static MutableFieldInThreadSafeType MutableFieldInThreadSafeType([NotNull] ITreeNode element, string fieldName) {
             return new MutableFieldInThreadSafeType(element, fieldName);
@@ -236,25 +224,14 @@ namespace AgentHeisenbug.Highlightings {
         ) {}
     }
 
-    [ConfigurableSeverityHighlighting(CallToNonThreadSafeStaticMethodInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class CallToNonThreadSafeStaticMethodInThreadSafeType : HeisenbugHighligtingBase {
-        public const string Id = "AgentHeisenbug.CallToNonThreadSafeStaticMethodInThreadSafeType";
+    [ConfigurableSeverityHighlighting(AccessToNonThreadSafeStaticMemberInThreadSafeType.Id, CSharpLanguage.Name)]
+    public class AccessToNonThreadSafeStaticMemberInThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.AccessToNonThreadSafeStaticMemberInThreadSafeType";
 
-        public CallToNonThreadSafeStaticMethodInThreadSafeType([NotNull] ITreeNode element, string methodName) : base(
-            element,
-            "Method '{0}' is not declared to be thread-safe.",
-            methodName
-        ) {}
-    }
-
-    [ConfigurableSeverityHighlighting(AssignmentToNonThreadSafeStaticMemberInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class AssignmentToNonThreadSafeStaticMemberInThreadSafeType : HeisenbugHighligtingBase {
-        public const string Id = "AgentHeisenbug.AssignmentToNonThreadSafeStaticMemberInThreadSafeType";
-
-        public AssignmentToNonThreadSafeStaticMemberInThreadSafeType([NotNull] ITreeNode element, string fieldOrProperty, string memberName) : base(
+        public AccessToNonThreadSafeStaticMemberInThreadSafeType([NotNull] ITreeNode element, string memberKind, string memberName) : base(
             element,
             "{0} '{1}' is not declared to be thread-safe.",
-            fieldOrProperty, memberName
+            memberKind, memberName
         ) {}
     }
 

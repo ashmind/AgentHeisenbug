@@ -25,16 +25,18 @@ namespace AgentHeisenbug.Annotations {
         }
 
         [NotNull]
-        public HeisenbugFeatures GetFeaturesFromAnnotations([NotNull] IAttributesOwner member) {
-            Argument.NotNull("member", member);
-            return _heisenbugCache.GetOrAdd(member, GetFeaturesFromAnnotationsUncached).NotNull();
+        public HeisenbugFeatures GetFeaturesFromAnnotations([NotNull] IAttributesOwner element) {
+            Argument.NotNull("element", element);
+            return _heisenbugCache.GetOrAdd(element, GetFeaturesFromAnnotationsUncached).NotNull();
         }
 
         [NotNull]
-        private HeisenbugFeatures GetFeaturesFromAnnotationsUncached([NotNull] IAttributesOwner member) {
-            var attributes = member.ReliablyGetAttributeInstances(false).NotNull();
+        private HeisenbugFeatures GetFeaturesFromAnnotationsUncached([NotNull] IAttributesOwner element) {
+            var attributes = element.ReliablyGetAttributeInstances(false).NotNull();
+            var member = element as ITypeMember;
             return new HeisenbugFeatures(
                 HasAnnotationAttribute(attributes, "ReadOnlyAttribute"),
+                member != null && _annotationCache.IsPure(member),
                 GetThreadSafetyUncached(attributes)
             );
         }

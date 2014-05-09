@@ -27,17 +27,10 @@ using AgentHeisenbug.Highlightings;
     ),
 
     new Model(
-        "CallToNonThreadSafeStaticMethodInThreadSafeType",
-        "Call to static method that is not thread-safe from type annotated with [ThreadSafe]",
-        "Method '{0}' is not declared to be thread-safe.",
-        "string methodName"
-    ),
-
-    new Model(
-        "AssignmentToNonThreadSafeStaticMemberInThreadSafeType",
-        "Assignment to static field or property that is not thread-safe from type annotated with [ThreadSafe]",
+        "AccessToNonThreadSafeStaticMemberInThreadSafeType",
+        "Access to static member that is not thread-safe from type annotated with [ThreadSafe]",
         "{0} '{1}' is not declared to be thread-safe.",
-        "string fieldOrProperty, string memberName"
+        "string memberKind, string memberName"
     ),
 
     new Model(

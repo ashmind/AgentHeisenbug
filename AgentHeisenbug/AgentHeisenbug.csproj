@@ -72,7 +72,6 @@
       <DependentUpon>Highlightings.tt</DependentUpon>
     </Compile>
     <Compile Include="Highlightings\HeisenbugHighligtingBase.cs" />
-    <Compile Include="Analyzers\ThreadSafe\ThreadSafeStaticCallAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafe\ThreadSafeFieldAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThreadSafety.cs" />

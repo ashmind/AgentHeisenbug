@@ -12,8 +12,8 @@ namespace AgentHeisenbug.Processing {
     [PsiComponent]
     public class HeisenbugFeatureProvider : InvalidatingPsiCache {
         private static class FeatureInstances {
-            [NotNull] public static readonly HeisenbugFeatures None = new HeisenbugFeatures(false, ThreadSafety.None);
-            [NotNull] public static readonly HeisenbugFeatures TriviallySafe = new HeisenbugFeatures(true, ThreadSafety.All);
+            [NotNull] public static readonly HeisenbugFeatures None = new HeisenbugFeatures(false, false, ThreadSafety.None);
+            [NotNull] public static readonly HeisenbugFeatures TriviallySafe = new HeisenbugFeatures(true, true, ThreadSafety.All);
         }
 
         [NotNull] private readonly ConcurrentDictionary<IClrDeclaredElement, HeisenbugFeatures> _cache = new ConcurrentDictionary<IClrDeclaredElement, HeisenbugFeatures>();
