@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AgentHeisenbug.Annotations;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Util;
 
-namespace AgentHeisenbug.Analyzers.Helpers {
+namespace AgentHeisenbug.Processing {
     [PsiComponent]
     public class AnalyzerPreconditions {
-        [NotNull] private readonly HeisenbugAnnotationCache _annotationCache;
+        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
-        public AnalyzerPreconditions([NotNull] HeisenbugAnnotationCache annotationCache) {
-            _annotationCache = annotationCache;
+        public AnalyzerPreconditions([NotNull] HeisenbugFeatureProvider featureProvider) {
+            _featureProvider = featureProvider;
         }
 
         public bool MustBeThreadSafe([NotNull] ITypeParameter parameter) {
             Argument.NotNull("parameter", parameter);
-            return _annotationCache.GetAnnotations(parameter).ThreadSafety == ThreadSafety.Instance;
+            return _featureProvider.GetFeatures(parameter).DeclaredThreadSafety == ThreadSafety.Instance;
         }
 
         public bool MustBeThreadSafe([NotNull] ITreeNode node) {
@@ -28,7 +27,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 
-            var safety = _annotationCache.GetAnnotations(typeNode.DeclaredElement).ThreadSafety;
+            var safety = _featureProvider.GetFeatures(typeNode.DeclaredElement).DeclaredThreadSafety;
             var member = node.GetContainingNode<ICSharpTypeMemberDeclaration>();
             if (member == null)
                 return safety == ThreadSafety.All;
@@ -38,7 +37,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
 
         public bool MustBeReadOnly([NotNull] ITypeParameter parameter) {
             Argument.NotNull("parameter", parameter);
-            return _annotationCache.GetAnnotations(parameter).IsReadOnly;
+            return _featureProvider.GetFeatures(parameter).IsReadOnly;
         }
 
         public bool MustBeReadOnly([NotNull] ITreeNode node) {
@@ -48,7 +47,7 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 
-            return _annotationCache.GetAnnotations(typeNode.DeclaredElement).IsReadOnly;
+            return _featureProvider.GetFeatures(typeNode.DeclaredElement).IsReadOnly;
         }
     }
 }

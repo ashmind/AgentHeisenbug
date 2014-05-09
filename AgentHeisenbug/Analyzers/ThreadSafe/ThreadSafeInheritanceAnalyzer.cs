@@ -23,7 +23,7 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
         }
 
         protected override bool IsAnnotated(ITypeElement type) {
-            return _annotationCache.GetAnnotations(type).ThreadSafety != ThreadSafety.None;
+            return _annotationCache.GetFeaturesFromAnnotations(type).DeclaredThreadSafety != ThreadSafety.None;
         }
 
         protected override IHighlighting NewInterfaceImplementedByNonAnnotatedType(IDeclaredTypeUsage superTypeUsage, string superTypeName, string typeName) {

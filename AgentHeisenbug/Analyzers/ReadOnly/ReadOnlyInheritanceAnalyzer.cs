@@ -23,7 +23,7 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
         }
 
         protected override bool IsAnnotated(ITypeElement type) {
-            return _annotationCache.GetAnnotations(type).IsReadOnly;
+            return _annotationCache.GetFeaturesFromAnnotations(type).IsReadOnly;
         }
 
         protected override IHighlighting NewInterfaceImplementedByNonAnnotatedType(IDeclaredTypeUsage superTypeUsage, string superTypeName, string typeName) {

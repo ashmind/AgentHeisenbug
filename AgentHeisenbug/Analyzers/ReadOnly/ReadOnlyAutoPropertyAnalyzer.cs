@@ -1,5 +1,6 @@
 using System.Linq;
 using AgentHeisenbug.Annotations;
+using AgentHeisenbug.Processing;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -7,7 +8,6 @@ using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Util;
-using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers.ReadOnly {
@@ -17,11 +17,11 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
     })]
     public class ReadOnlyAutoPropertyAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly ReferencedTypeHelper _referenceHelper;
+        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
-        public ReadOnlyAutoPropertyAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] ReferencedTypeHelper referenceHelper) {
+        public ReadOnlyAutoPropertyAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider) {
             _preconditions = preconditions;
-            _referenceHelper = referenceHelper;
+            _featureProvider = featureProvider;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
@@ -33,11 +33,12 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
             if (setter != null && !setter.IsPrivate())
                 consumer.AddHighlighting(new MutableAutoPropertyInReadOnlyType(setter.NameIdentifier.NotNull(), property.DeclaredName));
 
-            _referenceHelper.ValidateTypeUsageTree(
+            TypeUsageTreeValidator.Validate(
                 property.TypeUsage.NotNull(),
                 property.Type.NotNull(),
                 _preconditions.MustBeReadOnly,
-                _referenceHelper.IsReadOnly,
+                // ReSharper disable once AssignNullToNotNullAttribute
+                t => _featureProvider.GetFeatures(t).IsReadOnly,
 
                 (type, usage) => consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(
                     // ReSharper disable AssignNullToNotNullAttribute

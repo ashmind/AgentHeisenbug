@@ -127,6 +127,9 @@
       </attribute>
     </typeparameter>
   </member>
+  <member name="T:System.String">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Threading.Barrier">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>

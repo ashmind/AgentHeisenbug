@@ -34,6 +34,13 @@ using AgentHeisenbug.Highlightings;
     ),
 
     new Model(
+        "AssignmentToNonThreadSafeStaticMemberInThreadSafeType",
+        "Assignment to static field or property that is not thread-safe from type annotated with [ThreadSafe]",
+        "{0} '{1}' is not declared to be thread-safe.",
+        "string fieldOrProperty, string memberName"
+    ),
+
+    new Model(
         "MutableFieldInThreadSafeType",
         "Mutable field in type annotated with [ThreadSafe]",
         "Field '{0}' in a [ThreadSafe] class should be readonly.",

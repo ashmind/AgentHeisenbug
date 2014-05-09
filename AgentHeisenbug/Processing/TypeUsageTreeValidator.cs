@@ -7,7 +7,7 @@ using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace AgentHeisenbug.Analyzers.Helpers {
+namespace AgentHeisenbug.Processing {
     public class TypeUsageTreeValidator {
         [NotNull] private readonly Func<ITypeParameter, bool> _mustBeValid;
         [NotNull] private readonly Func<IType, bool> _isValid;
@@ -21,6 +21,17 @@ namespace AgentHeisenbug.Analyzers.Helpers {
             _mustBeValid = mustBeValid;
             _isValid = isValid;
             _processInvalid = processInvalid;
+        }
+        
+        public static void Validate(
+            [NotNull] ITypeUsage rootUsage,
+            [NotNull] IType rootType,
+            [NotNull] Func<ITypeParameter, bool> mustBeValid,
+            [NotNull] Func<IType, bool> isValid,
+            [NotNull] Action<IType, ITypeUsage> processInvalid
+        ) {
+            new TypeUsageTreeValidator(mustBeValid, isValid, processInvalid)
+                .Validate(rootType, rootUsage);
         }
 
         public void Validate([NotNull] IType rootType, [NotNull] ITypeUsage rootUsage) {

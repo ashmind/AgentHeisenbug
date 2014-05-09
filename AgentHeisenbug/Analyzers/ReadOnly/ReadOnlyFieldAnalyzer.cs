@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using AgentHeisenbug.Processing;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -9,7 +10,6 @@ using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Util;
-using AgentHeisenbug.Analyzers.Helpers;
 using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers.ReadOnly {
@@ -19,11 +19,11 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
     })]
     public class ReadOnlyFieldAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly ReferencedTypeHelper _referenceHelper;
+        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
-        public ReadOnlyFieldAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] ReferencedTypeHelper referenceHelper) {
+        public ReadOnlyFieldAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider) {
             _preconditions = preconditions;
-            _referenceHelper = referenceHelper;
+            _featureProvider = featureProvider;
         }
 
         public void Run(ITreeNode element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
@@ -34,11 +34,12 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
             if (!field.IsReadonly)
                 consumer.AddHighlighting(new MutableFieldInReadOnlyType(field, field.DeclaredName));
             
-            _referenceHelper.ValidateTypeUsageTree(
+            TypeUsageTreeValidator.Validate(
                 field.TypeUsage.NotNull(),
                 field.Type.NotNull(),
                 _preconditions.MustBeReadOnly,
-                _referenceHelper.IsReadOnly,
+                // ReSharper disable once AssignNullToNotNullAttribute
+                t => _featureProvider.GetFeatures(t).IsReadOnly,
 
                 (type, usage) => consumer.AddHighlighting(new FieldOfNonReadOnlyTypeInReadOnlyType(
                     // ReSharper disable AssignNullToNotNullAttribute

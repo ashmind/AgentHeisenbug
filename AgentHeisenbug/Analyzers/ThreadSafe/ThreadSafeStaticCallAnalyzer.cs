@@ -1,4 +1,5 @@
 using System.Linq;
+using AgentHeisenbug.Processing;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -8,24 +9,22 @@ using JetBrains.ReSharper.Psi.CodeAnnotations;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Util;
-using AgentHeisenbug.Analyzers.Helpers;
-using AgentHeisenbug.Annotations;
 using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Analyzers.ThreadSafe {
     [ElementProblemAnalyzer(new[] { typeof(IInvocationExpression) }, HighlightingTypes = new[] { typeof(CallToNonThreadSafeStaticMethodInThreadSafeType) })]
     public class ThreadSafeStaticCallAnalyzer : IElementProblemAnalyzer {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly HeisenbugAnnotationCache _annotationCache;
+        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
         [NotNull] private readonly CodeAnnotationsCache _defaultAnnotationCache;
 
         public ThreadSafeStaticCallAnalyzer(
             [NotNull] AnalyzerPreconditions preconditions,
-            [NotNull] HeisenbugAnnotationCache annotationCache,
+            [NotNull] HeisenbugFeatureProvider featureProvider,
             [NotNull] CodeAnnotationsCache defaultAnnotationCache
         ) {
             _preconditions = preconditions;
-            _annotationCache = annotationCache;
+            _featureProvider = featureProvider;
             _defaultAnnotationCache = defaultAnnotationCache;
         }
 
@@ -43,8 +42,7 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             if (method == null || !method.IsStatic)
                 return;
 
-            var safetyLevel = _annotationCache.GetAnnotations(method).ThreadSafety;
-            if (safetyLevel.Has(ThreadSafety.Static))
+            if (_featureProvider.GetFeatures(method).IsStaticAccessThreadSafe)
                 return;
 
             if (_defaultAnnotationCache.IsPure(method))

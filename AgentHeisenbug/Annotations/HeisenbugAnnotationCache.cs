@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using AgentHeisenbug.Processing;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
@@ -17,40 +18,32 @@ namespace AgentHeisenbug.Annotations {
         [NotNull] private static readonly Func<ExternalAnnotationAttributeInstance, int, string> GetPositionalAttributeValue = CompileGetPositionalAttributeValue();
 
         [NotNull] private readonly CodeAnnotationsCache _annotationCache;
-        [NotNull] private readonly ConcurrentDictionary<IAttributesOwner, HeisenbugAnnotations> _heisenbugCache = new ConcurrentDictionary<IAttributesOwner, HeisenbugAnnotations>();
+        [NotNull] private readonly ConcurrentDictionary<IAttributesOwner, HeisenbugFeatures> _heisenbugCache = new ConcurrentDictionary<IAttributesOwner, HeisenbugFeatures>();
 
         public HeisenbugAnnotationCache([NotNull] CodeAnnotationsCache annotationCache) {
             _annotationCache = annotationCache;
         }
 
         [NotNull]
-        public HeisenbugAnnotations GetAnnotations([NotNull] IAttributesOwner member) {
+        public HeisenbugFeatures GetFeaturesFromAnnotations([NotNull] IAttributesOwner member) {
             Argument.NotNull("member", member);
-            return _heisenbugCache.GetOrAdd(member, GetAnnotationsUncached).NotNull();
+            return _heisenbugCache.GetOrAdd(member, GetFeaturesFromAnnotationsUncached).NotNull();
         }
 
         [NotNull]
-        private HeisenbugAnnotations GetAnnotationsUncached([NotNull] IAttributesOwner member) {
+        private HeisenbugFeatures GetFeaturesFromAnnotationsUncached([NotNull] IAttributesOwner member) {
             var attributes = member.ReliablyGetAttributeInstances(false).NotNull();
-            return new HeisenbugAnnotations(
-                IsReadOnlyUncached(member, attributes),
-                GetThreadSafetyUncached(member, attributes)
+            return new HeisenbugFeatures(
+                HasAnnotationAttribute(attributes, "ReadOnlyAttribute"),
+                GetThreadSafetyUncached(attributes)
             );
         }
 
-        private bool IsReadOnlyUncached([NotNull] IClrDeclaredElement member, [NotNull] IList<IAttributeInstance> attributes) {
-            return HasAnnotationAttribute(attributes, "ReadOnlyAttribute")
-                // ReSharper disable once PossibleNullReferenceException
-                || GetValueFromParentOrDefault(member, a => a.IsReadOnly);
-        }
-
-        private ThreadSafety GetThreadSafetyUncached([NotNull] IClrDeclaredElement member, [NotNull] IList<IAttributeInstance> attributes) {
+        private ThreadSafety GetThreadSafetyUncached([NotNull] IList<IAttributeInstance> attributes) {
             if (HasAnnotationAttribute(attributes, "ThreadSafeAttribute"))
                 return ThreadSafety.All;
 
-            return GetThreadSafetyFromGenerated(attributes)
-                // ReSharper disable once PossibleNullReferenceException
-                ?? GetValueFromParentOrDefault(member, a => a.ThreadSafety);
+            return GetThreadSafetyFromGenerated(attributes) ?? ThreadSafety.None;
         }
 
         private bool HasAnnotationAttribute([NotNull] IEnumerable<IAttributeInstance> attributes, [NotNull] string name) {
@@ -67,18 +60,7 @@ namespace AgentHeisenbug.Annotations {
             var valueString = GetPositionalAttributeValue(((ExternalAnnotationAttributeInstance)generated), 0);
             return (ThreadSafety)Enum.Parse(typeof(ThreadSafety), valueString.NotNull());
         }
-
-        private T GetValueFromParentOrDefault<T>([NotNull] IClrDeclaredElement member, [NotNull] Func<HeisenbugAnnotations, T> getValue) {
-            if (member is ITypeElement)
-                return default(T);
-
-            var containing = member.GetContainingType();
-            if (containing != null)
-                return getValue(GetAnnotations(containing));
-
-            return default(T);
-        }
-
+        
         protected override void InvalidateOnPhysicalChange() {
             base.InvalidateOnPhysicalChange();
             _heisenbugCache.Clear();

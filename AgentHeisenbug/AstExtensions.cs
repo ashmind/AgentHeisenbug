@@ -24,21 +24,6 @@ namespace AgentHeisenbug {
         }
 
         [CanBeNull]
-        public static ITypeElement GetCSharpDeclaredType([NotNull] this IDeclaredTypeUsage usage) {
-            Argument.NotNull("usage", usage);
-
-            var userDeclaredUsage = usage as IUserDeclaredTypeUsage;
-            if (userDeclaredUsage != null) {
-                var typeName = userDeclaredUsage.TypeName;
-                if (typeName != null)
-                    return typeName.Reference.Resolve().DeclaredElement as ITypeElement;
-            }
-
-            var declaredType = CSharpTypeFactory.CreateDeclaredType(usage);
-            return declaredType.GetTypeElement();
-        }
-
-        [CanBeNull]
         public static string GetCSharpPresentableName([NotNull] this IType type) {
             Argument.NotNull("type", type);
             return type.GetPresentableName(CSharpLanguage.Instance);
@@ -59,5 +44,7 @@ namespace AgentHeisenbug {
             var attributes = declarations.SelectMany(d => d.AttributesEnumerable);
             return attributes.Select(CSharpImplUtil.GetAttributeInstance).AsIList();
         }
+
+
     }
 }

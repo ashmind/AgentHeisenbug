@@ -12,10 +12,15 @@ namespace AgentHeisenbug.Tests.Of.Highlightings {
         [TestCase("Fields.cs")]
         [TestCase("Properties.cs")]
         [TestCase("BclTypes.cs")]
-        [TestCase("StaticCalls.cs")]
         [HighlightingFilter(exclude: "Inherited|Implemented")]
         public void Test(string testName) {
             DoTestSolution(testName);
+        }
+
+        [Test]
+        [HighlightingFilter(include: @"AgentHeisenbug\..*Static.*")]
+        public void ExternalStatic() {
+            DoTestSolution("StaticAccess.cs");
         }
 
         [Test]
