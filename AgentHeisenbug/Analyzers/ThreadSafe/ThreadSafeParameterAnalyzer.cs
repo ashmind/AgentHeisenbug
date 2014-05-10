@@ -1,10 +1,10 @@
 using System.Linq;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Psi.CodeAnnotations;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
 using AgentHeisenbug.Highlightings;
@@ -14,12 +14,16 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
     public class ThreadSafeParameterAnalyzer : ElementProblemAnalyzer<IRegularParameterDeclaration> {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
-        [NotNull] private readonly CodeAnnotationsCache _annotationsCache;
+        [NotNull] private readonly ThreadSafeTypeUsageValidator _typeUsageValidator;
 
-        public ThreadSafeParameterAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider, [NotNull] CodeAnnotationsCache annotationsCache) {
+        public ThreadSafeParameterAnalyzer(
+            [NotNull] AnalyzerPreconditions preconditions,
+            [NotNull] HeisenbugFeatureProvider featureProvider,
+            [NotNull] ThreadSafeTypeUsageValidator typeUsageValidator
+        ) {
             _preconditions = preconditions;
             _featureProvider = featureProvider;
-            _annotationsCache = annotationsCache;
+            _typeUsageValidator = typeUsageValidator;
         }
 
         protected override void Run(IRegularParameterDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
@@ -27,22 +31,16 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
                 return;
 
             var method = element.GetContainingNode<IMethodDeclaration>();
-            if (method == null || method.IsPrivate() || _annotationsCache.IsPure(method.DeclaredElement))
+            if (method == null || method.IsPrivate() || (method.DeclaredElement != null && _featureProvider.GetFeatures(method.DeclaredElement).IsPure))
                 return;
 
-            TypeUsageTreeValidator.Validate(
-                element.TypeUsage.NotNull(),
-                element.Type.NotNull(),
-                _preconditions.MustBeThreadSafe,
-                // ReSharper disable once AssignNullToNotNullAttribute
-                t => _featureProvider.GetFeatures(t).IsInstanceAccessThreadSafeOrReadOnly,
-
-                (type, usage) => consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
-                    // ReSharper disable AssignNullToNotNullAttribute
-                    usage, element.DeclaredName, type.GetCSharpPresentableName()
-                    // ReSharper enable AssignNullToNotNullAttribute
-                ))
-            );
+            foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
+                // ReSharper disable AssignNullToNotNullAttribute
+                consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
+                    invalid.Usage, element.DeclaredName, invalid.Type.GetCSharpPresentableName()
+                ));
+                // ReSharper enable AssignNullToNotNullAttribute
+            }
         }
     }
 }

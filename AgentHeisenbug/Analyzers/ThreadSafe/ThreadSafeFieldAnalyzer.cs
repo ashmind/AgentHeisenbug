@@ -1,5 +1,6 @@
 using System.Linq;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -15,11 +16,14 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
     })]
     public class ThreadSafeFieldAnalyzer : ElementProblemAnalyzer<IFieldDeclaration> {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
+        [NotNull] private readonly ThreadSafeTypeUsageValidator _typeUsageValidator;
 
-        public ThreadSafeFieldAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider) {
+        public ThreadSafeFieldAnalyzer(
+            [NotNull] AnalyzerPreconditions preconditions,
+            [NotNull] ThreadSafeTypeUsageValidator typeUsageValidator
+        ) {
             _preconditions = preconditions;
-            _featureProvider = featureProvider;
+            _typeUsageValidator = typeUsageValidator;
         }
 
         protected override void Run(IFieldDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
@@ -29,19 +33,13 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             if (!element.IsReadonly)
                 consumer.AddHighlighting(new MutableFieldInThreadSafeType(element, element.DeclaredName));
 
-            TypeUsageTreeValidator.Validate(
-                element.TypeUsage.NotNull(),
-                element.Type.NotNull(),
-                _preconditions.MustBeThreadSafe,
-                // ReSharper disable once AssignNullToNotNullAttribute
-                t => _featureProvider.GetFeatures(t).IsInstanceAccessThreadSafeOrReadOnly,
-
-                (type, usage) => consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
-                    // ReSharper disable AssignNullToNotNullAttribute
-                    usage, element.DeclaredName, type.GetCSharpPresentableName()
-                    // ReSharper enable AssignNullToNotNullAttribute
-                ))
-            );
+            foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
+                // ReSharper disable AssignNullToNotNullAttribute
+                consumer.AddHighlighting(new FieldOfNonThreadSafeTypeInThreadSafeType(
+                    invalid.Usage, element.DeclaredName, invalid.Type.GetCSharpPresentableName()
+                ));
+                // ReSharper enable AssignNullToNotNullAttribute
+            }
         }
     }
 }

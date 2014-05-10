@@ -1,5 +1,6 @@
 using System.Linq;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -15,11 +16,11 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
     })]
     public class ReadOnlyAutoPropertyAnalyzer : ElementProblemAnalyzer<IPropertyDeclaration> {
         [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
+        [NotNull] private readonly ReadOnlyTypeUsageValidator _typeUsageValidator;
 
-        public ReadOnlyAutoPropertyAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider) {
+        public ReadOnlyAutoPropertyAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] ReadOnlyTypeUsageValidator typeUsageValidator) {
             _preconditions = preconditions;
-            _featureProvider = featureProvider;
+            _typeUsageValidator = typeUsageValidator;
         }
 
         protected override void Run(IPropertyDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
@@ -30,19 +31,13 @@ namespace AgentHeisenbug.Analyzers.ReadOnly {
             if (setter != null && !setter.IsPrivate())
                 consumer.AddHighlighting(new MutableAutoPropertyInReadOnlyType(setter.NameIdentifier.NotNull(), element.DeclaredName));
 
-            TypeUsageTreeValidator.Validate(
-                element.TypeUsage.NotNull(),
-                element.Type.NotNull(),
-                _preconditions.MustBeReadOnly,
-                // ReSharper disable once AssignNullToNotNullAttribute
-                t => _featureProvider.GetFeatures(t).IsReadOnly,
-
-                (type, usage) => consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(
-                    // ReSharper disable AssignNullToNotNullAttribute
-                    usage, element.DeclaredName, type.GetCSharpPresentableName()
-                    // ReSharper enable AssignNullToNotNullAttribute
-                ))
-            );
+            foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
+                // ReSharper disable AssignNullToNotNullAttribute
+                consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(
+                    invalid.Usage, element.DeclaredName, invalid.Type.GetCSharpPresentableName()
+                ));
+                // ReSharper enable AssignNullToNotNullAttribute
+            }
         }
     }
 }

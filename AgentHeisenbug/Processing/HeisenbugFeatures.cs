@@ -30,6 +30,10 @@ namespace AgentHeisenbug.Processing {
             get { return _isReadOnly; }
         }
 
+        public bool IsPure {
+            get { return _isPure; }
+        }
+
         public ThreadSafety DeclaredThreadSafety {
             get { return _threadSafety; }
         }

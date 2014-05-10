@@ -50,8 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Processing\TypeUsageTree\ReadOnlyTypeUsageValidator.cs" />
     <Compile Include="Processing\HeisenbugFeatureProvider.cs" />
-    <Compile Include="Processing\TypeUsageTreeValidator.cs" />
+    <Compile Include="Processing\TypeUsageTree\TypeUsagePair.cs" />
+    <Compile Include="Processing\TypeUsageTree\ThreadSafeTypeUsageValidator.cs" />
+    <Compile Include="Processing\TypeUsageTree\TypeUsageTreeValidator.cs" />
     <Compile Include="Analyzers\ThreadSafe\ThreadSafeStaticReferenceAnalyzer.cs" />
     <Compile Include="Analyzers\ThreadSafe\ThreadSafeInheritanceAnalyzer.cs" />
     <Compile Include="Analyzers\ReadOnly\ReadOnlyInheritanceAnalyzer.cs" />
