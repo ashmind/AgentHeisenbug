@@ -50,22 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Processing\TypeUsageTree\ReadOnlyTypeUsageValidator.cs" />
+    <Compile Include="Processing\Preconditions\AnalyzerPrecondition.cs" />
+    <Compile Include="Processing\FeatureTypes\ThreadSafe.cs" />
+    <Compile Include="Processing\Preconditions\ThreadSafeAnalyzerPrecondition.cs" />
+    <Compile Include="Processing\FeatureTypes\InstanceThreadSafe.cs" />
+    <Compile Include="Processing\FeatureTypes\IFeatureMarker.cs" />
+    <Compile Include="Processing\FeatureTypes\ReadOnly.cs" />
+    <Compile Include="Processing\IAnalyzerPrecondition.cs" />
     <Compile Include="Processing\HeisenbugFeatureProvider.cs" />
     <Compile Include="Processing\TypeUsageTree\TypeUsagePair.cs" />
-    <Compile Include="Processing\TypeUsageTree\ThreadSafeTypeUsageValidator.cs" />
     <Compile Include="Processing\TypeUsageTree\TypeUsageTreeValidator.cs" />
-    <Compile Include="Analyzers\ThreadSafe\ThreadSafeStaticReferenceAnalyzer.cs" />
-    <Compile Include="Analyzers\ThreadSafe\ThreadSafeInheritanceAnalyzer.cs" />
-    <Compile Include="Analyzers\ReadOnly\ReadOnlyInheritanceAnalyzer.cs" />
-    <Compile Include="Analyzers\ThreadSafe\ThreadSafeAutoPropertyAssignmentAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafeStaticReferenceAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafeInheritanceAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnlyInheritanceAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafeAutoPropertyAssignmentAnalyzer.cs" />
     <Compile Include="AstExtensions.cs" />
-    <Compile Include="Analyzers\ReadOnly\ReadOnlyAutoPropertyAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnlyAutoPropertyAnalyzer.cs" />
     <Compile Include="Analyzers\Base\AutoPropertyAssignmentAnalyzerBase.cs" />
-    <Compile Include="Analyzers\ReadOnly\ReadOnlyAutoPropertyAssignmentAnalyzer.cs" />
-    <Compile Include="Analyzers\ThreadSafe\ThreadSafeParameterAnalyzer.cs" />
-    <Compile Include="Analyzers\ReadOnly\ReadOnlyFieldAnalyzer.cs" />
-    <Compile Include="Processing\AnalyzerPreconditions.cs" />
+    <Compile Include="Analyzers\ReadOnlyAutoPropertyAssignmentAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafeParameterAnalyzer.cs" />
+    <Compile Include="Analyzers\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Processing\HeisenbugFeatures.cs" />
     <Compile Include="Annotations\HeisenbugDebugExternalAnnotationFileProvider.cs" />
     <Compile Include="Highlightings\Highlightings.cs">
@@ -74,10 +78,10 @@
       <DependentUpon>Highlightings.tt</DependentUpon>
     </Compile>
     <Compile Include="Highlightings\HeisenbugHighligtingBase.cs" />
-    <Compile Include="Analyzers\ThreadSafe\ThreadSafeFieldAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafeFieldAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThreadSafety.cs" />
-    <Compile Include="Analyzers\ThreadSafe\ThreadSafeAutoPropertyAnalyzer.cs" />
+    <Compile Include="Analyzers\ThreadSafeAutoPropertyAnalyzer.cs" />
     <Compile Include="Annotations\HeisenbugAnnotationCache.cs" />
   </ItemGroup>
   <ItemGroup>

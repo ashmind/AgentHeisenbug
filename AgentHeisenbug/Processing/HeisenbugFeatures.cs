@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.Util;
 
@@ -62,6 +63,19 @@ namespace AgentHeisenbug.Processing {
         [Pure] [NotNull]
         public HeisenbugFeatures WithReadOnly(bool readOnly) {
             return new HeisenbugFeatures(readOnly, _isPure, _threadSafety, _containingTypeFeatures);
+        }
+
+        public bool Has<TFeature>()
+            where TFeature : IFeatureMarker
+        {
+            var featureType = typeof(TFeature);
+            if (featureType == typeof(ReadOnly))
+                return IsReadOnly;
+
+            if (featureType == typeof(InstanceThreadSafe))
+                return IsInstanceAccessThreadSafeOrReadOnly;
+
+            throw new NotSupportedException("Feature type " + featureType + " is either unknown or not specific enough.");
         }
     }
 }

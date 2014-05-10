@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using AgentHeisenbug.Highlightings;
 using JetBrains.Util;
 
-namespace AgentHeisenbug.Analyzers.ReadOnly {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IClassLikeDeclaration) }, HighlightingTypes = new[] {
         typeof(NonReadOnlyBaseClassInReadOnlyClass)
     })]
     public class ReadOnlyInheritanceAnalyzer : ElementProblemAnalyzer<IClassLikeDeclaration> {
-        [NotNull] private readonly AnalyzerPreconditions _preconditions;
+        [NotNull] private readonly IAnalyzerPrecondition<ReadOnly> _precondition;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
-        public ReadOnlyInheritanceAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider) {
-            _preconditions = preconditions;
+        public ReadOnlyInheritanceAnalyzer([NotNull] IAnalyzerPrecondition<ReadOnly> precondition, [NotNull] HeisenbugFeatureProvider featureProvider) {
+            _precondition = precondition;
             _featureProvider = featureProvider;
         }
 
         protected override void Run(IClassLikeDeclaration element, ElementProblemAnalyzerData data, IHighlightingConsumer consumer) {
-            if (!_preconditions.MustBeReadOnly(element))
+            if (!_precondition.Applies(element))
                 return;
 
             var superTypes = element.SuperTypes;

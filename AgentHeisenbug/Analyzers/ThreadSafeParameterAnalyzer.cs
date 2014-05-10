@@ -1,5 +1,7 @@
 using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -7,27 +9,26 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
-using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers.ThreadSafe {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IRegularParameterDeclaration) }, HighlightingTypes = new[] { typeof(ParameterOfNonThreadSafeTypeInThreadSafeMethod) })]
     public class ThreadSafeParameterAnalyzer : ElementProblemAnalyzer<IRegularParameterDeclaration> {
-        [NotNull] private readonly AnalyzerPreconditions _preconditions;
+        [NotNull] private readonly IAnalyzerPrecondition<InstanceThreadSafe> _precondition;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
-        [NotNull] private readonly ThreadSafeTypeUsageValidator _typeUsageValidator;
+        [NotNull] private readonly TypeUsageTreeValidator<InstanceThreadSafe> _typeUsageValidator;
 
         public ThreadSafeParameterAnalyzer(
-            [NotNull] AnalyzerPreconditions preconditions,
+            [NotNull] IAnalyzerPrecondition<ThreadSafe> precondition,
             [NotNull] HeisenbugFeatureProvider featureProvider,
-            [NotNull] ThreadSafeTypeUsageValidator typeUsageValidator
+            [NotNull] TypeUsageTreeValidator<InstanceThreadSafe> typeUsageValidator
         ) {
-            _preconditions = preconditions;
+            _precondition = precondition;
             _featureProvider = featureProvider;
             _typeUsageValidator = typeUsageValidator;
         }
 
         protected override void Run(IRegularParameterDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            if (!_preconditions.MustBeThreadSafe(element))
+            if (!_precondition.Applies(element))
                 return;
 
             var method = element.GetContainingNode<IMethodDeclaration>();

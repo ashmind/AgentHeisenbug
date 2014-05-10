@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -9,22 +11,21 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using AgentHeisenbug.Highlightings;
 using JetBrains.ReSharper.Psi.Util;
 using JetBrains.Util;
 
-namespace AgentHeisenbug.Analyzers.ThreadSafe {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IClassLikeDeclaration) }, HighlightingTypes = new[] {
         typeof(NonThreadSafeBaseClassInThreadSafeClass),
         typeof(ThreadSafeBaseClassInNonThreadSafeClass),
         typeof(ThreadSafeInterfaceInNonThreadSafeType)
     })]
     public class ThreadSafeInheritanceAnalyzer : ElementProblemAnalyzer<IClassLikeDeclaration> {
-        [NotNull] private readonly AnalyzerPreconditions _preconditions;
+        [NotNull] private readonly IAnalyzerPrecondition<ThreadSafe> _precondition;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
-        public ThreadSafeInheritanceAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider) {
-            _preconditions = preconditions;
+        public ThreadSafeInheritanceAnalyzer([NotNull] IAnalyzerPrecondition<ThreadSafe> precondition, [NotNull] HeisenbugFeatureProvider featureProvider) {
+            _precondition = precondition;
             _featureProvider = featureProvider;
         }
 
@@ -36,7 +37,7 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             if (superTypes == null)
                 return;
             
-            var mustBeThreadSafe = _preconditions.MustBeThreadSafe(element);
+            var mustBeThreadSafe = _precondition.Applies(element);
             var index = -1;
             foreach (var superType in superTypes) {
                 index += 1;

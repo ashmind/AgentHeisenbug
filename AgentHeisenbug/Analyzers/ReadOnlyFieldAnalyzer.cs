@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -7,27 +9,26 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
-using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers.ReadOnly {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] {
         typeof(MutableFieldInReadOnlyType),
         typeof(FieldOfNonReadOnlyTypeInReadOnlyType)
     })]
     public class ReadOnlyFieldAnalyzer : ElementProblemAnalyzer<IFieldDeclaration> {
-        [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly ReadOnlyTypeUsageValidator _typeUsageValidator;
+        [NotNull] private readonly IAnalyzerPrecondition<ReadOnly> _precondition;
+        [NotNull] private readonly TypeUsageTreeValidator<ReadOnly> _typeUsageValidator;
 
         public ReadOnlyFieldAnalyzer(
-            [NotNull] AnalyzerPreconditions preconditions,
-            [NotNull] ReadOnlyTypeUsageValidator typeUsageValidator
+            [NotNull] IAnalyzerPrecondition<ReadOnly> precondition,
+            [NotNull] TypeUsageTreeValidator<ReadOnly> typeUsageValidator
         ) {
-            _preconditions = preconditions;
+            _precondition = precondition;
             _typeUsageValidator = typeUsageValidator;
         }
 
         protected override void Run(IFieldDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            if (!_preconditions.MustBeReadOnly(element))
+            if (!_precondition.Applies(element))
                 return;
             
             if (!element.IsReadonly)

@@ -1,5 +1,7 @@
 using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -7,9 +9,8 @@ using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
-using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers.ThreadSafe {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IReferenceExpression) }, HighlightingTypes = new[] { typeof(AccessToNonThreadSafeStaticMemberInThreadSafeType) })]
     public class ThreadSafeStaticReferenceAnalyzer : ElementProblemAnalyzer<IReferenceExpression> {
         private enum MemberKind {
@@ -20,19 +21,19 @@ namespace AgentHeisenbug.Analyzers.ThreadSafe {
             Unknown
         }
 
-        [NotNull] private readonly AnalyzerPreconditions _preconditions;
+        [NotNull] private readonly IAnalyzerPrecondition<ThreadSafe> _precondition;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
         public ThreadSafeStaticReferenceAnalyzer(
-            [NotNull] AnalyzerPreconditions preconditions,
+            [NotNull] IAnalyzerPrecondition<ThreadSafe> precondition,
             [NotNull] HeisenbugFeatureProvider featureProvider
         ) {
-            _preconditions = preconditions;
+            _precondition = precondition;
             _featureProvider = featureProvider;
         }
 
         protected override void Run(IReferenceExpression element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            if (!_preconditions.MustBeThreadSafe(element))
+            if (!_precondition.Applies(element))
                 return;
             
             var resolved = element.Reference.Resolve();

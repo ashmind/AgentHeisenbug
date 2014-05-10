@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using AgentHeisenbug.Analyzers.ThreadSafe;
+using AgentHeisenbug.Analyzers;
 using JetBrains.Application;
 using JetBrains.Threading;
 using NUnit.Framework;

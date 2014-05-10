@@ -1,5 +1,7 @@
 using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -7,27 +9,26 @@ using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
-using AgentHeisenbug.Highlightings;
 
-namespace AgentHeisenbug.Analyzers.ThreadSafe {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IFieldDeclaration) }, HighlightingTypes = new[] {
         typeof(MutableFieldInThreadSafeType),
         typeof(FieldOfNonThreadSafeTypeInThreadSafeType)
     })]
     public class ThreadSafeFieldAnalyzer : ElementProblemAnalyzer<IFieldDeclaration> {
-        [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly ThreadSafeTypeUsageValidator _typeUsageValidator;
+        [NotNull] private readonly IAnalyzerPrecondition<ThreadSafe> _precondition;
+        [NotNull] private readonly TypeUsageTreeValidator<InstanceThreadSafe> _typeUsageValidator;
 
         public ThreadSafeFieldAnalyzer(
-            [NotNull] AnalyzerPreconditions preconditions,
-            [NotNull] ThreadSafeTypeUsageValidator typeUsageValidator
+            [NotNull] IAnalyzerPrecondition<ThreadSafe> precondition,
+            [NotNull] TypeUsageTreeValidator<InstanceThreadSafe> typeUsageValidator
         ) {
-            _preconditions = preconditions;
+            _precondition = precondition;
             _typeUsageValidator = typeUsageValidator;
         }
 
         protected override void Run(IFieldDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            if (!_preconditions.MustBeThreadSafe(element))
+            if (!_precondition.Applies(element))
                 return;
             
             if (!element.IsReadonly)

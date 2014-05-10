@@ -1,4 +1,6 @@
 using System.Linq;
+using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -9,9 +11,17 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.CSharp.Util;
 
 namespace AgentHeisenbug.Analyzers.Base {
-    public abstract class AutoPropertyAssignmentAnalyzerBase : ElementProblemAnalyzer<IAssignmentExpression> {
+    public abstract class AutoPropertyAssignmentAnalyzerBase<TFeature> : ElementProblemAnalyzer<IAssignmentExpression>
+        where TFeature : IFeatureMarker
+    {
+        [NotNull] private readonly IAnalyzerPrecondition<TFeature> _precondition;
+
+        protected AutoPropertyAssignmentAnalyzerBase([NotNull] IAnalyzerPrecondition<TFeature> precondition) {
+            _precondition = precondition;
+        }
+
         protected override void Run(IAssignmentExpression element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            if (!MustBeAnalyzed(element))
+            if (!_precondition.Applies(element))
                 return;
 
             var reference = element.Dest as IReferenceExpression;
@@ -38,7 +48,6 @@ namespace AgentHeisenbug.Analyzers.Base {
             ));
         }
 
-        protected abstract bool MustBeAnalyzed([NotNull] IAssignmentExpression assignment);
         protected abstract IHighlighting NewHighlighting([NotNull] IAssignmentExpression assignment, [NotNull] string propertyName, string staticOrInstance);
     }
 }

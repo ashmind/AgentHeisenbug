@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
@@ -8,7 +9,17 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 
 namespace AgentHeisenbug.Processing.TypeUsageTree {
-    public abstract class TypeUsageTreeValidator {
+    public class TypeUsageTreeValidator<TFeature>
+        where TFeature : IFeatureMarker
+    {
+        [NotNull] private readonly IAnalyzerPrecondition<TFeature> _precondition;
+        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
+
+        public TypeUsageTreeValidator([NotNull] IAnalyzerPrecondition<TFeature> precondition, [NotNull] HeisenbugFeatureProvider featureProvider) {
+            _precondition = precondition;
+            _featureProvider = featureProvider;
+        }
+
         [NotNull]
         public IEnumerable<TypeUsagePair> GetAllInvalid([NotNull] IType rootType, [NotNull] ITypeUsage rootUsage) {
             var invalid = new List<TypeUsagePair>();
@@ -17,10 +28,11 @@ namespace AgentHeisenbug.Processing.TypeUsageTree {
         }
 
         private void ValidateRecursive([NotNull] IType type, [NotNull] ITypeUsage typeUsage, ITypeParameter typeAsParameter, [NotNull] ICollection<TypeUsagePair> invalid) {
-            if (typeAsParameter != null && !MustBeValid(typeAsParameter))
+            if (typeAsParameter != null && !_precondition.Applies(typeAsParameter))
                 return;
 
-            if (!IsValid(type)) {
+            var features = _featureProvider.GetFeatures(type);
+            if (!features.Has<TFeature>()) {
                 invalid.Add(new TypeUsagePair(type, typeUsage));
                 return;
             }
@@ -63,8 +75,17 @@ namespace AgentHeisenbug.Processing.TypeUsageTree {
 
             return element.TypeParameters;
         }
-
-        protected abstract bool MustBeValid([NotNull] ITypeParameter parameter);
-        protected abstract bool IsValid([NotNull] IType type);
     }
+
+    #region Workaround for R# not supporting open generics
+    [PsiComponent]
+    public class ReadOnlyTypeUsageTreeValidator : TypeUsageTreeValidator<ReadOnly> {
+        public ReadOnlyTypeUsageTreeValidator([NotNull] IAnalyzerPrecondition<ReadOnly> precondition, [NotNull] HeisenbugFeatureProvider featureProvider) : base(precondition, featureProvider) {}
+    }
+
+    [PsiComponent]
+    public class InstanceThreadSafeTypeUsageTreeValidator : TypeUsageTreeValidator<InstanceThreadSafe> {
+        public InstanceThreadSafeTypeUsageTreeValidator([NotNull] IAnalyzerPrecondition<InstanceThreadSafe> precondition, [NotNull] HeisenbugFeatureProvider featureProvider) : base(precondition, featureProvider) {}
+    }
+    #endregion
 }

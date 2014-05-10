@@ -1,30 +1,31 @@
 using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
+using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using AgentHeisenbug.Highlightings;
 using JetBrains.Util;
 
-namespace AgentHeisenbug.Analyzers.ThreadSafe {
+namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IPropertyDeclaration) }, HighlightingTypes = new[] {
         typeof(MutableAutoPropertyInThreadSafeType),
         typeof(AutoPropertyOfNonThreadSafeTypeInThreadSafeType)
     })]
     public class ThreadSafeAutoPropertyAnalyzer : ElementProblemAnalyzer<IPropertyDeclaration> {
-        [NotNull] private readonly AnalyzerPreconditions _preconditions;
-        [NotNull] private readonly ThreadSafeTypeUsageValidator _typeUsageValidator;
+        [NotNull] private readonly IAnalyzerPrecondition<ThreadSafe> _precondition;
+        [NotNull] private readonly TypeUsageTreeValidator<InstanceThreadSafe> _typeUsageValidator;
 
-        public ThreadSafeAutoPropertyAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] ThreadSafeTypeUsageValidator typeUsageValidator) {
-            _preconditions = preconditions;
+        public ThreadSafeAutoPropertyAnalyzer([NotNull] IAnalyzerPrecondition<ThreadSafe> precondition, [NotNull] TypeUsageTreeValidator<InstanceThreadSafe> typeUsageValidator) {
+            _precondition = precondition;
             _typeUsageValidator = typeUsageValidator;
         }
 
         protected override void Run(IPropertyDeclaration element, ElementProblemAnalyzerData analyzerData, IHighlightingConsumer consumer) {
-            if (!element.IsAuto || !_preconditions.MustBeThreadSafe(element))
+            if (!element.IsAuto || !_precondition.Applies(element))
                 return;
 
             var setter = element.GetSetter();
