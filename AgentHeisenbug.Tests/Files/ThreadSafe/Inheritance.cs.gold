@@ -2,19 +2,23 @@
 using JetBrains.Annotations;
 
 namespace JetBrains.Annotations {
-    [ThreadSafe]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false, Inherited = false)]
     public class ThreadSafeAttribute : Attribute {}
 }
 
 [ThreadSafe] public interface IThreadSafe {}
 [ThreadSafe] public class ThreadSafeBase {}
+public interface INonThreadSafe {}
+public class NonThreadSafeBase {}
 
-public class NonReadOnlyImplementingClass : |IThreadSafe|(0) {}
-[ThreadSafe] public class ReadOnlyImplementingClass : IThreadSafe {}
+public class NonThreadSafeClass_ImplementingThreadSafe : |IThreadSafe|(0) {}
+[ThreadSafe] public class ThreadSafeClass_ImplementingThreadSafe : IThreadSafe {}
+[ThreadSafe] public class ThreadSafeClass_ImplementingNonThreadSafe : IThreadSafe {}
 
-public class NonThreadSafeSubClass : |ThreadSafeBase|(1) {}
-[ThreadSafe] public class ThreadSafeSubClass : ThreadSafeBase {}
+public class NonThreadSafeClass_InheritingThreadSafe : |ThreadSafeBase|(1) {}
+[ThreadSafe] public class ThreadSafeClass_InheritingThreadSafe : ThreadSafeBase {}
+[ThreadSafe] public class ThreadSafeClass_InheritingNonThreadSafe : |NonThreadSafeBase|(2) {}
 ---------------------------------------------------------
-(0): ReSharper Warning: Interface 'IThreadSafe' is thread-safe, but type 'NonReadOnlyImplementingClass' is not annotated with [ThreadSafe].
-(1): ReSharper Warning: Class 'ThreadSafeBase' is thread-safe, but type 'NonThreadSafeSubClass' is not annotated with [ThreadSafe].
+(0): ReSharper Warning: Base interface 'IThreadSafe' is thread-safe, but type 'NonThreadSafeClass_ImplementingThreadSafe' is not annotated with [ThreadSafe].
+(1): ReSharper Warning: Base class 'ThreadSafeBase' is thread-safe, but class 'NonThreadSafeClass_InheritingThreadSafe' is not annotated with [ThreadSafe].
+(2): ReSharper Warning: Base class 'NonThreadSafeBase' is not thread-safe, but class 'ThreadSafeClass_InheritingNonThreadSafe' is annotated with [ThreadSafe]

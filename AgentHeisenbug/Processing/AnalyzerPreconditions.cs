@@ -23,7 +23,7 @@ namespace AgentHeisenbug.Processing {
 
         public bool MustBeThreadSafe([NotNull] ITreeNode node) {
             Argument.NotNull("node", node);
-            var typeNode = node.GetContainingNode<ITypeDeclaration>();
+            var typeNode = (node as ITypeDeclaration) ?? node.GetContainingNode<ITypeDeclaration>();
             if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 
@@ -43,7 +43,7 @@ namespace AgentHeisenbug.Processing {
         public bool MustBeReadOnly([NotNull] ITreeNode node) {
             Argument.NotNull("node", node);
 
-            var typeNode = node.GetContainingNode<ITypeDeclaration>();
+            var typeNode = (node as ITypeDeclaration) ?? node.GetContainingNode<ITypeDeclaration>();
             if (typeNode == null || typeNode.DeclaredElement == null)
                 return false;
 

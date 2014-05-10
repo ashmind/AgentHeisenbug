@@ -6,7 +6,7 @@ using AgentHeisenbug.Highlightings;
 
 
 [assembly: RegisterConfigurableSeverity(
-    ThreadSafeInterfaceImplementedByNonThreadSafeType.Id,
+    ThreadSafeInterfaceInNonThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
     "Thread-safe interface implemented by type that is not annotated with [ThreadSafe].",
@@ -15,11 +15,20 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
-    ThreadSafeClassInheritedByNonThreadSafeType.Id,
+    ThreadSafeBaseClassInNonThreadSafeClass.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Thread-safe class inherited by type that is not annotated with [ThreadSafe].",
-    "Thread-safe class inherited by type that is not annotated with [ThreadSafe].",
+    "Thread-safe base class in class not annotated with [ThreadSafe].",
+    "Thread-safe base class in class not annotated with [ThreadSafe].",
+    Severity.WARNING,
+    false
+)]
+[assembly: RegisterConfigurableSeverity(
+    NonThreadSafeBaseClassInThreadSafeClass.Id,
+    null,
+    HighlightingGroupIds.ConstraintViolation,
+    "Non-readonly base class in class annotated with [ReadOnly].",
+    "Non-readonly base class in class annotated with [ReadOnly].",
     Severity.WARNING,
     false
 )]
@@ -87,20 +96,11 @@ using AgentHeisenbug.Highlightings;
     false
 )]
 [assembly: RegisterConfigurableSeverity(
-    ReadOnlyInterfaceImplementedByNonReadOnlyType.Id,
+    NonReadOnlyBaseClassInReadOnlyClass.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Readonly interface implemented by type that is not annotated with [ReadOnly].",
-    "Readonly interface implemented by type that is not annotated with [ReadOnly].",
-    Severity.WARNING,
-    false
-)]
-[assembly: RegisterConfigurableSeverity(
-    ReadOnlyClassInheritedByNonReadOnlyType.Id,
-    null,
-    HighlightingGroupIds.ConstraintViolation,
-    "Readonly class inherited by type that is not annotated with [ReadOnly].",
-    "Readonly class inherited by type that is not annotated with [ReadOnly].",
+    "Non-readonly base class in class annotated with [ReadOnly].",
+    "Non-readonly base class in class annotated with [ReadOnly].",
     Severity.WARNING,
     false
 )]
@@ -152,11 +152,14 @@ using AgentHeisenbug.Highlightings;
 
 namespace AgentHeisenbug.Highlightings {
     public static class HeisenbugHighlightings {
-        public static ThreadSafeInterfaceImplementedByNonThreadSafeType ThreadSafeInterfaceImplementedByNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) {
-            return new ThreadSafeInterfaceImplementedByNonThreadSafeType(element, interfaceName, typeName);
+        public static ThreadSafeInterfaceInNonThreadSafeType ThreadSafeInterfaceInNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) {
+            return new ThreadSafeInterfaceInNonThreadSafeType(element, interfaceName, typeName);
         }
-        public static ThreadSafeClassInheritedByNonThreadSafeType ThreadSafeClassInheritedByNonThreadSafeType([NotNull] ITreeNode element, string baseClassName, string typeName) {
-            return new ThreadSafeClassInheritedByNonThreadSafeType(element, baseClassName, typeName);
+        public static ThreadSafeBaseClassInNonThreadSafeClass ThreadSafeBaseClassInNonThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) {
+            return new ThreadSafeBaseClassInNonThreadSafeClass(element, baseClassName, typeName);
+        }
+        public static NonThreadSafeBaseClassInThreadSafeClass NonThreadSafeBaseClassInThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) {
+            return new NonThreadSafeBaseClassInThreadSafeClass(element, baseClassName, typeName);
         }
         public static AccessToNonThreadSafeStaticMemberInThreadSafeType AccessToNonThreadSafeStaticMemberInThreadSafeType([NotNull] ITreeNode element, string memberKind, string memberName) {
             return new AccessToNonThreadSafeStaticMemberInThreadSafeType(element, memberKind, memberName);
@@ -179,11 +182,8 @@ namespace AgentHeisenbug.Highlightings {
         public static ParameterOfNonThreadSafeTypeInThreadSafeMethod ParameterOfNonThreadSafeTypeInThreadSafeMethod([NotNull] ITreeNode element, string paramterName, string typeName) {
             return new ParameterOfNonThreadSafeTypeInThreadSafeMethod(element, paramterName, typeName);
         }
-        public static ReadOnlyInterfaceImplementedByNonReadOnlyType ReadOnlyInterfaceImplementedByNonReadOnlyType([NotNull] ITreeNode element, string interfaceName, string typeName) {
-            return new ReadOnlyInterfaceImplementedByNonReadOnlyType(element, interfaceName, typeName);
-        }
-        public static ReadOnlyClassInheritedByNonReadOnlyType ReadOnlyClassInheritedByNonReadOnlyType([NotNull] ITreeNode element, string baseClassName, string typeName) {
-            return new ReadOnlyClassInheritedByNonReadOnlyType(element, baseClassName, typeName);
+        public static NonReadOnlyBaseClassInReadOnlyClass NonReadOnlyBaseClassInReadOnlyClass([NotNull] ITreeNode element, string baseClassName, string typeName) {
+            return new NonReadOnlyBaseClassInReadOnlyClass(element, baseClassName, typeName);
         }
         public static MutableFieldInReadOnlyType MutableFieldInReadOnlyType([NotNull] ITreeNode element, string fieldName) {
             return new MutableFieldInReadOnlyType(element, fieldName);
@@ -202,24 +202,35 @@ namespace AgentHeisenbug.Highlightings {
         }
     }
 
-    [ConfigurableSeverityHighlighting(ThreadSafeInterfaceImplementedByNonThreadSafeType.Id, CSharpLanguage.Name)]
-    public class ThreadSafeInterfaceImplementedByNonThreadSafeType : HeisenbugHighligtingBase {
-        public const string Id = "AgentHeisenbug.ThreadSafeInterfaceImplementedByNonThreadSafeType";
+    [ConfigurableSeverityHighlighting(ThreadSafeInterfaceInNonThreadSafeType.Id, CSharpLanguage.Name)]
+    public class ThreadSafeInterfaceInNonThreadSafeType : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.ThreadSafeInterfaceInNonThreadSafeType";
 
-        public ThreadSafeInterfaceImplementedByNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) : base(
+        public ThreadSafeInterfaceInNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) : base(
             element,
-            "Interface '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
+            "Base interface '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
             interfaceName, typeName
         ) {}
     }
 
-    [ConfigurableSeverityHighlighting(ThreadSafeClassInheritedByNonThreadSafeType.Id, CSharpLanguage.Name)]
-    public class ThreadSafeClassInheritedByNonThreadSafeType : HeisenbugHighligtingBase {
-        public const string Id = "AgentHeisenbug.ThreadSafeClassInheritedByNonThreadSafeType";
+    [ConfigurableSeverityHighlighting(ThreadSafeBaseClassInNonThreadSafeClass.Id, CSharpLanguage.Name)]
+    public class ThreadSafeBaseClassInNonThreadSafeClass : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.ThreadSafeBaseClassInNonThreadSafeClass";
 
-        public ThreadSafeClassInheritedByNonThreadSafeType([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
+        public ThreadSafeBaseClassInNonThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
             element,
-            "Class '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
+            "Base class '{0}' is thread-safe, but class '{1}' is not annotated with [ThreadSafe].",
+            baseClassName, typeName
+        ) {}
+    }
+
+    [ConfigurableSeverityHighlighting(NonThreadSafeBaseClassInThreadSafeClass.Id, CSharpLanguage.Name)]
+    public class NonThreadSafeBaseClassInThreadSafeClass : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.NonThreadSafeBaseClassInThreadSafeClass";
+
+        public NonThreadSafeBaseClassInThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
+            element,
+            "Base class '{0}' is not thread-safe, but class '{1}' is annotated with [ThreadSafe]",
             baseClassName, typeName
         ) {}
     }
@@ -301,24 +312,13 @@ namespace AgentHeisenbug.Highlightings {
         ) {}
     }
 
-    [ConfigurableSeverityHighlighting(ReadOnlyInterfaceImplementedByNonReadOnlyType.Id, CSharpLanguage.Name)]
-    public class ReadOnlyInterfaceImplementedByNonReadOnlyType : HeisenbugHighligtingBase {
-        public const string Id = "AgentHeisenbug.ReadOnlyInterfaceImplementedByNonReadOnlyType";
+    [ConfigurableSeverityHighlighting(NonReadOnlyBaseClassInReadOnlyClass.Id, CSharpLanguage.Name)]
+    public class NonReadOnlyBaseClassInReadOnlyClass : HeisenbugHighligtingBase {
+        public const string Id = "AgentHeisenbug.NonReadOnlyBaseClassInReadOnlyClass";
 
-        public ReadOnlyInterfaceImplementedByNonReadOnlyType([NotNull] ITreeNode element, string interfaceName, string typeName) : base(
+        public NonReadOnlyBaseClassInReadOnlyClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
             element,
-            "Interface '{0}' is readonly, but type '{1}' is not annotated with [ReadOnly].",
-            interfaceName, typeName
-        ) {}
-    }
-
-    [ConfigurableSeverityHighlighting(ReadOnlyClassInheritedByNonReadOnlyType.Id, CSharpLanguage.Name)]
-    public class ReadOnlyClassInheritedByNonReadOnlyType : HeisenbugHighligtingBase {
-        public const string Id = "AgentHeisenbug.ReadOnlyClassInheritedByNonReadOnlyType";
-
-        public ReadOnlyClassInheritedByNonReadOnlyType([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
-            element,
-            "Class '{0}' is readonly, but type '{1}' is not annotated with [ReadOnly].",
+            "Base class '{0}' is not readonly, but class '{1}' is annotated with [ReadOnly]",
             baseClassName, typeName
         ) {}
     }

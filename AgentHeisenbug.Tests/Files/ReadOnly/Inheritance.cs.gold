@@ -6,14 +6,9 @@ namespace JetBrains.Annotations {
     public class ReadOnlyAttribute : Attribute {}
 }
 
-[ReadOnly] public interface IReadOnly {}
-[ReadOnly] public class ReadOnlyBase {}
+public class NonReadOnlyBase {}
 
-public class NonReadOnlyImplementingClass : |IReadOnly|(0) {}
-[ReadOnly] public class ReadOnlyImplementingClass : IReadOnly {}
-
-public class NonReadOnlySubClass : |ReadOnlyBase|(1) {}
-[ReadOnly] public class ReadOnlySubClass : ReadOnlyBase {}
+public class NonReadOnlyClass_ImplementingNonReadOnly : NonReadOnlyBase {}
+[ReadOnly] public class ReadOnlyClass_ImplementingNonReadOnly : |NonReadOnlyBase|(0) {}
 ---------------------------------------------------------
-(0): ReSharper Warning: Interface 'IReadOnly' is readonly, but type 'NonReadOnlyImplementingClass' is not annotated with [ReadOnly].
-(1): ReSharper Warning: Class 'ReadOnlyBase' is readonly, but type 'NonReadOnlySubClass' is not annotated with [ReadOnly].
+(0): ReSharper Warning: Base class 'NonReadOnlyBase' is not readonly, but class 'ReadOnlyClass_ImplementingNonReadOnly' is annotated with [ReadOnly]

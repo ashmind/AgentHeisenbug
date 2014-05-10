@@ -1,37 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Processing;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Daemon;
+using JetBrains.ReSharper.Daemon.CSharp.Stages;
+using JetBrains.ReSharper.Daemon.Stages;
 using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
-using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using AgentHeisenbug.Analyzers.Base;
-using AgentHeisenbug.Annotations;
 using AgentHeisenbug.Highlightings;
+using JetBrains.Util;
 
 namespace AgentHeisenbug.Analyzers.ReadOnly {
     [ElementProblemAnalyzer(new[] { typeof(IClassLikeDeclaration) }, HighlightingTypes = new[] {
-        typeof(ReadOnlyClassInheritedByNonReadOnlyType),
-        typeof(ReadOnlyInterfaceImplementedByNonReadOnlyType)
+        typeof(NonReadOnlyBaseClassInReadOnlyClass)
     })]
-    public class ReadOnlyInheritanceAnalyzer : InheritanceAnalyzerBase {
-        [NotNull] private readonly HeisenbugAnnotationCache _annotationCache;
+    public class ReadOnlyInheritanceAnalyzer : ElementProblemAnalyzer<IClassLikeDeclaration> {
+        [NotNull] private readonly AnalyzerPreconditions _preconditions;
+        [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
 
-        public ReadOnlyInheritanceAnalyzer([NotNull] HeisenbugAnnotationCache annotationCache) {
-            _annotationCache = annotationCache;
+        public ReadOnlyInheritanceAnalyzer([NotNull] AnalyzerPreconditions preconditions, [NotNull] HeisenbugFeatureProvider featureProvider) {
+            _preconditions = preconditions;
+            _featureProvider = featureProvider;
         }
 
-        protected override bool IsAnnotated(ITypeElement type) {
-            return _annotationCache.GetFeaturesFromAnnotations(type).IsReadOnly;
-        }
+        protected override void Run(IClassLikeDeclaration element, ElementProblemAnalyzerData data, IHighlightingConsumer consumer) {
+            if (!_preconditions.MustBeReadOnly(element))
+                return;
 
-        protected override IHighlighting NewInterfaceImplementedByNonAnnotatedType(IDeclaredTypeUsage superTypeUsage, string superTypeName, string typeName) {
-            return new ReadOnlyInterfaceImplementedByNonReadOnlyType(superTypeUsage, superTypeName, typeName);
-        }
+            var superTypes = element.SuperTypes;
+            if (superTypes == null)
+                return;
+            
+            var index = -1;
+            foreach (var superType in superTypes) {
+                index += 1;
+                if (superType == null)
+                    continue;
 
-        protected override IHighlighting NewClassInheritedByNonAnnotatedType(IDeclaredTypeUsage superTypeUsage, string superTypeName, string typeName) {
-            return new ReadOnlyClassInheritedByNonReadOnlyType(superTypeUsage, superTypeName, typeName);
+                if (_featureProvider.GetFeatures(superType).IsReadOnly)
+                    continue;
+                
+                consumer.AddHighlighting(
+                    new NonReadOnlyBaseClassInReadOnlyClass(element.SuperTypeUsageNodes[index].NotNull(), superType.GetCSharpPresentableName(), element.DeclaredName)
+                );
+            }
         }
     }
 }

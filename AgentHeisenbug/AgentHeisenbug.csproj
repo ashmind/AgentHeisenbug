@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyzers\Base\InheritanceAnalyzerBase.cs" />
     <Compile Include="Processing\HeisenbugFeatureProvider.cs" />
     <Compile Include="Processing\TypeUsageTreeValidator.cs" />
     <Compile Include="Analyzers\ThreadSafe\ThreadSafeStaticReferenceAnalyzer.cs" />

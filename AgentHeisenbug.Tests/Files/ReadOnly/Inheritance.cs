@@ -6,11 +6,7 @@ namespace JetBrains.Annotations {
     public class ReadOnlyAttribute : Attribute {}
 }
 
-[ReadOnly] public interface IReadOnly {}
-[ReadOnly] public class ReadOnlyBase {}
+public class NonReadOnlyBase {}
 
-public class NonReadOnlyImplementingClass : IReadOnly {}
-[ReadOnly] public class ReadOnlyImplementingClass : IReadOnly {}
-
-public class NonReadOnlySubClass : ReadOnlyBase {}
-[ReadOnly] public class ReadOnlySubClass : ReadOnlyBase {}
+public class NonReadOnlyClass_ImplementingNonReadOnly : NonReadOnlyBase {}
+[ReadOnly] public class ReadOnlyClass_ImplementingNonReadOnly : NonReadOnlyBase {}
