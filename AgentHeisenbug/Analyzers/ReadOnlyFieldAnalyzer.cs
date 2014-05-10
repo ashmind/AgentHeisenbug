@@ -17,11 +17,11 @@ namespace AgentHeisenbug.Analyzers {
     })]
     public class ReadOnlyFieldAnalyzer : ElementProblemAnalyzer<IFieldDeclaration> {
         [NotNull] private readonly IAnalyzerPrecondition<ReadOnly> _precondition;
-        [NotNull] private readonly TypeUsageTreeValidator<ReadOnly> _typeUsageValidator;
+        [NotNull] private readonly ITypeUsageTreeValidator<ReadOnly> _typeUsageValidator;
 
         public ReadOnlyFieldAnalyzer(
             [NotNull] IAnalyzerPrecondition<ReadOnly> precondition,
-            [NotNull] TypeUsageTreeValidator<ReadOnly> typeUsageValidator
+            [NotNull] ITypeUsageTreeValidator<ReadOnly> typeUsageValidator
         ) {
             _precondition = precondition;
             _typeUsageValidator = typeUsageValidator;

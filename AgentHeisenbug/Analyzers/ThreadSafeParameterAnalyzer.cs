@@ -2,7 +2,6 @@ using System.Linq;
 using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
-using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -15,12 +14,12 @@ namespace AgentHeisenbug.Analyzers {
     public class ThreadSafeParameterAnalyzer : ElementProblemAnalyzer<IRegularParameterDeclaration> {
         [NotNull] private readonly IAnalyzerPrecondition<InstanceThreadSafe> _precondition;
         [NotNull] private readonly HeisenbugFeatureProvider _featureProvider;
-        [NotNull] private readonly TypeUsageTreeValidator<InstanceThreadSafe> _typeUsageValidator;
+        [NotNull] private readonly ITypeUsageTreeValidator<InstanceThreadSafe> _typeUsageValidator;
 
         public ThreadSafeParameterAnalyzer(
             [NotNull] IAnalyzerPrecondition<ThreadSafe> precondition,
             [NotNull] HeisenbugFeatureProvider featureProvider,
-            [NotNull] TypeUsageTreeValidator<InstanceThreadSafe> typeUsageValidator
+            [NotNull] ITypeUsageTreeValidator<InstanceThreadSafe> typeUsageValidator
         ) {
             _precondition = precondition;
             _featureProvider = featureProvider;

@@ -9,7 +9,7 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Tree;
 
 namespace AgentHeisenbug.Processing.TypeUsageTree {
-    public class TypeUsageTreeValidator<TFeature>
+    public class TypeUsageTreeValidator<TFeature> : ITypeUsageTreeValidator<TFeature>
         where TFeature : IFeatureMarker
     {
         [NotNull] private readonly IAnalyzerPrecondition<TFeature> _precondition;
@@ -20,8 +20,7 @@ namespace AgentHeisenbug.Processing.TypeUsageTree {
             _featureProvider = featureProvider;
         }
 
-        [NotNull]
-        public IEnumerable<TypeUsagePair> GetAllInvalid([NotNull] IType rootType, [NotNull] ITypeUsage rootUsage) {
+        public IEnumerable<TypeUsagePair> GetAllInvalid(IType rootType, ITypeUsage rootUsage) {
             var invalid = new List<TypeUsagePair>();
             ValidateRecursive(rootType, rootUsage, null, invalid);
             return invalid;

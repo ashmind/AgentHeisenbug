@@ -58,6 +58,7 @@
     <Compile Include="Processing\FeatureTypes\ReadOnly.cs" />
     <Compile Include="Processing\IAnalyzerPrecondition.cs" />
     <Compile Include="Processing\HeisenbugFeatureProvider.cs" />
+    <Compile Include="Processing\ITypeUsageTreeValidator.cs" />
     <Compile Include="Processing\TypeUsageTree\TypeUsagePair.cs" />
     <Compile Include="Processing\TypeUsageTree\TypeUsageTreeValidator.cs" />
     <Compile Include="Analyzers\ThreadSafeStaticReferenceAnalyzer.cs" />

@@ -2,7 +2,6 @@ using System.Linq;
 using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
-using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -17,9 +16,9 @@ namespace AgentHeisenbug.Analyzers {
     })]
     public class ReadOnlyAutoPropertyAnalyzer : ElementProblemAnalyzer<IPropertyDeclaration> {
         [NotNull] private readonly IAnalyzerPrecondition<ReadOnly> _precondition;
-        [NotNull] private readonly TypeUsageTreeValidator<ReadOnly> _typeUsageValidator;
+        [NotNull] private readonly ITypeUsageTreeValidator<ReadOnly> _typeUsageValidator;
 
-        public ReadOnlyAutoPropertyAnalyzer([NotNull] IAnalyzerPrecondition<ReadOnly> precondition, [NotNull] TypeUsageTreeValidator<ReadOnly> typeUsageValidator) {
+        public ReadOnlyAutoPropertyAnalyzer([NotNull] IAnalyzerPrecondition<ReadOnly> precondition, [NotNull] ITypeUsageTreeValidator<ReadOnly> typeUsageValidator) {
             _precondition = precondition;
             _typeUsageValidator = typeUsageValidator;
         }
