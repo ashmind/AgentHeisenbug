@@ -4,7 +4,7 @@
     <id>AgentHeisenbug</id>
     
     <!-- Note: at the moment should be manually synchronized with AssemblyInfo: -->
-    <version>0.5.0-pre</version>
+    <version>0.5.1-pre</version>
     
     <title>Agent Heisenbug</title>
     <authors>Andrey Shchekin</authors>
@@ -16,7 +16,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\*.*" target="ReSharper\v8.2\plugins\AgentHeisenbug" />
+    <file src="bin\Release\*.*" target="ReSharper\v8.2\plugins\" />
     <file src="..\#annotations\**\*.*" target="ReSharper\vAny\annotations\" />
   </files>
 </package>

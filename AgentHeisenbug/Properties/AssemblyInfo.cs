@@ -15,14 +15,14 @@ using JetBrains.Application.PluginSupport;
 
 // The following information is displayed by ReSharper in the Plugins dialog
 [assembly: PluginTitle("Agent Heisenbug")]
-[assembly: PluginDescription("")]
+[assembly: PluginDescription("Provides basic [ThreadSafe]/[ReadOnly] annotations.")]
 [assembly: PluginVendor(AssemblyInfo.Author)]
 
 namespace AgentHeisenbug.Properties {
     internal static class AssemblyInfo {
         public const string Author = "Andrey Shchekin";
         public const string Title = "AgentHeisenbug";
-        public const string Version = "0.5.0";
+        public const string Version = "0.5.1";
         public const string FullVersion = Version + "-pre";
     }
 }
