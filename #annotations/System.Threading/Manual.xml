@@ -80,17 +80,17 @@
       <argument>None</argument>
     </attribute>
   </member>
-  <member name="T:System.Threading.Task">
+  <member name="T:System.Threading.Tasks.Task">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>
   </member>
-  <member name="M:System.Threading.Task.Dispose">
+  <member name="M:System.Threading.Tasks.Task.Dispose">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>None</argument>
     </attribute>
   </member>
-  <member name="T:System.Threading.Task`1">
+  <member name="T:System.Threading.Tasks.Task`1">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>All</argument>
     </attribute>

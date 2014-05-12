@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 
 namespace JetBrains.Annotations {
@@ -27,5 +28,7 @@ public class BclTypes {
         Regex.Match("", "");
         Uri.EscapeDataString("");
         decimal.Add(0, 0);
+
+        Task.Factory.StartNew(() => {});
     }
 }

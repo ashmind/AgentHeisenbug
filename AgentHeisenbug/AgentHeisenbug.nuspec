@@ -4,7 +4,7 @@
     <id>AgentHeisenbug</id>
     
     <!-- Note: at the moment should be manually synchronized with AssemblyInfo: -->
-    <version>0.5.1-pre</version>
+    <version>0.5.2-pre</version>
     
     <title>Agent Heisenbug</title>
     <authors>Andrey Shchekin</authors>
