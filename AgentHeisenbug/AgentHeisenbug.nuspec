@@ -4,10 +4,11 @@
     <id>AgentHeisenbug</id>
     
     <!-- Note: at the moment should be manually synchronized with AssemblyInfo: -->
-    <version>0.5.2-pre</version>
+    <version>0.5.2-alpha</version>
     
     <title>Agent Heisenbug</title>
     <authors>Andrey Shchekin</authors>
+    <projectUrl>https://github.com/ashmind/AgentHeisenbug</projectUrl>
     <description>Basic [ThreadSafe] and [ReadOnly] annotations.</description>
     <copyright>Copyright &#x00A9; 2014 Andrey Shchekin</copyright>
     <tags>annotations</tags>

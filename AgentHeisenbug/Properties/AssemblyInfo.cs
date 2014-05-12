@@ -22,7 +22,7 @@ namespace AgentHeisenbug.Properties {
     internal static class AssemblyInfo {
         public const string Author = "Andrey Shchekin";
         public const string Title = "AgentHeisenbug";
-        public const string Version = "0.5.2";
-        public const string FullVersion = Version + "-pre";
+        public const string Version = "0.5.3";
+        public const string FullVersion = Version + "-alpha";
     }
 }
