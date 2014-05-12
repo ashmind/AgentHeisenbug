@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using JetBrains.Annotations;
@@ -15,7 +16,7 @@ namespace AgentHeisenbug.Annotations {
         [NotNull] private readonly FileSystemPath _path;
 
         public HeisenbugDebugExternalAnnotationFileProvider() {
-            _path = FileSystemPath.Parse(Assembly.GetExecutingAssembly().Location)
+            _path = FileSystemPath.Parse(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).NotNull())
                                   .Combine("../../../#annotations");
         }
 
