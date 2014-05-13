@@ -11,7 +11,7 @@ using AshMind.Extensions;
 
 namespace AgentHeisenbug.Indexer.ThreadSafe {
     public class HelpRawReader {
-        [NotNull]private static readonly XmlNamespaceManager NamespaceManager;
+        [NotNull] private static readonly XmlNamespaceManager NamespaceManager;
         [NotNull] private readonly ICollection<FileInfo> _files;
         
         static HelpRawReader() {
@@ -27,7 +27,7 @@ namespace AgentHeisenbug.Indexer.ThreadSafe {
         [NotNull]
         public IEnumerable<TypeHelp> ReadFiles([NotNull] Action<double> reportProgress) {
             return _files.OnAfterEach((_, index) => reportProgress((double)index / _files.Count))
-                             .SelectMany(ReadFile);
+                         .SelectMany(ReadFile);
         }
 
         [NotNull]
