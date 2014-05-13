@@ -9,8 +9,8 @@ using AgentHeisenbug.Highlightings;
     ThreadSafeInterfaceInNonThreadSafeType.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Thread-safe interface implemented by type that is not annotated with [ThreadSafe].",
-    "Thread-safe interface implemented by type that is not annotated with [ThreadSafe].",
+    "Thread-safe interface implemented by type that is not annotated with [ThreadSafe]",
+    "Thread-safe interface implemented by type that is not annotated with [ThreadSafe]",
     Severity.WARNING,
     false
 )]
@@ -18,8 +18,8 @@ using AgentHeisenbug.Highlightings;
     ThreadSafeBaseClassInNonThreadSafeClass.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Thread-safe base class in class not annotated with [ThreadSafe].",
-    "Thread-safe base class in class not annotated with [ThreadSafe].",
+    "Thread-safe base class in class not annotated with [ThreadSafe]",
+    "Thread-safe base class in class not annotated with [ThreadSafe]",
     Severity.WARNING,
     false
 )]
@@ -27,8 +27,8 @@ using AgentHeisenbug.Highlightings;
     NonThreadSafeBaseClassInThreadSafeClass.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Non-readonly base class in class annotated with [ReadOnly].",
-    "Non-readonly base class in class annotated with [ReadOnly].",
+    "Non-readonly base class in class annotated with [ReadOnly]",
+    "Non-readonly base class in class annotated with [ReadOnly]",
     Severity.WARNING,
     false
 )]
@@ -99,8 +99,8 @@ using AgentHeisenbug.Highlightings;
     NonReadOnlyBaseClassInReadOnlyClass.Id,
     null,
     HighlightingGroupIds.ConstraintViolation,
-    "Non-readonly base class in class annotated with [ReadOnly].",
-    "Non-readonly base class in class annotated with [ReadOnly].",
+    "Non-readonly base class in class annotated with [ReadOnly]",
+    "Non-readonly base class in class annotated with [ReadOnly]",
     Severity.WARNING,
     false
 )]
@@ -230,7 +230,7 @@ namespace AgentHeisenbug.Highlightings {
 
         public NonThreadSafeBaseClassInThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
             element,
-            "Base class '{0}' is not thread-safe, but class '{1}' is annotated with [ThreadSafe]",
+            "Base class '{0}' is not thread-safe, but class '{1}' is annotated with [ThreadSafe].",
             baseClassName, typeName
         ) {}
     }

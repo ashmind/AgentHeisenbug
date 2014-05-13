@@ -12,13 +12,15 @@ public interface INonThreadSafe {}
 public class NonThreadSafeBase {}
 
 public class NonThreadSafeClass_ImplementingThreadSafe : |IThreadSafe|(0) {}
+public class NonThreadSafeClass_ImplementingNonThreadSafe : INonThreadSafe {}
 [ThreadSafe] public class ThreadSafeClass_ImplementingThreadSafe : IThreadSafe {}
-[ThreadSafe] public class ThreadSafeClass_ImplementingNonThreadSafe : IThreadSafe {}
+[ThreadSafe] public class ThreadSafeClass_ImplementingNonThreadSafe : INonThreadSafe {}
 
 public class NonThreadSafeClass_InheritingThreadSafe : |ThreadSafeBase|(1) {}
+public class NonThreadSafeClass_InheritingNonThreadSafe : NonThreadSafeBase {}
 [ThreadSafe] public class ThreadSafeClass_InheritingThreadSafe : ThreadSafeBase {}
 [ThreadSafe] public class ThreadSafeClass_InheritingNonThreadSafe : |NonThreadSafeBase|(2) {}
 ---------------------------------------------------------
 (0): ReSharper Warning: Base interface 'IThreadSafe' is thread-safe, but type 'NonThreadSafeClass_ImplementingThreadSafe' is not annotated with [ThreadSafe].
 (1): ReSharper Warning: Base class 'ThreadSafeBase' is thread-safe, but class 'NonThreadSafeClass_InheritingThreadSafe' is not annotated with [ThreadSafe].
-(2): ReSharper Warning: Base class 'NonThreadSafeBase' is not thread-safe, but class 'ThreadSafeClass_InheritingNonThreadSafe' is annotated with [ThreadSafe]
+(2): ReSharper Warning: Base class 'NonThreadSafeBase' is not thread-safe, but class 'ThreadSafeClass_InheritingNonThreadSafe' is annotated with [ThreadSafe].

@@ -59,11 +59,14 @@ namespace AgentHeisenbug.Analyzers {
 
             var superTypeThreadSafe = _featureProvider.GetFeatures(superTypeElement).DeclaredThreadSafety.Has(ThreadSafety.Instance);
             var typeName = element.DeclaredElement.NotNull().ShortName;
-            if (mustBeThreadSafe) {
-                if (!superTypeThreadSafe)
-                    return new NonThreadSafeBaseClassInThreadSafeClass(superTypeUsage, superType.GetCSharpPresentableName(), typeName);
-
+            if (superTypeThreadSafe == mustBeThreadSafe)
                 return null;
+
+            if (!superTypeThreadSafe) {
+                if (superType.IsInterfaceType())
+                    return null;
+                
+                return new NonThreadSafeBaseClassInThreadSafeClass(superTypeUsage, superType.GetCSharpPresentableName(), typeName);
             }
 
             if (ShouldNotConsiderAnnotatingFor(superTypeElement))
