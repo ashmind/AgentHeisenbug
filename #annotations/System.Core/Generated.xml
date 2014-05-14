@@ -390,45 +390,97 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Linq.Expressions.AssignBinaryExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Linq.Expressions.BinaryExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.Block2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.Block3">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.Block4">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.Block5">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.BlockExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.BlockN">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.ByRefParameterExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.CatchBlock">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Linq.Expressions.ClearDebugInfoExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.CoalesceConversionBinaryExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.Compiler.SpilledExpressionBlock">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Linq.Expressions.ConditionalExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.ConstantExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.DebugInfoExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.DefaultExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.DynamicExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.DynamicExpression1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.DynamicExpression2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.DynamicExpression3">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.DynamicExpression4">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.DynamicExpressionN">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.DynamicExpressionVisitor">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
@@ -444,36 +496,60 @@
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.Expression`1">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.ExpressionVisitor">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Linq.Expressions.FieldExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.FullConditionalExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.FullConditionalExpressionWithType">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Linq.Expressions.GotoExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.IndexExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.InstanceMethodCallExpression2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.InstanceMethodCallExpression3">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.InstanceMethodCallExpressionN">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.InvocationExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.LabelExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.LabelTarget">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
@@ -484,16 +560,22 @@
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.ListInitExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.LogicalBinaryExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.LoopExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.MemberAssignment">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
@@ -509,11 +591,13 @@
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.MemberInitExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.MemberListBinding">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
@@ -525,30 +609,92 @@
       <argument>Static</argument>
     </attribute>
   </member>
+  <member name="T:System.Linq.Expressions.MethodBinaryExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
   <member name="T:System.Linq.Expressions.MethodCallExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.MethodCallExpression1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.MethodCallExpression2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.MethodCallExpression3">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.MethodCallExpression4">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.MethodCallExpression5">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.MethodCallExpressionN">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.NewArrayBoundsExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.NewArrayExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.NewArrayInitExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.NewExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.NewValueTypeExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.OpAssignMethodConversionBinaryExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.ParameterExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.PrimitiveParameterExpression`1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.PropertyExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.RuntimeVariablesExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.Scope1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.ScopeExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.ScopeN">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.ScopeWithType">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.SimpleBinaryExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.SpanDebugInfoExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.SwitchCase">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
@@ -559,6 +705,7 @@
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.SymbolDocumentInfo">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
@@ -569,16 +716,40 @@
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.TypeBinaryExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.TypedConstantExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.TypedDynamicExpression1">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.TypedDynamicExpression2">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.TypedDynamicExpression3">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.TypedDynamicExpression4">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.TypedDynamicExpressionN">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
+  </member>
+  <member name="T:System.Linq.Expressions.TypedParameterExpression">
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Expressions.UnaryExpression">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">
       <argument>Static</argument>
     </attribute>
+    <attribute ctor="M:JetBrains.Annotations.ReadOnlyAttribute.#ctor" />
   </member>
   <member name="T:System.Linq.Lookup`2">
     <attribute ctor="M:AgentHeisenbug.Annotations.Generated.GeneratedThreadSafeAttribute.#ctor">

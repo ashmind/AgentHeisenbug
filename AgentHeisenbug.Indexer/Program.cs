@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using AgentHeisenbug.Indexer.ReadOnly;
 using AgentHeisenbug.Indexer.ThreadSafe;
 using JetBrains.Annotations;
 
@@ -23,6 +24,7 @@ namespace AgentHeisenbug.Indexer {
 
             var helpParsingFailures = new List<TypeHelp>();
             var providers = new IAnnotationProvider[] {
+                new ExpressionAnnotationProvider(),
                 new HelpAnnotationProvider(new HelpRawReader(msdnDirectory.GetFiles("*NET_FRAMEWORK_45*.mshc")), helpParsingFailures.Add)
             };
 

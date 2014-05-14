@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using JetBrains.Annotations;
 
@@ -21,6 +22,8 @@ public class BclTypes {
     private readonly Uri x;
     private readonly Regex x;
     private readonly Lazy<Uri> x;
+    private readonly Expression x;
+    private readonly Expression<Action> x;
 
     private readonly IReadOnlyCollection<int> x;
     private readonly ReadOnlyCollection<int> x;
