@@ -61,11 +61,11 @@
     <Content Include="Files\Highlightings\ReadOnly\GenericTypes.cs" />
     <Content Include="Files\Highlightings\ThreadSafe\BclTypes.cs" />
     <Content Include="Files\Highlightings\ThreadSafe\StaticAccess.cs" />
-    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToBase_Simple.cs" />
-    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToSelf_Simple.cs" />
-    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_Simple.cs" />
-    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_GenericParameter.cs" />
-    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_StaticMethod.cs" />
+    <Content Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToBase_Simple.cs" />
+    <Content Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToSelf_Simple.cs" />
+    <Content Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToReference_Simple.cs" />
+    <Content Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToReference_GenericParameter.cs" />
+    <Content Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToReference_StaticMethod.cs" />
     <Compile Include="Of.Highlightings\HeisenbugHighlightingTestBase.cs" />
     <Compile Include="Of.Highlightings\HighlightingFilterAttribute.cs" />
     <Compile Include="Of.QuickFixes\AddThreadSafeAttributeQuickFixTests.cs" />
@@ -95,11 +95,11 @@
     <Compile Include="Of.Highlightings\ThreadSafeTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToBase_Simple.cs.gold" />
-    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToSelf_Simple.cs.gold" />
-    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_Simple.cs.gold" />
-    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_GenericParameter.cs.gold" />
-    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_StaticMethod.cs.gold" />
+    <None Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToBase_Simple.cs.gold" />
+    <None Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToSelf_Simple.cs.gold" />
+    <None Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToReference_Simple.cs.gold" />
+    <None Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToReference_GenericParameter.cs.gold" />
+    <None Include="Files\QuickFixes\AddAttributeFix.ThreadSafe\AddToReference_StaticMethod.cs.gold" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

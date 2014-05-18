@@ -5,9 +5,10 @@ using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
+using AgentHeisenbug.Highlightings.AnnotationFixSupport;
 
 namespace AgentHeisenbug.Highlightings.ThreadSafe {
-    public partial class ThreadSafeInterfaceInNonThreadSafeType : IFixableByThreadSafeAttribute {
+    public partial class ThreadSafeInterfaceInNonThreadSafeType : IFixableByAnnotation {
         [NotNull] public IClassLikeDeclaration TypeDeclaration { get; private set; }
 
         public ThreadSafeInterfaceInNonThreadSafeType([NotNull] IClassLikeDeclaration typeDeclaration, [NotNull] IDeclaredTypeUsage baseClassUsage, [NotNull] IDeclaredType baseClass)
@@ -16,8 +17,8 @@ namespace AgentHeisenbug.Highlightings.ThreadSafe {
             TypeDeclaration = typeDeclaration;
         }
         
-        IAttributesOwnerDeclaration IFixableByThreadSafeAttribute.GetTargetDeclaration() {
-            return TypeDeclaration;
+        IEnumerable<AnnotationCandidate> IFixableByAnnotation.GetCandidates() {
+            yield return new AnnotationCandidate(TypeDeclaration, AnnotationTypeNames.ThreadSafe);
         }
     }
 }
