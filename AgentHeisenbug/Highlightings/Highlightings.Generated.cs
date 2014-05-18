@@ -211,7 +211,7 @@ namespace AgentHeisenbug.Highlightings.ThreadSafe {
     public partial class MutableFieldInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableFieldInThreadSafeType";
 
-        public MutableFieldInThreadSafeType([NotNull] ITreeNode element, string fieldName) : base(
+        private MutableFieldInThreadSafeType([NotNull] ITreeNode element, string fieldName) : base(
             element,
             "Field '{0}' in a [ThreadSafe] class should be readonly.",
             fieldName
@@ -302,7 +302,7 @@ namespace AgentHeisenbug.Highlightings.ReadOnly {
     public partial class MutableFieldInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableFieldInReadOnlyType";
 
-        public MutableFieldInReadOnlyType([NotNull] ITreeNode element, string fieldName) : base(
+        private MutableFieldInReadOnlyType([NotNull] ITreeNode element, string fieldName) : base(
             element,
             "Field '{0}' in a [ReadOnly] type should be readonly.",
             fieldName

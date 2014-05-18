@@ -72,6 +72,10 @@
     <Compile Include="Of.Highlightings\HeisenbugHighlightingTestBase.cs" />
     <Compile Include="Of.Highlightings\HighlightingFilterAttribute.cs" />
     <Compile Include="Of.QuickFixes\AddAttributeFixTests.cs" />
+    <Content Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ReadOnlyClass_Simple.cs" />
+    <Content Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ThreadSafeClass_Simple.cs" />
+    <Compile Include="Of.QuickFixes\HeisenbugQuickFixTestBase.cs" />
+    <Compile Include="Of.QuickFixes\MakeFieldReadOnlyFixTests.cs" />
     <Compile Include="Properties\TestEnvironmentAssembly.cs" />
     <None Include="Of.Highlightings\Files\ReadOnly\BclTypes.cs.gold" />
     <None Include="Of.Highlightings\Files\ReadOnly\ArrayPointerEtcTypes.cs.gold" />
@@ -106,6 +110,8 @@
     <None Include="Of.QuickFixes\Files\AddAttributeFix\ThreadSafe\AddToReference_Simple.cs.gold" />
     <None Include="Of.QuickFixes\Files\AddAttributeFix\ThreadSafe\AddToReference_StaticMethod.cs.gold" />
     <None Include="Of.QuickFixes\Files\AddAttributeFix\ThreadSafe\AddToSelf_Simple.cs.gold" />
+    <None Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ReadOnlyClass_Simple.cs.gold" />
+    <None Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ThreadSafeClass_Simple.cs.gold" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

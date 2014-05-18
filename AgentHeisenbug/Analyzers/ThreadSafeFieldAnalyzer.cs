@@ -31,7 +31,7 @@ namespace AgentHeisenbug.Analyzers {
                 return;
             
             if (!element.IsReadonly)
-                consumer.AddHighlighting(new MutableFieldInThreadSafeType(element, element.DeclaredName));
+                consumer.AddHighlighting(new MutableFieldInThreadSafeType(element));
 
             foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
                 // ReSharper disable AssignNullToNotNullAttribute

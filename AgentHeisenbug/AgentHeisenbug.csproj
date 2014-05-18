@@ -51,18 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Highlightings\AnnotationFixSupport\AnnotationCandidate.cs" />
-    <Compile Include="Highlightings\AnnotationFixSupport\AnnotationTypeNames.cs" />
+    <Compile Include="Highlightings\Common\AnnotationCandidate.cs" />
+    <Compile Include="Highlightings\Common\AnnotationTypeNames.cs" />
+    <Compile Include="Highlightings\Common\IForMutableField.cs" />
     <Compile Include="Highlightings\ReadOnly\AutoPropertyOfNonReadOnlyTypeInReadOnlyType.cs" />
     <Compile Include="Highlightings\ReadOnly\FieldOfNonReadOnlyTypeInReadOnlyType.cs" />
+    <Compile Include="Highlightings\ReadOnly\MutableFieldInReadOnlyType.cs" />
     <Compile Include="Highlightings\ReadOnly\NonReadOnlyBaseClassInReadOnlyClass.cs" />
     <Compile Include="Highlightings\ThreadSafe\AutoPropertyOfNonThreadSafeTypeInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\AccessToNonThreadSafeStaticMemberInThreadSafeType.cs" />
+    <Compile Include="Highlightings\ThreadSafe\MutableFieldInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\ParameterOfNonThreadSafeTypeInThreadSafeMethod.cs" />
     <Compile Include="Highlightings\ThreadSafe\FieldOfNonThreadSafeTypeInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\ThreadSafeInterfaceInNonThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\ThreadSafeBaseClassInNonThreadSafeClass.cs" />
-    <Compile Include="Highlightings\AnnotationFixSupport\IFixableByAnnotation.cs" />
+    <Compile Include="Highlightings\Common\IFixableByAnnotation.cs" />
     <Compile Include="Highlightings\ThreadSafe\NonThreadSafeBaseClassInThreadSafeClass.cs" />
     <Compile Include="Processing\Preconditions\AnalyzerPrecondition.cs" />
     <Compile Include="Processing\FeatureTypes\ThreadSafe.cs" />
@@ -97,6 +100,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickFixes\AddAttributeBulbAction.cs" />
     <Compile Include="QuickFixes\AddAttributeFix.cs" />
+    <Compile Include="QuickFixes\MakeFieldReadOnlyFix.cs" />
     <Compile Include="ThreadSafety.cs" />
     <Compile Include="Analyzers\ThreadSafeAutoPropertyAnalyzer.cs" />
     <Compile Include="Annotations\HeisenbugAnnotationCache.cs" />

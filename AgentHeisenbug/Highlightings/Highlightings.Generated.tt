@@ -47,8 +47,7 @@ using AgentHeisenbug.Highlightings.ThreadSafe;
         "MutableFieldInThreadSafeType",
         "Mutable field in type annotated with [ThreadSafe]",
         "Field '{0}' in a [ThreadSafe] class should be readonly.",
-        "string fieldName",
-        manualConstructor: false
+        "string fieldName"
     ),
 
     new Model(
@@ -99,8 +98,7 @@ using AgentHeisenbug.Highlightings.ThreadSafe;
         "MutableFieldInReadOnlyType",
         "Mutable field in type annotated with [ReadOnly]",
         "Field '{0}' in a [ReadOnly] type should be readonly.",
-        "string fieldName",
-        manualConstructor: false
+        "string fieldName"
     ),
 
     new Model(

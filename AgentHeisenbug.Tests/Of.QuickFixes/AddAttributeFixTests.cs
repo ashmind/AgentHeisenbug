@@ -2,23 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using AgentHeisenbug.Highlightings.Common;
 using AshMind.Extensions;
 using JetBrains.Annotations;
-using JetBrains.ReSharper.Intentions.CSharp.QuickFixes.Tests;
 using JetBrains.ReSharper.Intentions.Extensibility;
 using JetBrains.TextControl;
 using NUnit.Framework;
-using AgentHeisenbug.Highlightings.AnnotationFixSupport;
 using AgentHeisenbug.QuickFixes;
 
 namespace AgentHeisenbug.Tests.Of.QuickFixes {
     [TestFixture]
-    public class AddAttributeFixTests : CSharpQuickFixTestBase<AddAttributeFix> {
+    public class AddAttributeFixTests : HeisenbugQuickFixTestBase<AddAttributeFix> {
         [NotNull] private string _annotationTypeName;
-
-        protected override string RelativeTestDataPath {
-            get { return Path.Combine("Of.QuickFixes\\Files", typeof(AddAttributeFix).Name); }
-        }
 
         [TestCase("AddToBase_Simple.cs")]
         [TestCase("AddToSelf_Simple.cs")]

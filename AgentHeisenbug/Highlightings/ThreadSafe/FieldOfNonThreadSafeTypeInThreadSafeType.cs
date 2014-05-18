@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Highlightings.Common;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
-using AgentHeisenbug.Highlightings.AnnotationFixSupport;
 
 namespace AgentHeisenbug.Highlightings.ThreadSafe {
     public partial class FieldOfNonThreadSafeTypeInThreadSafeType : IFixableByAnnotation {
@@ -16,7 +16,7 @@ namespace AgentHeisenbug.Highlightings.ThreadSafe {
             InvalidType = invalidType;
         }
 
-        IEnumerable<AnnotationFixSupport.AnnotationCandidate> IFixableByAnnotation.GetCandidates() {
+        IEnumerable<AnnotationCandidate> IFixableByAnnotation.GetCandidates() {
             var declaration = InvalidType.GetDeclarations().FirstOrDefault() as IAttributesOwnerDeclaration;
             if (declaration == null)
                 yield break;

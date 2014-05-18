@@ -32,7 +32,7 @@ namespace AgentHeisenbug.Analyzers {
                 return;
             
             if (!element.IsReadonly)
-                consumer.AddHighlighting(new MutableFieldInReadOnlyType(element, element.DeclaredName));
+                consumer.AddHighlighting(new MutableFieldInReadOnlyType(element));
 
             foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
                 // ReSharper disable AssignNullToNotNullAttribute
