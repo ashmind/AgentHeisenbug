@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 
-namespace AgentHeisenbug.Highlightings {
+namespace AgentHeisenbug.Highlightings.ThreadSafe {
     public interface IFixableByThreadSafeAttribute : IHighlighting {
         [CanBeNull]
         IAttributesOwnerDeclaration GetTargetDeclaration();

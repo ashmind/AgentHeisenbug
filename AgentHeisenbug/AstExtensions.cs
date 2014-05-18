@@ -6,6 +6,7 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.CSharp.Impl;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
+using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.Util;
 
 namespace AgentHeisenbug {
@@ -45,6 +46,17 @@ namespace AgentHeisenbug {
             return attributes.Select(CSharpImplUtil.GetAttributeInstance).AsIList();
         }
 
+        [NotNull]
+        public static IList<IDeclaration> GetDeclarations([NotNull] this IType type) {
+            var declaredType = type as IDeclaredType;
+            if (declaredType == null)
+                return EmptyList<IDeclaration>.InstanceList;
 
+            var typeElement = declaredType.GetTypeElement();
+            if (typeElement == null)
+                return EmptyList<IDeclaration>.InstanceList;
+
+            return typeElement.GetDeclarations();
+        }
     }
 }

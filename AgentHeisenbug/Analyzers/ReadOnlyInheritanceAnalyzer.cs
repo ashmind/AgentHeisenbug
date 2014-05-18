@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AgentHeisenbug.Highlightings;
+using AgentHeisenbug.Highlightings.ReadOnly;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;

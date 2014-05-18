@@ -63,6 +63,9 @@
     <Content Include="Files\Highlightings\ThreadSafe\StaticAccess.cs" />
     <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToBase_Simple.cs" />
     <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToSelf_Simple.cs" />
+    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_Simple.cs" />
+    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_GenericParameter.cs" />
+    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_StaticMethod.cs" />
     <Compile Include="Of.Highlightings\HeisenbugHighlightingTestBase.cs" />
     <Compile Include="Of.Highlightings\HighlightingFilterAttribute.cs" />
     <Compile Include="Of.QuickFixes\AddThreadSafeAttributeQuickFixTests.cs" />
@@ -94,6 +97,9 @@
   <ItemGroup>
     <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToBase_Simple.cs.gold" />
     <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToSelf_Simple.cs.gold" />
+    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_Simple.cs.gold" />
+    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_GenericParameter.cs.gold" />
+    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToReference_StaticMethod.cs.gold" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

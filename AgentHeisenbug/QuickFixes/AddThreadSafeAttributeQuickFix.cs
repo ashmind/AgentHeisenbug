@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using AgentHeisenbug.Highlightings;
+using AgentHeisenbug.Highlightings.ThreadSafe;
 using JetBrains.Annotations;
 using JetBrains.Application.Progress;
 using JetBrains.ProjectModel;

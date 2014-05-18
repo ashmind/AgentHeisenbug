@@ -9,7 +9,8 @@ using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
-using AgentHeisenbug.Highlightings;
+using AgentHeisenbug.Highlightings.ReadOnly;
+using AgentHeisenbug.Highlightings.ThreadSafe;
 
 // ReSharper disable PartialTypeWithSinglePart
 
@@ -42,7 +43,8 @@ using AgentHeisenbug.Highlightings;
         "AccessToNonThreadSafeStaticMemberInThreadSafeType",
         "Access to static member that is not thread-safe from type annotated with [ThreadSafe]",
         "{0} '{1}' is not declared to be thread-safe.",
-        "string memberKind, string memberName"
+        "string memberKind, string memberName",
+        manualConstructor: true
     ),
 
     new Model(
@@ -56,7 +58,8 @@ using AgentHeisenbug.Highlightings;
         "FieldOfNonThreadSafeTypeInThreadSafeType",
         "Field using type that is not thread-safe in type annotated with [ThreadSafe]",
         "Type '{1}' used by field '{0}' in a [ThreadSafe] type should be thread-safe.",
-        "string fieldName, string typeName"
+        "string fieldName, string typeName",
+        manualConstructor: true
     ),
 
     new Model(
@@ -70,7 +73,8 @@ using AgentHeisenbug.Highlightings;
         "AutoPropertyOfNonThreadSafeTypeInThreadSafeType",
         "Auto property using type that is not thread-safe in type annotated with [ThreadSafe]",
         "Type '{1}' used by auto property '{0}' in a [ThreadSafe] type should be thread-safe.",
-        "string propertyName, string typeName"
+        "string propertyName, string typeName",
+        manualConstructor: true
     ),
 
     new Model(
@@ -84,7 +88,8 @@ using AgentHeisenbug.Highlightings;
         "ParameterOfNonThreadSafeTypeInThreadSafeMethod",
         "Parameter using type that is not thread-safe in a thread-safe method",
         "Type '{1}' used by parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
-        "string parameterName, string typeName"
+        "string parameterName, string typeName",
+        manualConstructor: true
     ),
     
     new Model(
@@ -142,15 +147,9 @@ using AgentHeisenbug.Highlightings;
 )]
 <# } #>
 
-namespace AgentHeisenbug.Highlightings {
-    /*public static class HeisenbugHighlightings {
-<# foreach (var model in models) { #>
-        public static <#= model.Id #> <#= model.Id #>([NotNull] ITreeNode element, <#= model.ArgumentsDefinition #>) {
-            return new <#= model.Id #>(element, <#= model.Arguments #>);
-        }
-<# } #>    }*/
 <# foreach (var model in models) { #>
 
+namespace AgentHeisenbug.Highlightings.<#= model.Namespace #> {
     [ConfigurableSeverityHighlighting(<#= model.Id #>.Id, CSharpLanguage.Name)]
     public partial class <#= model.Id #> : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.<#= model.Id #>";
@@ -161,10 +160,12 @@ namespace AgentHeisenbug.Highlightings {
             <#= model.Arguments #>
         ) {}
     }
-<# } #>}
+}
+<# } #>
 
 <#+
 private class Model {
+    public string Namespace { get; private set; }
     public string Id { get; private set; }
     public string Description { get; private set; }
     public string MessageFormat { get; private set; }
@@ -176,9 +177,11 @@ private class Model {
         this.Id = id;
         this.Description = description;
         this.MessageFormat = messageFormat;
-        this.ArgumentsDefinition = argumentsDefinition;
-        this.Arguments = Regex.Replace(argumentsDefinition, @"(?<=(?:^|,)\s*)\S+\s+", "");
+        this.ArgumentsDefinition = argumentsDefinition;        
         this.ManualConstructor = manualConstructor;
+
+        this.Arguments = Regex.Replace(argumentsDefinition, @"(?<=(?:^|,)\s*)\S+\s+", "");
+        this.Namespace = Regex.Match(id, "ReadOnly|ThreadSafe").Value;
     }
 }
 #>

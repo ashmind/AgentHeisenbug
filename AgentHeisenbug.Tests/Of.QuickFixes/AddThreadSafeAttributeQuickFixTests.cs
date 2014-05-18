@@ -11,6 +11,9 @@ namespace AgentHeisenbug.Tests.Of.QuickFixes {
 
         [TestCase("AddToBase_Simple.cs")]
         [TestCase("AddToSelf_Simple.cs")]
+        [TestCase("AddToReference_Simple.cs")]
+        [TestCase("AddToReference_GenericParameter.cs")]
+        [TestCase("AddToReference_StaticMethod.cs")]
         public void Test(string fileName) {
             DoTestFiles(fileName);
         }

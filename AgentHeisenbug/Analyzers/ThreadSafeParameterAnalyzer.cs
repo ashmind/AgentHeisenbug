@@ -1,5 +1,6 @@
 using System.Linq;
 using AgentHeisenbug.Highlightings;
+using AgentHeisenbug.Highlightings.ThreadSafe;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
@@ -36,9 +37,7 @@ namespace AgentHeisenbug.Analyzers {
 
             foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
                 // ReSharper disable AssignNullToNotNullAttribute
-                consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(
-                    invalid.Usage, element.DeclaredName, invalid.Type.GetCSharpPresentableName()
-                ));
+                consumer.AddHighlighting(new ParameterOfNonThreadSafeTypeInThreadSafeMethod(element, invalid.Usage, invalid.Type));
                 // ReSharper enable AssignNullToNotNullAttribute
             }
         }

@@ -6,7 +6,7 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
 
-namespace AgentHeisenbug.Highlightings {
+namespace AgentHeisenbug.Highlightings.ThreadSafe {
     public partial class ThreadSafeBaseClassInNonThreadSafeClass : IFixableByThreadSafeAttribute {
         [NotNull] public IClassLikeDeclaration ClassDeclaration { get; private set; }
 

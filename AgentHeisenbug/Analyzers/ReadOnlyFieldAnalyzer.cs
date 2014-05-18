@@ -1,8 +1,7 @@
 ﻿using System.Linq;
-using AgentHeisenbug.Highlightings;
+using AgentHeisenbug.Highlightings.ReadOnly;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
-using AgentHeisenbug.Processing.TypeUsageTree;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;

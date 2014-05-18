@@ -1,5 +1,5 @@
 using System.Linq;
-using AgentHeisenbug.Highlightings;
+using AgentHeisenbug.Highlightings.ThreadSafe;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
@@ -48,9 +48,7 @@ namespace AgentHeisenbug.Analyzers {
             if (_featureProvider.GetFeatures(member).IsStaticAccessThreadSafe)
                 return;
 
-            consumer.AddHighlighting(new AccessToNonThreadSafeStaticMemberInThreadSafeType(
-                element.NotNull(), kind.ToString(), member.ShortName
-            ));
+            consumer.AddHighlighting(new AccessToNonThreadSafeStaticMemberInThreadSafeType(element.NotNull(), member, kind.ToString()));
         }
 
         private MemberKind GetMemberKind(ITypeMember member) {

@@ -50,10 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Highlightings\ThreadSafeInterfaceInNonThreadSafeType.cs" />
-    <Compile Include="Highlightings\ThreadSafeBaseClassInNonThreadSafeClass.cs" />
-    <Compile Include="Highlightings\IFixableByThreadSafeAttribute.cs" />
-    <Compile Include="Highlightings\NonThreadSafeBaseClassInThreadSafeClass.cs" />
+    <Compile Include="Highlightings\ThreadSafe\AutoPropertyOfNonThreadSafeTypeInThreadSafeType.cs" />
+    <Compile Include="Highlightings\ThreadSafe\AccessToNonThreadSafeStaticMemberInThreadSafeType.cs" />
+    <Compile Include="Highlightings\ThreadSafe\ParameterOfNonThreadSafeTypeInThreadSafeMethod.cs" />
+    <Compile Include="Highlightings\ThreadSafe\FieldOfNonThreadSafeTypeInThreadSafeType.cs" />
+    <Compile Include="Highlightings\ThreadSafe\ThreadSafeInterfaceInNonThreadSafeType.cs" />
+    <Compile Include="Highlightings\ThreadSafe\ThreadSafeBaseClassInNonThreadSafeClass.cs" />
+    <Compile Include="Highlightings\ThreadSafe\IFixableByThreadSafeAttribute.cs" />
+    <Compile Include="Highlightings\ThreadSafe\NonThreadSafeBaseClassInThreadSafeClass.cs" />
     <Compile Include="Processing\Preconditions\AnalyzerPrecondition.cs" />
     <Compile Include="Processing\FeatureTypes\ThreadSafe.cs" />
     <Compile Include="Processing\Preconditions\ThreadSafeAnalyzerPrecondition.cs" />
