@@ -34,9 +34,7 @@ namespace AgentHeisenbug.Analyzers {
 
             foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
                 // ReSharper disable AssignNullToNotNullAttribute
-                consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(
-                    invalid.Usage, element.DeclaredName, invalid.Type.GetCSharpPresentableName()
-                ));
+                consumer.AddHighlighting(new AutoPropertyOfNonReadOnlyTypeInReadOnlyType(element, invalid.Usage, invalid.Type));
                 // ReSharper enable AssignNullToNotNullAttribute
             }
         }

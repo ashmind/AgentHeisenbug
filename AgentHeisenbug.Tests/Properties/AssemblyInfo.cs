@@ -1,4 +1,4 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Util;
 
-[assembly: TestDataPathBase(@"AgentHeisenbug.Tests\Files")]
+[assembly: TestDataPathBase(@"AgentHeisenbug.Tests")]

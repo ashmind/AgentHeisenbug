@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Highlightings.ReadOnly;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
@@ -35,9 +36,7 @@ namespace AgentHeisenbug.Analyzers {
 
             foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
                 // ReSharper disable AssignNullToNotNullAttribute
-                consumer.AddHighlighting(new FieldOfNonReadOnlyTypeInReadOnlyType(
-                    invalid.Usage, element.DeclaredName, invalid.Type.GetCSharpPresentableName()
-                ));
+                consumer.AddHighlighting(new FieldOfNonReadOnlyTypeInReadOnlyType(element, invalid.Usage, invalid.Type));
                 // ReSharper enable AssignNullToNotNullAttribute
             }
         }

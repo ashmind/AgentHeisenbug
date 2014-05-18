@@ -1,7 +1,4 @@
 using System.Linq;
-using AgentHeisenbug.Highlightings.ThreadSafe;
-using AgentHeisenbug.Processing;
-using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
 using JetBrains.ReSharper.Daemon.Stages;
@@ -9,6 +6,9 @@ using JetBrains.ReSharper.Daemon.Stages.Dispatcher;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.Util;
+using AgentHeisenbug.Highlightings.ThreadSafe;
+using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 
 namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IReferenceExpression) }, HighlightingTypes = new[] { typeof(AccessToNonThreadSafeStaticMemberInThreadSafeType) })]

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AgentHeisenbug.Analyzers.Base;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Highlightings.ThreadSafe;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;

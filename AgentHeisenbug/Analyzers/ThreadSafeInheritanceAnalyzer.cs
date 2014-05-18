@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AgentHeisenbug.Highlightings.ThreadSafe;
-using AgentHeisenbug.Processing;
-using AgentHeisenbug.Processing.FeatureTypes;
 using JetBrains.Annotations;
 using JetBrains.ReSharper.Daemon;
 using JetBrains.ReSharper.Daemon.CSharp.Stages;
@@ -13,8 +10,9 @@ using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Util;
 using JetBrains.Util;
-using NonThreadSafeBaseClassInThreadSafeClass = AgentHeisenbug.Highlightings.ThreadSafe.NonThreadSafeBaseClassInThreadSafeClass;
-using ThreadSafeBaseClassInNonThreadSafeClass = AgentHeisenbug.Highlightings.ThreadSafe.ThreadSafeBaseClassInNonThreadSafeClass;
+using AgentHeisenbug.Highlightings.ThreadSafe;
+using AgentHeisenbug.Processing;
+using AgentHeisenbug.Processing.FeatureTypes;
 
 namespace AgentHeisenbug.Analyzers {
     [ElementProblemAnalyzer(new[] { typeof(IClassLikeDeclaration) }, HighlightingTypes = new[] {

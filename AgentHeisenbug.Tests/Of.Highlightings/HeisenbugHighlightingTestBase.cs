@@ -14,7 +14,7 @@ using JetBrains.ReSharper.Daemon.CSharp;
 namespace AgentHeisenbug.Tests.Of.Highlightings {
     public abstract class HeisenbugHighlightingTestBase : CSharpHighlightingTestNet45Base {
         protected override string RelativeTestDataPath {
-            get { return Path.Combine(@"Highlightings", GetType().Name.SubstringBefore("Tests")); }
+            get { return Path.Combine(@"Of.Highlightings\\Files", GetType().Name.SubstringBefore("Tests")); }
         }
 
         protected override bool HighlightingPredicate([NotNull] IHighlighting highlighting, IContextBoundSettingsStore settingsStore) {

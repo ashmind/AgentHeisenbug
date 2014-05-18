@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AgentHeisenbug.Highlightings;
 using AgentHeisenbug.Highlightings.ReadOnly;
 using AgentHeisenbug.Processing;
 using AgentHeisenbug.Processing.FeatureTypes;
@@ -42,7 +43,7 @@ namespace AgentHeisenbug.Analyzers {
                     continue;
                 
                 consumer.AddHighlighting(
-                    new NonReadOnlyBaseClassInReadOnlyClass(element.SuperTypeUsageNodes[index].NotNull(), superType.GetCSharpPresentableName(), element.DeclaredName)
+                    new NonReadOnlyBaseClassInReadOnlyClass(element, element.SuperTypeUsageNodes[index].NotNull(), superType)
                 );
             }
         }

@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="Highlightings\AnnotationFixSupport\AnnotationCandidate.cs" />
     <Compile Include="Highlightings\AnnotationFixSupport\AnnotationTypeNames.cs" />
+    <Compile Include="Highlightings\ReadOnly\AutoPropertyOfNonReadOnlyTypeInReadOnlyType.cs" />
+    <Compile Include="Highlightings\ReadOnly\FieldOfNonReadOnlyTypeInReadOnlyType.cs" />
+    <Compile Include="Highlightings\ReadOnly\NonReadOnlyBaseClassInReadOnlyClass.cs" />
     <Compile Include="Highlightings\ThreadSafe\AutoPropertyOfNonThreadSafeTypeInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\AccessToNonThreadSafeStaticMemberInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\ParameterOfNonThreadSafeTypeInThreadSafeMethod.cs" />
@@ -115,6 +118,7 @@
       <Name>AgentHeisenbug.Annotations.Generated</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="BuildReSharperNuGetPackage" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
     <Exec Command="nuget pack &quot;$(MSBuildProjectDirectory)\AgentHeisenbug.nuspec&quot; -OutputDirectory &quot;$(MSBuildProjectDirectory)\$(OutputPath)\&quot;" />

@@ -289,7 +289,7 @@ namespace AgentHeisenbug.Highlightings.ReadOnly {
     public partial class NonReadOnlyBaseClassInReadOnlyClass : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.NonReadOnlyBaseClassInReadOnlyClass";
 
-        public NonReadOnlyBaseClassInReadOnlyClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
+        private NonReadOnlyBaseClassInReadOnlyClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
             element,
             "Base class '{0}' is not readonly, but class '{1}' is annotated with [ReadOnly]",
             baseClassName, typeName
@@ -315,7 +315,7 @@ namespace AgentHeisenbug.Highlightings.ReadOnly {
     public partial class FieldOfNonReadOnlyTypeInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.FieldOfNonReadOnlyTypeInReadOnlyType";
 
-        public FieldOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string fieldName, string typeName) : base(
+        private FieldOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string fieldName, string typeName) : base(
             element,
             "Type '{1}' used by field '{0}' in a [ReadOnly] type should be readonly.",
             fieldName, typeName
@@ -341,7 +341,7 @@ namespace AgentHeisenbug.Highlightings.ReadOnly {
     public partial class AutoPropertyOfNonReadOnlyTypeInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.AutoPropertyOfNonReadOnlyTypeInReadOnlyType";
 
-        public AutoPropertyOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string propertyName, string typeName) : base(
+        private AutoPropertyOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string propertyName, string typeName) : base(
             element,
             "Type '{1}' used by auto property '{0}' in a [ReadOnly] type should be readonly.",
             propertyName, typeName
