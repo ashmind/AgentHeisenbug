@@ -44,7 +44,7 @@ namespace AgentHeisenbug.Analyzers {
                 if (superType == null)
                     continue;
                 
-                var highlightning = Highlight(element, mustBeThreadSafe, superType, element.SuperTypeUsageNodes[index].NotNull(), consumer);
+                var highlightning = Highlight(element, mustBeThreadSafe, superType, element.SuperTypeUsageNodes[index].NotNull());
                 if (highlightning == null)
                     continue;
 
@@ -52,13 +52,12 @@ namespace AgentHeisenbug.Analyzers {
             }
         }
 
-        private IHighlighting Highlight([NotNull] IClassLikeDeclaration element, bool mustBeThreadSafe, [NotNull] IDeclaredType superType, [NotNull] IDeclaredTypeUsage superTypeUsage, IHighlightingConsumer consumer) {
+        private IHighlighting Highlight([NotNull] IClassLikeDeclaration element, bool mustBeThreadSafe, [NotNull] IDeclaredType superType, [NotNull] IDeclaredTypeUsage superTypeUsage) {
             var superTypeElement = superType.GetTypeElement();
             if (superTypeElement == null)
                 return null;
 
             var superTypeThreadSafe = _featureProvider.GetFeatures(superTypeElement).DeclaredThreadSafety.Has(ThreadSafety.Instance);
-            var typeName = element.DeclaredElement.NotNull().ShortName;
             if (superTypeThreadSafe == mustBeThreadSafe)
                 return null;
 
@@ -66,16 +65,16 @@ namespace AgentHeisenbug.Analyzers {
                 if (superType.IsInterfaceType())
                     return null;
                 
-                return new NonThreadSafeBaseClassInThreadSafeClass(superTypeUsage, superType.GetCSharpPresentableName(), typeName);
+                return new NonThreadSafeBaseClassInThreadSafeClass(element, superTypeUsage, superType);
             }
 
             if (ShouldNotConsiderAnnotatingFor(superTypeElement))
                 return null;
 
             if (superType.IsInterfaceType())
-                return new ThreadSafeInterfaceInNonThreadSafeType(superTypeUsage, superType.GetCSharpPresentableName(), typeName);
+                return new ThreadSafeInterfaceInNonThreadSafeType(element, superTypeUsage, superType);
 
-            return new ThreadSafeBaseClassInNonThreadSafeClass(superTypeUsage, superType.GetCSharpPresentableName(), typeName);
+            return new ThreadSafeBaseClassInNonThreadSafeClass(element, superTypeUsage, superType);
         }
 
         private bool ShouldNotConsiderAnnotatingFor([NotNull] ITypeElement superTypeElement) {

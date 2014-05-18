@@ -4,10 +4,6 @@ namespace AgentHeisenbug.Tests.Of.Highlightings {
     [TestFixture]
     [HighlightingFilter("ThreadSafe")]
     public class ThreadSafeTests : HeisenbugHighlightingTestBase {
-        protected override string RelativeTestDataPath {
-            get { return "ThreadSafe"; }
-        }
-
         [Test]
         [TestCase("Fields.cs")]
         [TestCase("Properties.cs")]

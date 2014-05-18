@@ -50,6 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Highlightings\ThreadSafeInterfaceInNonThreadSafeType.cs" />
+    <Compile Include="Highlightings\ThreadSafeBaseClassInNonThreadSafeClass.cs" />
+    <Compile Include="Highlightings\IFixableByThreadSafeAttribute.cs" />
+    <Compile Include="Highlightings\NonThreadSafeBaseClassInThreadSafeClass.cs" />
     <Compile Include="Processing\Preconditions\AnalyzerPrecondition.cs" />
     <Compile Include="Processing\FeatureTypes\ThreadSafe.cs" />
     <Compile Include="Processing\Preconditions\ThreadSafeAnalyzerPrecondition.cs" />
@@ -73,23 +77,24 @@
     <Compile Include="Analyzers\ReadOnlyFieldAnalyzer.cs" />
     <Compile Include="Processing\HeisenbugFeatures.cs" />
     <Compile Include="Annotations\HeisenbugDebugExternalAnnotationFileProvider.cs" />
-    <Compile Include="Highlightings\Highlightings.cs">
+    <Compile Include="Highlightings\Highlightings.Generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Highlightings.tt</DependentUpon>
+      <DependentUpon>Highlightings.Generated.tt</DependentUpon>
     </Compile>
     <Compile Include="Highlightings\HeisenbugHighligtingBase.cs" />
     <Compile Include="Analyzers\ThreadSafeFieldAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickFixes\AddThreadSafeAttributeQuickFix.cs" />
     <Compile Include="ThreadSafety.cs" />
     <Compile Include="Analyzers\ThreadSafeAutoPropertyAnalyzer.cs" />
     <Compile Include="Annotations\HeisenbugAnnotationCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AgentHeisenbug.nuspec" />
-    <None Include="Highlightings\Highlightings.tt">
+    <None Include="Highlightings\Highlightings.Generated.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Highlightings.cs</LastGenOutput>
+      <LastGenOutput>Highlightings.Generated.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

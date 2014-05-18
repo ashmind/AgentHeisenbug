@@ -4,6 +4,8 @@ using JetBrains.ReSharper.Psi.CSharp;
 using JetBrains.ReSharper.Psi.Tree;
 using AgentHeisenbug.Highlightings;
 
+// ReSharper disable PartialTypeWithSinglePart
+
 
 [assembly: RegisterConfigurableSeverity(
     ThreadSafeInterfaceInNonThreadSafeType.Id,
@@ -151,7 +153,7 @@ using AgentHeisenbug.Highlightings;
 )]
 
 namespace AgentHeisenbug.Highlightings {
-    public static class HeisenbugHighlightings {
+    /*public static class HeisenbugHighlightings {
         public static ThreadSafeInterfaceInNonThreadSafeType ThreadSafeInterfaceInNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) {
             return new ThreadSafeInterfaceInNonThreadSafeType(element, interfaceName, typeName);
         }
@@ -179,8 +181,8 @@ namespace AgentHeisenbug.Highlightings {
         public static AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType([NotNull] ITreeNode element, string propertyName, string @static) {
             return new AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType(element, propertyName, @static);
         }
-        public static ParameterOfNonThreadSafeTypeInThreadSafeMethod ParameterOfNonThreadSafeTypeInThreadSafeMethod([NotNull] ITreeNode element, string paramterName, string typeName) {
-            return new ParameterOfNonThreadSafeTypeInThreadSafeMethod(element, paramterName, typeName);
+        public static ParameterOfNonThreadSafeTypeInThreadSafeMethod ParameterOfNonThreadSafeTypeInThreadSafeMethod([NotNull] ITreeNode element, string parameterName, string typeName) {
+            return new ParameterOfNonThreadSafeTypeInThreadSafeMethod(element, parameterName, typeName);
         }
         public static NonReadOnlyBaseClassInReadOnlyClass NonReadOnlyBaseClassInReadOnlyClass([NotNull] ITreeNode element, string baseClassName, string typeName) {
             return new NonReadOnlyBaseClassInReadOnlyClass(element, baseClassName, typeName);
@@ -200,13 +202,13 @@ namespace AgentHeisenbug.Highlightings {
         public static AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType([NotNull] ITreeNode element, string propertyName, string @static) {
             return new AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType(element, propertyName, @static);
         }
-    }
+    }*/
 
     [ConfigurableSeverityHighlighting(ThreadSafeInterfaceInNonThreadSafeType.Id, CSharpLanguage.Name)]
-    public class ThreadSafeInterfaceInNonThreadSafeType : HeisenbugHighligtingBase {
+    public partial class ThreadSafeInterfaceInNonThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.ThreadSafeInterfaceInNonThreadSafeType";
 
-        public ThreadSafeInterfaceInNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) : base(
+        private ThreadSafeInterfaceInNonThreadSafeType([NotNull] ITreeNode element, string interfaceName, string typeName) : base(
             element,
             "Base interface '{0}' is thread-safe, but type '{1}' is not annotated with [ThreadSafe].",
             interfaceName, typeName
@@ -214,10 +216,10 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(ThreadSafeBaseClassInNonThreadSafeClass.Id, CSharpLanguage.Name)]
-    public class ThreadSafeBaseClassInNonThreadSafeClass : HeisenbugHighligtingBase {
+    public partial class ThreadSafeBaseClassInNonThreadSafeClass : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.ThreadSafeBaseClassInNonThreadSafeClass";
 
-        public ThreadSafeBaseClassInNonThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
+        private ThreadSafeBaseClassInNonThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
             element,
             "Base class '{0}' is thread-safe, but class '{1}' is not annotated with [ThreadSafe].",
             baseClassName, typeName
@@ -225,10 +227,10 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(NonThreadSafeBaseClassInThreadSafeClass.Id, CSharpLanguage.Name)]
-    public class NonThreadSafeBaseClassInThreadSafeClass : HeisenbugHighligtingBase {
+    public partial class NonThreadSafeBaseClassInThreadSafeClass : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.NonThreadSafeBaseClassInThreadSafeClass";
 
-        public NonThreadSafeBaseClassInThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
+        private NonThreadSafeBaseClassInThreadSafeClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
             element,
             "Base class '{0}' is not thread-safe, but class '{1}' is annotated with [ThreadSafe].",
             baseClassName, typeName
@@ -236,7 +238,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(AccessToNonThreadSafeStaticMemberInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class AccessToNonThreadSafeStaticMemberInThreadSafeType : HeisenbugHighligtingBase {
+    public partial class AccessToNonThreadSafeStaticMemberInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.AccessToNonThreadSafeStaticMemberInThreadSafeType";
 
         public AccessToNonThreadSafeStaticMemberInThreadSafeType([NotNull] ITreeNode element, string memberKind, string memberName) : base(
@@ -247,7 +249,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(MutableFieldInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class MutableFieldInThreadSafeType : HeisenbugHighligtingBase {
+    public partial class MutableFieldInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableFieldInThreadSafeType";
 
         public MutableFieldInThreadSafeType([NotNull] ITreeNode element, string fieldName) : base(
@@ -258,7 +260,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(FieldOfNonThreadSafeTypeInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class FieldOfNonThreadSafeTypeInThreadSafeType : HeisenbugHighligtingBase {
+    public partial class FieldOfNonThreadSafeTypeInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.FieldOfNonThreadSafeTypeInThreadSafeType";
 
         public FieldOfNonThreadSafeTypeInThreadSafeType([NotNull] ITreeNode element, string fieldName, string typeName) : base(
@@ -269,7 +271,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(MutableAutoPropertyInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class MutableAutoPropertyInThreadSafeType : HeisenbugHighligtingBase {
+    public partial class MutableAutoPropertyInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableAutoPropertyInThreadSafeType";
 
         public MutableAutoPropertyInThreadSafeType([NotNull] ITreeNode element, string propertyName) : base(
@@ -280,7 +282,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(AutoPropertyOfNonThreadSafeTypeInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class AutoPropertyOfNonThreadSafeTypeInThreadSafeType : HeisenbugHighligtingBase {
+    public partial class AutoPropertyOfNonThreadSafeTypeInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.AutoPropertyOfNonThreadSafeTypeInThreadSafeType";
 
         public AutoPropertyOfNonThreadSafeTypeInThreadSafeType([NotNull] ITreeNode element, string propertyName, string typeName) : base(
@@ -291,7 +293,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType.Id, CSharpLanguage.Name)]
-    public class AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType : HeisenbugHighligtingBase {
+    public partial class AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType";
 
         public AutoPropertyAssignmentOutsideOfConstructorInThreadSafeType([NotNull] ITreeNode element, string propertyName, string @static) : base(
@@ -302,18 +304,18 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(ParameterOfNonThreadSafeTypeInThreadSafeMethod.Id, CSharpLanguage.Name)]
-    public class ParameterOfNonThreadSafeTypeInThreadSafeMethod : HeisenbugHighligtingBase {
+    public partial class ParameterOfNonThreadSafeTypeInThreadSafeMethod : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.ParameterOfNonThreadSafeTypeInThreadSafeMethod";
 
-        public ParameterOfNonThreadSafeTypeInThreadSafeMethod([NotNull] ITreeNode element, string paramterName, string typeName) : base(
+        public ParameterOfNonThreadSafeTypeInThreadSafeMethod([NotNull] ITreeNode element, string parameterName, string typeName) : base(
             element,
             "Type '{1}' used by parameter '{0}' in a thread-safe method should be thread-safe unless method is [Pure].",
-            paramterName, typeName
+            parameterName, typeName
         ) {}
     }
 
     [ConfigurableSeverityHighlighting(NonReadOnlyBaseClassInReadOnlyClass.Id, CSharpLanguage.Name)]
-    public class NonReadOnlyBaseClassInReadOnlyClass : HeisenbugHighligtingBase {
+    public partial class NonReadOnlyBaseClassInReadOnlyClass : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.NonReadOnlyBaseClassInReadOnlyClass";
 
         public NonReadOnlyBaseClassInReadOnlyClass([NotNull] ITreeNode element, string baseClassName, string typeName) : base(
@@ -324,7 +326,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(MutableFieldInReadOnlyType.Id, CSharpLanguage.Name)]
-    public class MutableFieldInReadOnlyType : HeisenbugHighligtingBase {
+    public partial class MutableFieldInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableFieldInReadOnlyType";
 
         public MutableFieldInReadOnlyType([NotNull] ITreeNode element, string fieldName) : base(
@@ -335,7 +337,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(FieldOfNonReadOnlyTypeInReadOnlyType.Id, CSharpLanguage.Name)]
-    public class FieldOfNonReadOnlyTypeInReadOnlyType : HeisenbugHighligtingBase {
+    public partial class FieldOfNonReadOnlyTypeInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.FieldOfNonReadOnlyTypeInReadOnlyType";
 
         public FieldOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string fieldName, string typeName) : base(
@@ -346,7 +348,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(MutableAutoPropertyInReadOnlyType.Id, CSharpLanguage.Name)]
-    public class MutableAutoPropertyInReadOnlyType : HeisenbugHighligtingBase {
+    public partial class MutableAutoPropertyInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableAutoPropertyInReadOnlyType";
 
         public MutableAutoPropertyInReadOnlyType([NotNull] ITreeNode element, string propertyName) : base(
@@ -357,7 +359,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(AutoPropertyOfNonReadOnlyTypeInReadOnlyType.Id, CSharpLanguage.Name)]
-    public class AutoPropertyOfNonReadOnlyTypeInReadOnlyType : HeisenbugHighligtingBase {
+    public partial class AutoPropertyOfNonReadOnlyTypeInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.AutoPropertyOfNonReadOnlyTypeInReadOnlyType";
 
         public AutoPropertyOfNonReadOnlyTypeInReadOnlyType([NotNull] ITreeNode element, string propertyName, string typeName) : base(
@@ -368,7 +370,7 @@ namespace AgentHeisenbug.Highlightings {
     }
 
     [ConfigurableSeverityHighlighting(AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType.Id, CSharpLanguage.Name)]
-    public class AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType : HeisenbugHighligtingBase {
+    public partial class AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType";
 
         public AutoPropertyAssignmentOutsideOfConstructorInReadOnlyType([NotNull] ITreeNode element, string propertyName, string @static) : base(

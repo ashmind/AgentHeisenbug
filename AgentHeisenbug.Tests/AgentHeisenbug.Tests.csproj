@@ -57,38 +57,43 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Files\ReadOnly\ArrayPointerEtcTypes.cs" />
-    <Content Include="Files\ReadOnly\GenericTypes.cs" />
-    <Content Include="Files\ThreadSafe\BclTypes.cs" />
-    <Content Include="Files\ThreadSafe\StaticAccess.cs" />
+    <Content Include="Files\Highlightings\ReadOnly\ArrayPointerEtcTypes.cs" />
+    <Content Include="Files\Highlightings\ReadOnly\GenericTypes.cs" />
+    <Content Include="Files\Highlightings\ThreadSafe\BclTypes.cs" />
+    <Content Include="Files\Highlightings\ThreadSafe\StaticAccess.cs" />
+    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToBase_Simple.cs" />
+    <Content Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToSelf_Simple.cs" />
     <Compile Include="Of.Highlightings\HeisenbugHighlightingTestBase.cs" />
     <Compile Include="Of.Highlightings\HighlightingFilterAttribute.cs" />
+    <Compile Include="Of.QuickFixes\AddThreadSafeAttributeQuickFixTests.cs" />
     <Compile Include="Properties\TestEnvironmentAssembly.cs" />
-    <None Include="Files\ReadOnly\BclTypes.cs.gold" />
-    <None Include="Files\ReadOnly\ArrayPointerEtcTypes.cs.gold" />
-    <None Include="Files\ReadOnly\GenericTypes.cs.gold" />
-    <None Include="Files\ReadOnly\Fields.cs.gold" />
-    <None Include="Files\ReadOnly\Inheritance.cs.gold" />
-    <None Include="Files\ReadOnly\Properties.cs.gold" />
-    <None Include="Files\ThreadSafe\BclTypes.cs.gold" />
-    <None Include="Files\ThreadSafe\StaticAccess.cs.gold" />
-    <None Include="Files\ThreadSafe\Inheritance.cs.gold" />
-    <None Include="Files\ThreadSafe\Parameters.cs.gold" />
-    <None Include="Files\ThreadSafe\Properties.cs.gold" />
-    <None Include="Files\ThreadSafe\Fields.cs.gold" />
-    <Content Include="Files\ThreadSafe\Properties.cs" />
-    <Content Include="Files\ThreadSafe\Fields.cs" />
-    <Content Include="Files\ThreadSafe\Parameters.cs" />
-    <Content Include="Files\ReadOnly\Fields.cs" />
-    <Content Include="Files\ReadOnly\Properties.cs" />
-    <Content Include="Files\ThreadSafe\Inheritance.cs" />
-    <Content Include="Files\ReadOnly\Inheritance.cs" />
-    <Content Include="Files\ReadOnly\BclTypes.cs" />
+    <None Include="Files\Highlightings\ReadOnly\BclTypes.cs.gold" />
+    <None Include="Files\Highlightings\ReadOnly\ArrayPointerEtcTypes.cs.gold" />
+    <None Include="Files\Highlightings\ReadOnly\GenericTypes.cs.gold" />
+    <None Include="Files\Highlightings\ReadOnly\Fields.cs.gold" />
+    <None Include="Files\Highlightings\ReadOnly\Inheritance.cs.gold" />
+    <None Include="Files\Highlightings\ReadOnly\Properties.cs.gold" />
+    <None Include="Files\Highlightings\ThreadSafe\BclTypes.cs.gold" />
+    <None Include="Files\Highlightings\ThreadSafe\StaticAccess.cs.gold" />
+    <None Include="Files\Highlightings\ThreadSafe\Inheritance.cs.gold" />
+    <None Include="Files\Highlightings\ThreadSafe\Parameters.cs.gold" />
+    <None Include="Files\Highlightings\ThreadSafe\Properties.cs.gold" />
+    <None Include="Files\Highlightings\ThreadSafe\Fields.cs.gold" />
+    <Content Include="Files\Highlightings\ThreadSafe\Properties.cs" />
+    <Content Include="Files\Highlightings\ThreadSafe\Fields.cs" />
+    <Content Include="Files\Highlightings\ThreadSafe\Parameters.cs" />
+    <Content Include="Files\Highlightings\ReadOnly\Fields.cs" />
+    <Content Include="Files\Highlightings\ReadOnly\Properties.cs" />
+    <Content Include="Files\Highlightings\ThreadSafe\Inheritance.cs" />
+    <Content Include="Files\Highlightings\ReadOnly\Inheritance.cs" />
+    <Content Include="Files\Highlightings\ReadOnly\BclTypes.cs" />
     <Compile Include="Of.Highlightings\ReadOnlyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Of.Highlightings\ThreadSafeTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToBase_Simple.cs.gold" />
+    <None Include="Files\QuickFixes\AddThreadSafeAttributeFix\AddToSelf_Simple.cs.gold" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
