@@ -12,7 +12,6 @@ namespace AgentHeisenbug.Tests.Of.Highlightings {
         [TestCase("BclTypes.cs")]
         [TestCase("ArrayPointerEtcTypes.cs")]
         [TestCase("GenericTypes.cs")]
-        [TestCase("ReadOnlyClass_Simple.cs")]
         public void Test(string testName) {
             DoTestSolution(testName);
         }

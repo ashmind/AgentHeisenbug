@@ -30,7 +30,7 @@ namespace AgentHeisenbug.Analyzers {
 
             var setter = element.GetSetter();
             if (setter != null && !setter.IsPrivate())
-                consumer.AddHighlighting(new MutableAutoPropertyInReadOnlyType(setter.NameIdentifier.NotNull(), element.DeclaredName));
+                consumer.AddHighlighting(new MutableAutoPropertyInReadOnlyType(element, setter));
 
             foreach (var invalid in _typeUsageValidator.GetAllInvalid(element.Type.NotNull(), element.TypeUsage.NotNull())) {
                 // ReSharper disable AssignNullToNotNullAttribute

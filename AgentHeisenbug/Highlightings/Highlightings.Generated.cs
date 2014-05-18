@@ -237,7 +237,7 @@ namespace AgentHeisenbug.Highlightings.ThreadSafe {
     public partial class MutableAutoPropertyInThreadSafeType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableAutoPropertyInThreadSafeType";
 
-        public MutableAutoPropertyInThreadSafeType([NotNull] ITreeNode element, string propertyName) : base(
+        private MutableAutoPropertyInThreadSafeType([NotNull] ITreeNode element, string propertyName) : base(
             element,
             "Setter of auto property '{0}' in a [ThreadSafe] class should be private.",
             propertyName
@@ -328,7 +328,7 @@ namespace AgentHeisenbug.Highlightings.ReadOnly {
     public partial class MutableAutoPropertyInReadOnlyType : HeisenbugHighligtingBase {
         public const string Id = "AgentHeisenbug.MutableAutoPropertyInReadOnlyType";
 
-        public MutableAutoPropertyInReadOnlyType([NotNull] ITreeNode element, string propertyName) : base(
+        private MutableAutoPropertyInReadOnlyType([NotNull] ITreeNode element, string propertyName) : base(
             element,
             "Setter of auto property '{0}' in a [ReadOnly] class should be private.",
             propertyName

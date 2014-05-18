@@ -74,6 +74,9 @@
     <Compile Include="Of.QuickFixes\AddAttributeFixTests.cs" />
     <Content Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ReadOnlyClass_Simple.cs" />
     <Content Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ThreadSafeClass_Simple.cs" />
+    <Content Include="Of.QuickFixes\Files\MakeAutoPropertySetterPrivateFix\ReadOnlyClass_Simple.cs" />
+    <Content Include="Of.QuickFixes\Files\MakeAutoPropertySetterPrivateFix\ThreadSafeClass_Simple.cs" />
+    <Compile Include="Of.QuickFixes\MakeAutoPropertySetterPrivateFixTests.cs" />
     <Compile Include="Of.QuickFixes\HeisenbugQuickFixTestBase.cs" />
     <Compile Include="Of.QuickFixes\MakeFieldReadOnlyFixTests.cs" />
     <Compile Include="Properties\TestEnvironmentAssembly.cs" />
@@ -110,6 +113,8 @@
     <None Include="Of.QuickFixes\Files\AddAttributeFix\ThreadSafe\AddToReference_Simple.cs.gold" />
     <None Include="Of.QuickFixes\Files\AddAttributeFix\ThreadSafe\AddToReference_StaticMethod.cs.gold" />
     <None Include="Of.QuickFixes\Files\AddAttributeFix\ThreadSafe\AddToSelf_Simple.cs.gold" />
+    <None Include="Of.QuickFixes\Files\MakeAutoPropertySetterPrivateFix\ReadOnlyClass_Simple.cs.gold" />
+    <None Include="Of.QuickFixes\Files\MakeAutoPropertySetterPrivateFix\ThreadSafeClass_Simple.cs.gold" />
     <None Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ReadOnlyClass_Simple.cs.gold" />
     <None Include="Of.QuickFixes\Files\MakeFieldReadOnlyFix\ThreadSafeClass_Simple.cs.gold" />
     <None Include="packages.config" />

@@ -53,13 +53,16 @@
   <ItemGroup>
     <Compile Include="Highlightings\Common\AnnotationCandidate.cs" />
     <Compile Include="Highlightings\Common\AnnotationTypeNames.cs" />
+    <Compile Include="Highlightings\Common\IForMutableAutoProperty.cs" />
     <Compile Include="Highlightings\Common\IForMutableField.cs" />
     <Compile Include="Highlightings\ReadOnly\AutoPropertyOfNonReadOnlyTypeInReadOnlyType.cs" />
+    <Compile Include="Highlightings\ReadOnly\MutableAutoPropertyInReadOnlyType.cs" />
     <Compile Include="Highlightings\ReadOnly\FieldOfNonReadOnlyTypeInReadOnlyType.cs" />
     <Compile Include="Highlightings\ReadOnly\MutableFieldInReadOnlyType.cs" />
     <Compile Include="Highlightings\ReadOnly\NonReadOnlyBaseClassInReadOnlyClass.cs" />
     <Compile Include="Highlightings\ThreadSafe\AutoPropertyOfNonThreadSafeTypeInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\AccessToNonThreadSafeStaticMemberInThreadSafeType.cs" />
+    <Compile Include="Highlightings\ThreadSafe\MutableAutoPropertyInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\MutableFieldInThreadSafeType.cs" />
     <Compile Include="Highlightings\ThreadSafe\ParameterOfNonThreadSafeTypeInThreadSafeMethod.cs" />
     <Compile Include="Highlightings\ThreadSafe\FieldOfNonThreadSafeTypeInThreadSafeType.cs" />
@@ -100,6 +103,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickFixes\AddAttributeBulbAction.cs" />
     <Compile Include="QuickFixes\AddAttributeFix.cs" />
+    <Compile Include="QuickFixes\MakeAutoPropertySetterPrivateFix.cs" />
     <Compile Include="QuickFixes\MakeFieldReadOnlyFix.cs" />
     <Compile Include="ThreadSafety.cs" />
     <Compile Include="Analyzers\ThreadSafeAutoPropertyAnalyzer.cs" />
